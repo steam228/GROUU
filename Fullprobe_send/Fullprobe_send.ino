@@ -79,36 +79,21 @@ void loop() {
 //  if (isnan(t) || isnan(h) {
 //    Serial.println("Failed to read from DHT");
 //  } else {
-    Serial.println("_AMBIENT VARIABLES_");
-    Serial.println("__________");  
-    Serial.print("Humidity: "); 
+    Serial.println("data:");
     Serial.print(h);
-    Serial.print(" %\t");
-    Serial.print("Temperature: "); 
+    Serial.print("%s/");
     Serial.print(t);
-    Serial.print(" *C\t");
-    Serial.print("Luminance: "); 
+    Serial.print("%s/");
     Serial.print(l);
-    Serial.println(" Lumens/m2");
-    Serial.println("_SOIL VARIABLES_");
-    Serial.println("__________"); 
-    Serial.print("Soil Moisture: "); 
+    Serial.print("%s/");
     Serial.print(m);
-    Serial.print(" %\t");
-    Serial.print("Soil pH: "); 
+    Serial.print("%s/");
     Serial.print(pH);
-    Serial.print("  \t");
-    Serial.print("Soil Temperature: "); 
+    Serial.print("%s/");
     Serial.print(sT);
-    Serial.println(" *C\t");
-    Serial.println("_PLANT VARIABLES_");
-    Serial.println("__________");
-    Serial.print("Leaf Wetness: "); 
-    Serial.print(w);
-    Serial.println(" %");
-    Serial.println("_____________________");
-    Serial.println("_____________________");
-    Serial.println("_____________________");
+    Serial.print("%s/");
+    Serial.println(w);
+
     
     if (t < 20) {
       digitalWrite (ledPin, HIGH);   
