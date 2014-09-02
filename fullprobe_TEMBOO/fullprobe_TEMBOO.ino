@@ -4,6 +4,9 @@
 #include "math.h"
 //#include <Wire.h>
 #include "floatToString.h"
+#include <Bridge.h>
+#include <Temboo.h>
+#include "TembooAccount.h" // Contains Temboo account information 
 
 //Sensors location
 
@@ -97,8 +100,7 @@ void loop() {
     Serial.println(sT);
     Serial.print("Leaf Wetness: ");
     Serial.println(w);
-    Serial.println("///////////////////////////////");
-    Serial.println("///////////////////////////////");
+    
 //    Wire.beginTransmission(4); // transmit to device #4
 //    Wire.write("floatToString(buffer,h,5);");
 //    Wire.write("floatToString(buffer,t,5);");
@@ -116,7 +118,7 @@ void loop() {
       digitalWrite (ledPin, LOW);   
     }
     
-    delay(4000);
+    delay(1000);
    
 //  }
 }
