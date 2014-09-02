@@ -1,20 +1,21 @@
 
 #include "DHT.h"
 #include "OneWire.h"
+#include "math.h"
 
 //Sensors location
 
 
-#define DHTPIN 3     
-#define DHTTYPE DHT22   // DHT 22  (AM2302)
+#define DHTPIN 4     
+#define DHTTYPE DHT22  
 DHT dht(DHTPIN, DHTTYPE);
-int ledPin = 13;
+
 int moistPin = A0;
 int wetPin = A1;
 int lumPin = A2;
-int phPin = A3;
-int soiltempPin = 2;
+int soiltempPin = 5;
 OneWire ds(soiltempPin);
+int ledPin = 13;
 
 //Variables
 
@@ -23,7 +24,6 @@ OneWire ds(soiltempPin);
   float l = 0;
   int m = 0;
   int w = 0;
-  int pH = 0;
   float sT = 0;
   
 //Analog calibration Values for Maping (input here)
@@ -59,16 +59,15 @@ void loop() {
   l = analogRead(lumPin);
   m = analogRead(moistPin);
   w = analogRead(wetPin);
-  pH = analogRead(phPin);
   sT = getTemp();
   
   
   //Converting Units
   
-  l = map(l,lMin,lMax,0,70000);
+  l = exp(0.02639*l-0.7512); 
   m = map(m,mMin,mMax,0,100);
   w = map(w,wMin,wMax,100,0);
-  int ph = map(pH, pHMin, pHMax,0,7);
+
  
   
 
@@ -84,8 +83,6 @@ void loop() {
     Serial.print(l);
     Serial.print("|");
     Serial.print(m);
-    Serial.print("|");
-    Serial.print(pH);
     Serial.print("|");
     Serial.print(sT);
     Serial.print("|");

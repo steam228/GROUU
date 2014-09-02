@@ -2,21 +2,28 @@
 #include "DHT.h"
 #include "OneWire.h"
 #include "math.h"
-//#include <Wire.h>
-#include "floatToString.h"
 
 //Sensors location
 
 
-#define DHTPIN 4     
+#define DHTPIN 3     
 #define DHTTYPE DHT22   // DHT 22  (AM2302)
+
+const int numReadings = 20;
+
+int readings[numReadings];      // the readings from the analog input
+int index = 0;                  // the index of the current reading
+int total = 0;                  // the running total
+int average = 0;                // the average
+
+
 DHT dht(DHTPIN, DHTTYPE);
 int ledPin = 13;
 int moistPin = A0;
 int wetPin = A1;
 int lumPin = A2;
-//int phPin = A3;
-int soiltempPin = 5;
+int phPin = A3;
+int soiltempPin = 2;
 OneWire ds(soiltempPin);
 
 //Variables
@@ -26,13 +33,13 @@ OneWire ds(soiltempPin);
   float l = 0;
   int m = 0;
   int w = 0;
-  int pH = 0;
+  float pH = 0;
   float sT = 0;
   
 //Analog calibration Values for Maping (input here)
 
   
-  int mMax=600;
+  int mMax=693;
   int mMin=0;
   
   int wMax=1013;
@@ -41,8 +48,8 @@ OneWire ds(soiltempPin);
   float lMax=1023/2;
   int lMin=0;
   
-//  int pHMax=1023;
-//  int pHMin=0;
+  int pHMax=1023;
+  int pHMin=0;
   
 
 
@@ -52,7 +59,8 @@ void setup() {
  
   dht.begin();
   
-//  Wire.begin();                
+  for (int thisReading = 0; thisReading < numReadings; thisReading++)
+    readings[thisReading] = 0;
   
   pinMode (ledPin, OUTPUT);
 }
@@ -64,18 +72,37 @@ void loop() {
   l = analogRead(lumPin);
   m = analogRead(moistPin);
   w = analogRead(wetPin);
-//  pH = analogRead(phPin);
+    // subtract the last reading:
+  total= total - readings[index];         
+  // read from the sensor:  
+  readings[index] = analogRead(phPin); 
+  // add the reading to the total:
+  total= total + readings[index];       
+  // advance to the next position in the array:  
+  index = index + 1;                    
+
+  // if we're at the end of the array...
+  if (index >= numReadings)              
+    // ...wrap around to the beginning: 
+    index = 0;                           
+
+  // calculate the average:
+  average = total / numReadings;         
+  // send it to the computer as ASCII digits
+  
+
+  pH = (0.02*average)-2.92;
   sT = getTemp();
   
   
   //Converting Units
   
-  //l = map(l,lMin,lMax,3,70000);
+
   l = exp(0.02639*l-0.7512); 
   
   m = map(m,mMin,mMax,0,100);
   w = map(w,wMin,wMax,100,0);
-//  int ph = map(pH, pHMin, pHMax,0,7);
+
  
   
 
@@ -83,31 +110,21 @@ void loop() {
 //  if (isnan(t) || isnan(h) {
 //    Serial.println("Failed to read from DHT");
 //  } else {
-    Serial.print("Relative Humidity: ");
-    Serial.println(h);
-    Serial.print("Temperature: ");
-    Serial.println(t);
-    Serial.print("Luminosity: ");
-    Serial.println(l);
-    Serial.print("Moisture: ");
-    Serial.println(m);
-    Serial.print("Soil Temperature: ");
-//    Serial.print(pH);
-//    Serial.print("%s/");
-    Serial.println(sT);
-    Serial.print("Leaf Wetness: ");
-    Serial.println(w);
-    Serial.println("///////////////////////////////");
-    Serial.println("///////////////////////////////");
-//    Wire.beginTransmission(4); // transmit to device #4
-//    Wire.write("floatToString(buffer,h,5);");
-//    Wire.write("floatToString(buffer,t,5);");
-//    Wire.write("floatToString(buffer,l,5);");
-//    Wire.write("floatToString(buffer,m,5);");
-//    Wire.write("floatToString(buffer,sT,5);");
-//    Wire.write("floatToString(buffer,w,5);");
-//    Wire.endTransmission();    // stop transmitting
-
+    Serial.print("A"); 
+    Serial.print(h);
+    Serial.print("G");
+    Serial.print(t);
+    Serial.print("P");
+    Serial.print(l);
+    Serial.print("Q");
+    Serial.print(m);
+    Serial.print("R"); 
+    Serial.print(pH,1);
+    Serial.print("S");
+    Serial.print(sT);
+    Serial.print("T");
+    Serial.print(w);
+    Serial.print("U");
     
     if (t < 20) {
       digitalWrite (ledPin, HIGH);   
@@ -116,7 +133,7 @@ void loop() {
       digitalWrite (ledPin, LOW);   
     }
     
-    delay(4000);
+    delay(50);
    
 //  }
 }
@@ -170,4 +187,11 @@ float getTemp(){
  
 }
 
+void getPH() {
+  
 
+
+
+ 
+  
+}

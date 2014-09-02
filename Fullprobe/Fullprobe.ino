@@ -8,6 +8,15 @@
 
 #define DHTPIN 3     
 #define DHTTYPE DHT22   // DHT 22  (AM2302)
+
+const int numReadings = 20;
+
+int readings[numReadings];      // the readings from the analog input
+int index = 0;                  // the index of the current reading
+int total = 0;                  // the running total
+int average = 0;                // the average
+
+
 DHT dht(DHTPIN, DHTTYPE);
 int ledPin = 13;
 int moistPin = A0;
@@ -24,13 +33,13 @@ OneWire ds(soiltempPin);
   float l = 0;
   int m = 0;
   int w = 0;
-  int pH = 0;
+  float pH = 0;
   float sT = 0;
   
 //Analog calibration Values for Maping (input here)
 
   
-  int mMax=600;
+  int mMax=693;
   int mMin=0;
   
   int wMax=1013;
@@ -50,6 +59,9 @@ void setup() {
  
   dht.begin();
   
+  for (int thisReading = 0; thisReading < numReadings; thisReading++)
+    readings[thisReading] = 0;
+  
   pinMode (ledPin, OUTPUT);
 }
 
@@ -60,18 +72,37 @@ void loop() {
   l = analogRead(lumPin);
   m = analogRead(moistPin);
   w = analogRead(wetPin);
-  pH = analogRead(phPin);
+    // subtract the last reading:
+  total= total - readings[index];         
+  // read from the sensor:  
+  readings[index] = analogRead(phPin); 
+  // add the reading to the total:
+  total= total + readings[index];       
+  // advance to the next position in the array:  
+  index = index + 1;                    
+
+  // if we're at the end of the array...
+  if (index >= numReadings)              
+    // ...wrap around to the beginning: 
+    index = 0;                           
+
+  // calculate the average:
+  average = total / numReadings;         
+  // send it to the computer as ASCII digits
+  
+
+  pH = (0.02*average)-2.92;
   sT = getTemp();
   
   
   //Converting Units
   
-  //l = map(l,lMin,lMax,3,70000);
+
   l = exp(0.02639*l-0.7512); 
   
   m = map(m,mMin,mMax,0,100);
   w = map(w,wMin,wMax,100,0);
-  int ph = map(pH, pHMin, pHMax,0,7);
+
  
   
 
@@ -96,7 +127,7 @@ void loop() {
     Serial.print(m);
     Serial.print(" %\t");
     Serial.print("Soil pH: "); 
-    Serial.print(pH);
+    Serial.print(pH,1);
     Serial.print("  \t");
     Serial.print("Soil Temperature: "); 
     Serial.print(sT);
@@ -169,4 +200,13 @@ float getTemp(){
  
  return TemperatureSum;
  
+}
+
+void getPH() {
+  
+
+
+
+ 
+  
 }
