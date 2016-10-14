@@ -35,6 +35,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/addons/p5.dom.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script language="javascript" src="sketch.js"></script>
 
 
@@ -64,11 +65,15 @@
 			</header>
 
 		<!-- Signup Form -->
-			  <form action="http://levosystems.us4.list-manage.com/subscribe?u=c98a34e589751c39b4a8e4b33&id=6fdbf37aef&amp;id=6fdbf37aef" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-				<input type="email" name="email" id="mce-EMAIL" placeholder="Email Address" />
+		<form
+				id="subscribe-form"
+				action="http://levosystems.us4.list-manage.com/subscribe/post-json?u=c98a34e589751c39b4a8e4b33&id=6fdbf37aef"
+				method="get">
+				<input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Email Address" />
 				<input class="btn btn-primary btn-lg" type="submit" value="Subscribe" />
-			</form>
 
+			</form>
+         <h6 id="subscribe-result"></h6>
 			<canvas class="defaulCanvas" style="width: 1260px; height: 994px;" width="1260" height="994">
 </canvas>
 		<!-- Footer -->
@@ -80,13 +85,79 @@
 					<li><a href="mailto:info@grouu.cc" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 				</ul>
 				<ul class="copyright">
-					<li>licensed under CC-by 4.0 </li><li>to <a href="http://steam228.com">STEAM228</a><li>Adapted from <a href:"http://html5up.net">HTML5UP</a> original from <a href="http://twitter.com/ajlkn/<li">AJ</a> design.</li>
+					<li>licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-by 4.0</a></li><li><a href="http://steam228.com" target="_blank">STEAM228</a><li>Adapted from <a href="http://html5up.net" target="_blank">HTML5UP</a> original from <a href="http://twitter.com/ajlkn/" target="_blank">AJ</a> design.</li>
 				</ul>
 			</footer>
 
 		<!-- Scripts -->
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+			    $(document).ready(function(){
+			        ajaxMailChimpForm($("#subscribe-form"), $("#subscribe-result"));
+			        // Turn the given MailChimp form into an ajax version of it.
+			        // If resultElement is given, the subscribe result is set as html to
+			        // that element.
+			        function ajaxMailChimpForm($form, $resultElement){
+			            // Hijack the submission. We'll submit the form manually.
+			            $form.submit(function(e) {
+			                e.preventDefault();
+			                if (!isValidEmail($form)) {
+			                    var error =  "A valid email address must be provided.";
+			                    $resultElement.html(error);
+			                    $resultElement.css("color", "red");
+			                } else {
+			                    $resultElement.css("color", "black");
+			                    $resultElement.html("Subscribing...");
+			                    submitSubscribeForm($form, $resultElement);
+			                }
+			            });
+			        }
+			        // Validate the email address in the form
+			        function isValidEmail($form) {
+			            // If email is empty, show error message.
+			            // contains just one @
+			            var email = $form.find("input[type='email']").val();
+			            if (!email || !email.length) {
+			                return false;
+			            } else if (email.indexOf("@") == -1) {
+			                return false;
+			            }
+			            return true;
+			        }
+			        // Submit the form with an ajax/jsonp request.
+			        // Based on http://stackoverflow.com/a/15120409/215821
+			        function submitSubscribeForm($form, $resultElement) {
+			            $.ajax({
+			                type: "GET",
+			                url: $form.attr("action"),
+			                data: $form.serialize(),
+			                cache: false,
+			                dataType: "jsonp",
+			                jsonp: "c", // trigger MailChimp to return a JSONP response
+			                contentType: "application/json; charset=utf-8",
+			                error: function(error){
+			                    // According to jquery docs, this is never called for cross-domain JSONP requests
+			                },
+			                success: function(data){
+			                    if (data.result != "success") {
+			                        var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
+			                        $resultElement.css("color", "red");
+			                        if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+			                            message = "You're already subscribed. Thank you.";
+			                            $resultElement.css("color", "black");
+			                        }
+			                        $resultElement.html(message);
+			                    } else {
+			                        $resultElement.css("color", "black");
+			                        $resultElement.html("Thank you!<br>You must confirm the subscription in your inbox.");
+			                    }
+			                }
+			            });
+			        }
+			    });
+			</script>
+
 
 	</body>
 </html>

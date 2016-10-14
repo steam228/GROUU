@@ -1066,7 +1066,7 @@ z-index:4;
 
 /* Signup Form */
 
-	#mc-embedded-subscribe-form {
+	#subscribe-form {
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -1074,40 +1074,48 @@ z-index:4;
 		position: relative;
 	}
 
-		#mc-embedded-subscribe-form input[type="text"],
-		#mc-embedded-subscribe-form input[type="password"],
-		#mc-embedded-subscribe-form input[type="email"] {
+	#subscribe-result{
+
+
+
+	}
+
+		#subscribe-form input[type="text"],
+		#subscribe-form input[type="password"],
+		#subscribe-form input[type="email"] {
 			width: 18em;
 		}
 
-		#mc-embedded-subscribe-form > * {
+		#subscribe-form > * {
 			margin: 0 0 0 1em;
 		}
 
-		#mc-embedded-subscribe-form > :first-child {
+		#subscribe-form > :first-child {
 			margin: 0 0 0 0;
 		}
 
+
+
 		@media screen and (max-width: 480px) {
 
-			#mc-embedded-subscribe-form {
+			#subscribe-form {
 				-moz-flex-direction: column;
 				-webkit-flex-direction: column;
 				-ms-flex-direction: column;
 				flex-direction: column;
 			}
 
-				#mc-embedded-subscribe-form input[type="type"],
-				#mc-embedded-subscribe-form input[type="password"],
-				#mc-embedded-subscribe-form input[type="email"] {
+				#subscribe-form input[type="type"],
+				#subscribe-form input[type="password"],
+				#subscribe-form input[type="email"] {
 					width: 100%;
 				}
 
-				#mc-embedded-subscribe-form > * {
+				#subscribe-form > * {
 					margin: 1.25em 0 0 0;
 				}
 
-				#mc-embedded-subscribe-form .message {
+				#subscribe-form .message {
 					bottom: -1.5em;
 					font-size: 0.9em;
 					height: 1em;
