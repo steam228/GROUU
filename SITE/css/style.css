@@ -1,0 +1,58 @@
+
+body {
+	padding:0;
+	margin:0;
+	font-family: Arial;
+
+
+background-image: url(../img/bg.jpg);
+
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+
+}
+
+.texture{
+z-index:2;	
+background:url(
+
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJklEQVQYV2NkYGA4w8DAYMKABBihbBQJmCBIDi6BLAiXQBcESwAA/TAE0tq0NJ8AAAAASUVORK5CYII=
+) repeat;}
+
+#content { padding:30px; }
+xmp { background-color:#E0E0E0; padding:10px; max-width:450px; }
+
+/* et pour superposer la canvas et le contenu html... */
+canvas { position:fixed; top:0; left:0; z-index:1; opacity: 0.8; filter: alpha(opacity=80);}
+#content { position:relative; z-index:3; }
+
+.logo {
+
+  max-width: 290px;
+  align-content: center;
+  margin: auto;
+	margin-top: 25%;
+
+}
+
+.image {
+max-width: 100%;
+height: auto;
+z-index:4;
+
+}
