@@ -171,7 +171,7 @@ z-index:4;
 		transition: opacity 2s ease-in-out;
 		height: 100%;
 		left: 0;
-		opacity: 0.25;
+		opacity: 0.35;
 		position: fixed;
 		top: 0;
 		width: 100%;
@@ -514,7 +514,7 @@ z-index:4;
 		line-height: 1.5em;
 	}
 
-	canvas { position:fixed; top:0; left:0; z-index:1; opacity: 0.4; filter: alpha(opacity=30);}
+	canvas { position:fixed; top:0; left:0; z-index:1; opacity: 0.15; filter: alpha(opacity=10);}
 
 	@media screen and (max-width: 980px) {
 
