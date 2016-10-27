@@ -18,21 +18,23 @@ function setup() {
   blue = 0;
   base = 255-vari;
   toogle = true;
+
 }
 
 function draw() {
 
 if (toogle==true){
 if (abs(mouseX-MouseOldX)  > 10 || abs(mouseY-MouseOldY)  > 10 ){
-red = map(mouseX, 0, width,-vari,+vari); 
+red = map(mouseX, 0, width,-vari,+vari);
 blue = map(mouseY, 0, height,-vari,+vari);
+
 background(vari, base+red,base+blue);
 MouseOldX = mouseX;
 MouseOldY = mouseY;
 }
 }
-  
-  
+
+
 }
 
 
@@ -43,6 +45,3 @@ function windowResized() {
 function mouseClicked() {
   toogle = !toogle;
 }
-
-
-
