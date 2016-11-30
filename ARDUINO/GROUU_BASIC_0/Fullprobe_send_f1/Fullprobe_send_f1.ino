@@ -1,5 +1,5 @@
 
-#insempre encarei aclude "DHT.h"
+#include "DHT.h"
 #include "OneWire.h"
 #include "math.h"
 
