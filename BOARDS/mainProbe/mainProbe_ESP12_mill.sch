@@ -1085,7 +1085,7 @@ Note: The AM2302 is a wired version of the DHT-22 which typically requires less 
 <part name="IC1" library="fab" deviceset="REGULATOR" device="SOT23"/>
 <part name="D1" library="fab" deviceset="DIODE" device="SOD123"/>
 <part name="D2" library="fab" deviceset="DIODE" device="SOD123"/>
-<part name="U2" library="RHT03_DHT-22_AM2302" deviceset="RHT03_DHT-22_AM2302" device=""/>
+<part name="DHT22" library="RHT03_DHT-22_AM2302" deviceset="RHT03_DHT-22_AM2302" device=""/>
 <part name="TEMPSENSOR" library="headers(2mm)" deviceset="1X3" device=""/>
 <part name="R2" library="fab" deviceset="RES-US" device="1206" value="4.7K"/>
 <part name="MOISTURE1" library="headers(2mm)" deviceset="1X2" device=""/>
@@ -1109,7 +1109,7 @@ Note: The AM2302 is a wired version of the DHT-22 which typically requires less 
 <instance part="IC1" gate="G$1" x="25.4" y="86.36"/>
 <instance part="D1" gate="G$1" x="68.58" y="83.82"/>
 <instance part="D2" gate="G$1" x="96.52" y="83.82"/>
-<instance part="U2" gate="G$1" x="157.48" y="83.82"/>
+<instance part="DHT22" gate="G$1" x="157.48" y="83.82"/>
 <instance part="TEMPSENSOR" gate="G$1" x="22.86" y="58.42"/>
 <instance part="R2" gate="G$1" x="30.48" y="48.26" rot="R90"/>
 <instance part="MOISTURE1" gate="G$1" x="58.42" y="91.44"/>
@@ -1138,7 +1138,7 @@ Note: The AM2302 is a wired version of the DHT-22 which typically requires less 
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="DATA"/>
+<pinref part="DHT22" gate="G$1" pin="DATA"/>
 <wire x1="147.32" y1="86.36" x2="142.24" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="142.24" y1="86.36" x2="139.7" y2="86.36" width="0.1524" layer="91"/>
@@ -1235,7 +1235,7 @@ Note: The AM2302 is a wired version of the DHT-22 which typically requires less 
 <label x="99.06" y="40.64" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="GND"/>
+<pinref part="DHT22" gate="G$1" pin="GND"/>
 <wire x1="147.32" y1="76.2" x2="121.92" y2="76.2" width="0.1524" layer="91"/>
 <label x="121.92" y="76.2" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -1290,7 +1290,7 @@ Note: The AM2302 is a wired version of the DHT-22 which typically requires less 
 <label x="53.34" y="40.64" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="VDD"/>
+<pinref part="DHT22" gate="G$1" pin="VDD"/>
 <wire x1="147.32" y1="91.44" x2="121.92" y2="91.44" width="0.1524" layer="91"/>
 <label x="121.92" y="91.44" size="1.016" layer="95" rot="R180" xref="yes"/>
 <pinref part="R1" gate="G$1" pin="1"/>
