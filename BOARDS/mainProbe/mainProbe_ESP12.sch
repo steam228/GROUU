@@ -471,11 +471,6 @@ wave soldering</description>
 <rectangle x1="-1.9558" y1="-0.3048" x2="-1.3716" y2="0.3048" layer="51" rot="R180"/>
 <rectangle x1="1.3716" y1="-0.3048" x2="1.9558" y2="0.3048" layer="51" rot="R180"/>
 <rectangle x1="-0.4001" y1="-0.7" x2="0.4001" y2="0.7" layer="35"/>
-<wire x1="-2.667" y1="0.889" x2="-2.667" y2="-0.889" width="0.127" layer="21"/>
-<wire x1="-2.921" y1="0.889" x2="-2.921" y2="-0.889" width="0.127" layer="21"/>
-<wire x1="-2.921" y1="-0.889" x2="2.794" y2="-0.889" width="0.127" layer="21"/>
-<wire x1="2.794" y1="-0.889" x2="2.794" y2="0.889" width="0.127" layer="21"/>
-<wire x1="2.794" y1="0.889" x2="-2.921" y2="0.889" width="0.127" layer="21"/>
 </package>
 <package name="C1206">
 <description>&lt;b&gt;CAPACITOR&lt;/b&gt;</description>
@@ -535,8 +530,8 @@ Metric Code Size 3216</description>
 <wire x1="3.6" y1="-2.2" x2="3.6" y2="3.4" width="0.127" layer="21"/>
 <wire x1="3.6" y1="3.4" x2="-3.4" y2="3.4" width="0.127" layer="21"/>
 <wire x1="-3.4" y1="-2.2" x2="3.6" y2="-2.2" width="0.127" layer="21"/>
-<pad name="1" x="1.8" y="0" drill="1.2" diameter="2.1844"/>
-<pad name="2" x="-1.7" y="0" drill="1.2" diameter="2.1844"/>
+<pad name="1" x="1.8" y="0" drill="1.27" diameter="2.286"/>
+<pad name="2" x="-1.7" y="0" drill="1.27" diameter="2.286"/>
 <text x="3" y="5" size="1.27" layer="25" rot="R180">&gt;NAME</text>
 </package>
 </packages>

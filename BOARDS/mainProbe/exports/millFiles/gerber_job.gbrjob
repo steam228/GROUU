@@ -1,0 +1,13 @@
+G04 Gerber job file.*
+%TF.FileFunction,JobInfo*%
+%TF.GenerationSoftware,Autodesk,EAGLE,9.1.1*%
+%TF.CreationDate,2018-07-26T12:17:36Z*%
+%TF.Part,Single*%
+%MOMM*%
+%TJ.B_Owner,Andre Rocha <andre@designadvancedresources.org>*%
+%TJ.B_ID,mainProbe_ESP12_mill_headers*%
+%TJ.B_LayerNum,2*%
+%TJ.B_Thickness,1.570000*%
+%TJ.B_Size_X,31.750000*%
+%TJ.B_Size_Y,43.307000*%
+M02*
