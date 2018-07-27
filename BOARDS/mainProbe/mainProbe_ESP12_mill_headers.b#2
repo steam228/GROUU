@@ -159,14 +159,16 @@
 <board>
 <plain>
 <polygon width="0.6" layer="20">
-<vertex x="-0.381" y="42.418"/>
-<vertex x="-0.381" y="2.921"/>
-<vertex x="2.159" y="0.381"/>
-<vertex x="29.21" y="0.381"/>
-<vertex x="32.258" y="3.429"/>
-<vertex x="32.258" y="42.418"/>
-<vertex x="29.083" y="45.593"/>
-<vertex x="2.794" y="45.593"/>
+<vertex x="2.921" y="43.942"/>
+<vertex x="0.381" y="41.402"/>
+<vertex x="0.508" y="2.921"/>
+<vertex x="2.921" y="0.635"/>
+<vertex x="29.591" y="0.635"/>
+<vertex x="32.131" y="3.302"/>
+<vertex x="32.131" y="5.842"/>
+<vertex x="32.131" y="41.402"/>
+<vertex x="30.861" y="42.672"/>
+<vertex x="29.591" y="43.942"/>
 </polygon>
 </plain>
 <libraries>

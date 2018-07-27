@@ -343,34 +343,6 @@
 </package>
 </packages>
 </library>
-<library name="RHT03_DHT-22_AM2302">
-<description>&lt;h1&gt;RHT03 / DHT-22 / AM2302 library&lt;/h1&gt;
-&lt;p&gt;
-Library with devices (schematic symbol and packages) for the RHT03 / DHT-22 / AM2302 digital relative humidity and tempearture sensor.&lt;br /&gt;
-Warning: Package does not include tKeepout areas so that the part may optionally be placed on a riser with components underneath.  Please keep the package outline and bent-pin space in mind.
-&lt;/p&gt;</description>
-<packages>
-<package name="RHT03_DHT-22">
-<description>&lt;h1&gt;RHT03 / DHT-22&lt;/h1&gt;
-&lt;p&gt;
-Package for the RHT03 / DHT-22 relative humidity and temperature sensor.
-&lt;/p&gt;</description>
-<pad name="VDD" x="-3.81" y="0" drill="0.8" shape="octagon"/>
-<pad name="DATA" x="-1.27" y="0" drill="0.8"/>
-<pad name="NULL" x="1.27" y="0" drill="0.8"/>
-<pad name="GND" x="3.81" y="0" drill="0.8"/>
-<wire x1="-7.55" y1="2.5" x2="7.55" y2="2.5" width="0.127" layer="21"/>
-<wire x1="-7.55" y1="-5.2" x2="7.55" y2="-5.2" width="0.127" layer="21"/>
-<wire x1="-7.55" y1="2.5" x2="-7.55" y2="0.8" width="0.127" layer="21"/>
-<wire x1="-7.55" y1="0.8" x2="-7.55" y2="-5.2" width="0.127" layer="21"/>
-<wire x1="7.55" y1="2.5" x2="7.55" y2="0.8" width="0.127" layer="21"/>
-<wire x1="7.55" y1="0.8" x2="7.55" y2="-5.2" width="0.127" layer="21"/>
-<wire x1="-7.55" y1="0.8" x2="7.55" y2="0.8" width="0.127" layer="21"/>
-<text x="-6" y="-4.5" size="1.27" layer="21" font="vector">&gt;NAME</text>
-<text x="-6" y="-2.5" size="1.27" layer="21" font="vector">&gt;VALUE</text>
-</package>
-</packages>
-</library>
 <library name="pinhead" urn="urn:adsk.eagle:library:325">
 <description>&lt;b&gt;Pin Header Connectors&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
@@ -452,6 +424,48 @@ Package for the RHT03 / DHT-22 relative humidity and temperature sensor.
 <rectangle x1="-1.651" y1="-2.921" x2="-0.889" y2="-1.905" layer="21"/>
 <rectangle x1="0.889" y1="-2.921" x2="1.651" y2="-1.905" layer="21"/>
 </package>
+<package name="1X04" urn="urn:adsk.eagle:footprint:22258/1" library_version="3">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="0" y1="0.635" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="1.27" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="0.635" x2="2.54" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="-0.635" x2="1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="-1.27" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-4.445" y1="1.27" x2="-3.175" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-3.175" y1="1.27" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="-0.635" x2="-3.175" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0.635" x2="-1.905" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.27" x2="-0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="-1.27" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="-1.27" x2="-2.54" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="0.635" x2="-5.08" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-4.445" y1="1.27" x2="-5.08" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="-0.635" x2="-4.445" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-3.175" y1="-1.27" x2="-4.445" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="1.27" x2="4.445" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="4.445" y1="1.27" x2="5.08" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="0.635" x2="5.08" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="-0.635" x2="4.445" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="1.27" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="-0.635" x2="3.175" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="4.445" y1="-1.27" x2="3.175" y2="-1.27" width="0.1524" layer="21"/>
+<pad name="1" x="-3.81" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="-1.27" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="3" x="1.27" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="4" x="3.81" y="0" drill="1.016" shape="long" rot="R90"/>
+<text x="-5.1562" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-5.08" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+<rectangle x1="-4.064" y1="-0.254" x2="-3.556" y2="0.254" layer="51"/>
+<rectangle x1="3.556" y1="-0.254" x2="4.064" y2="0.254" layer="51"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="1X02" urn="urn:adsk.eagle:package:22435/2" type="model" library_version="3">
@@ -470,6 +484,12 @@ Package for the RHT03 / DHT-22 relative humidity and temperature sensor.
 <description>PIN HEADER</description>
 <packageinstances>
 <packageinstance name="1X02/90"/>
+</packageinstances>
+</package3d>
+<package3d name="1X04" urn="urn:adsk.eagle:package:22407/2" type="model" library_version="3">
+<description>PIN HEADER</description>
+<packageinstances>
+<packageinstance name="1X04"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -680,13 +700,11 @@ design rules under a new name.</description>
 <element name="U$1" library="fab" package="1X06SMD" value="FTDI-SMD-HEADER" x="27.686" y="19.304"/>
 <element name="U$2" library="fab" package="LED1206" value="LED" x="17.78" y="31.115"/>
 <element name="U1" library="esp8266modules" package="ESP12" value="" x="13.589" y="20.828" rot="R90"/>
-<element name="DHT22" library="RHT03_DHT-22_AM2302" package="RHT03_DHT-22" value="" x="10.795" y="37.719" rot="R180">
-<attribute name="PROD_ID" value="SEN-10167" x="10.795" y="37.719" size="1.778" layer="27" rot="R180" display="off"/>
-</element>
 <element name="MOISTURE1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="18.923" y="6.35" rot="R90"/>
 <element name="MOISTURE2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="" x="22.479" y="6.35" rot="R90"/>
 <element name="TEMPSENSOR" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X03" package3d_urn="urn:adsk.eagle:package:22458/2" value="" x="28.194" y="6.604" rot="R90"/>
 <element name="SOLARIN" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02/90" package3d_urn="urn:adsk.eagle:package:22437/2" value="" x="26.797" y="42.164"/>
+<element name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X04" package3d_urn="urn:adsk.eagle:package:22407/2" value="" x="11.811" y="38.481" rot="R180"/>
 </elements>
 <signals>
 <signal name="N$2">
@@ -696,20 +714,20 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="4"/>
 </signal>
 <signal name="N$8">
-<contactref element="DHT22" pad="DATA"/>
 <contactref element="R1" pad="2"/>
 <contactref element="U1" pad="GPIO2"/>
 <wire x1="17.789" y1="27.728" x2="17.789" y2="32.503" width="0.6" layer="1"/>
-<wire x1="14.351" y1="35.941" x2="12.065" y2="35.941" width="0.6" layer="1"/>
-<wire x1="17.789" y1="32.503" x2="14.351" y2="35.941" width="0.6" layer="1"/>
+<wire x1="17.789" y1="32.503" x2="13.29266875" y2="36.99933125" width="0.6" layer="1"/>
 <wire x1="24.511" y1="14.224" x2="24.511" y2="13.106" width="0.6" layer="1"/>
 <wire x1="24.511" y1="14.224" x2="18.415" y2="20.32" width="0.6" layer="1"/>
 <wire x1="18.415" y1="20.32" x2="12.954" y2="20.32" width="0.6" layer="1"/>
 <wire x1="12.954" y1="20.32" x2="6.477" y2="26.797" width="0.6" layer="1"/>
 <wire x1="6.477" y1="26.797" x2="6.477" y2="30.353" width="0.6" layer="1"/>
-<wire x1="6.477" y1="30.353" x2="12.065" y2="35.941" width="0.6" layer="1"/>
-<wire x1="12.065" y1="35.941" x2="12.065" y2="37.719" width="0.6" layer="1"/>
 <wire x1="24.638" y1="13.233" x2="24.511" y2="13.106" width="0.6" layer="1"/>
+<contactref element="JP1" pad="2"/>
+<wire x1="6.477" y1="30.353" x2="13.208" y2="37.084" width="0.6" layer="1"/>
+<wire x1="13.29266875" y1="36.99933125" x2="13.081" y2="38.481" width="0.6" layer="1"/>
+<wire x1="13.29266875" y1="36.99933125" x2="13.208" y2="37.084" width="0.6" layer="1"/>
 </signal>
 <signal name="TX">
 <contactref element="U1" pad="TX"/>
@@ -764,16 +782,13 @@ design rules under a new name.</description>
 <contactref element="C1" pad="2"/>
 <contactref element="C2" pad="2"/>
 <contactref element="U1" pad="GND"/>
-<contactref element="DHT22" pad="GND"/>
 <contactref element="U$1" pad="1"/>
 <contactref element="R2" pad="2"/>
 <contactref element="R3" pad="1"/>
 <contactref element="R4" pad="1"/>
 <contactref element="R5" pad="2"/>
-<wire x1="6.985" y1="37.719" x2="10.436" y2="41.17" width="0.6" layer="1"/>
-<wire x1="10.436" y1="41.17" x2="23.241" y2="41.17" width="0.6" layer="1"/>
-<wire x1="19.601" y1="34.671" x2="19.601" y2="37.53" width="0.6" layer="1"/>
-<wire x1="19.601" y1="37.53" x2="23.241" y2="41.17" width="0.6" layer="1"/>
+<wire x1="19.601" y1="34.671" x2="19.601" y2="36.26" width="0.6" layer="1"/>
+<wire x1="20.0375" y1="37.9665" x2="23.241" y2="41.17" width="0.6" layer="1"/>
 <wire x1="28.321" y1="34.541" x2="27.943" y2="34.163" width="0.6" layer="1"/>
 <wire x1="28.321" y1="39.392" x2="28.321" y2="34.541" width="0.6" layer="1"/>
 <wire x1="27.943" y1="34.163" x2="27.943" y2="31.496" width="0.6" layer="1"/>
@@ -791,9 +806,6 @@ design rules under a new name.</description>
 <wire x1="2.54" y1="7.899" x2="5.334" y2="7.899" width="0.6" layer="1"/>
 <wire x1="5.334" y1="7.899" x2="8.128" y2="7.899" width="0.6" layer="1"/>
 <wire x1="2.286" y1="7.899" x2="2.54" y2="7.899" width="0.6" layer="1"/>
-<wire x1="4.064" y1="9.423" x2="4.064" y2="34.798" width="0.6" layer="1"/>
-<wire x1="4.064" y1="34.798" x2="6.985" y2="37.719" width="0.6" layer="1"/>
-<wire x1="2.54" y1="7.899" x2="4.064" y2="9.423" width="0.6" layer="1"/>
 <contactref element="TEMPSENSOR" pad="1"/>
 <contactref element="SOLARIN" pad="2"/>
 <wire x1="23.241" y1="41.17" x2="26.543" y2="41.17" width="0.6" layer="1"/>
@@ -801,38 +813,56 @@ design rules under a new name.</description>
 <wire x1="30.861" y1="18.161" x2="30.861" y2="5.842" width="0.6" layer="1"/>
 <wire x1="30.861" y1="5.842" x2="28.956" y2="3.937" width="0.6" layer="1"/>
 <wire x1="28.956" y1="3.937" x2="28.194" y2="4.064" width="0.6" layer="1"/>
+<contactref element="JP1" pad="4"/>
+<wire x1="2.54" y1="33.02" x2="8.001" y2="38.481" width="0.6" layer="1"/>
+<wire x1="2.54" y1="7.899" x2="2.54" y2="33.02" width="0.6" layer="1"/>
+<wire x1="8.036" y1="41.3311625" x2="8.8338375" y2="42.129" width="0.6" layer="1"/>
+<wire x1="8.001" y1="38.481" x2="8.036" y2="38.516" width="0.6" layer="1"/>
+<wire x1="8.036" y1="38.516" x2="8.036" y2="41.3311625" width="0.6" layer="1"/>
+<wire x1="8.8338375" y1="42.129" x2="9.109" y2="42.129" width="0.6" layer="1"/>
+<wire x1="9.109" y1="42.129" x2="9.144" y2="42.164" width="0.6" layer="1"/>
+<wire x1="20.0375" y1="37.9665" x2="20.6725" y2="37.3315" width="0.6" layer="1"/>
+<wire x1="9.144" y1="42.164" x2="15.84" y2="42.164" width="0.6" layer="1"/>
 <wire x1="28.321" y1="39.392" x2="28.067" y2="38.354" width="0" layer="19" extent="1-1"/>
+<wire x1="19.601" y1="36.26" x2="20.6725" y2="37.3315" width="0.6" layer="1"/>
+<wire x1="15.84" y1="42.164" x2="20.0375" y2="37.9665" width="0.6" layer="1"/>
 </signal>
 <signal name="3.3V">
 <contactref element="IC1" pad="1"/>
 <contactref element="C2" pad="1"/>
 <contactref element="U1" pad="VCC"/>
-<contactref element="DHT22" pad="VDD"/>
 <contactref element="R1" pad="1"/>
 <wire x1="21.801" y1="33.721" x2="22.159" y2="33.721" width="0.6" layer="1"/>
 <wire x1="24.384" y1="31.496" x2="25.143" y2="31.496" width="0.6" layer="1"/>
 <wire x1="22.159" y1="33.721" x2="24.384" y2="31.496" width="0.6" layer="1"/>
-<wire x1="14.605" y1="37.592" x2="18.796" y2="33.401" width="0.6" layer="1"/>
-<wire x1="18.796" y1="33.401" x2="21.209" y2="33.401" width="0.6" layer="1"/>
+<wire x1="18.796" y1="33.401" x2="19.05" y2="33.401" width="0.6" layer="1"/>
+<wire x1="19.05" y1="33.401" x2="21.209" y2="33.401" width="0.6" layer="1"/>
 <wire x1="21.209" y1="33.401" x2="21.529" y2="33.721" width="0.6" layer="1"/>
 <wire x1="21.529" y1="33.721" x2="21.801" y2="33.721" width="0.6" layer="1"/>
 <wire x1="21.789" y1="15.125" x2="17.864" y2="19.05" width="0.6" layer="1"/>
-<wire x1="17.864" y1="19.05" x2="12.446" y2="19.05" width="0.6" layer="1"/>
-<wire x1="12.446" y1="19.05" x2="5.334" y2="26.162" width="0.6" layer="1"/>
-<wire x1="5.334" y1="26.162" x2="5.334" y2="31.115" width="0.6" layer="1"/>
-<wire x1="10.795" y1="38.481" x2="11.43" y2="39.116" width="0.6" layer="1"/>
-<wire x1="11.43" y1="39.116" x2="12.7" y2="39.116" width="0.6" layer="1"/>
-<wire x1="12.7" y1="39.116" x2="14.097" y2="37.719" width="0.6" layer="1"/>
-<wire x1="5.334" y1="31.115" x2="10.795" y2="36.576" width="0.6" layer="1"/>
-<wire x1="10.795" y1="36.576" x2="10.795" y2="38.481" width="0.6" layer="1"/>
+<wire x1="17.864" y1="19.05" x2="12.573" y2="19.05" width="0.6" layer="1"/>
+<wire x1="12.573" y1="19.05" x2="4.318" y2="27.305" width="0.6" layer="1"/>
 <wire x1="21.789" y1="13.728" x2="21.789" y2="15.125" width="0.6" layer="1"/>
-<wire x1="14.097" y1="37.719" x2="14.605" y2="37.719" width="0.6" layer="1"/>
-<wire x1="14.605" y1="37.719" x2="14.605" y2="37.592" width="0.6" layer="1"/>
 <contactref element="TEMPSENSOR" pad="3"/>
 <wire x1="24.638" y1="10.389" x2="24.666771875" y2="10.385228125" width="0.6" layer="1"/>
 <wire x1="24.666771875" y1="10.385228125" x2="25.908" y2="9.144" width="0.6" layer="1"/>
-<wire x1="21.789" y1="13.728" x2="24.638" y2="10.389" width="0" layer="19" extent="1-1"/>
 <wire x1="25.908" y1="9.144" x2="28.194" y2="9.144" width="0.6" layer="1"/>
+<contactref element="JP1" pad="1"/>
+<contactref element="JP1" pad="3"/>
+<wire x1="4.318" y1="27.305" x2="4.318" y2="30.861" width="0.6" layer="1"/>
+<wire x1="4.318" y1="30.861" x2="10.541" y2="37.084" width="0.6" layer="1"/>
+<wire x1="10.541" y1="37.084" x2="10.541" y2="38.481" width="0.6" layer="1"/>
+<wire x1="18.301" y1="33.92246875" x2="18.65246875" y2="33.571" width="0.6" layer="1"/>
+<wire x1="15.621" y1="38.481" x2="18.301" y2="35.801" width="0.6" layer="1"/>
+<wire x1="18.301" y1="35.801" x2="18.301" y2="33.92246875" width="0.6" layer="1"/>
+<wire x1="18.65246875" y1="33.571" x2="18.88" y2="33.571" width="0.6" layer="1"/>
+<wire x1="18.88" y1="33.571" x2="19.05" y2="33.401" width="0.6" layer="1"/>
+<wire x1="10.541" y1="38.481" x2="10.541" y2="40.259" width="0.6" layer="1"/>
+<wire x1="10.541" y1="40.259" x2="11.303" y2="41.148" width="0.6" layer="1"/>
+<wire x1="11.303" y1="41.148" x2="14.097" y2="41.148" width="0.6" layer="1"/>
+<wire x1="14.097" y1="41.148" x2="15.621" y2="39.878" width="0.6" layer="1"/>
+<wire x1="15.621" y1="39.878" x2="15.621" y2="38.481" width="0.6" layer="1"/>
+<wire x1="21.789" y1="13.728" x2="24.638" y2="10.389" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3">
 <contactref element="U1" pad="GPIO16"/>
