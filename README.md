@@ -1,7 +1,61 @@
+# NEXT TASKS (delete after done)
+
+1. adapt code: https://github.com/steam228/fishTank/blob/master/fishTank_V1/fishTank_V1.ino
+2. supply diagrams;
+
+
+# WORKSHOP
+
+## at Habibi.Works 30/07/2018 to 03/08/2018
+
+1. Introduction to Arduino
+a) Electricity + Ohm's Law
+Build a Visual Soil Moisture Sensor
+
+b) Connect it to Arduino and gather data;
+
+c) Trigger a reaction to variations on that data.
+
+
+2. Introduction to GROUU
+Build a simple irrigation system that will adapt soil moisture to specific crops by using 3 simple modules:
+a) A soil probe: soil moisture (%) and soil temperature (ºC) (it can gather local environmental data - Relative Humidity and Temperature);
+b) Control
+
+
+
 # JOURNAL
 
 
-## New mainSoilProbe board design on REV1
+## configuring Raspberry Pi zero W as server
+
+#### configuring the Pi
+https://core-electronics.com.au/tutorials/raspberry-pi-zerow-headless-wifi-setup.html
+
+#### Accessing through ssh on mac or linux terminal
+https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md
+
+#### upgrade Node-Red and Node.js
+1. open terminal;
+2. commands:
+```
+sudo apt-get update
+sudo apt-get upgrade
+bash <(curl -sL https:/raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
+sudo systemctl enable nodered.service
+```
+3. Connect to Raspberry Pi Node-red console throught your browser be accessing ```http://"raspipaddress":1880```
+
+##### other useful links:
+Security: manage permissions on node-red tutorial - https://www.youtube.com/watch?v=GeN7g4bdHiM
+
+
+## mainSoilProbe REV0
+
+### pin list:
+
+DHT pin
+
 
 ### This board includes:
 DHT22 (Humidity and Temperature - Near plants Control);
