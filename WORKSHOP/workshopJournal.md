@@ -1,0 +1,23 @@
+# WORKSHOP HW - Distributed Design Market Platform
+#### at Habibi.Works 30/07/2018 to 03/08/2018
+
+1. Introduction to Arduino
+a) Electricity + Ohm's Law
+Build a Visual Soil Moisture Sensor
+
+b) Connect it to Arduino and gather data;
+
+c) Trigger a reaction to variations on that data.
+
+see WORKSHOP/materials/day1.pdf
+
+
+2. Introduction to GROUU
+Build a simple irrigation system that will adapt soil moisture to specific crops by using 3 simple modules:
+a) A soil probe: soil moisture (%) and soil temperature (ºC) (it can gather local environmental data - Relative Humidity and Temperature);
+
+b) Control Water routing by building logic set of actions using Node.js;
+
+c) Visualize data on a Dashboard.
+
+see WORKSHOP/materials/day3.pdf
