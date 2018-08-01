@@ -32,6 +32,12 @@ sudo systemctl enable nodered.service
 ```
 3. Connect to Raspberry Pi Node-red console throught your browser be accessing ```http://"raspipaddress":1880```
 
+4. Install Mosquitto MQTT broker
+```
+sudo apt-get install Mosquitto
+```
+some instructions on how to test here: https://www.instructables.com/id/Installing-MQTT-BrokerMosquitto-on-Raspberry-Pi/
+
 ##### other useful links:
 Security: manage permissions on node-red tutorial - https://www.youtube.com/watch?v=GeN7g4bdHiM
 
