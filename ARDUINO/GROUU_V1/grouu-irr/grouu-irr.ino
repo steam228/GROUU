@@ -9,7 +9,7 @@
 //MQTT
 #include <PubSubClient.h>
 //ESP
-#include <ESP8266WiFi.h>'
+#include <ESP8266WiFi.h>
 //Wi-Fi Manager library
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
@@ -34,24 +34,24 @@
 
 //moist
 #define moistPort A0
-#define enableSur 5 //GPIO14 to feed surface Moist sensor
-#define enableDeep 6 //GPIO12 to feed deep Moist sensor
+#define enableSur 14 //GPIO14 to feed surface Moist sensor
+#define enableDeep 12 //GPIO12 to feed deep Moist sensor
 
 //soilTemperature
 
-#define ONE_WIRE_BUS 2
+#define ONE_WIRE_BUS 4 //GPIO4
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature DS18B20(&oneWire);
 
 //enviromnental - DHT22
 float temp;
 float humid;
-#define DHTPIN            4        
+#define DHTPIN            2        
 #define DHTTYPE           DHT22     // DHT 22 (AM2302)
 DHT_Unified dht(DHTPIN, DHTTYPE);
 
 Timing mytimer;
-uint32_t delayMS= 3000;
+uint32_t delayMS;
 
 
 //configure MQTT server
@@ -67,17 +67,20 @@ uint32_t delayMS= 3000;
 #define PAYLOAD_OFF "OFF"
 
 //CONSTANTS
-const String IDNUMBER = "1"; //change number if adding new
-const String HOSTNAME  = "grouu-irr"+IDNUMBER; 
+//ID of the Board
+const String Instalation = "Habibi"; //Where is it?
+const String IDCODE = "1"; //number your probe
+const String TYPE = "SoilProbe"; //choose type
+const String Host = "Grouu" + Instalation + TYPE + IDCODE; //just change if it is not grouu 
 const char * OTA_PASSWORD  = "herbertolevah";
 const String MQTT_LOG = "system/log";
-const String MQTT_SYSTEM_CONTROL_TOPIC = "system/set/"+HOSTNAME;
+const String MQTT_SYSTEM_CONTROL_TOPIC = "system/set/"+Host;
 //sensors
-const String MQTT_WATER_humid_PUBLISH_TOPIC = "grouu-irr/sensor/humid"+IDNUMBER;
-const String MQTT_WATER_temp_PUBLISH_TOPIC = "grouu-irr/sensor/temp"+IDNUMBER;
-const String MQTT_WATER_moistSur_PUBLISH_TOPIC = "grouu-irr/sensor/moistSur"+IDNUMBER;
-const String MQTT_WATER_moistDeep_PUBLISH_TOPIC = "grouu-irr/sensor/moistDeep"+IDNUMBER;
-const String MQTT_WATER_soilTemp_PUBLISH_TOPIC = "grouu-irr/sensor/stemp"+IDNUMBER;
+const String MQTT_WATER_humid_PUBLISH_TOPIC = Host + "/sensor/humid";
+const String MQTT_WATER_temp_PUBLISH_TOPIC = Host + "/sensor/temp";
+const String MQTT_WATER_moistSur_PUBLISH_TOPIC = Host + "/sensor/moistSur";
+const String MQTT_WATER_moistDeep_PUBLISH_TOPIC = Host + "/sensor/moistDeep";
+const String MQTT_WATER_soilTemp_PUBLISH_TOPIC = Host + "/sensor/stemp";
 
 WiFiClient wclient;
 PubSubClient client(MQTT_BROKER_IP,MQTT_BROKER_PORT,wclient);
@@ -89,14 +92,15 @@ bool lastButtonState = false;
 
 
 void setup() {
+  
   Serial.begin(SERIAL_BAUDRATE);
   WiFiManager wifiManager;
   //reset saved settings
-  wifiManager.resetSettings();
+  //wifiManager.resetSettings();
   /*timeout relates to the maximum time before the portal to become innactive*/
   wifiManager.setTimeout(AP_TIMEOUT);
  
-  if(!wifiManager.autoConnect(HOSTNAME.c_str())) {
+  if(!wifiManager.autoConnect(Host.c_str())) {
     Serial.println("failed to connect and hit timeout");
     delay(3000);
     ESP.restart();
@@ -146,12 +150,12 @@ void callback(char* topic, byte* payload, unsigned int length) {
 //Verifica se a ligação está ativa, caso não este liga-se e subscreve aos tópicos de interesse
 bool checkMqttConnection(){
   if (!client.connected()) {
-    if (MQTT_AUTH ? client.connect(HOSTNAME.c_str(),MQTT_USERNAME, MQTT_PASSWORD) : client.connect(HOSTNAME.c_str())) {
+    if (MQTT_AUTH ? client.connect(Host.c_str(),MQTT_USERNAME, MQTT_PASSWORD) : client.connect(Host.c_str())) {
       //SUBSCRIÇÃO DE TOPICOS
       Serial.println("CONNECTED ON MQTT");
       client.subscribe(MQTT_SYSTEM_CONTROL_TOPIC.c_str());
       //Envia uma mensagem por MQTT para o tópico de log a informar que está ligado
-      client.publish(MQTT_LOG.c_str(),(String(HOSTNAME)+" CONNECTED").c_str());
+      client.publish(MQTT_LOG.c_str(),(String(Host)+" CONNECTED").c_str());
     }
   }
   return client.connected();
@@ -174,14 +178,15 @@ void loop() {
     }
   }
 }
+
 //Setup do OTA para permitir updates de Firmware via Wi-Fi
 void setupOTA(){
   if (WiFi.status() == WL_CONNECTED && checkMqttConnection()) {
-    client.publish(MQTT_LOG.c_str(),(String(HOSTNAME)+" OTA IS SETUP").c_str());
-    ArduinoOTA.setHostname(HOSTNAME.c_str());
+    client.publish(MQTT_LOG.c_str(),(String(Host)+" OTA IS SETUP").c_str());
+    ArduinoOTA.setHostname(Host.c_str());
     ArduinoOTA.setPassword((const char *)OTA_PASSWORD);
     ArduinoOTA.begin();
-    client.publish(MQTT_LOG.c_str(),(String(HOSTNAME)+" OTA IS READY").c_str());
+    client.publish(MQTT_LOG.c_str(),(String(Host)+" OTA IS READY").c_str());
   }  
 }
 
