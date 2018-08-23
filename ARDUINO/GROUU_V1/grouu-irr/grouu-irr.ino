@@ -45,6 +45,7 @@ DallasTemperature DS18B20(&oneWire);
 
 //enviromnental - DHT22
 float temp;
+float stemp;
 float humid;
 #define DHTPIN            2        
 #define DHTTYPE           DHT22     // DHT 22 (AM2302)
@@ -225,10 +226,10 @@ void publishValues(){
   //soilTemperature
 
     DS18B20.requestTemperatures();
-    temp = DS18B20.getTempCByIndex(0);
-    String soilTemp = String(temp,1);
+    stemp = DS18B20.getTempCByIndex(0);
+    String soilTemp = String(stemp,1);
 
-    Serial.println(temp);
+    Serial.println(stemp);
     client.publish(MQTT_WATER_soilTemp_PUBLISH_TOPIC.c_str(), soilTemp.c_str()); 
 
   //moisture (surface and deep)
@@ -238,6 +239,7 @@ void publishValues(){
     digitalWrite(enableDeep,LOW);    
     float sensorValue = analogRead(moistPort);
     String moistSur = String(sensorValue);
+    Serial.println(moistSur);
     client.publish(MQTT_WATER_moistSur_PUBLISH_TOPIC.c_str(), moistSur.c_str());
 
     //read&publishDeep
@@ -245,6 +247,7 @@ void publishValues(){
     digitalWrite(enableDeep,HIGH);    
     sensorValue = analogRead(moistPort);
     String moistDeep = String(sensorValue);
+    Serial.println(moistDeep);
     client.publish(MQTT_WATER_moistDeep_PUBLISH_TOPIC.c_str(), moistDeep.c_str());
     digitalWrite(enableDeep,LOW); 
     
