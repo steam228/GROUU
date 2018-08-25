@@ -39,3 +39,9 @@ http://www.ti.com/lit/ds/symlink/lm3480.pdf
 #### use FTDI on ESP12
 
 https://www.hackster.io/harshmangukiya/program-esp8266-esp-12e-with-arduino-using-ftdi-cable-2310c9
+
+
+### refs fabrication:
+#### eagle to flatCAM
+
+http://caram.cl/software/flatcam/board-cutout-with-flatcam/
