@@ -348,6 +348,7 @@ UsedLibraryUrn="urn:adsk.eagle:library:174"
 UsedLibraryUrn="urn:adsk.eagle:library:175"
 UsedLibraryUrn="urn:adsk.eagle:library:176"
 UsedLibraryUrn="urn:adsk.eagle:library:177"
+<<<<<<< HEAD
 UsedLibrary="/Users/steam228/Documents/EAGLE/libraries/adafruit.lbr"
 UsedLibrary="/Users/steam228/Documents/EAGLE/libraries/esp8266modules.lbr"
 UsedLibrary="/Users/steam228/Documents/EAGLE/libraries/fab.lbr"
@@ -447,9 +448,10 @@ ArcDirection=0
 AddLevel=2
 PadsSameType=0
 Layer=1
+=======
+UsedLibrary="/Users/STEAM228/Documents/EAGLE/libraries/esp8266modules.lbr"
+UsedLibrary="/Users/STEAM228/Documents/EAGLE/libraries/fab.lbr"
+>>>>>>> cdcb62508fb8f3592cd0b5c5dc38477a4334da40
 
 [Desktop]
-Screen="2560 1440"
-Window="Win_1"
-Window="Win_2"
-Window="Win_3"
+Screen="1440 900"

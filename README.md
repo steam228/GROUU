@@ -1,7 +1,52 @@
+# NEXT TASKS (delete after done)
+
+1. finish documentation (day3.pdf) on who to build a mainSoilProbe with a nodeMCU;
+
+Day3 Afternoon: solder workshop
+
+
+
+
+
+
+
 # JOURNAL
 
 
-## New mainSoilProbe board design on REV1
+## configuring Raspberry Pi zero W as server
+
+#### configuring the Pi
+https://core-electronics.com.au/tutorials/raspberry-pi-zerow-headless-wifi-setup.html
+
+#### Accessing through ssh on mac or linux terminal
+https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md
+
+#### upgrade Node-Red and Node.js
+1. open terminal;
+2. commands:
+```
+sudo apt-get update
+sudo apt-get upgrade
+bash <(curl -sL https:/raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
+sudo systemctl enable nodered.service
+```
+3. Connect to Raspberry Pi Node-red console throught your browser be accessing ```http://"raspipaddress":1880```
+
+4. Install Mosquitto MQTT broker
+```sudo apt-get install Mosquitto```
+
+some instructions on how to test here: https://www.instructables.com/id/Installing-MQTT-BrokerMosquitto-on-Raspberry-Pi/
+
+##### other useful links:
+Security: manage permissions on node-red tutorial - https://www.youtube.com/watch?v=GeN7g4bdHiM
+
+
+## mainSoilProbe REV0
+
+### pin list:
+
+DHT pin
+
 
 ### This board includes:
 DHT22 (Humidity and Temperature - Near plants Control);
