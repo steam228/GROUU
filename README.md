@@ -81,7 +81,7 @@ Security: manage permissions on node-red tutorial - https://www.youtube.com/watc
 
 # Archived on this REPO You'll also find:
 
-## mainSoilProbe REV0 - Developed at the Habibi Works (Ioaninna, Greece) CultiMake Workshop - P2PLab - Archived
+## mainSoilProbe REV0 - Developed at the Habibi Works (Ioannina, Greece) CultiMake Workshop - P2PLab - Archived
 # ![alt text](./images/soilProbeHabibi.jpg)
 
 ### design
