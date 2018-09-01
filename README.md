@@ -13,8 +13,9 @@ These modules can be useful for all, used together, adapted, remixed, distribute
 
 
 ## soilProbe
-![alt text](./images/soil.png)  The soil probe reads Soil Moisture and Soil Temperature;
-You can add as many as you want in order to measure these in as many points as you wish.
+![alt text](./images/soil.png)
+- The soil probe reads Soil Moisture and Soil Temperature;
+- You can add as many as you want in order to measure these in as many points as you wish.
 
 ### design
 **eagleCAD:**
@@ -25,8 +26,9 @@ You can add as many as you want in order to measure these in as many points as y
 
 
 ## waterRouter
-![alt text](./images/router.png)  The water router uses a standart 1 in 4 out electrovalves from a washing machine. You should also decrease the water pressure on the outputs for microirrigation.
-You can use this directly to the network or after a motor (be careful with the pressure in compatibility). You can add as many as you want in the system.
+![alt text](./images/router.png)
+- The water router uses a standart 1 in 4 out electrovalves from a washing machine. You should also decrease the water pressure on the outputs for microirrigation.
+- You can use this directly to the network or after a motor (be careful with the pressure in compatibility). You can add as many as you want in the system.
 
 ### design
 **eagleCAD:**
@@ -37,8 +39,9 @@ You can use this directly to the network or after a motor (be careful with the p
 
 
 ## core
-![alt text](./images/core.png)  Core is the local server. Right now is mostly a test hub were the data from the networked servers is received and processed.
-We are using Node-Red but all collaboration is welcomed!
+![alt text](./images/core.png)
+- Core is the local server. Right now is mostly a test hub were the data from the networked servers is received and processed.
+- We are using Node-Red but all collaboration is welcomed!
 
 ### design
 Right now we are using a **standard Raspberry case.**
