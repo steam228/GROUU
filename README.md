@@ -17,11 +17,11 @@ The soil probe reads Soil Moisture and Soil Temperature;
 You can add as many as you want in order to measure these in as many points as you wish.
 
 #### design
-eagleCAD:
-Fusion 3D (plastic 3D print Enclosure):
+**eagleCAD:**
+**Fusion 3D (plastic 3D print Enclosure):**
 
 #### code
-Arduino IDE Firmware:
+**Arduino IDE Firmware:**
 
 ![alt text](./images/router.png)
 ## waterRouter
@@ -29,11 +29,11 @@ The water router uses a standart 1 in 4 out electrovalves from a washing machine
 You can use this directly to the network or after a motor (be careful with the pressure in compatibility). You can add as many as you want in the system.
 
 #### design
-eagleCAD:
-Fusion 3D (plastic 3D print Enclosure):
+**eagleCAD:**
+**Fusion 3D** (plastic 3D print Enclosure):
 
 #### code
-Arduino IDE Firmware:
+**Arduino IDE Firmware:**
 
 ![alt text](./images/core.png)
 ## core
@@ -41,13 +41,13 @@ Core is the local server. Right now is mostly a test hub were the data from the 
 We are using Node-Red but all collaboration is welcomed!
 
 #### design
-Right now we are using a standart Raspberry case.
+Right now we are using a **standard Raspberry case.**
 
 
 #### code
-configure and install:
+**configure and install:**
 
-###### configuring Raspberry Pi zero W as server
+##### configuring Raspberry Pi zero W as server
 
 1. configuring the Pi
 https://core-electronics.com.au/tutorials/raspberry-pi-zerow-headless-wifi-setup.html
@@ -79,16 +79,14 @@ Security: manage permissions on node-red tutorial - https://www.youtube.com/watc
 
 # Archived on this REPO You'll also find:
 
-
-
 ## mainSoilProbe REV0 - Developed at the Habibi Works (Ioaninna, Greece) CultiMake Workshop - P2PLab - Archived
 # ![alt text](./images/soilProbeHabibi.jpg)
 
 #### design
-eagleCAD: A provisional board (not working!!) is on /BOARDS/soilProbe/Archive but we ended up using a nodeMCU dev board at the workshop (see Habibi.Works Workshop Journal at WORKSHOP/habibiWorksJuly2018)
+**eagleCAD:** A provisional board (not working!!) is on /BOARDS/soilProbe/Archive but we ended up using a nodeMCU dev board at the workshop (see Habibi.Works Workshop Journal at WORKSHOP/habibiWorksJuly2018)
 As you see on the photo above, a stantard plastic box was used for demo purposes.
 
-+ This board includes:
+*This board includes:*
 - 1 x 3 male header for DS18B20 (encapsulated version for Soil Temperature);
 - 2 x 2 male header connections for Moisture 10k with Two probes (one for each probe requiring calibration - see calib. instructions);
 - 1 led (no usage yet, mostly for debug purposes);
@@ -97,22 +95,20 @@ As you see on the photo above, a stantard plastic box was used for demo purposes
 - 1 x 2 screw headers to add solar panel + battery (maybe connect solar battery pack now).
 
 #### code
-Arduino IDE Firmware: /ARDUINO/habibiWorksJuly2018-WS/grouu-irr
-
-
+**Arduino IDE Firmware:** [/ARDUINO/habibiWorksJuly2018-WS/grouu-irr] (/ARDUINO/habibiWorksJuly2018-WS/grouu-irr)
 
 
 ## GROUU greenhouse - Archived
 # ![alt text](./images/grouuView.png)
 
 #### design
-SolidWorks files for the complete Structure (to be added) - also check constructive system (levosystems.com)
-Photos (soon)
-Other Diagrams (soon)
+**SolidWorks files** for the complete Structure (to be added) - also check constructive system (levosystems.com)
+**Photos** (soon)
+**Other Diagrams** (soon)
 
 
 #### code
-Arduino Yun code: /ARCHIVE/arduino/GROUU_GREENHOUSE_0/
+**Arduino Yun code:** [/ARCHIVE/arduino/GROUU_GREENHOUSE_0/] (/ARCHIVE/arduino/GROUU_GREENHOUSE_0/)
 
 
 
