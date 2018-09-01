@@ -88,13 +88,13 @@ Security: manage permissions on node-red tutorial - https://www.youtube.com/watc
 eagleCAD: A provisional board (not working!!) is on /BOARDS/soilProbe/Archive but we ended up using a nodeMCU dev board at the workshop (see Habibi.Works Workshop Journal at WORKSHOP/habibiWorksJuly2018)
 As you see on the photo above, a stantard plastic box was used for demo purposes.
 
----- This board includes:
-. 1 x 3 male header for DS18B20 (encapsulated version for Soil Temperature);
-. 2 x 2 male header connections for Moisture 10k with Two probes (one for each probe requiring calibration - see calib. instructions);
-. 1 led (no usage yet, mostly for debug purposes);
-. 1 ftdi set headers;
-. 1 voltage converter 12V - 3,3V;
-. 1 x 2 screw headers to add solar panel + battery (maybe connect solar battery pack now).
++ This board includes:
+- 1 x 3 male header for DS18B20 (encapsulated version for Soil Temperature);
+- 2 x 2 male header connections for Moisture 10k with Two probes (one for each probe requiring calibration - see calib. instructions);
+- 1 led (no usage yet, mostly for debug purposes);
+- 1 ftdi set headers;
+- 1 voltage converter 12V - 3,3V;
+- 1 x 2 screw headers to add solar panel + battery (maybe connect solar battery pack now).
 
 #### code
 Arduino IDE Firmware: /ARDUINO/habibiWorksJuly2018-WS/grouu-irr
