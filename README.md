@@ -16,11 +16,11 @@ These modules can be useful for all, used together, adapted, remixed, distribute
 The soil probe reads Soil Moisture and Soil Temperature;
 You can add as many as you want in order to measure these in as many points as you wish.
 
-#### design
+### design
 **eagleCAD:**
 **Fusion 3D (plastic 3D print Enclosure):**
 
-#### code
+### code
 **Arduino IDE Firmware:**
 
 ![alt text](./images/router.png)
@@ -28,11 +28,11 @@ You can add as many as you want in order to measure these in as many points as y
 The water router uses a standart 1 in 4 out electrovalves from a washing machine. You should also decrease the water pressure on the outputs for microirrigation.
 You can use this directly to the network or after a motor (be careful with the pressure in compatibility). You can add as many as you want in the system.
 
-#### design
+### design
 **eagleCAD:**
 **Fusion 3D** (plastic 3D print Enclosure):
 
-#### code
+### code
 **Arduino IDE Firmware:**
 
 ![alt text](./images/core.png)
@@ -40,14 +40,14 @@ You can use this directly to the network or after a motor (be careful with the p
 Core is the local server. Right now is mostly a test hub were the data from the networked servers is received and processed.
 We are using Node-Red but all collaboration is welcomed!
 
-#### design
+### design
 Right now we are using a **standard Raspberry case.**
 
 
-#### code
+### code
 **configure and install:**
 
-##### configuring Raspberry Pi zero W as server
+#### configuring Raspberry Pi zero W as server
 
 1. configuring the Pi
 https://core-electronics.com.au/tutorials/raspberry-pi-zerow-headless-wifi-setup.html
@@ -82,7 +82,7 @@ Security: manage permissions on node-red tutorial - https://www.youtube.com/watc
 ## mainSoilProbe REV0 - Developed at the Habibi Works (Ioaninna, Greece) CultiMake Workshop - P2PLab - Archived
 # ![alt text](./images/soilProbeHabibi.jpg)
 
-#### design
+### design
 **eagleCAD:**
 - A provisional board (not working!!) is on [/BOARDS/soilProbe/Archive](/BOARDS/soilProbe/Archive);
 - For this example a nodeMCU dev board was used and tested at the workshop (see Habibi.Works [Workshop Journal](WORKSHOP/habibiWorksJuly2018/workshopJournal.md))
@@ -96,20 +96,20 @@ Security: manage permissions on node-red tutorial - https://www.youtube.com/watc
 - 1 voltage converter 12V - 3,3V;
 - 1 x 2 screw headers to add solar panel + battery (maybe connect solar battery pack now).
 
-#### code
+### code
 **Arduino IDE Firmware:** [/ARDUINO/habibiWorksJuly2018-WS/grouu-irr](/ARDUINO/habibiWorksJuly2018-WS/grouu-irr)
 
 
 ## GROUU greenhouse - Archived
 # ![alt text](./images/grouuView.png)
 
-#### design
+### design
 **SolidWorks files** for the complete Structure (to be added) - also check constructive system (levosystems.com)
 **Photos** (soon)
 **Other Diagrams** (soon)
 
 
-#### code
+### code
 **Arduino Yun code:** [/ARCHIVE/arduino/GROUU_GREENHOUSE_0/](/ARCHIVE/arduino/GROUU_GREENHOUSE_0/)
 
 
