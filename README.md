@@ -95,7 +95,7 @@ As you see on the photo above, a stantard plastic box was used for demo purposes
 - 1 x 2 screw headers to add solar panel + battery (maybe connect solar battery pack now).
 
 #### code
-**Arduino IDE Firmware:** [/ARDUINO/habibiWorksJuly2018-WS/grouu-irr] (/ARDUINO/habibiWorksJuly2018-WS/grouu-irr)
+**Arduino IDE Firmware:** [/ARDUINO/habibiWorksJuly2018-WS/grouu-irr](/ARDUINO/habibiWorksJuly2018-WS/grouu-irr)
 
 
 ## GROUU greenhouse - Archived
@@ -108,7 +108,7 @@ As you see on the photo above, a stantard plastic box was used for demo purposes
 
 
 #### code
-**Arduino Yun code:** [/ARCHIVE/arduino/GROUU_GREENHOUSE_0/] (/ARCHIVE/arduino/GROUU_GREENHOUSE_0/)
+**Arduino Yun code:** [/ARCHIVE/arduino/GROUU_GREENHOUSE_0/](/ARCHIVE/arduino/GROUU_GREENHOUSE_0/)
 
 
 
