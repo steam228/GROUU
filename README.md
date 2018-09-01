@@ -83,8 +83,10 @@ Security: manage permissions on node-red tutorial - https://www.youtube.com/watc
 # ![alt text](./images/soilProbeHabibi.jpg)
 
 #### design
-**eagleCAD:** A provisional board (not working!!) is on /BOARDS/soilProbe/Archive but we ended up using a nodeMCU dev board at the workshop (see Habibi.Works Workshop Journal at WORKSHOP/habibiWorksJuly2018)
-As you see on the photo above, a stantard plastic box was used for demo purposes.
+**eagleCAD:**
+- A provisional board (not working!!) is on [/BOARDS/soilProbe/Archive](/BOARDS/soilProbe/Archive);
+- For this example a nodeMCU dev board was used and tested at the workshop (see Habibi.Works [Workshop Journal](WORKSHOP/habibiWorksJuly2018/workshopJournal.md))
+**enclosure:** A standard plastic box was used for demo purposes.
 
 *This board includes:*
 - 1 x 3 male header for DS18B20 (encapsulated version for Soil Temperature);
