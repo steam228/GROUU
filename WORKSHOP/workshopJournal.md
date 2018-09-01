@@ -15,7 +15,7 @@ see WORKSHOP/materials/day1.pdf
 ----> nice engagement and it seemed like there was the possibility of forming a smaller team in order to preceed with the work.
 
 ##### day 2 (31/07)
------> day 2 was more about fuguring out how to adapt the infracture to nodeMCU boards instead of the design of the mainSoilProbe which still is not working properly;
+-----> day 2 was more about figuring out how to adapt the infrastructure to nodeMCU boards instead of the design of the mainSoilProbe which still is not working properly;
 The collaboration with the Meteo station group was great.
 
 2. Introduction to GROUU
@@ -29,5 +29,4 @@ c) Visualize data on a Dashboard.
 see WORKSHOP/materials/day3.pdf
 
 ##### day 3 (01/08)
-----> The team is formed by me (André), Aryas ____ and Mustafa ____. Also the team setting up the meteo station.
-The
+----> The team is formed by me André Rocha, Aryas Ali and Mustafa Eskandari. Also the team setting up the Meteo station.

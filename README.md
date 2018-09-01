@@ -1,12 +1,23 @@
+# GROUU
+#### Modular Open Agriculture
+
+Enabling the implementation of Precision agriculture / Automation in any context or scale of production:
+- from indoor hidroponics to traditional agriculture;
+- from a balcony vase implementation to a large exploration;
+- in an urban or rural context;
+These modules can be useful for all, used together, adapted, remixed, distributed...
+
+#### Your help is precious! No onboarding needed, just start developing!
+
+## Current developments:
+
+![alt text](./images/core.png)
+
+
+
+
+
 # NEXT TASKS (delete after done)
-
-1. finish documentation (day3.pdf) on who to build a mainSoilProbe with a nodeMCU;
-
-Day3 Afternoon: solder workshop
-
-
-
-
 
 
 
@@ -41,13 +52,10 @@ some instructions on how to test here: https://www.instructables.com/id/Installi
 Security: manage permissions on node-red tutorial - https://www.youtube.com/watch?v=GeN7g4bdHiM
 
 
-## mainSoilProbe REV0
 
-### pin list:
+# Archived on this REPO You'll also find:
 
-DHT pin
-
-
+## mainSoilProbe REV0 - Archived
 ### This board includes:
 DHT22 (Humidity and Temperature - Near plants Control);
 1 x 3 male header for DS18B20 (encapsulated version for Soil Temperature);
@@ -56,6 +64,15 @@ DHT22 (Humidity and Temperature - Near plants Control);
 1 ftdi set headers;
 1 voltage converter 12V - 3,3V;
 1 x 2 screw headers to add solar panel + battery (maybe connect solar battery pack now).
+
+
+## GROUU greenhouse - Archived
+### includes:
+. Arduino Yun code and Schemes;
+. SolidWorks files for the complete Structure
+. Photos
+. Other Diagrams
+
 
 ### refs:
 #### solarpower
