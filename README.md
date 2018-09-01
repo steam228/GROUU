@@ -91,8 +91,9 @@ Security: manage permissions on node-red tutorial - https://www.youtube.com/watc
 **enclosure:** A standard plastic box was used for demo purposes.
 
 *This board includes:*
+- 1 x 4 male header for DHT22 Temperature and Humidity Sensor
 - 1 x 3 male header for DS18B20 (encapsulated version for Soil Temperature);
-- 2 x 2 male header connections for Moisture 10k with Two probes (one for each probe requiring calibration - see calib. instructions);
+- 2 x 2 male header connections for Moisture 10k with Two probes;
 - 1 led (no usage yet, mostly for debug purposes);
 - 1 ftdi set headers;
 - 1 voltage converter 12V - 3,3V;
