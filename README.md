@@ -9,22 +9,20 @@ These modules can be useful for all, used together, adapted, remixed, distribute
 
 #### Your help is precious! No onboarding needed, just start developing!
 
-## Current developments:
+## Modules V1 - ESP12 based version (under dev - design (boards, enclosures), firmware(arduino))
+![alt text](./images/soil.png)
+
+
+![alt text](./images/router.png)
+
 
 ![alt text](./images/core.png)
 
+## software
 
+## configure and install:
 
-
-
-# NEXT TASKS (delete after done)
-
-
-
-# JOURNAL
-
-
-## configuring Raspberry Pi zero W as server
+### configuring Raspberry Pi zero W as server
 
 #### configuring the Pi
 https://core-electronics.com.au/tutorials/raspberry-pi-zerow-headless-wifi-setup.html
@@ -56,6 +54,8 @@ Security: manage permissions on node-red tutorial - https://www.youtube.com/watc
 # Archived on this REPO You'll also find:
 
 ## mainSoilProbe REV0 - Archived
+# ![alt text](./images/soilProbeHabibi.jpg)
+
 ### This board includes:
 DHT22 (Humidity and Temperature - Near plants Control);
 1 x 3 male header for DS18B20 (encapsulated version for Soil Temperature);
@@ -67,6 +67,9 @@ DHT22 (Humidity and Temperature - Near plants Control);
 
 
 ## GROUU greenhouse - Archived
+
+# ![alt text](./images/grouuView.png)
+
 ### includes:
 . Arduino Yun code and Schemes;
 . SolidWorks files for the complete Structure
@@ -74,7 +77,13 @@ DHT22 (Humidity and Temperature - Near plants Control);
 . Other Diagrams
 
 
-### refs:
+
+
+
+
+
+
+## Refs:
 #### solarpower
 https://www.aki.pt/electricidade/producao-energia-renovavel/solar-eolico-energia-propia/acessorios-de-energias-renovaveis/bateria/controladores/painelmanutencaobaterias-p10533.aspx#info
 https://www.aki.pt/electricidade/producao-energia-renovavel/solar-eolico-energia-propia/kits-solares/kitbombadeaguamicrosolar-p49581.aspx
