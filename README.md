@@ -1,8 +1,8 @@
-# GROUU
+# ![alt text](./images/logo.png)
 #### Modular Open Agriculture
 
 Enabling the implementation of Precision agriculture / Automation in any context or scale of production:
-- from indoor hidroponics to traditional agriculture;
+- from indoor hydroponics to traditional agriculture;
 - from a balcony vase implementation to a large exploration;
 - in an urban or rural context;
 These modules can be useful for all, used together, adapted, remixed, distributed...
