@@ -11,6 +11,37 @@ These modules can be useful for all, used together, adapted, remixed, distribute
 
 # Modules V1 - ESP12 based version (under dev - design (boards, enclosures), firmware(arduino))
 
+### Types:
+- core;
+- s modules (wireless sensors);
+- a modules (actuator modules);
+
+### Development Goals
+
+- The way the module is powered is not yet fully defined: All should have batteries (3.3V _____ Amps), some should this as the only source and be periodically charged (induction most probably), and others, can be connected to a power source (solar, network, wind...) for constant charging;
+- The later can also charge the previous, which is too say that a power source (ex: solar panel) can be a module on its own and an induction charger can be another module (tbd - to be designed);
+- The following code:
+```
+const String Instalation = "myFarm"; //Where is it?
+const String IDCODE = "1"; //number your probe
+const String TYPE = "SoilProbe"; //choose type
+const String Host = "Grouu" + Instalation + TYPE + IDCODE; //just change if it is not grouu and you're adapting the code for something else
+const char * OTA_PASSWORD  = "yourpasswordhere";
+
+```
+will allow you to set a hostname (Host) - These are the only parameters you should have to change before injecting the firmware on your board (we should work on an even simpler method);
+
+- This hostname (`const String Host`):
+1. will be the name of the network the device generates each time it is not able to connect to any wireless network;
+2. Will identify the MQTT addresses being used by that type of device (expl: `HostName/Sensor/Moist1`);
+
+- There shouldn't be a limit for the ammount of modules developed nor used. The scale and context should dictate these options.
+- All Explorations, independently from the context or scale should be considered valid data generators;
+
+### Call for Collaboration
+
+It is permanent, develop whatever you want whenever you want!
+
 
 ## soilProbe
 ![alt text](./images/soil.png)
