@@ -18,8 +18,8 @@ These modules can be useful for all, used together, adapted, remixed, distribute
 
 ### Development Goals
 
-- The way the module is powered is not yet fully defined: All should have batteries (3.3V _____ Amps), some should this as the only source and be periodically charged (induction most probably), and others, can be connected to a power source (solar, network, wind...) for constant charging;
-- The later can also charge the previous, which is too say that a power source (ex: solar panel) can be a module on its own and an induction charger can be another module (tbd - to be designed);
+- The way the module is powered is not yet fully defined: All should have batteries (3.3V _____ Amps), some should have only this as power source and be periodically charged (induction most probably), and others, can be connected to a power source (solar, network, wind...) for constant charging;
+- A power source (ex: solar panel) can be a module on its own and an induction charger can be another module (tbd - to be designed);
 - The following code:
 ```
 const String Instalation = "myFarm"; //Where is it?
