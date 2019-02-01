@@ -26,7 +26,9 @@ Alibaba Group](https://www.aliexpress.com/item/1pcs-Direct-waterproof-DS18B20-di
 - Placa de Controle com:
 	- ESP12E;
 	- Alguns componentes complementares: Resistências, condensadores e afins que podem compor a forma da restante placa de muitas formas diferentes, fazendo com que a maior condicionante seja o pp ESP12E;
-- Solenoid Valves: 1 para 4 12V NC (normally closed) [1Pcs DC 12V DN20 G3/4” 1 in 4 out Plastic Electromagnetic Valve Normally Closed Water Drain Valve-in Valve from Home Improvement on Aliexpress.com | Alibaba Group](https://www.aliexpress.com/item/1Pcs-DC-12V-DN20-G3-4-1-in-4-out-Plastic-Electromagnetic-Valve-Normally-Closed-Water/32897483874.html?spm=2114.search0104.3.232.715c78f3tdeNwy&ws_ab_test=searchweb0_0,searchweb201602_1_10065_10068_319_317_10696_453_10084_454_10083_433_10618_431_10304_10307_10820_10821_10301_537_536_10902_10059_10884_10887_321_322_10103,searchweb201603_16,ppcSwitch_0&algo_expid=76eabde3-c4e3-4ab8-a5b5-27f0efe548b0-33&algo_pvid=76eabde3-c4e3-4ab8-a5b5-27f0efe548b0)
+- Solenoid Valves: 1 para 4 12V NC (normally closed) 
+[1Pcs DC 12V DN20 G3/4” 1 in 4 out Plastic Electromagnetic Valve Normally Closed Water Drain Valve-in Valve from Home Improvement on Aliexpress.com | Alibaba Group](https://www.aliexpress.com/item/1Pcs-DC-12V-DN20-G3-4-1-in-4-out-Plastic-Electromagnetic-Valve-Normally-Closed-Water/32897483874.html?spm=2114.search0104.3.232.715c78f3tdeNwy&ws_ab_test=searchweb0_0,searchweb201602_1_10065_10068_319_317_10696_453_10084_454_10083_433_10618_431_10304_10307_10820_10821_10301_537_536_10902_10059_10884_10887_321_322_10103,searchweb201603_16,ppcSwitch_0&algo_expid=76eabde3-c4e3-4ab8-a5b5-27f0efe548b0-33&algo_pvid=76eabde3-c4e3-4ab8-a5b5-27f0efe548b0)
+
 ![](Set%20V0%20GROUU/Screenshot_2019-01-30%20US%20$16%2017%2037%25%20OFF%201Pcs%20DC%2012V%20DN20%20G3%204%201%20in%204%20out%20Plastic%20Electromagnetic%20Valve%20Normally%20Closed%20Wate....png)
 
 ### 3. Water Level (adaptable to any tank)
@@ -38,6 +40,7 @@ Alibaba Group](https://www.aliexpress.com/item/1pcs-Direct-waterproof-DS18B20-di
 ![](Set%20V0%20GROUU/Screenshot_2019-01-30%20US%20$1%2011%2015%25%20OFF%20100V%20Liquid%20Water%20Level%20Sensor%20Horizontal%20Float%20Switch%20For%20Aquariums%20Fish%20Tank-in%20Fl....png)
 
 	- Usar um sensor InfraRed no topo: [Newest 15mA 5V Optical Infrared Water Liquid Level Sensor Liquid Water Level Control Switch Favorable Level Sensors-in Sensors from Electronic Components & Supplies on Aliexpress.com | Alibaba Group](https://www.aliexpress.com/item/Newest-15mA-5V-Optical-Infrared-Water-Liquid-Level-Sensor-Liquid-Water-Level-Control-Switch-Favorable-Level/32748475170.html?spm=a2g0s.9042311.0.0.27424c4dZKJAXZ)
+	
 ![](Set%20V0%20GROUU/Screenshot_2019-01-30%20US%20$2%2074%2010%25%20OFF%20Newest%2015mA%205V%20Optical%20Infrared%20Water%20Liquid%20Level%20Sensor%20Liquid%20Water%20Level%20Control....png)
 
 
