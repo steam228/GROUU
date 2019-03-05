@@ -1,3 +1,9 @@
+---
+layout: default
+title: GROUU BOM PT_PT wip
+---
+
+
 # ![alt text](./images/logo.png)
 #### Modular Open Agriculture
 
