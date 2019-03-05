@@ -1,3 +1,11 @@
+---
+layout: default
+title: GROUU BOM PT_PT wip
+---
+
+
+
+
 # Set V0 GROUU
 - - - -
 
@@ -14,8 +22,8 @@
 ![](Set%20V0%20GROUU/00CDE53B-2D0E-4704-A9E1-9CB0C4399E5F%202.png)
 ![](Set%20V0%20GROUU/8B35F060-8294-48BE-A186-7AB80FA3CB3D%202.png)
 
-- Um termometro digital: 
-	- Com encapsulamento pp: [1pcs Direct waterproof DS18B20 digital temperature sensor (probe) a large number of original spot can be customized-in Sensors from Electronic Components & Supplies on Aliexpress.com | 
+- Um termometro digital:
+	- Com encapsulamento pp: [1pcs Direct waterproof DS18B20 digital temperature sensor (probe) a large number of original spot can be customised in Sensors from Electronic Components & Supplies on Aliexpress.com |
 Alibaba Group](https://www.aliexpress.com/item/1pcs-Direct-waterproof-DS18B20-digital-temperature-sensor-probe-a-large-number-of-original-spot-can-be/32675444739.html?spm=2114.search0104.3.6.6ccf3bb753cbjV&ws_ab_test=searchweb0_0,searchweb201602_1_10065_10068_319_317_10696_453_10084_454_10083_433_10618_431_10304_10307_10820_10821_10301_537_536_10902_10059_10884_10887_321_322_10103,searchweb201603_16,ppcSwitch_0&algo_expid=053b9263-dde6-4dbb-8d99-83143a31b1db-0&algo_pvid=053b9263-dde6-4dbb-8d99-83143a31b1db) ou;
 ![](Set%20V0%20GROUU/Screenshot_2019-01-30%20US%20$1%2006%208%25%20OFF%201pcs%20Direct%20waterproof%20DS18B20%20digital%20temperature%20sensor%20(probe)%20a%20large%20number%20of%20o...%202.png)
 	- integrar no desenho utilizando apenas componente: [Free Shipping 10pcs DALLAS DS18B20 18B20 TO 92 IC CHIP Thermometer Temperature Sensor-in Sensors from Electronic Components & Supplies on Aliexpress.com | Alibaba Group](https://www.aliexpress.com/item/Free-Shipping-10pcs-DALLAS-DS18B20-18B20-18S20-TO-92-IC-CHIP-Thermometer-Temperature-Sensor/32523899337.html?spm=2114.search0104.3.15.6ccf3bb753cbjV&ws_ab_test=searchweb0_0%2Csearchweb201602_1_10065_10068_319_317_10696_453_10084_454_10083_433_10618_431_10304_10307_10820_10821_10301_537_536_10902_10059_10884_10887_321_322_10103%2Csearchweb201603_16%2CppcSwitch_0&algo_pvid=053b9263-dde6-4dbb-8d99-83143a31b1db&algo_expid=053b9263-dde6-4dbb-8d99-83143a31b1db-5)*
@@ -31,7 +39,7 @@ Alibaba Group](https://www.aliexpress.com/item/1pcs-Direct-waterproof-DS18B20-di
 
 
 
-## 2. “Encaminhador de Água” - *Water Router 1/4* 
+## 2. “Encaminhador de Água” - *Water Router 1/4*
 - - - -
 *Serve para direccionar a água dividindo-a de um para 4. Assim, podemos juntar quantos quisermos em serie podendo desta forma aumentar a distribuição da água por mais zonas de rega.*
 
