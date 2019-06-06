@@ -22,8 +22,8 @@
 #define SERIAL_BAUDRATE 115200
 
 //Other Libs
-#include <OneWire.h>
-#include <DallasTemperature.h>
+//#include <OneWire.h>
+//#include <DallasTemperature.h>
 #include <Timing.h>
 
 
@@ -31,14 +31,26 @@
 
 //moist
 #define moistPort A0
-#define enableSur 14 //GPIO14 to feed surface Moist sensor
-#define enableDeep 12 //GPIO12 to feed deep Moist sensor
+#define enableSur 1 //GPIO14 to feed surface Moist sensor
+#define enableDeep 2 //GPIO12 to feed deep Moist sensor
+#define enableSur2 8 //GPIO14 to feed surface Moist sensor
+#define enableDeep2 9 //GPIO12 to feed deep Moist sensor
+////soilTemperature
+//
+//#define ONE_WIRE_BUS 9 //GPIO4
+//OneWire oneWire(ONE_WIRE_BUS);
+//DallasTemperature DS18B20(&oneWire);
 
-//soilTemperature
+//valves
 
-#define ONE_WIRE_BUS 4 //GPIO4
-OneWire oneWire(ONE_WIRE_BUS);
-DallasTemperature DS18B20(&oneWire);
+#define p1 6
+
+#define v2 2
+#define v3 3
+#define v4 4
+#define v5 5
+
+#define ls1 7
 
 float stemp;
 
@@ -69,9 +81,19 @@ const String MQTT_LOG = Host + "/system/log";
 const String MQTT_SYSTEM_CONTROL_TOPIC = Host + "/system/set";
 
 //sensors
-const String MQTT_WATER_moistSur_PUBLISH_TOPIC = Host + "/sensor/moistSur";
-const String MQTT_WATER_moistDeep_PUBLISH_TOPIC = Host + "/sensor/moistDeep";
-const String MQTT_WATER_soilTemp_PUBLISH_TOPIC = Host + "/sensor/stemp";
+const String MS1 = Host + "/sensor/MS1";
+const String MS2 = Host + "/sensor/MS2";
+const String MS1B = Host + "/sensor/MS1B";
+const String MS2B = Host + "/sensor/MS2B";
+//const String LS2 = Host + "/sensor/LS1"; //tank Full
+const String LS1 = Host + "/sensor/LS2"; //tank Empty
+//const String STEMP = Host + "/sensor/stemp"; //soil temperature
+
+//valves & Pumps
+
+
+
+
 
 WiFiClient wclient;
 PubSubClient client(MQTT_BROKER_IP,MQTT_BROKER_PORT,wclient);
@@ -100,11 +122,27 @@ void setup() {
   client.setCallback(callback);
 
 
+  // moisture pins - might go out on moisture over RF version
+
   pinMode(enableSur,OUTPUT);
   pinMode(enableDeep,OUTPUT);
+  pinMode(enableSur2,OUTPUT);
+  pinMode(enableDeep2,OUTPUT);
 
   digitalWrite(enableSur,LOW);
   digitalWrite(enableDeep,LOW);
+  digitalWrite(enableSur2,LOW);
+  digitalWrite(enableDeep2,LOW);
+
+
+  // other output pins pins - valves and pumps
+
+  
+
+
+
+
+
   
   mytimer.begin(0);
 
@@ -133,7 +171,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
 } 
 
 
-//Verifica se a ligação está ativa, caso não este liga-se e subscreve aos tópicos de interesse
+//Verifies if there is connection and accepts payloads
 bool checkMqttConnection(){
   if (!client.connected()) {
     if (MQTT_AUTH ? client.connect(Host.c_str(),MQTT_USERNAME, MQTT_PASSWORD) : client.connect(Host.c_str())) {
@@ -165,7 +203,7 @@ void loop() {
   }
 }
 
-//Setup do OTA para permitir updates de Firmware via Wi-Fi
+//OTA setup
 void setupOTA(){
   if (WiFi.status() == WL_CONNECTED && checkMqttConnection()) {
     client.publish(MQTT_LOG.c_str(),(String(Host)+" OTA IS SETUP").c_str());
@@ -180,22 +218,22 @@ void publishValues(){
 
   //soilTemperature
 
-    DS18B20.requestTemperatures();
-    stemp = DS18B20.getTempCByIndex(0);
-    String soilTemp = String(stemp,1);
-
-    Serial.println(stemp);
-    client.publish(MQTT_WATER_soilTemp_PUBLISH_TOPIC.c_str(), soilTemp.c_str()); 
+//    DS18B20.requestTemperatures();
+//    stemp = DS18B20.getTempCByIndex(0);
+//    String soilTemp = String(stemp,1);
+//
+//    Serial.println(stemp);
+//    client.publish(STEMP.c_str(), soilTemp.c_str()); 
 
   //moisture (surface and deep)
 
     //read&publishSurface
+    digitalWrite(enableDeep,LOW);   
     digitalWrite(enableSur,HIGH);
-    digitalWrite(enableDeep,LOW);    
     float sensorValue = analogRead(moistPort);
     String moistSur = String(sensorValue);
     Serial.println(moistSur);
-    client.publish(MQTT_WATER_moistSur_PUBLISH_TOPIC.c_str(), moistSur.c_str());
+    client.publish(MS1.c_str(), moistSur.c_str());
 
     //read&publishDeep
     digitalWrite(enableSur,LOW);
@@ -203,8 +241,25 @@ void publishValues(){
     sensorValue = analogRead(moistPort);
     String moistDeep = String(sensorValue);
     Serial.println(moistDeep);
-    client.publish(MQTT_WATER_moistDeep_PUBLISH_TOPIC.c_str(), moistDeep.c_str());
-    digitalWrite(enableDeep,LOW); 
+    client.publish(MS2.c_str(), moistDeep.c_str());
+   
+
+        //read&publishSurface
+    digitalWrite(enableDeep2,LOW); 
+    digitalWrite(enableSur2,HIGH);
+    sensorValue = analogRead(moistPort);
+    String moistSur2 = String(sensorValue);
+    Serial.println(moistSur2);
+    client.publish(MS1.c_str(), moistSur.c_str());
+
+    //read&publishDeep
+    digitalWrite(enableSur2,LOW);
+    digitalWrite(enableDeep2,HIGH);    
+    sensorValue = analogRead(moistPort);
+    String moistDeep2 = String(sensorValue);
+    Serial.println(moistDeep2);
+    client.publish(MS2.c_str(), moistDeep.c_str());
+   
     
 
 }
