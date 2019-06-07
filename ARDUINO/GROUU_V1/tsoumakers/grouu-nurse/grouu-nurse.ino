@@ -12,6 +12,8 @@ adapted from BHonofre
 //OTA
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h> 
+
+#include <Timing.h>
            
 #define AP_TIMEOUT 180
 #define SERIAL_BAUDRATE 115200
@@ -23,6 +25,7 @@ adapted from BHonofre
 #define MQTT_USERNAME "grouu"
 #define MQTT_PASSWORD "herbertolevah"
 
+//define Relay Actuators
 
 #define RELAY_ONE 16 //D0 V2
 #define RELAY_TWO 5 //D1 V3
@@ -31,8 +34,21 @@ adapted from BHonofre
 #define RELAY_FIVE 2 //D4 P1
 
 
+//define Sensor Ports and Activators (Digital Pins that feed the sensor in order to have all the readings from just one ADC port)
+
+#define MS1E 14 //D5
+#define MS2E 12 //D6
+#define MS3E 13 //D7
+#define MS4E 15 //D8
+
+#define MSSS A0 //D8
+
+
 #define PAYLOAD_ON "ON"
 #define PAYLOAD_OFF "OFF"
+
+Timing mytimer;
+uint32_t delayMS;
 
 //CONSTANTS
 //CONSTANTS
@@ -63,11 +79,13 @@ const String MQTT_PUMP_ONE_TOPIC = Host+ "/pump/one/set";
 const String MQTT_PUMP_ONE_STATE_TOPIC = Host+ "/pump/one";
 
 //sensors
+
 const String MQTT_MS1 = Host + "/sensor/MS1";
 const String MQTT_MS2 = Host + "/sensor/MS2";
-const String MQTT_MS1B = Host + "/sensor/MS1B";
-const String MQTT_MS2B = Host + "/sensor/MS2B";
-const String MQTT_LS1 = Host + "/sensor/LS2";
+const String MQTT_MS3 = Host + "/sensor/MS3";
+const String MQTT_MS4 = Host + "/sensor/MS4";
+
+
 
 
 WiFiClient wclient;
@@ -100,6 +118,25 @@ void setup() {
   pinMode(RELAY_THREE,OUTPUT);
   pinMode(RELAY_FOUR,OUTPUT);
   pinMode(RELAY_FIVE,OUTPUT);
+
+  pinMode(MS1E,OUTPUT);
+  pinMode(MS2E,OUTPUT);
+  pinMode(MS3E,OUTPUT);
+  pinMode(MS4E,OUTPUT);
+
+  digitalWrite(MS2E,LOW); 
+  digitalWrite(MS3E,LOW);
+  digitalWrite(MS4E,LOW);   
+  digitalWrite(MS1E,LOW);
+
+  digitalWrite(RELAY_ONE,LOW); 
+  digitalWrite(RELAY_TWO,LOW);
+  digitalWrite(RELAY_THREE,LOW);   
+  digitalWrite(RELAY_FIVE,LOW);
+
+  mytimer.begin(0);
+  
+  
 }
 
 
@@ -235,6 +272,9 @@ bool checkMqttConnection(){
 void loop() {
   if (WiFi.status() == WL_CONNECTED) {
     if (checkMqttConnection()){
+       if (mytimer.onTimeout(delayMS)){
+          publishValues();
+          }
       client.loop();
       if(OTA){
         if(OTABegin){
@@ -255,4 +295,73 @@ void setupOTA(){
     ArduinoOTA.begin();
     client.publish(MQTT_LOG.c_str(),(String(Host)+" OTA IS READY").c_str());
   }  
+}
+
+
+void publishValues(){
+
+ 
+
+    //read&publishSurface
+    digitalWrite(MS2E,LOW); 
+    digitalWrite(MS3E,LOW);
+    digitalWrite(MS4E,LOW);   
+    digitalWrite(MS1E,HIGH);   
+    
+    float sensorValue = analogRead(MSSS);
+    String moistSur = String(sensorValue);
+    Serial.println(moistSur);
+    client.publish(MQTT_MS1.c_str(), moistSur.c_str());
+
+    digitalWrite(MS1E,LOW);   
+
+    delay(100);
+
+    
+    digitalWrite(MS3E,LOW);
+    digitalWrite(MS4E,LOW);   
+    digitalWrite(MS1E,LOW);
+    digitalWrite(MS2E,HIGH);   
+    
+    sensorValue = analogRead(MSSS);
+    moistSur = String(sensorValue);
+    Serial.println(moistSur);
+    client.publish(MQTT_MS2.c_str(), moistSur.c_str());
+
+    digitalWrite(MS2E,LOW);
+
+    delay(100);
+
+    
+    digitalWrite(MS4E,LOW);   
+    digitalWrite(MS1E,LOW);
+    digitalWrite(MS2E,LOW);
+    digitalWrite(MS3E,HIGH);   
+    
+    sensorValue = analogRead(MSSS);
+    moistSur = String(sensorValue);
+    Serial.println(moistSur);
+    client.publish(MQTT_MS3.c_str(), moistSur.c_str());
+
+    digitalWrite(MS3E,LOW); 
+
+    delay(100);
+
+       
+    digitalWrite(MS1E,LOW);
+    digitalWrite(MS2E,LOW);
+    digitalWrite(MS3E,LOW);
+    digitalWrite(MS4E,HIGH);   
+    
+    sensorValue = analogRead(MSSS);
+    moistSur = String(sensorValue);
+    Serial.println(moistSur);
+    client.publish(MQTT_MS4.c_str(), moistSur.c_str());
+
+    digitalWrite(MS4E,LOW); 
+
+    delay(100);
+   
+    
+
 }
