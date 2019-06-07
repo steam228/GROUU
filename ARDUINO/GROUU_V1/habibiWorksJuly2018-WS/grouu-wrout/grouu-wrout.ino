@@ -17,17 +17,18 @@ adapted from BHonofre
 #define SERIAL_BAUDRATE 115200
 
 //configure MQTT server
-#define MQTT_BROKER_IP "192.168.1.66"
+#define MQTT_BROKER_IP "10.116.116.134"
 #define MQTT_BROKER_PORT 1883
 #define MQTT_AUTH true
 #define MQTT_USERNAME "grouu"
 #define MQTT_PASSWORD "herbertolevah"
 
 
-#define RELAY_ONE 5
-#define RELAY_TWO 4
-#define RELAY_THREE 14
-#define RELAY_FOUR 15
+#define RELAY_ONE 16 //D0 V2
+#define RELAY_TWO 5 //D1 V3
+#define RELAY_THREE 4 //D2 V4
+#define RELAY_FOUR 0 //D3 V5
+
 
 #define PAYLOAD_ON "ON"
 #define PAYLOAD_OFF "OFF"
@@ -35,13 +36,15 @@ adapted from BHonofre
 //CONSTANTS
 //CONSTANTS
 //ID of the Board
-const String Instalation = "Habibi"; //Where is it?
-const String IDCODE = "1"; //number your probe
-const String TYPE = "WaterRouter"; //choose type
+const String Instalation = "Tsoumakers"; //Where is it?
+const String IDCODE = "1"; //Number your Device
+const String TYPE = "Nursery"; //choose type
 const String Host = "Grouu" + Instalation + TYPE + IDCODE; //just change if it is not grouu 
 const char * OTA_PASSWORD  = "herbertolevah";
-const String MQTT_LOG = "system/log";
-const String MQTT_SYSTEM_CONTROL_TOPIC = "system/set/"+Host;
+const String MQTT_LOG = "system/log"+ Host;
+const String MQTT_SYSTEM_CONTROL_TOPIC = "system/set/"+ Host;
+
+
 //valves
 const String MQTT_VALVE_ONE_TOPIC = Host+ "/valve/one/set";
 const String MQTT_VALVE_TWO_TOPIC = Host+ "/valve/two/set";
@@ -51,6 +54,13 @@ const String MQTT_VALVE_ONE_STATE_TOPIC = Host+ "/valve/one";
 const String MQTT_VALVE_TWO_STATE_TOPIC = Host+ "/valve/two";
 const String MQTT_VALVE_THREE_STATE_TOPIC = Host+ "/valve/three";
 const String MQTT_VALVE_FOUR_STATE_TOPIC = Host+ "/valve/four";
+
+//sensors
+const String MQTT_MS1 = Host + "/sensor/MS1";
+const String MQTT_MS2 = Host + "/sensor/MS2";
+const String MQTT_MS1B = Host + "/sensor/MS1B";
+const String MQTT_MS2B = Host + "/sensor/MS2B";
+const String MQTT_LS1 = Host + "/sensor/LS2";
 
 
 WiFiClient wclient;
@@ -229,8 +239,3 @@ void setupOTA(){
     client.publish(MQTT_LOG.c_str(),(String(Host)+" OTA IS READY").c_str());
   }  
 }
-
-
-
-
-

@@ -1,16 +1,11 @@
 /**
- * Nursery Table MVP version Main Probe Firmware for Wifi version of GROUU
- * Based on BHonofre, from Bruno Horta bhonofre.pt
- * to connect to NODE-RED flow ______
- * 
- * unlicensed with no rights reserved by GROUU 2019 (steam228)
- * 
+adapted from BHonofre
  * */
 //MQTT
-#include <PubSubClient.h>
+#include <PubSubClient.h>//https://www.youtube.com/watch?v=GMMH6qT8_f4  
 //ESP
-#include <ESP8266WiFi.h>
-//Wi-Fi Manager library
+#include <ESP8266WiFi.h>'
+//Wi-Fi Manger library
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 #include <WiFiManager.h>//https://github.com/tzapu/WiFiManager
@@ -21,43 +16,6 @@
 #define AP_TIMEOUT 180
 #define SERIAL_BAUDRATE 115200
 
-//Other Libs
-//#include <OneWire.h>
-//#include <DallasTemperature.h>
-#include <Timing.h>
-
-
-//PORTS and Global Variables
-
-//moist
-#define moistPort A0
-#define enableSur 1 //GPIO14 to feed surface Moist sensor
-#define enableDeep 2 //GPIO12 to feed deep Moist sensor
-#define enableSur2 8 //GPIO14 to feed surface Moist sensor
-#define enableDeep2 9 //GPIO12 to feed deep Moist sensor
-////soilTemperature
-//
-//#define ONE_WIRE_BUS 9 //GPIO4
-//OneWire oneWire(ONE_WIRE_BUS);
-//DallasTemperature DS18B20(&oneWire);
-
-//valves
-
-#define p1 6
-
-#define v2 2
-#define v3 3
-#define v4 4
-#define v5 5
-
-#define ls1 7
-
-float stemp;
-
-Timing mytimer;
-uint32_t delayMS;
-
-
 //configure MQTT server
 #define MQTT_BROKER_IP "10.116.116.134"
 #define MQTT_BROKER_PORT 1883
@@ -65,11 +23,18 @@ uint32_t delayMS;
 #define MQTT_USERNAME "grouu"
 #define MQTT_PASSWORD "herbertolevah"
 
-//free MQTT brokers: https://github.com/mqtt/mqtt.github.io/wiki/public_brokers
+
+#define RELAY_ONE 16 //D0 V2
+#define RELAY_TWO 5 //D1 V3
+#define RELAY_THREE 4 //D2 V4
+#define RELAY_FOUR 0 //D3 V5
+#define RELAY_FIVE 2 //D4 P1
+
 
 #define PAYLOAD_ON "ON"
 #define PAYLOAD_OFF "OFF"
 
+//CONSTANTS
 //CONSTANTS
 //ID of the Board
 const String Instalation = "Tsoumakers"; //Where is it?
@@ -77,22 +42,32 @@ const String IDCODE = "1"; //Number your Device
 const String TYPE = "Nursery"; //choose type
 const String Host = "Grouu" + Instalation + TYPE + IDCODE; //just change if it is not grouu 
 const char * OTA_PASSWORD  = "herbertolevah";
-const String MQTT_LOG = Host + "/system/log";
-const String MQTT_SYSTEM_CONTROL_TOPIC = Host + "/system/set";
+const String MQTT_LOG = "system/log"+ Host;
+const String MQTT_SYSTEM_CONTROL_TOPIC = "system/set/"+ Host;
+
+
+//valves
+const String MQTT_VALVE_ONE_TOPIC = Host+ "/valve/one/set";
+const String MQTT_VALVE_TWO_TOPIC = Host+ "/valve/two/set";
+const String MQTT_VALVE_THREE_TOPIC = Host+ "/valve/three/set";
+const String MQTT_VALVE_FOUR_TOPIC = Host+ "/valve/four/set";
+
+const String MQTT_VALVE_ONE_STATE_TOPIC = Host+ "/valve/one";
+const String MQTT_VALVE_TWO_STATE_TOPIC = Host+ "/valve/two";
+const String MQTT_VALVE_THREE_STATE_TOPIC = Host+ "/valve/three";
+const String MQTT_VALVE_FOUR_STATE_TOPIC = Host+ "/valve/four";
+
+//pumps
+const String MQTT_PUMP_ONE_TOPIC = Host+ "/pump/one/set";
+
+const String MQTT_PUMP_ONE_STATE_TOPIC = Host+ "/pump/one";
 
 //sensors
-const String MS1 = Host + "/sensor/MS1";
-const String MS2 = Host + "/sensor/MS2";
-const String MS1B = Host + "/sensor/MS1B";
-const String MS2B = Host + "/sensor/MS2B";
-//const String LS2 = Host + "/sensor/LS1"; //tank Full
-const String LS1 = Host + "/sensor/LS2"; //tank Empty
-//const String STEMP = Host + "/sensor/stemp"; //soil temperature
-
-//valves & Pumps
-
-
-
+const String MQTT_MS1 = Host + "/sensor/MS1";
+const String MQTT_MS2 = Host + "/sensor/MS2";
+const String MQTT_MS1B = Host + "/sensor/MS1B";
+const String MQTT_MS2B = Host + "/sensor/MS2B";
+const String MQTT_LS1 = Host + "/sensor/LS2";
 
 
 WiFiClient wclient;
@@ -105,12 +80,12 @@ bool lastButtonState = false;
 
 
 void setup() {
-  
   Serial.begin(SERIAL_BAUDRATE);
   WiFiManager wifiManager;
   //reset saved settings
   //wifiManager.resetSettings();
-  /*timeout relates to the maximum time before the portal to become innactive*/
+  /*define o tempo limite até o portal de configuração ficar novamente inátivo,
+   útil para quando alteramos a password do AP*/
   wifiManager.setTimeout(AP_TIMEOUT);
  
   if(!wifiManager.autoConnect(Host.c_str())) {
@@ -120,38 +95,66 @@ void setup() {
     delay(5000);
   } 
   client.setCallback(callback);
-
-
-  // moisture pins - might go out on moisture over RF version
-
-  pinMode(enableSur,OUTPUT);
-  pinMode(enableDeep,OUTPUT);
-  pinMode(enableSur2,OUTPUT);
-  pinMode(enableDeep2,OUTPUT);
-
-  digitalWrite(enableSur,LOW);
-  digitalWrite(enableDeep,LOW);
-  digitalWrite(enableSur2,LOW);
-  digitalWrite(enableDeep2,LOW);
-
-
-  // other output pins pins - valves and pumps
-
-  
-
-
-
-
-
-  
-  mytimer.begin(0);
-
+  pinMode(RELAY_ONE,OUTPUT);
+  pinMode(RELAY_TWO,OUTPUT);
+  pinMode(RELAY_THREE,OUTPUT);
+  pinMode(RELAY_FOUR,OUTPUT);
+  pinMode(RELAY_FIVE,OUTPUT);
 }
+
+
+// Set Valves States
+void turnOnOut1(){
+  digitalWrite(RELAY_ONE,HIGH);
+  client.publish(MQTT_VALVE_ONE_STATE_TOPIC.c_str(),PAYLOAD_ON);
+}
+void turnOffOut1(){
+   digitalWrite(RELAY_ONE,LOW);  
+   client.publish(MQTT_VALVE_ONE_STATE_TOPIC.c_str(),PAYLOAD_OFF);
+}
+
+void turnOnOut2(){
+  digitalWrite(RELAY_TWO,HIGH);
+  client.publish(MQTT_VALVE_TWO_STATE_TOPIC.c_str(),PAYLOAD_ON);
+}
+void turnOffOut2(){
+   digitalWrite(RELAY_TWO,LOW);  
+   client.publish(MQTT_VALVE_TWO_STATE_TOPIC.c_str(),PAYLOAD_OFF);
+}
+void turnOnOut3(){
+  digitalWrite(RELAY_THREE,HIGH);
+  client.publish(MQTT_VALVE_THREE_STATE_TOPIC.c_str(),PAYLOAD_ON);
+}
+void turnOffOut3(){
+   digitalWrite(RELAY_THREE,LOW);  
+   client.publish(MQTT_VALVE_THREE_STATE_TOPIC.c_str(),PAYLOAD_OFF);
+ }
+void turnOnOut4(){
+  digitalWrite(RELAY_FOUR,HIGH);
+  client.publish(MQTT_VALVE_THREE_STATE_TOPIC.c_str(),PAYLOAD_ON);
+}
+void turnOffOut4(){
+   digitalWrite(RELAY_FOUR,LOW);  
+   client.publish(MQTT_VALVE_THREE_STATE_TOPIC.c_str(),PAYLOAD_OFF);
+ }
+
+// set pump states
+void turnOnOut5(){
+  digitalWrite(RELAY_FIVE,HIGH);
+  client.publish(MQTT_PUMP_ONE_STATE_TOPIC.c_str(),PAYLOAD_ON);
+}
+void turnOffOut5(){
+   digitalWrite(RELAY_FIVE,LOW);  
+   client.publish(MQTT_PUMP_ONE_STATE_TOPIC.c_str(),PAYLOAD_OFF);
+ }
+
+
 
 
 //Chamada de recepção de mensagem 
 void callback(char* topic, byte* payload, unsigned int length) {
   String payloadStr = "";
+  Serial.println("payloadStr");
   for (int i=0; i<length; i++) {
     payloadStr += (char)payload[i];
   }
@@ -162,22 +165,66 @@ void callback(char* topic, byte* payload, unsigned int length) {
     OTA = true;
     OTABegin = true;
   }else if (payloadStr.equals("OTA_OFF")){
-    OTA = false;
-    OTABegin = false;
+    OTA = true;
+    OTABegin = true;
   }else if (payloadStr.equals("REBOOT")){
     ESP.restart();
   }
- }     
+ } else if(topicStr.equals(MQTT_VALVE_ONE_TOPIC)){
+  Serial.println(payloadStr);
+  if(payloadStr.equals(PAYLOAD_ON)){
+      turnOnOut1();
+    }else if(payloadStr.equals(PAYLOAD_OFF)) {
+      turnOffOut1();
+    }
+  }else if(topicStr.equals(MQTT_VALVE_TWO_TOPIC)){
+  Serial.println(payloadStr);
+  if(payloadStr.equals(PAYLOAD_ON)){
+      turnOnOut2();
+    }else if(payloadStr.equals(PAYLOAD_OFF)) {
+      turnOffOut2();
+    }
+
+  }else if(topicStr.equals(MQTT_VALVE_THREE_TOPIC)){
+  Serial.println(payloadStr);
+  if(payloadStr.equals(PAYLOAD_ON)){
+      turnOnOut3();
+    }else if(payloadStr.equals(PAYLOAD_OFF)) {
+      turnOffOut3();
+    }
+
+  }else if(topicStr.equals(MQTT_VALVE_FOUR_TOPIC)){
+  Serial.println(payloadStr);
+  if(payloadStr.equals(PAYLOAD_ON)){
+      turnOnOut4();
+    }else if(payloadStr.equals(PAYLOAD_OFF)) {
+      turnOffOut4();
+    }
+
+  }else if(topicStr.equals(MQTT_PUMP_ONE_TOPIC)){
+  Serial.println(payloadStr);
+  if(payloadStr.equals(PAYLOAD_ON)){
+      turnOnOut5();
+    }else if(payloadStr.equals(PAYLOAD_OFF)) {
+      turnOffOut5();
+    }
+
+  }
 } 
 
 
-//Verifies if there is connection and accepts payloads
+//Verifica se a ligação está ativa, caso não este liga-se e subscreve aos tópicos de interesse
 bool checkMqttConnection(){
   if (!client.connected()) {
     if (MQTT_AUTH ? client.connect(Host.c_str(),MQTT_USERNAME, MQTT_PASSWORD) : client.connect(Host.c_str())) {
       //SUBSCRIÇÃO DE TOPICOS
       Serial.println("CONNECTED ON MQTT");
       client.subscribe(MQTT_SYSTEM_CONTROL_TOPIC.c_str());
+      client.subscribe(MQTT_VALVE_ONE_TOPIC.c_str());
+      client.subscribe(MQTT_VALVE_TWO_TOPIC.c_str());
+      client.subscribe(MQTT_VALVE_THREE_TOPIC.c_str());
+      client.subscribe(MQTT_VALVE_FOUR_TOPIC.c_str());
+      client.subscribe(MQTT_PUMP_ONE_TOPIC.c_str());
       //Envia uma mensagem por MQTT para o tópico de log a informar que está ligado
       client.publish(MQTT_LOG.c_str(),(String(Host)+" CONNECTED").c_str());
     }
@@ -188,9 +235,6 @@ bool checkMqttConnection(){
 void loop() {
   if (WiFi.status() == WL_CONNECTED) {
     if (checkMqttConnection()){
-      if (mytimer.onTimeout(delayMS)){
-          publishValues();
-        }
       client.loop();
       if(OTA){
         if(OTABegin){
@@ -202,8 +246,7 @@ void loop() {
     }
   }
 }
-
-//OTA setup
+//Setup do OTA para permitir updates de Firmware via Wi-Fi
 void setupOTA(){
   if (WiFi.status() == WL_CONNECTED && checkMqttConnection()) {
     client.publish(MQTT_LOG.c_str(),(String(Host)+" OTA IS SETUP").c_str());
@@ -212,54 +255,4 @@ void setupOTA(){
     ArduinoOTA.begin();
     client.publish(MQTT_LOG.c_str(),(String(Host)+" OTA IS READY").c_str());
   }  
-}
-
-void publishValues(){
-
-  //soilTemperature
-
-//    DS18B20.requestTemperatures();
-//    stemp = DS18B20.getTempCByIndex(0);
-//    String soilTemp = String(stemp,1);
-//
-//    Serial.println(stemp);
-//    client.publish(STEMP.c_str(), soilTemp.c_str()); 
-
-  //moisture (surface and deep)
-
-    //read&publishSurface
-    digitalWrite(enableDeep,LOW);   
-    digitalWrite(enableSur,HIGH);
-    float sensorValue = analogRead(moistPort);
-    String moistSur = String(sensorValue);
-    Serial.println(moistSur);
-    client.publish(MS1.c_str(), moistSur.c_str());
-
-    //read&publishDeep
-    digitalWrite(enableSur,LOW);
-    digitalWrite(enableDeep,HIGH);    
-    sensorValue = analogRead(moistPort);
-    String moistDeep = String(sensorValue);
-    Serial.println(moistDeep);
-    client.publish(MS2.c_str(), moistDeep.c_str());
-   
-
-        //read&publishSurface
-    digitalWrite(enableDeep2,LOW); 
-    digitalWrite(enableSur2,HIGH);
-    sensorValue = analogRead(moistPort);
-    String moistSur2 = String(sensorValue);
-    Serial.println(moistSur2);
-    client.publish(MS1.c_str(), moistSur.c_str());
-
-    //read&publishDeep
-    digitalWrite(enableSur2,LOW);
-    digitalWrite(enableDeep2,HIGH);    
-    sensorValue = analogRead(moistPort);
-    String moistDeep2 = String(sensorValue);
-    Serial.println(moistDeep2);
-    client.publish(MS2.c_str(), moistDeep.c_str());
-   
-    
-
 }
