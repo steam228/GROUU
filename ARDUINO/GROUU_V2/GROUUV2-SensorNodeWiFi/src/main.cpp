@@ -1,22 +1,4 @@
-#include <Arduino.h>
-#include <WiFi.h>
-
-#include <Adafruit_Sensor.h>
-#include <DHT.h>
-#include <ArduinoJson.h>
-#include <ArduinoJson.hpp>
-
-// MQTT
-#include <PubSubClient.h>
-
-#define AP_TIMEOUT 180
-#define SERIAL_BAUDRATE 115200
-
-// OTA
-#include <WiFiUdp.h>
-#include <ArduinoOTA.h>
-
-#include <Timing.h>
+#include "header.h"
 
 #define DHTPIN D7
 #define DHTTYPE DHT22 // DHT 22 (AM2302)
@@ -149,7 +131,7 @@ void setupOTA()
 void publishValues()
 {
 
-  StaticJsonDocument<80> doc;
+  JsonDocument doc;
   char output[80];
 
   float newT = dht.readTemperature();
@@ -196,4 +178,3 @@ void loop()
     }
   }
 }
-
