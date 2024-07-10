@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <WiFi.h>
+// #include <WiFi.h>
 
 #include <Adafruit_Sensor.h>
 #include <DHT.h>
@@ -18,7 +18,7 @@
 
 #include <Timing.h>
 
-#define DHTPIN D7
+#define DHTPIN D4
 #define DHTTYPE DHT22 // DHT 22 (AM2302)
 
 DHT dht(DHTPIN, DHTTYPE);
@@ -42,7 +42,7 @@ uint32_t delayMS;
 // CONSTANTS
 // ID of the Board
 const String Instalation = "Loureiro";                     // Where is it?
-const String IDCODE = "1";                                 // number your probe
+const String IDCODE = "2";                                 // number your probe
 const String TYPE = "testNode";                            // choose type
 const String Host = "Grouu" + Instalation + TYPE + IDCODE; // just change if it is not grouu
 const char *OTA_PASSWORD = "norbertolevan";

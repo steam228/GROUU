@@ -4,7 +4,7 @@ void setup()
 {
   Serial.begin(SERIAL_BAUDRATE);
   dht.begin();
-  delayMS = 30000; // delay bettwen data collection and sending.
+  delayMS = 30000;
 
   // We start by connecting to a WiFi network
 
@@ -102,8 +102,8 @@ void publishValues()
   }
   else
   {
-    doc["t2"] = newT;
-    doc["h2"] = newH;
+    doc["t1"] = newT;
+    doc["h1"] = newH;
 
     serializeJson(doc, output);
     Serial.println(output);
