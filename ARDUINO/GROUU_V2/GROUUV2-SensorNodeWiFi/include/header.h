@@ -33,7 +33,7 @@ Timing mytimer;
 uint32_t delayMS;
 
 // configure MQTT server
-#define MQTT_BROKER_IP "grouu01.local"
+#define MQTT_BROKER_IP "192.168.1.226"
 #define MQTT_BROKER_PORT 1883
 #define MQTT_AUTH false
 #define MQTT_USERNAME "grouu"
