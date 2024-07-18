@@ -12,31 +12,32 @@ These modules can be useful for all, used together, adapted, remixed, and distri
 **Your collaboration is precious! No onboarding needed, just start designing and developing!**
 
 ## Table of Contents
-1. [GROUU V2 Documentation](#grouu-v2-documentation)
-2. [Server Documentation - GROUU Server V1 Configuration](#server-documentation---grouu-server-v1-configuration)
-3. [Modules V1 - ESP12 Based Version](#modules-v1---esp12-based-version)
-4. [Archived Projects](#archived-projects)
-5. [References](#references)
+1. [GROUU V2](#grouu-v2)
+   - [Server Documentation - GROUU Server V2 Configuration](#server-documentation---grouu-server-v2-configuration)
+2. [GROUU V1](#grouu-v1)
+   - [Modules V1 - ESP12 Based Version](#modules-v1---esp12-based-version)
+   - [Server Configuration - Raspberry Pi Zero W](#server-configuration---raspberry-pi-zero-w)
+3. [Archived Projects](#archived-projects)
+4. [References](#references)
 
-## GROUU V2 Documentation
 
-*This section is under development. More details coming soon!*
+## GROUU V2
 
-## Server Documentation - GROUU Server V1 Configuration
+### Server Documentation - GROUU Server V2 Configuration
 (GROUU Stack V1)
 
-The GROUU Stack V1 provides a solid foundation for your open-source IoT farming project:
+The GROUU Stack V1 (part of GROUU V2) provides an advanced foundation for your open-source IoT farming project:
 
 1. Mosquitto for MQTT messaging between your farming sensors and the system
 2. Node-RED for creating workflows and processing data from your farm
 3. InfluxDB for storing time-series data from your agricultural sensors
 4. Grafana for creating dashboards to visualize your farming data
 
-### GROUU Stack V1 Installation and Deployment Tutorial
+#### GROUU Stack V1 Installation and Deployment Tutorial
 
 This guide will help you set up the GROUU Stack V1, an open-source IoT solution for personal and small-scale farming.
 
-#### 1. Install Docker
+##### 1. Install Docker
 
 First, we need to install Docker on your Linux system:
 
@@ -60,7 +61,7 @@ sudo systemctl enable docker
 
 Log out and log back in for the group changes to take effect.
 
-#### 2. Install Portainer
+##### 2. Install Portainer
 
 Now, let's install Portainer:
 
@@ -75,11 +76,11 @@ docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always \
   portainer/portainer-ce
 ```
 
-#### 3. Access Portainer
+##### 3. Access Portainer
 
 Open a web browser and navigate to `http://your-server-ip:9000`. You'll be prompted to create an admin user.
 
-#### 4. Deploy the GROUU Stack V1
+##### 4. Deploy the GROUU Stack V1
 
 1. In Portainer, go to "Stacks" and click "Add stack".
 2. Name your stack "GROUU-Stack-V1".
@@ -138,7 +139,7 @@ volumes:
 
 4. Click "Deploy the stack".
 
-#### 5. Post-Deployment Steps
+##### 5. Post-Deployment Steps
 
 After deploying the GROUU Stack V1, you can access its components:
 
@@ -149,7 +150,7 @@ After deploying the GROUU Stack V1, you can access its components:
 
 Remember to replace `your-server-ip` with your actual server IP address.
 
-#### 6. Security Considerations
+##### 6. Security Considerations
 
 - Change default passwords for all services in the GROUU Stack V1
 - Use SSL/TLS for MQTT if exposing your farming data to the internet
@@ -158,7 +159,7 @@ Remember to replace `your-server-ip` with your actual server IP address.
 
 Congratulations! You now have the GROUU Stack V1 up and running for your personal or small-scale farming IoT project.
 
-### Manual Installation Guide
+#### Manual Installation Guide
 
 If you prefer not to use the stack configuration, you can follow these steps for manual installation:
 
@@ -229,15 +230,17 @@ Access Portainer web interface at `http://your-server-ip:9000` and follow these 
 
 Follow the post-deployment steps and security considerations from the stack installation guide above.
 
-## Modules V1 - ESP12 Based Version
+## GROUU V1
+
+### Modules V1 - ESP12 Based Version
 *Under development - design (boards, enclosures), firmware (Arduino)*
 
-### Types:
+#### Types:
 - Core
 - S modules (wireless sensors)
 - A modules (actuator modules)
 
-### Development Goals
+#### Development Goals
 - The way the module is powered is not yet fully defined: All should have batteries (3.3V _____ Amps), some should have only this as power source and be periodically charged (induction most probably), and others, can be connected to a power source (solar, network, wind...) for constant charging;
 - A power source (ex: solar panel) can be a module on its own and an induction charger can be another module (tbd - to be designed);
 - The following code:
@@ -257,48 +260,47 @@ will allow you to set a hostname (Host) - These are the only parameters you shou
 - There shouldn't be a limit for the amount of modules developed nor used. The scale and context should dictate these options.
 - All Explorations, independently from the context or scale should be considered valid data generators;
 
-### Call for Collaboration
+#### Call for Collaboration
 
 It is permanent, develop whatever you want whenever you want!
 
-### Current Modules
+#### Current Modules
 
-#### Soil Probe
+##### Soil Probe
 ![Soil Probe](./images/soil.png)
 - The soil probe reads Soil Moisture and Soil Temperature;
 - You can add as many as you want in order to measure these in as many points as you wish.
 
-##### Design
+###### Design
 - eagleCAD: [Link to eagleCAD files]
 - Fusion 3D (plastic 3D print Enclosure): [Link to Fusion 3D files]
 
-##### Code
+###### Code
 - Arduino IDE Firmware: [Link to Arduino code]
 
-#### Water Router
+##### Water Router
 ![Water Router](./images/router.png)
 - The water router uses a standard 1 in 4 out electrovalves from a washing machine. You should also decrease the water pressure on the outputs for microirrigation.
 - You can use this directly to the network or after a motor (be careful with the pressure in compatibility). You can add as many as you want in the system.
 
-##### Design
+###### Design
 - eagleCAD: [Link to eagleCAD files]
 - Fusion 3D (plastic 3D print Enclosure): [Link to Fusion 3D files]
 
-##### Code
+###### Code
 - Arduino IDE Firmware: [Link to Arduino code]
 
-#### Core
+##### Core
 ![Core](./images/core.png)
 - Core is the local server. Right now is mostly a test hub where the data from the networked servers is received and processed.
 - We are using Node-Red but all collaboration is welcomed!
 
-##### Design
+###### Design
 Right now we are using a standard Raspberry case.
 
-##### Code
-Configure and install:
+### Server Configuration - Raspberry Pi Zero W
 
-###### Configuring Raspberry Pi Zero W as server
+#### Configuring Raspberry Pi Zero W as server
 
 1. Configuring the Pi: [Tutorial Link](https://core-electronics.com.au/tutorials/raspberry-pi-zerow-headless-wifi-setup.html)
 
@@ -322,6 +324,7 @@ Some instructions on how to test here: [Instructables Tutorial](https://www.inst
 
 4. Other useful links:
    Security: manage permissions on node-red tutorial - [YouTube Tutorial](https://www.youtube.com/watch?v=GeN7g4bdHiM)
+
 
 ## Archived Projects
 
@@ -368,4 +371,3 @@ Arduino Yun code: [/ARCHIVE/arduino/GROUU_GREENHOUSE_0/](/ARCHIVE/arduino/GROUU_
 - [Multiple Analog Inputs on Only One Analog Pin](https://www.instructables.com/id/Multiple-Analog-Inputs-on-Only-One-Analoge-Pin/)
 
 ### ESP12 + Sensors
--
