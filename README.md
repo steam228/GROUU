@@ -29,12 +29,20 @@ GROUU V2 Sensor Modules Configuration
 
 [/ARDUINO/GROUU_V2/](/ARDUINO/GROUU_V2/)
 
+#### GROUU V2 WiFi Sensor Node Template
+![GROUU V2 WiFi Sensor Node Template](IMAGES/IMG_0714.JPG "GROUU V2 WiFi Sensor Node Template")
+
+#### GROUU V2 LoRA Sensor Node Template
+![GROUU V2 LoRA Sensor Node Template](IMAGES/IMG_0717.JPG "GROUU V2 LoRA Sensor Node Template")
+
 
 ### Actuator Modules Documentation
 GROUU V2 Sensor Actuator Configuration
 
 ### Server Documentation
 GROUU Server V2 Configuration(GROUU Stack V1)
+
+![GROUU V2 Server](IMAGES/IMG_0878.JPG "GROUU V2 Server")
 
 The GROUU Stack V1 (part of GROUU V2) provides an advanced foundation for your open-source IoT farming project:
 
