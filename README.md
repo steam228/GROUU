@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GROUU BOM PT_PT wip
+title: GROUU DOCS
 ---
 
 
@@ -14,6 +14,257 @@ Enabling the implementation of Precision agriculture / Automation in any context
 These modules can be useful for all, used together, adapted, remixed, distributed...
 
 #### Your collaboration is precious! No onboarding needed, just start designing and developing!
+
+# GROUU V2 Documentation
+
+## Server Documentation
+
+# GROUU server V1 configuration
+(GROUU stack V1)
+
+This GROUU Stack V1 provides a solid foundation for your open-source IoT farming project:
+
+1. Mosquitto for MQTT messaging between your farming sensors and the system
+2. Node-RED for creating workflows and processing data from your farm
+3. InfluxDB for storing time-series data from your agricultural sensors
+4. Grafana for creating dashboards to visualize your farming data
+
+# GROUU Stack V1 Installation and Deployment Tutorial
+
+This guide will help you set up the GROUU Stack V1, an open-source IoT solution for personal and small-scale farming.
+
+## 1. Install Docker
+
+First, we need to install Docker on your Linux system:
+
+```bash
+# Update and upgrade the system
+sudo apt update && sudo apt upgrade -y
+
+# Install required packages
+sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
+
+# Add Docker's official GPG key and set up the repository
+curl -fsSL <https://get.docker.com> -o get-docker.sh
+sudo sh get-docker.sh
+
+# Add your user to the docker group
+sudo usermod -aG docker $USER
+
+# Enable Docker to start on boot
+sudo systemctl enable docker
+
+```
+
+Log out and log back in for the group changes to take effect.
+
+## 2. Install Portainer
+
+Now, let's install Portainer:
+
+```bash
+# Create volume for Portainer
+docker volume create portainer_data
+
+# Install Portainer CE
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always \\
+  -v /var/run/docker.sock:/var/run/docker.sock \\
+  -v portainer_data:/data \\
+  portainer/portainer-ce
+
+```
+
+## 3. Access Portainer
+
+Open a web browser and navigate to `http://your-server-ip:9000`. You'll be prompted to create an admin user.
+
+## 4. Deploy the GROUU Stack V1
+
+1. In Portainer, go to "Stacks" and click "Add stack".
+2. Name your stack "GROUU-Stack-V1".
+3. In the "Web editor" tab, paste the GROUU Stack V1 configuration:
+
+```tsx
+version: '3'
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    ports:
+      - "1883:1883"
+    volumes:
+      - mosquitto-config:/mosquitto/config
+      - mosquitto-data:/mosquitto/data
+      - mosquitto-log:/mosquitto/log
+    restart: always
+
+  nodered:
+    image: nodered/node-red:latest
+    ports:
+      - "1880:1880"
+    volumes:
+      - nodered-data:/data
+    restart: always
+
+  influxdb:
+    image: influxdb:latest
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb-data:/var/lib/influxdb
+    environment:
+      - INFLUXDB_DB=grouudb
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_ADMIN_PASSWORD=grouuadmin  # Remember to change this password
+    restart: always
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: always
+
+volumes:
+  mosquitto-config:
+  mosquitto-data:
+  mosquitto-log:
+  nodered-data:
+  influxdb-data:
+  grafana-data:
+
+```
+
+1. Click "Deploy the stack".
+
+## 5. Post-Deployment Steps
+
+After deploying the GROUU Stack V1, you can access its components:
+
+1. Node-RED (for flow-based programming): `http://your-server-ip:1880`
+2. InfluxDB (time-series database): Use the InfluxDB CLI or API at `http://your-server-ip:8086`
+3. Grafana (for visualization): `http://your-server-ip:3000`
+4. Mosquitto (MQTT broker): Use an MQTT client to connect to `your-server-ip:1883`
+
+Remember to replace `your-server-ip` with your actual server IP address.
+
+## 6. Security Considerations
+
+- Change default passwords for all services in the GROUU Stack V1
+- Use SSL/TLS for MQTT if exposing your farming data to the internet
+- Set up proper firewalls and access controls
+- Regularly update all containers and the host system to ensure your farming data remains secure
+
+Congratulations! You now have the GROUU Stack V1 up and running for your personal or small-scale farming IoT project.
+
+# … if you don’t want to use the stack config
+GROUU STACK MANUAL INSTALATION
+
+## 1. Install Docker
+
+```bash
+# Update and upgrade the system
+sudo apt update && sudo apt upgrade -y
+
+# Install required packages
+sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
+
+# Add Docker's official GPG key
+curl -fsSL <https://download.docker.com/linux/raspbian/gpg> | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# Set up the stable repository
+echo "deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] <https://download.docker.com/linux/raspbian> $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Install Docker Engine
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+
+# Add your user to the docker group
+sudo usermod -aG docker $USER
+
+# Enable Docker to start on boot
+sudo systemctl enable docker
+
+```
+
+## 2. Install Portainer CE and Portainer Agent
+
+```bash
+# Create volume for Portainer
+docker volume create portainer_data
+
+# Install Portainer CE
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
+# Install Portainer Agent
+docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent
+
+```
+
+## 3. Install Containers via Portainer
+
+Access Portainer web interface at `http://your-raspberry-pi-ip:9000` and follow these steps for each container:
+
+### 3.1 Mosquitto (MQTT Broker)
+
+1. Go to "Containers" > "Add container"
+2. Name: mosquitto
+3. Image: eclipse-mosquitto:latest
+4. Port mapping: 1883:1883
+5. Volumes:
+    - /path/to/mosquitto/config:/mosquitto/config
+    - /path/to/mosquitto/data:/mosquitto/data
+    - /path/to/mosquitto/log:/mosquitto/log
+
+### 3.2 Node-RED
+
+1. Go to "Containers" > "Add container"
+2. Name: nodered
+3. Image: nodered/node-red:latest
+4. Port mapping: 1880:1880
+5. Volumes:
+    - /path/to/nodered/data:/data
+
+### 3.3 InfluxDB
+
+1. Go to "Containers" > "Add container"
+2. Name: influxdb
+3. Image: influxdb:latest
+4. Port mapping: 8086:8086
+5. Volumes:
+    - /path/to/influxdb/data:/var/lib/influxdb
+6. Environment variables:
+    - INFLUXDB_DB=mydb
+    - INFLUXDB_ADMIN_USER=admin
+    - INFLUXDB_ADMIN_PASSWORD=adminpassword
+
+### 3.4 Grafana
+
+1. Go to "Containers" > "Add container"
+2. Name: grafana
+3. Image: grafana/grafana:latest
+4. Port mapping: 3000:3000
+5. Volumes:
+    - /path/to/grafana/data:/var/lib/grafana
+
+## 4. Post-Installation Steps
+
+1. Access Mosquitto: Use an MQTT client to connect to `your-raspberry-pi-ip:1883`
+2. Access Node-RED: Open a web browser and go to `http://your-raspberry-pi-ip:1880`
+3. Access InfluxDB: Use the InfluxDB CLI or API at `http://your-raspberry-pi-ip:8086`
+4. Access Grafana: Open a web browser and go to `http://your-raspberry-pi-ip:3000`
+
+Remember to replace `your-raspberry-pi-ip` with the actual IP address of your Raspberry Pi.
+
+## 5. Security Considerations
+
+- Change default passwords for all services
+- Use SSL/TLS for MQTT if exposing to the internet
+- Set up proper firewalls and access controls
+- Regularly update all containers and the host system
+
+
 
 # Modules V1 - ESP12 based version (under dev - design (boards, enclosures), firmware(arduino))
 
