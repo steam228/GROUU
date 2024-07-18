@@ -2,18 +2,19 @@
 ![GROUU Logo](./images/logo.png)
 
 ## Overview
-GROUU enables the implementation of Precision Agriculture / Automation in any context or scale of production:
-- From indoor hydroponics to traditional agriculture
-- From a balcony vase implementation to a large exploration
-- In urban or rural contexts
+GROUU enables the implementation of Precision Agriculture / Automation in the context of personal or small scale agricultures.
+At the moment, the development goals for GROUU V2 is to implement a local/edge server based on a raspberry pi or other linux mini computer, a sensor node template with wifi communication and other with LoraWAN communication. The same for two actuator templates.
+when this basic infrastructure is designed we will apply it to personal contexts in order to test it.
+This process will generate new repositores.
+This Git repository also archives the personal development and learning process behind the project and research done throught it.
 
-These modules can be useful for all, used together, adapted, remixed, and distributed.
-
-**Your collaboration is precious! No onboarding needed, just start designing and developing!**
+**Let us know if you want to collaborate**
 
 ## Table of Contents
 1. [GROUU V2](#grouu-v2)
-   - [Server Documentation - GROUU Server V2 Configuration](#server-documentation---grouu-server-v2-configuration)
+   - [Server Documentation - GROUU Server V2 Configuration](#server-documentation)
+   - [Sensor Modules Documentation - GROUU V2 Sensor Modules Configuration](#sensor-modules-documentation)
+   - [Actuator Modules Documentation - GROUU V2 Sensor Actuator Configuration](#actuator-modules-documentation)
 2. [GROUU V1](#grouu-v1)
    - [Modules V1 - ESP12 Based Version](#modules-v1---esp12-based-version)
    - [Server Configuration - Raspberry Pi Zero W](#server-configuration---raspberry-pi-zero-w)
@@ -23,8 +24,17 @@ These modules can be useful for all, used together, adapted, remixed, and distri
 
 ## GROUU V2
 
-### Server Documentation - GROUU Server V2 Configuration
-(GROUU Stack V1)
+### Sensor Modules Documentation
+GROUU V2 Sensor Modules Configuration
+
+[/ARDUINO/GROUU_V2/](/ARDUINO/GROUU_V2/)
+
+
+### Actuator Modules Documentation
+GROUU V2 Sensor Actuator Configuration
+
+### Server Documentation
+GROUU Server V2 Configuration(GROUU Stack V1)
 
 The GROUU Stack V1 (part of GROUU V2) provides an advanced foundation for your open-source IoT farming project:
 
@@ -362,12 +372,3 @@ Arduino Yun code: [/ARCHIVE/arduino/GROUU_GREENHOUSE_0/](/ARCHIVE/arduino/GROUU_
 
 ## References
 
-### Solar Power
-- [AKI Solar Panel Maintenance Battery](https://www.aki.pt/electricidade/producao-energia-renovavel/solar-eolico-energia-propia/acessorios-de-energias-renovaveis/bateria/controladores/painelmanutencaobaterias-p10533.aspx#info)
-- [AKI Micro Solar Water Pump Kit](https://www.aki.pt/electricidade/producao-energia-renovavel/solar-eolico-energia-propia/kits-solares/kitbombadeaguamicrosolar-p49581.aspx)
-- [Mauser Solar Panel](https://mauser.pt/catalog/product_info.php?products_id=82391)
-
-### Multiple Analogs
-- [Multiple Analog Inputs on Only One Analog Pin](https://www.instructables.com/id/Multiple-Analog-Inputs-on-Only-One-Analoge-Pin/)
-
-### ESP12 + Sensors
