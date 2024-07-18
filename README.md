@@ -1,39 +1,42 @@
----
-layout: default
-title: GROUU DOCS
----
+# GROUU - Modular Open Agriculture
+![GROUU Logo](./images/logo.png)
 
+## Overview
+GROUU enables the implementation of Precision Agriculture / Automation in any context or scale of production:
+- From indoor hydroponics to traditional agriculture
+- From a balcony vase implementation to a large exploration
+- In urban or rural contexts
 
-# ![alt text](./images/logo.png)
-#### Modular Open Agriculture
+These modules can be useful for all, used together, adapted, remixed, and distributed.
 
-Enabling the implementation of Precision agriculture / Automation in any context or scale of production:
-- from indoor hydroponics to traditional agriculture;
-- from a balcony vase implementation to a large exploration;
-- in an urban or rural context;
-These modules can be useful for all, used together, adapted, remixed, distributed...
+**Your collaboration is precious! No onboarding needed, just start designing and developing!**
 
-#### Your collaboration is precious! No onboarding needed, just start designing and developing!
+## Table of Contents
+1. [GROUU V2 Documentation](#grouu-v2-documentation)
+2. [Server Documentation - GROUU Server V1 Configuration](#server-documentation---grouu-server-v1-configuration)
+3. [Modules V1 - ESP12 Based Version](#modules-v1---esp12-based-version)
+4. [Archived Projects](#archived-projects)
+5. [References](#references)
 
-# GROUU V2 Documentation
+## GROUU V2 Documentation
 
-## Server Documentation
+*This section is under development. More details coming soon!*
 
-# GROUU server V1 configuration
-(GROUU stack V1)
+## Server Documentation - GROUU Server V1 Configuration
+(GROUU Stack V1)
 
-This GROUU Stack V1 provides a solid foundation for your open-source IoT farming project:
+The GROUU Stack V1 provides a solid foundation for your open-source IoT farming project:
 
 1. Mosquitto for MQTT messaging between your farming sensors and the system
 2. Node-RED for creating workflows and processing data from your farm
 3. InfluxDB for storing time-series data from your agricultural sensors
 4. Grafana for creating dashboards to visualize your farming data
 
-# GROUU Stack V1 Installation and Deployment Tutorial
+### GROUU Stack V1 Installation and Deployment Tutorial
 
 This guide will help you set up the GROUU Stack V1, an open-source IoT solution for personal and small-scale farming.
 
-## 1. Install Docker
+#### 1. Install Docker
 
 First, we need to install Docker on your Linux system:
 
@@ -45,7 +48,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
 
 # Add Docker's official GPG key and set up the repository
-curl -fsSL <https://get.docker.com> -o get-docker.sh
+curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 
 # Add your user to the docker group
@@ -53,12 +56,11 @@ sudo usermod -aG docker $USER
 
 # Enable Docker to start on boot
 sudo systemctl enable docker
-
 ```
 
 Log out and log back in for the group changes to take effect.
 
-## 2. Install Portainer
+#### 2. Install Portainer
 
 Now, let's install Portainer:
 
@@ -67,24 +69,23 @@ Now, let's install Portainer:
 docker volume create portainer_data
 
 # Install Portainer CE
-docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always \\
-  -v /var/run/docker.sock:/var/run/docker.sock \\
-  -v portainer_data:/data \\
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data:/data \
   portainer/portainer-ce
-
 ```
 
-## 3. Access Portainer
+#### 3. Access Portainer
 
 Open a web browser and navigate to `http://your-server-ip:9000`. You'll be prompted to create an admin user.
 
-## 4. Deploy the GROUU Stack V1
+#### 4. Deploy the GROUU Stack V1
 
 1. In Portainer, go to "Stacks" and click "Add stack".
 2. Name your stack "GROUU-Stack-V1".
 3. In the "Web editor" tab, paste the GROUU Stack V1 configuration:
 
-```tsx
+```yaml
 version: '3'
 
 services:
@@ -133,12 +134,11 @@ volumes:
   nodered-data:
   influxdb-data:
   grafana-data:
-
 ```
 
-1. Click "Deploy the stack".
+4. Click "Deploy the stack".
 
-## 5. Post-Deployment Steps
+#### 5. Post-Deployment Steps
 
 After deploying the GROUU Stack V1, you can access its components:
 
@@ -149,7 +149,7 @@ After deploying the GROUU Stack V1, you can access its components:
 
 Remember to replace `your-server-ip` with your actual server IP address.
 
-## 6. Security Considerations
+#### 6. Security Considerations
 
 - Change default passwords for all services in the GROUU Stack V1
 - Use SSL/TLS for MQTT if exposing your farming data to the internet
@@ -158,37 +158,15 @@ Remember to replace `your-server-ip` with your actual server IP address.
 
 Congratulations! You now have the GROUU Stack V1 up and running for your personal or small-scale farming IoT project.
 
-# … if you don’t want to use the stack config
-GROUU STACK MANUAL INSTALATION
+### Manual Installation Guide
 
-## 1. Install Docker
+If you prefer not to use the stack configuration, you can follow these steps for manual installation:
 
-```bash
-# Update and upgrade the system
-sudo apt update && sudo apt upgrade -y
+#### 1. Install Docker
 
-# Install required packages
-sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
+Follow the Docker installation steps from the stack installation guide above.
 
-# Add Docker's official GPG key
-curl -fsSL <https://download.docker.com/linux/raspbian/gpg> | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-# Set up the stable repository
-echo "deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] <https://download.docker.com/linux/raspbian> $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-# Install Docker Engine
-sudo apt update
-sudo apt install -y docker-ce docker-ce-cli containerd.io
-
-# Add your user to the docker group
-sudo usermod -aG docker $USER
-
-# Enable Docker to start on boot
-sudo systemctl enable docker
-
-```
-
-## 2. Install Portainer CE and Portainer Agent
+#### 2. Install Portainer CE and Portainer Agent
 
 ```bash
 # Create volume for Portainer
@@ -199,14 +177,13 @@ docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /va
 
 # Install Portainer Agent
 docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent
-
 ```
 
-## 3. Install Containers via Portainer
+#### 3. Install Containers via Portainer
 
-Access Portainer web interface at `http://your-raspberry-pi-ip:9000` and follow these steps for each container:
+Access Portainer web interface at `http://your-server-ip:9000` and follow these steps for each container:
 
-### 3.1 Mosquitto (MQTT Broker)
+##### 3.1 Mosquitto (MQTT Broker)
 
 1. Go to "Containers" > "Add container"
 2. Name: mosquitto
@@ -217,7 +194,7 @@ Access Portainer web interface at `http://your-raspberry-pi-ip:9000` and follow 
     - /path/to/mosquitto/data:/mosquitto/data
     - /path/to/mosquitto/log:/mosquitto/log
 
-### 3.2 Node-RED
+##### 3.2 Node-RED
 
 1. Go to "Containers" > "Add container"
 2. Name: nodered
@@ -226,7 +203,7 @@ Access Portainer web interface at `http://your-raspberry-pi-ip:9000` and follow 
 5. Volumes:
     - /path/to/nodered/data:/data
 
-### 3.3 InfluxDB
+##### 3.3 InfluxDB
 
 1. Go to "Containers" > "Add container"
 2. Name: influxdb
@@ -239,7 +216,7 @@ Access Portainer web interface at `http://your-raspberry-pi-ip:9000` and follow 
     - INFLUXDB_ADMIN_USER=admin
     - INFLUXDB_ADMIN_PASSWORD=adminpassword
 
-### 3.4 Grafana
+##### 3.4 Grafana
 
 1. Go to "Containers" > "Add container"
 2. Name: grafana
@@ -248,201 +225,147 @@ Access Portainer web interface at `http://your-raspberry-pi-ip:9000` and follow 
 5. Volumes:
     - /path/to/grafana/data:/var/lib/grafana
 
-## 4. Post-Installation Steps
+#### 4. Post-Installation Steps
 
-1. Access Mosquitto: Use an MQTT client to connect to `your-raspberry-pi-ip:1883`
-2. Access Node-RED: Open a web browser and go to `http://your-raspberry-pi-ip:1880`
-3. Access InfluxDB: Use the InfluxDB CLI or API at `http://your-raspberry-pi-ip:8086`
-4. Access Grafana: Open a web browser and go to `http://your-raspberry-pi-ip:3000`
+Follow the post-deployment steps and security considerations from the stack installation guide above.
 
-Remember to replace `your-raspberry-pi-ip` with the actual IP address of your Raspberry Pi.
-
-## 5. Security Considerations
-
-- Change default passwords for all services
-- Use SSL/TLS for MQTT if exposing to the internet
-- Set up proper firewalls and access controls
-- Regularly update all containers and the host system
-
-
-
-# Modules V1 - ESP12 based version (under dev - design (boards, enclosures), firmware(arduino))
+## Modules V1 - ESP12 Based Version
+*Under development - design (boards, enclosures), firmware (Arduino)*
 
 ### Types:
-- core;
-- s modules (wireless sensors);
-- a modules (actuator modules);
+- Core
+- S modules (wireless sensors)
+- A modules (actuator modules)
 
 ### Development Goals
-
 - The way the module is powered is not yet fully defined: All should have batteries (3.3V _____ Amps), some should have only this as power source and be periodically charged (induction most probably), and others, can be connected to a power source (solar, network, wind...) for constant charging;
 - A power source (ex: solar panel) can be a module on its own and an induction charger can be another module (tbd - to be designed);
 - The following code:
-```
+```cpp
 const String Instalation = "myFarm"; //Where is it?
 const String IDCODE = "1"; //number your probe
 const String TYPE = "SoilProbe"; //choose type
 const String Host = "Grouu" + Instalation + TYPE + IDCODE; //just change if it is not grouu and you're adapting the code for something else
 const char * OTA_PASSWORD  = "yourpasswordhere";
-
 ```
 will allow you to set a hostname (Host) - These are the only parameters you should have to change before injecting the firmware on your board (we should work on an even simpler method);
 
 - This hostname (`const String Host`):
-1. will be the name of the network the device generates each time it is not able to connect to any wireless network;
-2. Will identify the MQTT addresses being used by that type of device (expl: `HostName/Sensor/Moist1`);
+  1. will be the name of the network the device generates each time it is not able to connect to any wireless network;
+  2. Will identify the MQTT addresses being used by that type of device (expl: `HostName/Sensor/Moist1`);
 
-- There shouldn't be a limit for the ammount of modules developed nor used. The scale and context should dictate these options.
+- There shouldn't be a limit for the amount of modules developed nor used. The scale and context should dictate these options.
 - All Explorations, independently from the context or scale should be considered valid data generators;
 
 ### Call for Collaboration
 
 It is permanent, develop whatever you want whenever you want!
 
+### Current Modules
 
-## soilProbe
-![alt text](./images/soil.png)
+#### Soil Probe
+![Soil Probe](./images/soil.png)
 - The soil probe reads Soil Moisture and Soil Temperature;
 - You can add as many as you want in order to measure these in as many points as you wish.
 
-### design
-**eagleCAD:**
-**Fusion 3D (plastic 3D print Enclosure):**
+##### Design
+- eagleCAD: [Link to eagleCAD files]
+- Fusion 3D (plastic 3D print Enclosure): [Link to Fusion 3D files]
 
-### code
-**Arduino IDE Firmware:**
+##### Code
+- Arduino IDE Firmware: [Link to Arduino code]
 
-
-## waterRouter
-![alt text](./images/router.png)
-- The water router uses a standart 1 in 4 out electrovalves from a washing machine. You should also decrease the water pressure on the outputs for microirrigation.
+#### Water Router
+![Water Router](./images/router.png)
+- The water router uses a standard 1 in 4 out electrovalves from a washing machine. You should also decrease the water pressure on the outputs for microirrigation.
 - You can use this directly to the network or after a motor (be careful with the pressure in compatibility). You can add as many as you want in the system.
 
-### design
-**eagleCAD:**
-**Fusion 3D** (plastic 3D print Enclosure):
+##### Design
+- eagleCAD: [Link to eagleCAD files]
+- Fusion 3D (plastic 3D print Enclosure): [Link to Fusion 3D files]
 
-### code
-**Arduino IDE Firmware:**
+##### Code
+- Arduino IDE Firmware: [Link to Arduino code]
 
-
-## core
-![alt text](./images/core.png)
-- Core is the local server. Right now is mostly a test hub were the data from the networked servers is received and processed.
+#### Core
+![Core](./images/core.png)
+- Core is the local server. Right now is mostly a test hub where the data from the networked servers is received and processed.
 - We are using Node-Red but all collaboration is welcomed!
 
-### design
-Right now we are using a **standard Raspberry case.**
+##### Design
+Right now we are using a standard Raspberry case.
 
-### code
-**configure and install:**
+##### Code
+Configure and install:
 
-#### configuring Raspberry Pi zero W as server
+###### Configuring Raspberry Pi Zero W as server
 
-1. configuring the Pi
-https://core-electronics.com.au/tutorials/raspberry-pi-zerow-headless-wifi-setup.html
+1. Configuring the Pi: [Tutorial Link](https://core-electronics.com.au/tutorials/raspberry-pi-zerow-headless-wifi-setup.html)
 
-2. Accessing through ssh on mac or linux terminal
-https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md
+2. Accessing through ssh on mac or linux terminal: [Tutorial Link](https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md)
 
-3. upgrade Node-Red and Node.js
-- open terminal;
-- commands:
-```
+3. Upgrade Node-Red and Node.js
+```bash
 sudo apt-get update
 sudo apt-get upgrade
-bash <(curl -sL https:/raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
+bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
 sudo systemctl enable nodered.service
 ```
-- Connect to Raspberry Pi Node-red console throught your browser be accessing ```http://"raspipaddress":1880```
+- Connect to Raspberry Pi Node-red console through your browser by accessing `http://"raspipaddress":1880`
 
 - Install Mosquitto MQTT broker
-```sudo apt-get install Mosquitto```
+```bash
+sudo apt-get install mosquitto
+```
 
-some instructions on how to test here: https://www.instructables.com/id/Installing-MQTT-BrokerMosquitto-on-Raspberry-Pi/
+Some instructions on how to test here: [Instructables Tutorial](https://www.instructables.com/id/Installing-MQTT-BrokerMosquitto-on-Raspberry-Pi/)
 
-4. other useful links:
-Security: manage permissions on node-red tutorial - https://www.youtube.com/watch?v=GeN7g4bdHiM
+4. Other useful links:
+   Security: manage permissions on node-red tutorial - [YouTube Tutorial](https://www.youtube.com/watch?v=GeN7g4bdHiM)
 
+## Archived Projects
 
+### Main Soil Probe REV0
+Developed at the Habibi Works (Ioannina, Greece) CultiMake Workshop - P2PLab
+![Main Soil Probe REV0](./images/soilProbeHabibi.jpg)
 
+#### Design
+- eagleCAD: A provisional board (not working!!) is on [/BOARDS/soilProbe/Archive](/BOARDS/soilProbe/Archive)
+- For this example, a nodeMCU dev board was used and tested at the workshop (see Habibi.Works [Workshop Journal](WORKSHOP/habibiWorksJuly2018/workshopJournal.md))
+- Enclosure: A standard plastic box was used for demo purposes.
 
-# Archived on this REPO You'll also find:
-
-## mainSoilProbe REV0 - Developed at the Habibi Works (Ioannina, Greece) CultiMake Workshop - P2PLab - Archived
-# ![alt text](./images/soilProbeHabibi.jpg)
-
-### design
-**eagleCAD:**
-- A provisional board (not working!!) is on [/BOARDS/soilProbe/Archive](/BOARDS/soilProbe/Archive);
-- For this example a nodeMCU dev board was used and tested at the workshop (see Habibi.Works [Workshop Journal](WORKSHOP/habibiWorksJuly2018/workshopJournal.md))
-**enclosure:** A standard plastic box was used for demo purposes.
-
-*This board includes:*
+This board includes:
 - 1 x 4 male header for DHT22 Temperature and Humidity Sensor
-- 1 x 3 male header for DS18B20 (encapsulated version for Soil Temperature);
-- 2 x 2 male header connections for Moisture 10k with Two probes;
-- 1 led (no usage yet, mostly for debug purposes);
-- 1 ftdi set headers;
-- 1 voltage converter 12V - 3,3V;
-- 1 x 2 screw headers to add solar panel + battery (maybe connect solar battery pack now).
+- 1 x 3 male header for DS18B20 (encapsulated version for Soil Temperature)
+- 2 x 2 male header connections for Moisture 10k with Two probes
+- 1 led (no usage yet, mostly for debug purposes)
+- 1 ftdi set headers
+- 1 voltage converter 12V - 3,3V
+- 1 x 2 screw headers to add solar panel + battery (maybe connect solar battery pack now)
 
-### code
-**Arduino IDE Firmware:** [/ARDUINO/habibiWorksJuly2018-WS/grouu-irr](/ARDUINO/habibiWorksJuly2018-WS/grouu-irr)
+#### Code
+Arduino IDE Firmware: [/ARDUINO/habibiWorksJuly2018-WS/grouu-irr](/ARDUINO/habibiWorksJuly2018-WS/grouu-irr)
 
+### GROUU Greenhouse
+![GROUU Greenhouse](./images/grouuView.png)
 
-## GROUU greenhouse - Archived
-# ![alt text](./images/grouuView.png)
+#### Design
+- SolidWorks files for the complete Structure (to be added) - also check constructive system (levosystems.com)
+- Photos (soon)
+- Other Diagrams (soon)
 
-### design
-**SolidWorks files** for the complete Structure (to be added) - also check constructive system (levosystems.com)
-**Photos** (soon)
-**Other Diagrams** (soon)
+#### Code
+Arduino Yun code: [/ARCHIVE/arduino/GROUU_GREENHOUSE_0/](/ARCHIVE/arduino/GROUU_GREENHOUSE_0/)
 
+## References
 
-### code
-**Arduino Yun code:** [/ARCHIVE/arduino/GROUU_GREENHOUSE_0/](/ARCHIVE/arduino/GROUU_GREENHOUSE_0/)
+### Solar Power
+- [AKI Solar Panel Maintenance Battery](https://www.aki.pt/electricidade/producao-energia-renovavel/solar-eolico-energia-propia/acessorios-de-energias-renovaveis/bateria/controladores/painelmanutencaobaterias-p10533.aspx#info)
+- [AKI Micro Solar Water Pump Kit](https://www.aki.pt/electricidade/producao-energia-renovavel/solar-eolico-energia-propia/kits-solares/kitbombadeaguamicrosolar-p49581.aspx)
+- [Mauser Solar Panel](https://mauser.pt/catalog/product_info.php?products_id=82391)
 
+### Multiple Analogs
+- [Multiple Analog Inputs on Only One Analog Pin](https://www.instructables.com/id/Multiple-Analog-Inputs-on-Only-One-Analoge-Pin/)
 
-
-
-
-
-
-
-
-
-
-## Refs:
-#### solarpower
-https://www.aki.pt/electricidade/producao-energia-renovavel/solar-eolico-energia-propia/acessorios-de-energias-renovaveis/bateria/controladores/painelmanutencaobaterias-p10533.aspx#info
-https://www.aki.pt/electricidade/producao-energia-renovavel/solar-eolico-energia-propia/kits-solares/kitbombadeaguamicrosolar-p49581.aspx
-https://mauser.pt/catalog/product_info.php?products_id=82391
-
-Main Probe
-
-#### Multiple Analogs -
-
-https://www.instructables.com/id/Multiple-Analog-Inputs-on-Only-One-Analoge-Pin/
-
-#### ESP12 + DHT22 -
-
-https://cityos.io/tutorial/2006/ESP12-and-DHT22
-
-#### ESP12  + temp
-
-https://iot-playground.com/blog/2-uncategorised/41-esp8266-ds18b20-temperature-sensor-arduino-ide
-
-#### Voltage Regulator
-
-http://www.ti.com/lit/ds/symlink/lm3480.pdf
-
-#### use FTDI on ESP12
-
-https://www.hackster.io/harshmangukiya/program-esp8266-esp-12e-with-arduino-using-ftdi-cable-2310c9
-
-
-### refs fabrication:
-#### eagle to flatCAM
-
-http://caram.cl/software/flatcam/board-cutout-with-flatcam/
+### ESP12 + Sensors
+-
