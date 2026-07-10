@@ -51,7 +51,7 @@ to stay under the ADS's 3.3 V input limit.
 |---|---|---|---|
 | LoRa radio | Wio-SX1262 | SPI · NSS 41 / DIO1 39 / RST 42 / BUSY 40 | `Module(41,39,42,40)` |
 | Water temp | DS18B20 | GPIO4 (1-Wire) | 4.7 kΩ pull-up |
-| TDS | Grove/DFRobot Gravity TDS | ADS **A0** | 5 V; ~2.3 V out (direct, safe) |
+| TDS | Seeed Grove TDS | ADS **A0** | 5 V; ~2.3 V out (direct, safe); DFRobot Gravity algorithm |
 | Turbidity | DFRobot SEN0189 | ADS **A1** | **5 V** + **10k/6.8k** divider (÷0.405) |
 | pH | Phidgets 1130 | ADS **A2** | 5 V + **10k/18k** divider |
 | I²C | ADS1115 @ 0x48 | SDA GPIO5 / SCL GPIO6 | XIAO Grove I²C |
