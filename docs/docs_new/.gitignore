@@ -1,0 +1,11 @@
+# Keep only the small design sources (.dc.html) + content (uploads/) + brand svgs.
+# Ignore the heavy design-tool binaries and runtime (the implemented site is docs/*.html).
+project/GROUU - 1st-Person Design.html
+project/*.jpg
+project/screenshot-*.png
+project/.thumbnail
+project/.image-slots.state.json
+project/deck-stage.js
+project/support.js
+project/image-slot.js
+project/scraps/

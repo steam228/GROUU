@@ -1,0 +1,19 @@
+import has_datasheet
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component FOJAN_FRC1206J104_TS_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C2907421", date="2026-07-03T12:13:00.521300+00:00", checksum="2f45d09bddb380c3537a014db658f4bec7b269ba8cd5fa11cb9ff107253c05a9">
+
+    trait is_atomic_part<manufacturer="FOJAN", partnumber="FRC1206J104 TS", footprint="R1206.kicad_mod", symbol="FRC1206J104TS.kicad_sym", model="R1206_L3.2-W1.6-H0.6.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2907421", manufacturer="FOJAN", partno="FRC1206J104 TS">
+    trait has_designator_prefix<prefix="R">
+    trait has_datasheet<datasheet="https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2308241947_FOJAN-FRC1206J104-TS_C2907421.pdf">
+
+    # pins
+    pin 2
+    pin 1

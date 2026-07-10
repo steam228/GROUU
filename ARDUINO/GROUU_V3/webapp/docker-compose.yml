@@ -1,0 +1,20 @@
+# WellBouy dashboard — deployed alongside the Pi's iot-stack.
+# Joins iot-stack_default (the existing stack network) so it reaches
+# influxdb:8086 by name. Published on 127.0.0.1:8088 (LAN-private, like the
+# panel); made public via the cloudflared tunnel hostname that points at
+# http://127.0.0.1:8088.
+services:
+  wellbouy-dashboard:
+    build: .
+    container_name: wellbouy-dashboard
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "127.0.0.1:8088:3000"
+    networks:
+      - iot
+
+networks:
+  iot:
+    external: true
+    name: iot-stack_default

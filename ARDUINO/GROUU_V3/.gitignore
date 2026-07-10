@@ -1,0 +1,28 @@
+# ── secrets — NEVER commit ──────────────────────────────────────────────────
+include/secrets.h
+.env
+**/.env
+
+# ── PlatformIO / firmware build ─────────────────────────────────────────────
+.pio/
+*.bin
+*.elf
+
+# ── Node / webapp ───────────────────────────────────────────────────────────
+node_modules/
+**/node_modules/
+
+# ── hardware: regenerable via `ato build` / KiCad (source .ato + .kicad_pcb stay)
+hardware/**/build/
+hardware/**/resources/
+hardware/**/*.step
+hardware/**/*.stp
+hardware/**/*.pdf
+hardware/**/*.brep
+
+# ── design-tool export (large binaries; superseded by webapp/) ──────────────
+server/first-person-well-water-sensor-design/
+
+# ── editor / OS ─────────────────────────────────────────────────────────────
+.vscode/
+.DS_Store

@@ -1,0 +1,21 @@
+import has_datasheet
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component UNI_ROYAL_1206W4F6801T5E_package:
+    """6.8KΩ (6801) ±1%"""
+
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C26034", date="2026-07-03T11:46:45.002716+00:00", checksum="2e5d0035a3b79eb45ce5caa357b8702ccd68c3f3c1509d4692a01685bef4589a">
+
+    trait is_atomic_part<manufacturer="UNI-ROYAL", partnumber="1206W4F6801T5E", footprint="R1206.kicad_mod", symbol="1206W4F6801T5E.kicad_sym", model="R1206_L3.2-W1.6-H0.6.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C26034", manufacturer="UNI-ROYAL", partno="1206W4F6801T5E">
+    trait has_designator_prefix<prefix="R">
+    trait has_datasheet<datasheet="https://www.lcsc.com/datasheet/lcsc_datasheet_2206010045_UNI-ROYAL-Uniroyal-Elec-1206W4F6801T5E_C26034.pdf">
+
+    # pins
+    pin 2
+    pin 1

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WiFi Sensor Node · GROUU</title>
+  <link rel="icon" href="site/assets/emblem-green.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{ margin:0; background:#e9f2ec; }
+    a{ color:#008a60; text-decoration:none; }
+    a:hover{ color:#00734f; }
+    ::selection{ background:#65c298; color:#122018; }
+    .imgslot{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+              text-align:center; background:repeating-linear-gradient(45deg,#dcece2,#dcece2 12px,#d5e6dc 12px,#d5e6dc 24px);
+              color:#5c6b60; border:1.5px dashed #9dbfaa; }
+    .imgslot .ico{ font-size:30px; opacity:.65; }
+    .imgslot .cap{ font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.03em; padding:0 18px; max-width:320px; line-height:1.4; }
+    .relcard{ transition:border-color .15s; }
+    .relcard:hover{ border-color:#008a60; }
+  </style>
+</head>
+<body>
+<div style="background:#e9f2ec;color:#3a423a;font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;">
+
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(233,242,236,0.82);backdrop-filter:blur(12px);border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="index.html" style="display:flex;align-items:center;gap:14px;"><img src="site/assets/wordmark-green.svg" alt="GROUU" style="height:26px;display:block;"></a>
+      <div style="display:flex;align-items:center;gap:30px;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;">
+        <a href="index.html#nodes" style="color:#4a524a;">← All nodes</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V2/GROUUV2-SensorNodeWiFi" target="_blank" rel="noopener" style="color:#f6f5f1;background:#008a60;border-radius:100px;padding:9px 20px;">Firmware ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <header style="border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:64px 40px 58px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#6b756b;margin-bottom:24px;"><a href="index.html" style="color:#6b756b;">GROUU</a> · <a href="index.html#nodes" style="color:#6b756b;">Nodes</a> · <span style="color:#008a60;">WiFi Sensor Node</span></div>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <span style="width:9px;height:9px;border-radius:50%;background:#008a60;box-shadow:0 0 0 4px rgba(0,138,96,0.16);"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#0c6b4b;">Developed · firmware published</span>
+      </div>
+      <h1 style="font-size:66px;font-weight:600;line-height:1.02;letter-spacing:-0.03em;color:#16201a;margin:0 0 22px;max-width:840px;">WiFi Sensor Node</h1>
+      <p style="font-size:26px;line-height:1.45;color:#3a423a;margin:0 0 34px;max-width:780px;">The reference template for local sensing on GROUU: an ESP32 that reads a sensor and publishes JSON over WiFi + MQTT, with reconnect logic and over-the-air updates. Complete, documented firmware you can clone, configure and flash.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">ESP32</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">DHT22</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">MQTT · PubSubClient</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">ArduinoOTA</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">PlatformIO</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- LEVEL OF DEVELOPMENT -->
+  <section style="background:#fff;border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Level of development</div>
+      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 12px;">What's published</h2>
+      <p style="font-size:20px;line-height:1.5;color:#4a524a;margin:0 0 40px;max-width:720px;">This node is complete as a firmware template. It runs on a stock ESP32 dev board, so there's no custom PCB — just source, a minimal parts list, and documentation.</p>
+      <div style="border:1px solid #d5e4da;border-radius:14px;overflow:hidden;">
+        <div style="display:grid;grid-template-columns:210px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
+          <span style="font-size:20px;font-weight:600;color:#16201a;">Firmware / code</span>
+          <span style="font-size:17px;color:#4a524a;line-height:1.4;">Full source, PlatformIO and Arduino, on GitHub.</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Available</span>
+        </div>
+        <div style="display:grid;grid-template-columns:210px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
+          <span style="font-size:20px;font-weight:600;color:#16201a;">Parts list</span>
+          <span style="font-size:17px;color:#4a524a;line-height:1.4;">ESP32 dev board + DHT22 + pull-up. Breadboard-simple.</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Available</span>
+        </div>
+        <div style="display:grid;grid-template-columns:210px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
+          <span style="font-size:20px;font-weight:600;color:#16201a;">Custom PCB</span>
+          <span style="font-size:17px;color:#4a524a;line-height:1.4;">Not required — runs on the stock dev board.</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b756b;background:#e6ede8;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">— N/A</span>
+        </div>
+        <div style="display:grid;grid-template-columns:210px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;">
+          <span style="font-size:20px;font-weight:600;color:#16201a;">Documentation</span>
+          <span style="font-size:17px;color:#4a524a;line-height:1.4;">Config, topics, libraries and full code walkthrough.</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">How it works</div>
+        <h2 style="font-size:36px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 24px;">Connect, publish, stay reachable</h2>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#008a60;">→</span><p style="font-size:19px;line-height:1.45;color:#3a423a;margin:0;">Joins WiFi with automatic reconnect.</p></div>
+          <div style="display:flex;gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#008a60;">→</span><p style="font-size:19px;line-height:1.45;color:#3a423a;margin:0;">Publishes / subscribes over MQTT via PubSubClient.</p></div>
+          <div style="display:flex;gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#008a60;">→</span><p style="font-size:19px;line-height:1.45;color:#3a423a;margin:0;">Reads DHT22 and sends <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;">{"t2":x,"h2":x}</span> every 3 s.</p></div>
+          <div style="display:flex;gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#008a60;">→</span><p style="font-size:19px;line-height:1.45;color:#3a423a;margin:0;"><strong style="color:#16201a;">OTA updates</strong>, armed remotely via a control topic.</p></div>
+          <div style="display:flex;gap:14px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#008a60;">→</span><p style="font-size:19px;line-height:1.45;color:#3a423a;margin:0;">Accepts a remote reboot command.</p></div>
+        </div>
+      </div>
+      <div class="imgslot" style="aspect-ratio:4/3;border-radius:16px;">
+        <span class="ico">🔧📷</span>
+        <span class="cap">Wiring diagram / photo: ESP32 + DHT22 on breadboard</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIG + TOPICS -->
+  <section style="background:#fff;border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;gap:56px;">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Configuration</div>
+        <h2 style="font-size:36px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 20px;">Set these for your site</h2>
+        <p style="font-size:18px;line-height:1.5;color:#4a524a;margin:0 0 22px;">Each node is named by the GROUU convention, so its topics derive automatically:</p>
+        <div style="background:#122018;border-radius:12px;padding:22px 26px;font-family:'IBM Plex Mono',monospace;font-size:17px;color:#eaf3ec;margin-bottom:24px;">Grouu<span style="color:#65c298;">[Installation][Type][ID]</span></div>
+        <div style="border:1px solid #d5e4da;border-radius:14px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:150px 1fr;font-size:17px;">
+            <div style="padding:14px 20px;background:#f4f8f5;font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#6b756b;border-bottom:1px solid #eef2ef;">Installation</div><div style="padding:14px 20px;border-bottom:1px solid #eef2ef;font-family:'IBM Plex Mono',monospace;font-size:15px;color:#16201a;">&lt;your-site&gt;</div>
+            <div style="padding:14px 20px;background:#f4f8f5;font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#6b756b;border-bottom:1px solid #eef2ef;">Type · ID</div><div style="padding:14px 20px;border-bottom:1px solid #eef2ef;font-family:'IBM Plex Mono',monospace;font-size:15px;color:#16201a;">&lt;type&gt; · &lt;n&gt;</div>
+            <div style="padding:14px 20px;background:#f4f8f5;font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#6b756b;border-bottom:1px solid #eef2ef;">WiFi</div><div style="padding:14px 20px;border-bottom:1px solid #eef2ef;font-family:'IBM Plex Mono',monospace;font-size:15px;color:#16201a;">&lt;ssid&gt; / &lt;password&gt;</div>
+            <div style="padding:14px 20px;background:#f4f8f5;font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#6b756b;border-bottom:1px solid #eef2ef;">MQTT broker</div><div style="padding:14px 20px;border-bottom:1px solid #eef2ef;font-family:'IBM Plex Mono',monospace;font-size:15px;color:#16201a;">&lt;broker-host&gt;:1883</div>
+            <div style="padding:14px 20px;background:#f4f8f5;font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#6b756b;">Sensor</div><div style="padding:14px 20px;color:#16201a;">DHT22 on a GPIO pin</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">MQTT topics</div>
+        <h2 style="font-size:36px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 20px;">Publish, control, log</h2>
+        <p style="font-size:18px;line-height:1.5;color:#4a524a;margin:0 0 22px;">Derived from the host name — swap in your own:</p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="border:1px solid #d5e4da;border-radius:12px;padding:20px 24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#008a60;margin-bottom:6px;">&lt;host&gt;/sensors</div><div style="font-size:17px;color:#4a524a;">Publishes the JSON reading every 3 s</div></div>
+          <div style="border:1px solid #d5e4da;border-radius:12px;padding:20px 24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#008a60;margin-bottom:6px;">system/set/&lt;host&gt;</div><div style="font-size:17px;color:#4a524a;">Subscribes for control — <span style="font-family:'IBM Plex Mono',monospace;">OTA_ON</span> / <span style="font-family:'IBM Plex Mono',monospace;">REBOOT</span></div></div>
+          <div style="border:1px solid #d5e4da;border-radius:12px;padding:20px 24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#008a60;margin-bottom:6px;">system/log/&lt;host&gt;</div><div style="font-size:17px;color:#4a524a;">Publishes connection &amp; status logs</div></div>
+        </div>
+        <p style="font-size:16px;color:#6b756b;margin:22px 0 0;line-height:1.45;">Libraries: WiFi, Adafruit_Sensor + DHT, ArduinoJson, PubSubClient, ArduinoOTA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO REUSE -->
+  <section style="background:#122018;color:#eaf3ec;border-bottom:1px solid #0c150f;">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#65c298;margin-bottom:16px;">How to reuse</div>
+      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;margin:0 0 40px;max-width:700px;">Four steps to a running node</h2>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+        <div style="background:#1a2a20;border:1px solid #274031;border-radius:14px;padding:28px 28px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#65c298;margin-bottom:12px;">01</div><div style="font-size:20px;font-weight:600;margin-bottom:8px;">Clone</div><p style="font-size:16px;line-height:1.4;color:#9fb2a4;margin:0;">Pull the WiFi node folder from the repo.</p></div>
+        <div style="background:#1a2a20;border:1px solid #274031;border-radius:14px;padding:28px 28px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#65c298;margin-bottom:12px;">02</div><div style="font-size:20px;font-weight:600;margin-bottom:8px;">Configure</div><p style="font-size:16px;line-height:1.4;color:#9fb2a4;margin:0;">Set installation, WiFi and broker; wire the DHT22.</p></div>
+        <div style="background:#1a2a20;border:1px solid #274031;border-radius:14px;padding:28px 28px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#65c298;margin-bottom:12px;">03</div><div style="font-size:20px;font-weight:600;margin-bottom:8px;">Flash</div><p style="font-size:16px;line-height:1.4;color:#9fb2a4;margin:0;">Build &amp; upload with PlatformIO.</p></div>
+        <div style="background:#1a2a20;border:1px solid #274031;border-radius:14px;padding:28px 28px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#65c298;margin-bottom:12px;">04</div><div style="font-size:20px;font-weight:600;margin-bottom:8px;">Point at a broker</div><p style="font-size:16px;line-height:1.4;color:#9fb2a4;margin:0;">Any MQTT broker — e.g. the GROUU Stack.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section style="background:#fff;border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:64px 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:28px;">Related</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+        <a href="server-stack.html" class="relcard" style="border:1px solid #d5e4da;border-radius:14px;padding:26px 28px;display:block;"><div style="font-size:21px;font-weight:600;color:#16201a;margin-bottom:6px;">Server Stack →</div><p style="font-size:16px;color:#4a524a;margin:0;line-height:1.4;">A broker + pipeline to receive this node.</p></a>
+        <a href="grouuwan.html" class="relcard" style="border:1px solid #d5e4da;border-radius:14px;padding:26px 28px;display:block;"><div style="font-size:21px;font-weight:600;color:#16201a;margin-bottom:6px;">GROUUWAN →</div><p style="font-size:16px;color:#4a524a;margin:0;line-height:1.4;">The long-range track for sites beyond WiFi.</p></a>
+        <a href="wellbouy.html" class="relcard" style="border:1px solid #d5e4da;border-radius:14px;padding:26px 28px;display:block;"><div style="font-size:21px;font-weight:600;color:#16201a;margin-bottom:6px;">WellBouy →</div><p style="font-size:16px;color:#4a524a;margin:0;line-height:1.4;">A deployed LoRaWAN water-quality node.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#0e1712;color:#8ba192;">
+    <div style="max-width:1120px;margin:0 auto;padding:48px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <a href="index.html"><img src="site/assets/wordmark-white.svg" alt="GROUU" style="height:24px;display:block;"></a>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5f7568;letter-spacing:0.04em;">Open hardware &amp; software · GPL</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

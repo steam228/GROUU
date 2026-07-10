@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The GROUU Stack — edge server · GROUU</title>
+  <link rel="icon" href="site/assets/emblem-green.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{ margin:0; background:#e9f2ec; }
+    a{ color:#008a60; text-decoration:none; }
+    a:hover{ color:#00734f; }
+    ::selection{ background:#65c298; color:#122018; }
+    .imgslot{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+              text-align:center; background:repeating-linear-gradient(45deg,#dcece2,#dcece2 12px,#d5e6dc 12px,#d5e6dc 24px);
+              color:#5c6b60; border:1.5px dashed #9dbfaa; }
+    .imgslot .ico{ font-size:30px; opacity:.65; }
+    .imgslot .cap{ font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.03em; padding:0 18px; max-width:320px; line-height:1.4; }
+    .relcard{ transition:border-color .15s; }
+    .relcard:hover{ border-color:#008a60; }
+  </style>
+</head>
+<body>
+<div style="background:#e9f2ec;color:#3a423a;font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;">
+
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(233,242,236,0.82);backdrop-filter:blur(12px);border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;">
+      <a href="index.html" style="display:flex;align-items:center;gap:14px;"><img src="site/assets/wordmark-green.svg" alt="GROUU" style="height:26px;display:block;"></a>
+      <div style="display:flex;align-items:center;gap:30px;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;">
+        <a href="index.html#system" style="color:#4a524a;">← System</a>
+        <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" style="color:#f6f5f1;background:#008a60;border-radius:100px;padding:9px 20px;">Source ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <header style="border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:64px 40px 58px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#6b756b;margin-bottom:24px;"><a href="index.html" style="color:#6b756b;">GROUU</a> · <a href="index.html#system" style="color:#6b756b;">System</a> · <span style="color:#008a60;">Server Stack</span></div>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <span style="width:9px;height:9px;border-radius:50%;background:#008a60;box-shadow:0 0 0 4px rgba(0,138,96,0.16);"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#0c6b4b;">Developed · reproducible from a compose file</span>
+      </div>
+      <h1 style="font-size:66px;font-weight:600;line-height:1.02;letter-spacing:-0.03em;color:#16201a;margin:0 0 22px;max-width:840px;">The GROUU Stack</h1>
+      <p style="font-size:26px;line-height:1.45;color:#3a423a;margin:0 0 34px;max-width:800px;">An open, containerised edge-server pipeline that any GROUU node can report into — messaging, flow logic, time-series storage and dashboards. Runs on any Linux host or Raspberry Pi from a single Docker Compose file.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">Docker Compose</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">Portainer</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">MQTT · time-series · dashboards</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- LEVEL OF DEVELOPMENT -->
+  <section style="background:#fff;border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Level of development</div>
+      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 12px;">What's published</h2>
+      <p style="font-size:20px;line-height:1.5;color:#4a524a;margin:0 0 40px;max-width:720px;">The stack is a complete, reusable recipe: a compose file plus the guidance to deploy and secure it. It runs live on the project's Raspberry Pi, ingesting the WellBouy node today.</p>
+      <div style="border:1px solid #d5e4da;border-radius:14px;overflow:hidden;">
+        <div style="display:grid;grid-template-columns:230px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
+          <span style="font-size:20px;font-weight:600;color:#16201a;">Docker Compose</span>
+          <span style="font-size:17px;color:#4a524a;line-height:1.4;">Full four-service stack definition, deployable as-is.</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Available</span>
+        </div>
+        <div style="display:grid;grid-template-columns:230px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
+          <span style="font-size:20px;font-weight:600;color:#16201a;">Install guide</span>
+          <span style="font-size:17px;color:#4a524a;line-height:1.4;">Docker + Portainer setup, then deploy the stack.</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Available</span>
+        </div>
+        <div style="display:grid;grid-template-columns:230px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
+          <span style="font-size:20px;font-weight:600;color:#16201a;">Service configuration</span>
+          <span style="font-size:17px;color:#4a524a;line-height:1.4;">MQTT auth, InfluxDB buckets and Grafana data-source notes.</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Available</span>
+        </div>
+        <div style="display:grid;grid-template-columns:230px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;">
+          <span style="font-size:20px;font-weight:600;color:#16201a;">TTN bridge recipe</span>
+          <span style="font-size:17px;color:#4a524a;line-height:1.4;">For pulling LoRaWAN uplinks in — see <a href="grouuwan.html">GROUUWAN</a>.</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Documented</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section style="border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">How it works · services</div>
+      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 44px;">Four containers, one pipeline</h2>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
+        <div style="background:#fff;border:1px solid #d5e4da;border-radius:14px;padding:30px 32px;">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;"><span style="font-size:24px;font-weight:600;color:#16201a;">Mosquitto</span><span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#008a60;">:1883</span></div>
+          <p style="font-size:17px;line-height:1.45;color:#4a524a;margin:0;">MQTT broker — receives every sensor uplink. Per-client authentication (anonymous access disabled).</p>
+        </div>
+        <div style="background:#fff;border:1px solid #d5e4da;border-radius:14px;padding:30px 32px;">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;"><span style="font-size:24px;font-weight:600;color:#16201a;">Node-RED</span><span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#008a60;">:1880</span></div>
+          <p style="font-size:17px;line-height:1.45;color:#4a524a;margin:0;">Flow-based processing — routes and parses messages (including TTN payloads) on the way to storage.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #d5e4da;border-radius:14px;padding:30px 32px;">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;"><span style="font-size:24px;font-weight:600;color:#16201a;">InfluxDB</span><span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#008a60;">:8086</span></div>
+          <p style="font-size:17px;line-height:1.45;color:#4a524a;margin:0;">Time-series database — one bucket per source. All sensor history lives here.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #d5e4da;border-radius:14px;padding:30px 32px;">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;"><span style="font-size:24px;font-weight:600;color:#16201a;">Grafana</span><span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#008a60;">:3000</span></div>
+          <p style="font-size:17px;line-height:1.45;color:#4a524a;margin:0;">Dashboards &amp; visualisation, reading InfluxDB over the shared compose network.</p>
+        </div>
+      </div>
+      <div style="margin-top:20px;border:1px dashed #c2d3c8;border-radius:14px;padding:24px 30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6b756b;">Management</span>
+        <span style="font-size:18px;color:#3a423a;"><strong style="color:#16201a;">Portainer</strong> <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#008a60;">:9000</span> — a web UI to deploy and manage the containers, images and volumes.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW + IMAGE -->
+  <section style="background:#fff;border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+      <div class="imgslot" style="aspect-ratio:4/3;border-radius:16px;order:-1;">
+        <span class="ico">📊📷</span>
+        <span class="cap">Screenshot: a Grafana dashboard (or the live GROUU dashboard)</span>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Data flow</div>
+        <h2 style="font-size:36px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 24px;">Every node, one path</h2>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div style="display:flex;gap:16px;align-items:center;"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#008a60;width:96px;flex-shrink:0;">Sources</span><p style="font-size:19px;line-height:1.4;color:#3a423a;margin:0;">WiFi &amp; LoRaWAN (via TTN) nodes</p></div>
+          <div style="width:1px;height:20px;background:#cbdccf;margin-left:47px;"></div>
+          <div style="display:flex;gap:16px;align-items:center;"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#008a60;width:96px;flex-shrink:0;">Ingest</span><p style="font-size:19px;line-height:1.4;color:#3a423a;margin:0;">Mosquitto → Node-RED</p></div>
+          <div style="width:1px;height:20px;background:#cbdccf;margin-left:47px;"></div>
+          <div style="display:flex;gap:16px;align-items:center;"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#008a60;width:96px;flex-shrink:0;">Store</span><p style="font-size:19px;line-height:1.4;color:#3a423a;margin:0;">InfluxDB time-series buckets</p></div>
+          <div style="width:1px;height:20px;background:#cbdccf;margin-left:47px;"></div>
+          <div style="display:flex;gap:16px;align-items:center;"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#008a60;width:96px;flex-shrink:0;">Visualise</span><p style="font-size:19px;line-height:1.4;color:#3a423a;margin:0;">Grafana dashboards</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPLOY -->
+  <section style="background:#122018;color:#eaf3ec;border-bottom:1px solid #0c150f;">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#65c298;margin-bottom:16px;">How to reuse · deploy</div>
+      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;margin:0 0 40px;max-width:700px;">Three steps to a running stack</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px;">
+        <div style="background:#1a2a20;border:1px solid #274031;border-radius:14px;padding:28px 30px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#65c298;margin-bottom:12px;">01</div><div style="font-size:20px;font-weight:600;margin-bottom:8px;">Install Docker</div><p style="font-size:16px;line-height:1.4;color:#9fb2a4;margin:0;">On any Linux host or Raspberry Pi.</p></div>
+        <div style="background:#1a2a20;border:1px solid #274031;border-radius:14px;padding:28px 30px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#65c298;margin-bottom:12px;">02</div><div style="font-size:20px;font-weight:600;margin-bottom:8px;">Run Portainer</div><p style="font-size:16px;line-height:1.4;color:#9fb2a4;margin:0;">Container-management UI on :9000.</p></div>
+        <div style="background:#1a2a20;border:1px solid #274031;border-radius:14px;padding:28px 30px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#65c298;margin-bottom:12px;">03</div><div style="font-size:20px;font-weight:600;margin-bottom:8px;">Deploy the stack</div><p style="font-size:16px;line-height:1.4;color:#9fb2a4;margin:0;">Paste the compose → Deploy.</p></div>
+      </div>
+      <div style="background:#0e1712;border:1px solid #23332a;border-radius:12px;padding:24px 28px;font-family:'IBM Plex Mono',monospace;font-size:16px;line-height:1.7;color:#a9c2b3;overflow-x:auto;">
+        <div style="color:#5f7568;">docker compose up -d</div>
+        <div><span style="color:#65c298;">mosquitto</span>  eclipse-mosquitto:2   →  :1883</div>
+        <div><span style="color:#65c298;">nodered</span>    nodered/node-red      →  :1880</div>
+        <div><span style="color:#65c298;">influxdb</span>   influxdb:2            →  :8086</div>
+        <div><span style="color:#65c298;">grafana</span>    grafana/grafana       →  :3000</div>
+      </div>
+      <div style="margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:15px;color:#7f9186;">Full compose file, MQTT-auth guide and a security checklist live in the <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" style="color:#65c298;">repository ↗</a></div>
+    </div>
+  </section>
+
+  <!-- REQUIREMENTS -->
+  <section style="background:#fff;border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:64px 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:28px;">Requirements</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6b756b;margin-bottom:8px;">Host</div><div style="font-size:20px;font-weight:600;color:#16201a;">Linux / RPi</div><div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#6b756b;margin-top:2px;">64-bit recommended</div></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6b756b;margin-bottom:8px;">Engine</div><div style="font-size:20px;font-weight:600;color:#16201a;">Docker</div><div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#6b756b;margin-top:2px;">compose plugin</div></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6b756b;margin-bottom:8px;">Network</div><div style="font-size:20px;font-weight:600;color:#16201a;">LAN</div><div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#6b756b;margin-top:2px;">static address advised</div></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6b756b;margin-bottom:8px;">Storage</div><div style="font-size:20px;font-weight:600;color:#16201a;">Volumes</div><div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#6b756b;margin-top:2px;">per service</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section style="background:#e9f2ec;border-bottom:1px solid #d5e4da;">
+    <div style="max-width:1120px;margin:0 auto;padding:64px 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:28px;">Related</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+        <a href="wifi-node.html" class="relcard" style="border:1px solid #d5e4da;border-radius:14px;padding:26px 28px;display:block;background:#fff;"><div style="font-size:21px;font-weight:600;color:#16201a;margin-bottom:6px;">WiFi Node →</div><p style="font-size:16px;color:#4a524a;margin:0;line-height:1.4;">A source that publishes into this stack.</p></a>
+        <a href="grouuwan.html" class="relcard" style="border:1px solid #d5e4da;border-radius:14px;padding:26px 28px;display:block;background:#fff;"><div style="font-size:21px;font-weight:600;color:#16201a;margin-bottom:6px;">GROUUWAN →</div><p style="font-size:16px;color:#4a524a;margin:0;line-height:1.4;">The TTN bridge into Mosquitto.</p></a>
+        <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" class="relcard" style="border:1px solid #d5e4da;border-radius:14px;padding:26px 28px;display:block;background:#fff;"><div style="font-size:21px;font-weight:600;color:#16201a;margin-bottom:6px;">Live dashboard ↗</div><p style="font-size:16px;color:#4a524a;margin:0;line-height:1.4;">A public Grafana-style view — real WellBouy data.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#0e1712;color:#8ba192;">
+    <div style="max-width:1120px;margin:0 auto;padding:48px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <a href="index.html"><img src="site/assets/wordmark-white.svg" alt="GROUU" style="height:24px;display:block;"></a>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5f7568;letter-spacing:0.04em;">Open hardware &amp; software · GPL</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

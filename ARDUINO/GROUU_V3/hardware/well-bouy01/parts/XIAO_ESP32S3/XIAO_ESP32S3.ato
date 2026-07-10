@@ -1,0 +1,28 @@
+import is_atomic_part
+import has_designator_prefix
+import has_part_picked
+
+# Seeed XIAO ESP32-S3 as a socketed/soldered module (SMD_PAD footprint).
+# No LCSC CAD model exists, so this is a hand-authored atomic part:
+# footprint from the Seeed OPL library, pins mapped from the footprint pad numbers.
+component XIAO_ESP32S3:
+    trait is_atomic_part<manufacturer="Seeed Studio", partnumber="XIAO-ESP32-S3", footprint="XIAO-ESP32-S3-SMD_PAD.kicad_mod", symbol="", model="">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C9900154951", manufacturer="Seeed Studio", partno="XIAO-ESP32-S3">
+    trait has_designator_prefix<prefix="U">
+
+    # left column (USB-C at top), pads 1..7 = D0..D6
+    signal D0 ~ pin 1     # GPIO1
+    signal D1 ~ pin 2     # GPIO2
+    signal D2 ~ pin 3     # GPIO3
+    signal D3 ~ pin 4     # GPIO4
+    signal D4 ~ pin 5     # GPIO5 / SDA
+    signal D5 ~ pin 6     # GPIO6 / SCL
+    signal D6 ~ pin 7     # GPIO43 / TX
+    # right column, pads 8..14 = D7..D10, 3V3, GND, 5V
+    signal D7 ~ pin 8     # GPIO44 / RX
+    signal D8 ~ pin 9     # GPIO7 / SCK
+    signal D9 ~ pin 10    # GPIO8 / MISO
+    signal D10 ~ pin 11   # GPIO9 / MOSI
+    signal P3V3 ~ pin 12
+    signal GND ~ pin 13
+    signal P5V ~ pin 14

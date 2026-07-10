@@ -1,0 +1,76 @@
+[
+  {
+    "id": "wellbouy_tab",
+    "type": "tab",
+    "label": "WellBouy TTN -> InfluxDB"
+  },
+  {
+    "id": "ttn_broker",
+    "type": "mqtt-broker",
+    "name": "TTN EU1 (fill username+API key in UI)",
+    "broker": "eu1.cloud.thethings.network",
+    "port": "8883",
+    "usetls": true,
+    "protocolVersion": "4",
+    "keepalive": "60",
+    "cleansession": true
+  },
+  {
+    "id": "influx_cfg",
+    "type": "influxdb",
+    "name": "InfluxDB 2.x (fill token in UI)",
+    "influxdbVersion": "2.0",
+    "url": "http://localhost:8086",
+    "organization": "REPLACE_WITH_YOUR_ORG",
+    "bucket": "wellbouy"
+  },
+  {
+    "id": "mqtt_in",
+    "type": "mqtt in",
+    "z": "wellbouy_tab",
+    "name": "TTN uplinks",
+    "topic": "v3/+/devices/+/up",
+    "qos": "0",
+    "datatype": "json",
+    "broker": "ttn_broker",
+    "x": 160,
+    "y": 140,
+    "wires": [["fn_point"]]
+  },
+  {
+    "id": "fn_point",
+    "type": "function",
+    "z": "wellbouy_tab",
+    "name": "TTN -> Influx point",
+    "func": "const p = msg.payload || {};\nconst up = p.uplink_message || {};\nconst decoded = up.decoded_payload || {};\nconst dev = (p.end_device_ids && p.end_device_ids.device_id) || \"unknown\";\n\n// every numeric decoded field becomes an Influx field\nconst fields = {};\nfor (const k in decoded) {\n    if (typeof decoded[k] === \"number\") fields[k] = decoded[k];\n}\n\n// link quality from the first gateway\nconst rx = (up.rx_metadata && up.rx_metadata[0]) || {};\nif (typeof rx.rssi === \"number\") fields.rssi = rx.rssi;\nif (typeof rx.snr === \"number\") fields.snr = rx.snr;\n\nif (Object.keys(fields).length === 0) { return null; }\n\n// influxdb 'out' node (v2): payload = [ fields, tags ]\nmsg.payload = [ fields, { device: dev } ];\nreturn msg;\n",
+    "outputs": 1,
+    "x": 400,
+    "y": 140,
+    "wires": [["influx_out", "dbg"]]
+  },
+  {
+    "id": "influx_out",
+    "type": "influxdb out",
+    "z": "wellbouy_tab",
+    "influxdb": "influx_cfg",
+    "name": "write wellbouy",
+    "measurement": "wellbouy",
+    "precision": "",
+    "org": "REPLACE_WITH_YOUR_ORG",
+    "bucket": "wellbouy",
+    "x": 660,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "dbg",
+    "type": "debug",
+    "z": "wellbouy_tab",
+    "name": "point",
+    "active": true,
+    "complete": "payload",
+    "x": 650,
+    "y": 180,
+    "wires": []
+  }
+]

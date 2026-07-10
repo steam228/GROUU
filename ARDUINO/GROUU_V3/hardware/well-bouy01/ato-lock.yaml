@@ -1,0 +1,163 @@
+poses:
+  schematic:
+    0b11bbbf:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: -150.0
+        y: 195.0
+      rotation: 0
+    13c31d3d:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 45.0
+        y: -60.0
+      rotation: 0
+    17ccab4b:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 165.0
+        y: 225.0
+      rotation: 0
+    3384193c:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: -75.0
+        y: 150.0
+      rotation: 0
+    498cecb5:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 390.0
+        y: 105.0
+      rotation: 0
+    4fce21a3:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 630.0
+        y: 30.0
+      rotation: 0
+    52ed4d94:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 165.0
+        y: 255.0
+      rotation: 0
+    6f290505:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 165.0
+        y: 0.0
+      rotation: 0
+    7008efa2:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 15.0
+        y: 105.0
+      rotation: 0
+    790617e9:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: -165.0
+        y: 75.0
+      rotation: 0
+    7a3117d4:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 165.0
+        y: -30.0
+      rotation: 0
+    8ee885b5:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: -15.0
+        y: 165.0
+      rotation: 0
+    98d46085:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 165.0
+        y: 30.0
+      rotation: 0
+    a17d4e91:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: -165.0
+        y: 120.0
+      rotation: 0
+    a1994bbe:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: -105.0
+        y: -30.0
+      rotation: 0
+    a59ba5c3:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 45.0
+        y: 285.0
+      rotation: 0
+    elec/src/well-bouy01.ato:WellBouy01::r_ds:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 45.0
+        y: 225.0
+      rotation: 0
+    elec/src/well-bouy01.ato:WellBouy01::r_ph_bot:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 495.0
+        y: -60.0
+      rotation: 0
+    elec/src/well-bouy01.ato:WellBouy01::r_ph_top:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 330.0
+        y: -45.0
+      rotation: 0
+    elec/src/well-bouy01.ato:WellBouy01::r_scl:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 255.0
+        y: 75.0
+      rotation: 0
+    elec/src/well-bouy01.ato:WellBouy01::r_sda:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 255.0
+        y: 150.0
+      rotation: 0
+    elec/src/well-bouy01.ato:WellBouy01::r_turb_bot:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: -30.0
+        y: -60.0
+      rotation: 0
+    elec/src/well-bouy01.ato:WellBouy01::r_turb_top:
+      mirror_x: false
+      mirror_y: false
+      position:
+        x: 60.0
+        y: 90.0
+      rotation: 0
