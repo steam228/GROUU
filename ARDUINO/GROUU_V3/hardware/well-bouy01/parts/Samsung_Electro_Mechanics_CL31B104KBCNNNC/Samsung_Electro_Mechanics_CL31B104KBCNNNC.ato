@@ -1,0 +1,21 @@
+import has_datasheet
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Samsung_Electro_Mechanics_CL31B104KBCNNNC_package:
+    """100nF (104) ±10% 50V"""
+
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C24497", date="2026-07-03T11:40:33.453195+00:00", checksum="0101ce5b0382bd80347195f2d715899753fe1ff3680c73b91566059a6f2287c5">
+
+    trait is_atomic_part<manufacturer="Samsung Electro-Mechanics", partnumber="CL31B104KBCNNNC", footprint="C1206.kicad_mod", symbol="CL31B104KBCNNNC.kicad_sym", model="C1206_L3.2-W1.6-H1.3.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C24497", manufacturer="Samsung Electro-Mechanics", partno="CL31B104KBCNNNC">
+    trait has_designator_prefix<prefix="C">
+    trait has_datasheet<datasheet="https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL31B104KBCNNNC_C24497.pdf">
+
+    # pins
+    pin 1
+    pin 2

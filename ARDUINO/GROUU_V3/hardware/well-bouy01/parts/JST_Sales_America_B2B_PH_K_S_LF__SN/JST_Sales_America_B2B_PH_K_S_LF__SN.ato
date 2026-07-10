@@ -1,0 +1,20 @@
+import has_datasheet
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+
+component JST_Sales_America_B2B_PH_K_S_LF__SN_package:
+    # Manually customized (added named pin aliases p1/p2) -> auto-gen trait removed.
+
+    trait is_atomic_part<manufacturer="JST Sales America", partnumber="B2B-PH-K-S(LF)(SN)", footprint="CONN-TH_B2B-PH-K-S.kicad_mod", symbol="B2B-PH-K-S(LF)(SN).kicad_sym", model="CONN-TH_PH2.00-LI-2P.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C131337", manufacturer="JST Sales America", partno="B2B-PH-K-S(LF)(SN)">
+    trait has_designator_prefix<prefix="CN">
+    trait has_datasheet<datasheet="https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-B2B-PH-K-S-LF-SN_C131337.pdf">
+
+    # pins
+    pin 1
+    pin 2
+
+    # named aliases for wiring
+    signal p1 ~ pin 1
+    signal p2 ~ pin 2

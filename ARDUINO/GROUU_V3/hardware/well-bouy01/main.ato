@@ -1,0 +1,185 @@
+"""WellBouy rev-A carrier - atopile 0.15.x.
+
+ADS1115 (I2C) + sensor dividers + DS18B20 pull-up + probe/power connectors.
+Still to add: XIAO 2x7 socket, 5V load switch, reverse-polarity, M4 holes.
+All passives 1206 (hand-solder).
+"""
+
+import Resistor
+import Capacitor
+from "parts/Texas_Instruments_ADS1115IDGSR/Texas_Instruments_ADS1115IDGSR.ato" import Texas_Instruments_ADS1115IDGSR_package
+from "parts/JST_Sales_America_B2B_PH_K_S_LF__SN/JST_Sales_America_B2B_PH_K_S_LF__SN.ato" import JST_Sales_America_B2B_PH_K_S_LF__SN_package
+from "parts/Cixi_Kefa_Elec_KF301_5_0_3P/Cixi_Kefa_Elec_KF301_5_0_3P.ato" import Cixi_Kefa_Elec_KF301_5_0_3P_package
+from "parts/Alpha___Omega_Semicon_AO3401A/Alpha___Omega_Semicon_AO3401A.ato" import Alpha___Omega_Semicon_AO3401A_package
+from "parts/PUOLOP_2N7002_SOT23/PUOLOP_2N7002_SOT23.ato" import PUOLOP_2N7002_SOT23_package
+from "parts/XIAO_ESP32S3/XIAO_ESP32S3.ato" import XIAO_ESP32S3
+from "parts/XKB_Connectivity_X2011WV_04A_N0SN/XKB_Connectivity_X2011WV_04A_N0SN.ato" import XKB_Connectivity_X2011WV_04A_N0SN_package
+
+module WellBouy:
+    # --- rails + buses ---
+    signal gnd
+    signal v3v3
+    signal v5v_sw          # gated 5V to TDS/pH modules + turbidity
+    signal sensor_pwr_en   # XIAO GPIO -> load-switch enable
+    signal sda
+    signal scl
+
+    # --- I2C pull-ups to 3V3 (4.7k) ---
+    r_sda = new Resistor
+    r_sda.resistance = 4.7kohm +/- 5%
+    r_sda.package = "1206"
+    r_sda.unnamed[0] ~ sda
+    r_sda.unnamed[1] ~ v3v3
+
+    r_scl = new Resistor
+    r_scl.resistance = 4.7kohm +/- 5%
+    r_scl.package = "1206"
+    r_scl.unnamed[0] ~ scl
+    r_scl.unnamed[1] ~ v3v3
+
+    # --- ADS1115 (ADDR->GND => 0x48) ---
+    ads = new Texas_Instruments_ADS1115IDGSR_package
+    ads.VDD ~ v3v3
+    ads.GND ~ gnd
+    ads.SDA ~ sda
+    ads.SCL ~ scl
+    ads.ADDR ~ gnd
+
+    c_ads = new Capacitor
+    c_ads.capacitance = 100nF +/- 10%
+    c_ads.package = "1206"
+    c_ads.unnamed[0] ~ v3v3
+    c_ads.unnamed[1] ~ gnd
+
+    # --- sensor inputs ---
+    signal tds_in
+    signal turb_in
+    signal ph_in
+    signal ds_data
+
+    # TDS: ~0-2.3 V, within range -> AIN0 direct
+    tds_in ~ ads.AIN0
+
+    # Turbidity divider 10k/6.8k -> AIN1
+    r_turb_top = new Resistor
+    r_turb_top.resistance = 10kohm +/- 1%
+    r_turb_top.package = "1206"
+    r_turb_bot = new Resistor
+    r_turb_bot.resistance = 6.8kohm +/- 1%
+    r_turb_bot.package = "1206"
+    turb_in ~ r_turb_top.unnamed[0]
+    r_turb_top.unnamed[1] ~ ads.AIN1
+    r_turb_top.unnamed[1] ~ r_turb_bot.unnamed[0]
+    r_turb_bot.unnamed[1] ~ gnd
+
+    # pH divider 10k/18k -> AIN2
+    r_ph_top = new Resistor
+    r_ph_top.resistance = 10kohm +/- 1%
+    r_ph_top.package = "1206"
+    r_ph_bot = new Resistor
+    r_ph_bot.resistance = 18kohm +/- 1%
+    r_ph_bot.package = "1206"
+    ph_in ~ r_ph_top.unnamed[0]
+    r_ph_top.unnamed[1] ~ ads.AIN2
+    r_ph_top.unnamed[1] ~ r_ph_bot.unnamed[0]
+    r_ph_bot.unnamed[1] ~ gnd
+
+    # --- DS18B20 pull-up 4.7k ---
+    r_ds = new Resistor
+    r_ds.resistance = 4.7kohm +/- 5%
+    r_ds.package = "1206"
+    r_ds.unnamed[0] ~ ds_data
+    r_ds.unnamed[1] ~ v3v3
+
+    # --- 5V input from the external power module (DFR1026: solar+battery -> 5V) ---
+    signal v5v_raw
+    j_5vin = new JST_Sales_America_B2B_PH_K_S_LF__SN_package
+    j_5vin.p1 ~ v5v_raw     # 5V from the DFR1026 output
+    j_5vin.p2 ~ gnd
+
+    # --- probe / module screw terminals (PWR / SIG / GND) ---
+    tb_ds = new Cixi_Kefa_Elec_KF301_5_0_3P_package
+    tb_ds.p1 ~ v3v3
+    tb_ds.p2 ~ ds_data
+    tb_ds.p3 ~ gnd
+
+    tb_turb = new Cixi_Kefa_Elec_KF301_5_0_3P_package
+    tb_turb.p1 ~ v5v_sw
+    tb_turb.p2 ~ turb_in
+    tb_turb.p3 ~ gnd
+
+    tb_tds = new Cixi_Kefa_Elec_KF301_5_0_3P_package
+    tb_tds.p1 ~ v5v_sw
+    tb_tds.p2 ~ tds_in
+    tb_tds.p3 ~ gnd
+
+    tb_ph = new Cixi_Kefa_Elec_KF301_5_0_3P_package
+    tb_ph.p1 ~ v5v_sw
+    tb_ph.p2 ~ ph_in
+    tb_ph.p3 ~ gnd
+
+    # =====================================================================
+    #  Power switching
+    # =====================================================================
+
+    # --- reverse-polarity protection on the 5V input (high-side P-FET) ---
+    q_revp = new Alpha___Omega_Semicon_AO3401A_package
+    q_revp.D ~ v5v_raw
+    q_revp.S ~ v5v
+    q_revp.G ~ gnd
+
+    # --- 5V high-side load switch: gates v5v_sw from v5v via sensor_pwr_en ---
+    signal v5v             # 5V rail from the power-manager module
+    signal pfet_gate
+
+    q_pfet = new Alpha___Omega_Semicon_AO3401A_package
+    q_pfet.S ~ v5v
+    q_pfet.D ~ v5v_sw
+    q_pfet.G ~ pfet_gate
+
+    r_pfet_pu = new Resistor       # pull gate to v5v -> P-FET OFF by default
+    r_pfet_pu.resistance = 100kohm +/- 5%
+    r_pfet_pu.package = "1206"
+    r_pfet_pu.unnamed[0] ~ pfet_gate
+    r_pfet_pu.unnamed[1] ~ v5v
+
+    q_nfet = new PUOLOP_2N7002_SOT23_package   # GPIO high -> pulls gate low -> ON
+    q_nfet.D ~ pfet_gate
+    q_nfet.S ~ gnd
+    q_nfet.G ~ sensor_pwr_en
+
+    r_en_pd = new Resistor         # keep enable low when GPIO hi-Z (deep sleep)
+    r_en_pd.resistance = 100kohm +/- 5%
+    r_en_pd.package = "1206"
+    r_en_pd.unnamed[0] ~ sensor_pwr_en
+    r_en_pd.unnamed[1] ~ gnd
+
+    # =====================================================================
+    #  XIAO ESP32-S3 (MCU; Wio-SX1262 radio stacks on top, uses D8-D10 SPI)
+    # =====================================================================
+    xiao = new XIAO_ESP32S3
+    xiao.P3V3 ~ v3v3
+    xiao.GND  ~ gnd
+    xiao.P5V  ~ v5v
+    xiao.D4   ~ sda            # GPIO5 / SDA
+    xiao.D5   ~ scl            # GPIO6 / SCL
+    xiao.D3   ~ ds_data        # GPIO4 / DS18B20 1-wire
+    xiao.D0   ~ sensor_pwr_en  # GPIO1 / load-switch enable
+    # free for Grove expansion: D1 (GPIO2), D2 (GPIO3), D6 (GPIO43), D7 (GPIO44)
+
+    # =====================================================================
+    #  Grove expansion connectors (2.0mm 4-pin, VCC = 3V3)
+    # =====================================================================
+    # Grove 1: I2C - shares the ADS bus; plug in any I2C sensor
+    grove_i2c = new XKB_Connectivity_X2011WV_04A_N0SN_package
+    grove_i2c.p1 ~ scl        # SIG1 = SCL
+    grove_i2c.p2 ~ sda        # SIG2 = SDA
+    grove_i2c.p3 ~ v3v3       # VCC
+    grove_i2c.p4 ~ gnd
+
+    # Grove 2: analog/digital on free XIAO pins D1 (GPIO2) / D2 (GPIO3)
+    grove_aux = new XKB_Connectivity_X2011WV_04A_N0SN_package
+    grove_aux.p1 ~ xiao.D1    # SIG1 = GPIO2
+    grove_aux.p2 ~ xiao.D2    # SIG2 = GPIO3
+    grove_aux.p3 ~ v3v3       # VCC
+    grove_aux.p4 ~ gnd

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; background:#0e100e; }
+    a{ color:#65c298; text-decoration:none; }
+    a:hover{ color:#8fd6b4; }
+    ::-webkit-scrollbar{ width:10px; height:10px; }
+    ::-webkit-scrollbar-thumb{ background:#2c312c; border-radius:6px; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh;background:#141715;color:#f6f5f1;font-family:'Space Grotesk',sans-serif;padding:34px 40px 48px;">
+  <div style="max-width:1480px;margin:0 auto;">
+
+    <!-- ── HEADER ── -->
+    <header style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid #262b26;margin-bottom:28px;">
+      <div style="display:flex;align-items:center;gap:26px;">
+        <img src="assets/wordmark-white.svg" alt="GROUU" style="height: 49px; width: 126px">
+        <div style="width:1px;height:40px;background:#2c312c;"></div>
+        <div>
+          <div style="font-size:27px;font-weight:600;letter-spacing:-0.01em;line-height:1.1;">Well-Water Monitor</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#8a908a;letter-spacing:0.06em;margin-top:4px;">NODE-01 · Quinta well · Porto</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:26px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="width:9px;height:9px;border-radius:50%;background:{{ liveColor }};box-shadow:0 0 0 4px rgba(101,194,152,0.15);"></span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.1em;text-transform:uppercase;color:#c9ccc7;">{{ liveLabel }}</span>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#8a908a;">{{ clock }}</div>
+        <button onClick="{{ toggleLive }}" style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:#f6f5f1;background:transparent;border:1px solid #3a3f3a;border-radius:100px;padding:9px 20px;cursor:pointer;">{{ liveBtn }}</button>
+      </div>
+    </header>
+
+    <!-- ── ROW 1 · CURRENT READINGS ── -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:18px;">
+      <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="4">
+        <div style="background:#1b201b;border:1px solid #262b26;border-top:3px solid {{ m.color }};border-radius:10px;padding:24px 26px 8px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.12em;text-transform:uppercase;color:#9aa09a;">{{ m.label }}</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:{{ m.color }};background:{{ m.chipBg }};border-radius:100px;padding:5px 12px;">{{ m.statusLabel }}</span>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:8px;">
+            <span style="font-size:52px;font-weight:600;letter-spacing:-0.02em;line-height:1;font-variant-numeric:tabular-nums;">{{ m.value }}</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:19px;color:#8a908a;">{{ m.unit }}</span>
+          </div>
+          <div style="margin-top:14px;height:46px;">{{ m.spark }}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6f756f;border-top:1px solid #23281f;padding:8px 0 9px;">{{ m.rangeNote }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- ── ROW 2 · HISTORICAL + STATUS ── -->
+    <div style="display:grid;grid-template-columns:1fr 372px;gap:18px;">
+
+      <!-- Historical chart -->
+      <div style="background:#1b201b;border:1px solid #262b26;border-radius:10px;padding:26px 28px 22px;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:22px;">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#8a908a;margin-bottom:8px;">History</div>
+            <div style="display:flex;align-items:baseline;gap:14px;">
+              <span style="font-size:30px;font-weight:600;letter-spacing:-0.01em;">{{ selName }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#8a908a;">{{ selUnit }}</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <sc-for list="{{ ranges }}" as="r" hint-placeholder-count="3">
+              <button onClick="{{ r.onClick }}" style="{{ r.style }}">{{ r.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- metric selector tabs -->
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+          <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+            <button onClick="{{ t.onClick }}" style="{{ t.style }}">{{ t.label }}</button>
+          </sc-for>
+        </div>
+
+        <div style="flex:1;min-height:300px;">{{ bigChart }}</div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px;border-top:1px solid #262b26;padding-top:18px;">
+          <div><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#6f756f;margin-bottom:6px;">Min</div><div style="font-size:24px;font-weight:600;font-variant-numeric:tabular-nums;">{{ selMin }}</div></div>
+          <div><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#6f756f;margin-bottom:6px;">Average</div><div style="font-size:24px;font-weight:600;font-variant-numeric:tabular-nums;">{{ selAvg }}</div></div>
+          <div><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#6f756f;margin-bottom:6px;">Max</div><div style="font-size:24px;font-weight:600;font-variant-numeric:tabular-nums;">{{ selMax }}</div></div>
+        </div>
+      </div>
+
+      <!-- Sensor status column -->
+      <div style="display:flex;flex-direction:column;gap:18px;">
+
+        <!-- LoRa link -->
+        <div style="background:#1b201b;border:1px solid #262b26;border-radius:10px;padding:24px 26px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#8a908a;">LoRa link</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#65c298;background:rgba(101,194,152,0.12);border-radius:100px;padding:5px 12px;">{{ linkQuality }}</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:16px;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6f756f;margin-bottom:6px;">RSSI</div>
+              <div style="display:flex;align-items:baseline;gap:6px;"><span style="font-size:30px;font-weight:600;font-variant-numeric:tabular-nums;">{{ rssi }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#8a908a;">dBm</span></div>
+            </div>
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6f756f;margin-bottom:6px;">SNR</div>
+              <div style="display:flex;align-items:baseline;gap:6px;"><span style="font-size:30px;font-weight:600;font-variant-numeric:tabular-nums;">{{ snr }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#8a908a;">dB</span></div>
+            </div>
+          </div>
+          <div style="height:56px;">{{ rssiChart }}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6f756f;margin-top:6px;">RSSI over last hour · SF7 · 868 MHz</div>
+        </div>
+
+        <!-- Battery -->
+        <div style="background:#1b201b;border:1px solid #262b26;border-radius:10px;padding:24px 26px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#8a908a;">Battery</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8a908a;">{{ battVoltage }} V · solar</span>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:16px;">
+            <span style="font-size:44px;font-weight:600;letter-spacing:-0.02em;line-height:1;font-variant-numeric:tabular-nums;">{{ battPct }}</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:18px;color:#8a908a;">%</span>
+          </div>
+          <div style="height:12px;background:#23281f;border-radius:100px;overflow:hidden;">
+            <div style="height:100%;width:{{ battWidth }};background:linear-gradient(90deg,#008a60,#65c298);border-radius:100px;"></div>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6f756f;margin-top:10px;">Charging · est. full in 3.2 h</div>
+        </div>
+
+        <!-- Uplink stats -->
+        <div style="background:#1b201b;border:1px solid #262b26;border-radius:10px;padding:22px 26px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#8a908a;margin-bottom:16px;">Uplinks</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:18px;color:#c9ccc7;">Last packet</span><span style="font-family:'IBM Plex Mono',monospace;font-size:17px;color:#65c298;">{{ lastSeen }}</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:18px;color:#c9ccc7;">Received (24h)</span><span style="font-family:'IBM Plex Mono',monospace;font-size:17px;color:#f6f5f1;font-variant-numeric:tabular-nums;">{{ packetsRx }}</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:18px;color:#c9ccc7;">Lost</span><span style="font-family:'IBM Plex Mono',monospace;font-size:17px;color:#f6f5f1;font-variant-numeric:tabular-nums;">{{ packetsLost }}</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:18px;color:#c9ccc7;">Interval</span><span style="font-family:'IBM Plex Mono',monospace;font-size:17px;color:#f6f5f1;">15 min</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer style="display:flex;align-items:center;justify-content:space-between;margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5f655f;letter-spacing:0.04em;">
+      <span>XIAO ESP32-S3 + Wio-SX1262 → The Things Network → RPi 4 · Mosquitto / Node-RED / InfluxDB / Grafana</span>
+      <span>Data simulated for preview</span>
+    </footer>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1480,&quot;height&quot;:940},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#65c298&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Appearance&quot;},&quot;live&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;},&quot;defaultRange&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1h&quot;,&quot;24h&quot;,&quot;7d&quot;],&quot;default&quot;:&quot;24h&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+class Component extends DCLogic {
+  state = {
+    range: this.props.defaultRange ?? '24h',
+    sel: 'turbidity',
+    live: this.props.live ?? true,
+    tick: 0,
+    data: null,
+    now: Date.now(),
+  };
+
+  // ── config ──
+  targets = { temperature: 24.0, tds: 1208, turbidity: 2713, ph: 6.09, rssi: -36, snr: 9.8 };
+  vol = { temperature: 0.18, tds: 26, turbidity: 130, ph: 0.05, rssi: 2.6, snr: 0.45 };
+  meta = {
+    temperature: { label: 'Temperature', unit: '°C', dec: 1 },
+    tds:         { label: 'TDS',         unit: 'ppm', dec: 0 },
+    turbidity:   { label: 'Turbidity',   unit: 'NTU', dec: 0 },
+    ph:          { label: 'pH',          unit: '',    dec: 2 },
+  };
+  ranges = { '1h': 60, '24h': 48, '7d': 84 };
+  rangeTicks = {
+    '1h': ['-60m','-45m','-30m','-15m','now'],
+    '24h': ['-24h','-18h','-12h','-6h','now'],
+    '7d': ['-7d','-5d','-3d','-1d','now'],
+  };
+
+  accent(){ return this.props.accent ?? '#65c298'; }
+
+  componentDidMount(){
+    this.timer = setInterval(() => {
+      if (!this.state.live) { this.setState({ now: Date.now() }); return; }
+      this.setState(s => {
+        const d = this._clone(s.data || this._build(this.ranges[s.range]));
+        for (const k of Object.keys(d)) {
+          const arr = d[k];
+          const last = arr[arr.length - 1];
+          const next = this._step(k, last);
+          arr.push(next); arr.shift();
+        }
+        return { data: d, tick: s.tick + 1, now: Date.now() };
+      });
+    }, 2000);
+  }
+  componentWillUnmount(){ clearInterval(this.timer); }
+
+  _clone(d){ const o = {}; for (const k in d) o[k] = d[k].slice(); return o; }
+  _step(k, last){
+    const t = this.targets[k], v = this.vol[k];
+    let n = last + (Math.random()*2-1)*v + (t - last)*0.06;
+    if (k === 'ph') n = Math.max(3, Math.min(11, n));
+    if (k === 'temperature') n = Math.max(2, Math.min(40, n));
+    if (k === 'tds' || k === 'turbidity') n = Math.max(0, n);
+    if (k === 'rssi') n = Math.max(-120, Math.min(-20, n));
+    return n;
+  }
+  _build(n){
+    const keys = ['temperature','tds','turbidity','ph','rssi','snr'];
+    const d = {};
+    for (const k of keys){
+      const arr = new Array(n);
+      arr[n-1] = this.targets[k];
+      for (let i = n-2; i >= 0; i--){
+        arr[i] = this._step(k, arr[i+1]);
+      }
+      d[k] = arr;
+    }
+    return d;
+  }
+  _data(){ return this.state.data || (this._seed ??= this._build(this.ranges[this.state.range])); }
+
+  _fmt(k, v){
+    const dec = this.meta[k] ? this.meta[k].dec : 1;
+    if (k === 'tds' || k === 'turbidity') return Math.round(v).toLocaleString('en-US');
+    return v.toFixed(dec);
+  }
+
+  _status(k, v){
+    const G = this.accent(), A = '#e0b050', R = '#e07a5f';
+    if (k === 'temperature') return { color: G, label: 'Normal', bg: 'rgba(101,194,152,0.12)' };
+    if (k === 'tds')       return v < 600 ? {color:G,label:'Good',bg:'rgba(101,194,152,0.12)'} : v < 1000 ? {color:A,label:'Elevated',bg:'rgba(224,176,80,0.14)'} : {color:R,label:'High',bg:'rgba(224,122,95,0.15)'};
+    if (k === 'turbidity') return v < 5 ? {color:G,label:'Clear',bg:'rgba(101,194,152,0.12)'} : v < 50 ? {color:A,label:'Cloudy',bg:'rgba(224,176,80,0.14)'} : {color:R,label:'Turbid',bg:'rgba(224,122,95,0.15)'};
+    if (k === 'ph')        return (v >= 6.5 && v <= 8.5) ? {color:G,label:'Safe',bg:'rgba(101,194,152,0.12)'} : (v >= 6.0 && v < 6.5) || (v > 8.5 && v <= 9) ? {color:A,label:'Acidic',bg:'rgba(224,176,80,0.14)'} : {color:R,label:'Out of range',bg:'rgba(224,122,95,0.15)'};
+    return { color: G, label: '', bg: 'transparent' };
+  }
+  _note(k){
+    if (k === 'temperature') return 'Informational';
+    if (k === 'tds') return 'Drinking ideal < 600 ppm';
+    if (k === 'turbidity') return 'Drinking limit < 5 NTU';
+    if (k === 'ph') return 'Safe band 6.5 – 8.5';
+    return '';
+  }
+
+  // ── SVG chart builders ──
+  _path(arr, w, h, pad){
+    const min = Math.min(...arr), max = Math.max(...arr);
+    const span = (max - min) || 1;
+    const n = arr.length;
+    const x = i => (i/(n-1))*w;
+    const y = v => h - pad - ((v-min)/span)*(h - pad*2);
+    let line = '';
+    for (let i=0;i<n;i++) line += (i?'L':'M') + x(i).toFixed(1) + ' ' + y(arr[i]).toFixed(1);
+    const area = line + `L${w} ${h}L0 ${h}Z`;
+    return { line, area, lastX: x(n-1), lastY: y(arr[n-1]), min, max };
+  }
+  _spark(k, arr, color){
+    const W=300,H=46; const p=this._path(arr,W,H,4);
+    const id = 'sg_'+k;
+    const h = React.createElement;
+    return h('svg',{viewBox:`0 0 ${W} ${H}`,preserveAspectRatio:'none',style:{width:'100%',height:'100%',display:'block'}},
+      h('defs',null,h('linearGradient',{id,x1:'0',y1:'0',x2:'0',y2:'1'},
+        h('stop',{offset:'0%',stopColor:color,stopOpacity:0.28}),
+        h('stop',{offset:'100%',stopColor:color,stopOpacity:0}))),
+      h('path',{d:p.area,fill:`url(#${id})`}),
+      h('path',{d:p.line,fill:'none',stroke:color,strokeWidth:2,strokeLinejoin:'round',strokeLinecap:'round'}),
+      h('circle',{cx:p.lastX,cy:p.lastY,r:3,fill:color})
+    );
+  }
+  _bigChart(k, arr, color){
+    const W=960,H=300, padTop=18, padBot=34, padL=6;
+    const min=Math.min(...arr), max=Math.max(...arr), span=(max-min)||1;
+    const n=arr.length;
+    const x=i=>padL + (i/(n-1))*(W-padL*2);
+    const y=v=>H-padBot - ((v-min)/span)*(H-padTop-padBot);
+    let line=''; for(let i=0;i<n;i++) line+=(i?'L':'M')+x(i).toFixed(1)+' '+y(arr[i]).toFixed(1);
+    const area=line+`L${x(n-1)} ${H-padBot}L${x(0)} ${H-padBot}Z`;
+    const id='bg_'+k;
+    const h=React.createElement;
+    // gridlines: 4 rows
+    const grid=[]; const labels=[];
+    for(let g=0;g<=3;g++){
+      const gy=padTop + (g/3)*(H-padTop-padBot);
+      const val=max - (g/3)*span;
+      grid.push(h('line',{key:'l'+g,x1:padL,y1:gy,x2:W-padL,y2:gy,stroke:'#262b26',strokeWidth:1}));
+      labels.push(h('text',{key:'t'+g,x:W-padL-2,y:gy-5,textAnchor:'end',fontFamily:'IBM Plex Mono, monospace',fontSize:13,fill:'#6f756f'}, this._fmt(k,val)));
+    }
+    const ticks=this.rangeTicks[this.state.range];
+    const xlabels=ticks.map((t,i)=>h('text',{key:'x'+i,x:padL+(i/(ticks.length-1))*(W-padL*2),y:H-8,textAnchor:i===0?'start':i===ticks.length-1?'end':'middle',fontFamily:'IBM Plex Mono, monospace',fontSize:13,fill:'#6f756f'},t));
+    return h('svg',{viewBox:`0 0 ${W} ${H}`,preserveAspectRatio:'none',style:{width:'100%',height:'300px',display:'block'}},
+      h('defs',null,h('linearGradient',{id,x1:'0',y1:'0',x2:'0',y2:'1'},
+        h('stop',{offset:'0%',stopColor:color,stopOpacity:0.32}),
+        h('stop',{offset:'100%',stopColor:color,stopOpacity:0.02}))),
+      ...grid,
+      h('path',{d:area,fill:`url(#${id})`}),
+      h('path',{d:line,fill:'none',stroke:color,strokeWidth:2.4,strokeLinejoin:'round',strokeLinecap:'round'}),
+      h('circle',{cx:x(n-1),cy:y(arr[n-1]),r:4,fill:color}),
+      h('circle',{cx:x(n-1),cy:y(arr[n-1]),r:8,fill:color,opacity:0.22}),
+      ...labels, ...xlabels
+    );
+  }
+
+  renderVals(){
+    const d = this._data();
+    const acc = this.accent();
+    const keys = ['temperature','tds','turbidity','ph'];
+
+    const metrics = keys.map(k => {
+      const arr = d[k]; const cur = arr[arr.length-1];
+      const st = this._status(k, cur);
+      return {
+        key: k, label: this.meta[k].label, unit: this.meta[k].unit,
+        value: this._fmt(k, cur), color: st.color, statusLabel: st.label, chipBg: st.bg,
+        rangeNote: this._note(k),
+        spark: this._spark(k, arr, st.color),
+      };
+    });
+
+    // selected
+    const selK = this.state.sel;
+    const selArr = d[selK];
+    const selCur = selArr[selArr.length-1];
+    const selSt = this._status(selK, selCur);
+    const selColor = selSt.color;
+    const smin = Math.min(...selArr), smax = Math.max(...selArr);
+    const savg = selArr.reduce((a,b)=>a+b,0)/selArr.length;
+
+    // tabs
+    const tabBase = 'font-family:\'IBM Plex Mono\',monospace;font-size:16px;letter-spacing:0.04em;padding:9px 18px;border-radius:100px;cursor:pointer;transition:all .15s;';
+    const tabs = keys.map(k => ({
+      label: this.meta[k].label,
+      onClick: () => this.setState({ sel: k }),
+      style: k === selK
+        ? tabBase + `background:${acc};color:#0e100e;border:1px solid ${acc};font-weight:600;`
+        : tabBase + 'background:transparent;color:#9aa09a;border:1px solid #3a3f3a;',
+    }));
+
+    // ranges
+    const rgBase = 'font-family:\'IBM Plex Mono\',monospace;font-size:15px;letter-spacing:0.06em;padding:8px 16px;border-radius:8px;cursor:pointer;';
+    const ranges = Object.keys(this.ranges).map(r => ({
+      label: r,
+      onClick: () => this.setState({ range: r, data: null, _reseed: Math.random() }, () => { this._seed = null; }),
+      style: r === this.state.range
+        ? rgBase + `background:#262b26;color:#f6f5f1;border:1px solid #3a3f3a;`
+        : rgBase + 'background:transparent;color:#8a908a;border:1px solid transparent;',
+    }));
+
+    // link
+    const rssiCur = d.rssi[d.rssi.length-1];
+    const snrCur = d.snr[d.snr.length-1];
+    const linkQuality = rssiCur > -70 ? 'Excellent' : rssiCur > -100 ? 'Good' : 'Weak';
+
+    // battery drift for realism
+    const battPct = 87;
+    return {
+      // header
+      clock: new Date(this.state.now).toLocaleTimeString('en-GB'),
+      live: this.state.live,
+      liveLabel: this.state.live ? 'Live' : 'Paused',
+      liveColor: this.state.live ? acc : '#8a908a',
+      liveBtn: this.state.live ? 'Pause' : 'Resume',
+      toggleLive: () => this.setState(s => ({ live: !s.live })),
+
+      metrics,
+      ranges, tabs,
+
+      selName: this.meta[selK].label,
+      selUnit: this.meta[selK].unit || '—',
+      bigChart: this._bigChart(selK, selArr, selColor),
+      selMin: this._fmt(selK, smin),
+      selMax: this._fmt(selK, smax),
+      selAvg: this._fmt(selK, savg),
+
+      // link
+      rssi: Math.round(rssiCur),
+      snr: snrCur.toFixed(1),
+      linkQuality,
+      rssiChart: this._spark('rssi', d.rssi, acc),
+
+      // battery
+      battPct, battWidth: battPct + '%', battVoltage: '3.94',
+
+      // uplinks
+      lastSeen: 'now',
+      packetsRx: '94',
+      packetsLost: '0',
+    };
+  }
+}
+</script>
+</body>
+</html>

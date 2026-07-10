@@ -1,0 +1,20 @@
+import has_datasheet
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component PUOLOP_2N7002_SOT23_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C332103", date="2026-07-03T12:07:09.459228+00:00", checksum="5fbc6aed335e196e68b5900803ec259c3f6b6c2955a008decb8094136c97a584">
+
+    trait is_atomic_part<manufacturer="PUOLOP", partnumber="2N7002-SOT23", footprint="SOT-23_L2.9-W1.3-P1.90-LS2.4-BR.kicad_mod", symbol="2N7002-SOT23.kicad_sym", model="SOT-23-3P_L2.9-W1.3-H1.0-LS2.4-P0.95.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C332103", manufacturer="PUOLOP", partno="2N7002-SOT23">
+    trait has_designator_prefix<prefix="Q">
+    trait has_datasheet<datasheet="https://www.lcsc.com/datasheet/lcsc_datasheet_1912111437_PUOLOP-2N7002-SOT23_C332103.pdf">
+
+    # pins
+    signal D ~ pin 3
+    signal G ~ pin 1
+    signal S ~ pin 2

@@ -1,0 +1,19 @@
+import has_datasheet
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component FOJAN_FRC1206F1802TS_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C2933614", date="2026-07-03T11:46:43.188938+00:00", checksum="c8a1b0b48e14c8cfd113c5a5a8b214165a76a4d8795971266fc8a98f0b273178">
+
+    trait is_atomic_part<manufacturer="FOJAN", partnumber="FRC1206F1802TS", footprint="R1206.kicad_mod", symbol="FRC1206F1802TS.kicad_sym", model="R1206_L3.2-W1.6-H0.6.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2933614", manufacturer="FOJAN", partno="FRC1206F1802TS">
+    trait has_designator_prefix<prefix="R">
+    trait has_datasheet<datasheet="https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2308241113_FOJAN-FRC1206F1802TS_C2933614.pdf">
+
+    # pins
+    pin 2
+    pin 1

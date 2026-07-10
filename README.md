@@ -11,6 +11,7 @@ This Git repository also archives the personal development and learning process 
 **Let us know if you want to collaborate**
 
 ## Table of Contents
+1. [GROUU V3 — WellBouy (well-water LoRaWAN node)](#grouu-v3--wellbouy)
 1. [GROUU V2](#grouu-v2)
    - [Server Documentation - GROUU Server V2 Configuration](#server-documentation)
    - [Sensor Modules Documentation - GROUU V2 Sensor Modules Configuration](#sensor-modules-documentation)
@@ -21,6 +22,20 @@ This Git repository also archives the personal development and learning process 
 3. [Archived Projects](#archived-projects)
 4. [References](#references)
 
+
+## GROUU V3 — WellBouy
+
+A well-water-quality LoRaWAN sensor node (**XIAO ESP32-S3 + Wio-SX1262**): reads
+water **temperature / TDS / turbidity / pH**, encodes them as CayenneLPP, and
+uplinks to **The Things Network** (EU868, OTAA) while deep-sleeping between
+readings. On a **Raspberry Pi** the data flows TTN → Node-RED → InfluxDB 2 →
+Grafana, and a small public dashboard renders it live.
+
+📁 [/ARDUINO/GROUU_V3/](/ARDUINO/GROUU_V3/) · 📊 live dashboard: **https://grouuwell01.hacktoimprove.com**
+
+Full docs — hardware, firmware bring-up, calibration, data pipeline, the web
+dashboard, and the dedicated atopile PCB — are in
+[ARDUINO/GROUU_V3/README.md](/ARDUINO/GROUU_V3/README.md).
 
 ## GROUU V2
 

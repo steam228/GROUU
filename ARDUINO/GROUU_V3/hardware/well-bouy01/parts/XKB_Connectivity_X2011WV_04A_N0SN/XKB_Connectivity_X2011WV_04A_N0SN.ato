@@ -1,0 +1,27 @@
+import has_datasheet
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component XKB_Connectivity_X2011WV_04A_N0SN_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C397444", date="2026-07-04T13:58:31.109946+00:00", checksum="ecb114f3c8c3edb3198f5bef48e94d5e2d40358872e0c76c7be9f590d185f34e">
+
+    trait is_atomic_part<manufacturer="XKB Connectivity", partnumber="X2011WV-04A-N0SN", footprint="CONN-TH_4P-P2.00_L5.1-W10.0.kicad_mod", symbol="X2011WV-04A-N0SN.kicad_sym", model="CONN-TH_4P-P2.00_L5.1-W10.0.stp">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C397444", manufacturer="XKB Connectivity", partno="X2011WV-04A-N0SN">
+    trait has_designator_prefix<prefix="CN">
+    trait has_datasheet<datasheet="https://www.lcsc.com/datasheet/lcsc_datasheet_2110151730_XKB-Connection-X2011WV-04A-N0SN_C397444.pdf">
+
+    # pins
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+
+    # named aliases for wiring (Grove pinout: SIG1 / SIG2 / VCC / GND)
+    signal p1 ~ pin 1
+    signal p2 ~ pin 2
+    signal p3 ~ pin 3
+    signal p4 ~ pin 4

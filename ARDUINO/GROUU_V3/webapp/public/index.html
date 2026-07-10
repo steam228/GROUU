@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GROUU · Well-Water Monitor</title>
+  <link rel="icon" href="assets/emblem-green.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#141715; --panel:#1b201b; --panel2:#23281f; --border:#262b26;
+      --ink:#f6f5f1; --muted:#8a908a; --muted2:#6f756f; --muted3:#9aa09a; --c9:#c9ccc7;
+      --accent:#65c298; --amber:#e0b050; --red:#e07a5f; --div:#2c312c;
+      color-scheme: dark;
+    }
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; background:#0e100e; }
+    body{ min-height:100vh; background:var(--bg); color:var(--ink);
+          font-family:'Space Grotesk',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+    a{ color:var(--accent); text-decoration:none; } a:hover{ color:#8fd6b4; }
+    ::-webkit-scrollbar{ width:10px; height:10px; }
+    ::-webkit-scrollbar-thumb{ background:var(--div); border-radius:6px; }
+    .mono{ font-family:'IBM Plex Mono',monospace; }
+    .wrap{ max-width:1480px; margin:0 auto; padding:34px 40px 48px; }
+    .panel{ background:var(--panel); border:1px solid var(--border); border-radius:10px; }
+    .eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:15px; letter-spacing:.14em;
+              text-transform:uppercase; color:var(--muted); }
+    .eyebrow2{ font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:.1em;
+               text-transform:uppercase; color:var(--muted2); margin-bottom:6px; }
+    .tabnum{ font-variant-numeric:tabular-nums; }
+
+    /* header */
+    .hdr{ display:flex; align-items:flex-end; justify-content:space-between; gap:30px; flex-wrap:wrap;
+          padding-bottom:26px; border-bottom:1px solid var(--border); margin-bottom:28px; }
+    .hdr-left{ display:flex; align-items:center; gap:26px; }
+    .wordmark{ height:49px; width:126px; }
+    .vdiv{ width:1px; height:40px; background:var(--div); }
+    .hdr-title{ font-size:27px; font-weight:600; letter-spacing:-.01em; line-height:1.1; }
+    .hdr-sub{ font-size:16px; color:var(--muted); letter-spacing:.06em; margin-top:4px; }
+    .hdr-right{ display:flex; align-items:center; gap:26px; }
+    .live{ display:flex; align-items:center; gap:10px; }
+    .live-dot{ width:9px; height:9px; border-radius:50%; background:var(--accent);
+               box-shadow:0 0 0 4px rgba(101,194,152,.15); }
+    .live-label{ font-size:16px; letter-spacing:.1em; text-transform:uppercase; color:var(--c9); }
+    .clock{ font-size:16px; color:var(--muted); }
+    .btn-pill{ font-family:'IBM Plex Mono',monospace; font-size:15px; letter-spacing:.08em;
+               text-transform:uppercase; color:var(--ink); background:transparent;
+               border:1px solid #3a3f3a; border-radius:100px; padding:9px 20px; cursor:pointer; }
+    .btn-pill:hover{ border-color:#4d534d; }
+
+    /* row 1 metrics */
+    .metrics{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-bottom:18px; }
+    .metric{ background:var(--panel); border:1px solid var(--border); border-top:3px solid var(--accent);
+             border-radius:10px; padding:24px 26px 8px; display:flex; flex-direction:column; }
+    .metric-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+    .metric-label{ font-family:'IBM Plex Mono',monospace; font-size:16px; letter-spacing:.12em;
+                   text-transform:uppercase; color:var(--muted3); }
+    .chip{ font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.06em;
+           text-transform:uppercase; border-radius:100px; padding:5px 12px; }
+    .metric-val{ display:flex; align-items:baseline; gap:8px; }
+    .metric-val .num{ font-size:52px; font-weight:600; letter-spacing:-.02em; line-height:1;
+                      font-variant-numeric:tabular-nums; }
+    .metric-val .unit{ font-family:'IBM Plex Mono',monospace; font-size:19px; color:var(--muted); }
+    .spark{ margin-top:14px; height:46px; }
+    .metric-note{ font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--muted2);
+                  border-top:1px solid var(--panel2); padding:8px 0 9px; margin-top:14px; }
+
+    /* row 2 */
+    .row2{ display:grid; grid-template-columns:1fr 372px; gap:18px; }
+    .history{ padding:26px 28px 22px; display:flex; flex-direction:column; }
+    .hist-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:20px;
+                flex-wrap:wrap; margin-bottom:22px; }
+    .hist-title{ display:flex; align-items:baseline; gap:14px; font-size:30px; font-weight:600; letter-spacing:-.01em; }
+    .hist-title .sel-unit{ font-size:16px; color:var(--muted); font-weight:400; }
+    .ranges{ display:flex; gap:8px; }
+    .tabs{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+    .rbtn{ font-family:'IBM Plex Mono',monospace; font-size:15px; letter-spacing:.06em;
+           padding:8px 16px; border-radius:8px; cursor:pointer; background:transparent;
+           color:var(--muted); border:1px solid transparent; }
+    .rbtn.on{ background:var(--border); color:var(--ink); border-color:#3a3f3a; }
+    .tab{ font-family:'IBM Plex Mono',monospace; font-size:16px; letter-spacing:.04em;
+          padding:9px 18px; border-radius:100px; cursor:pointer; background:transparent;
+          color:var(--muted3); border:1px solid #3a3f3a; transition:all .15s; }
+    .tab.on{ background:var(--accent); color:#0e100e; border-color:var(--accent); font-weight:600; }
+    .big-chart{ flex:1; min-height:300px; }
+    .stats3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px;
+             border-top:1px solid var(--border); padding-top:18px; }
+    .stat-v{ font-size:24px; font-weight:600; font-variant-numeric:tabular-nums; }
+
+    /* status column */
+    .statuscol{ display:flex; flex-direction:column; gap:18px; }
+    .scard{ padding:24px 26px; }
+    .scard-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
+    .ok-chip{ font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:.06em;
+              text-transform:uppercase; color:var(--accent); background:rgba(101,194,152,.12);
+              border-radius:100px; padding:5px 12px; }
+    .two{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:16px; }
+    .big-num{ display:flex; align-items:baseline; gap:6px; }
+    .big-num .n{ font-size:30px; font-weight:600; font-variant-numeric:tabular-nums; }
+    .big-num .u{ font-family:'IBM Plex Mono',monospace; font-size:15px; color:var(--muted); }
+    .rssi-chart{ height:56px; }
+    .foot-note{ font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--muted2); margin-top:6px; }
+    .batt-big{ display:flex; align-items:baseline; gap:8px; margin-bottom:16px; }
+    .batt-big .n{ font-size:44px; font-weight:600; letter-spacing:-.02em; line-height:1; font-variant-numeric:tabular-nums; }
+    .batt-big .u{ font-family:'IBM Plex Mono',monospace; font-size:18px; color:var(--muted); }
+    .batt-track{ height:12px; background:var(--panel2); border-radius:100px; overflow:hidden; }
+    .batt-fill{ height:100%; width:0%; background:linear-gradient(90deg,#008a60,#65c298); border-radius:100px; }
+    .ulist{ display:flex; flex-direction:column; gap:12px; }
+    .urow{ display:flex; align-items:center; justify-content:space-between; }
+    .urow .k{ font-size:18px; color:var(--c9); }
+    .urow .v{ font-family:'IBM Plex Mono',monospace; font-size:17px; color:var(--ink); font-variant-numeric:tabular-nums; }
+    .urow .v.accent{ color:var(--accent); }
+
+    footer.credits{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+             margin-top:26px; font-family:'IBM Plex Mono',monospace; font-size:13px;
+             color:#5f655f; letter-spacing:.04em; }
+
+    /* responsive */
+    @media (max-width:1120px){
+      .row2{ grid-template-columns:1fr; }
+      .metrics{ grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width:640px){
+      .wrap{ padding:22px 18px 32px; }
+      .metrics{ grid-template-columns:1fr; }
+      .hdr-right{ gap:16px; }
+      .metric-val .num{ font-size:44px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <header class="hdr">
+      <div class="hdr-left">
+        <img class="wordmark" src="assets/wordmark-white.svg" alt="GROUU" />
+        <div class="vdiv"></div>
+        <div>
+          <div class="hdr-title">Well-Water Monitor</div>
+          <div class="hdr-sub mono">NODE-01 · Casais da Espinheira, Serra do Bouro</div>
+        </div>
+      </div>
+      <div class="hdr-right">
+        <div class="live"><span class="live-dot" id="live-dot"></span><span class="live-label" id="live-label">Live</span></div>
+        <div class="clock" id="clock">--:--:--</div>
+        <button class="btn-pill" id="live-btn">Pause</button>
+      </div>
+    </header>
+
+    <!-- ROW 1 · current readings -->
+    <div class="metrics" id="metrics"></div>
+
+    <!-- ROW 2 · history + status -->
+    <div class="row2">
+      <div class="panel history">
+        <div class="hist-head">
+          <div>
+            <div class="eyebrow">History</div>
+            <div class="hist-title"><span id="sel-name">Turbidity</span><span class="sel-unit mono" id="sel-unit">NTU</span></div>
+          </div>
+          <div class="ranges" id="ranges"></div>
+        </div>
+        <div class="tabs" id="tabs"></div>
+        <div class="big-chart" id="big-chart"></div>
+        <div class="stats3">
+          <div><div class="eyebrow2">Min</div><div class="stat-v" id="sel-min">–</div></div>
+          <div><div class="eyebrow2">Average</div><div class="stat-v" id="sel-avg">–</div></div>
+          <div><div class="eyebrow2">Max</div><div class="stat-v" id="sel-max">–</div></div>
+        </div>
+      </div>
+
+      <div class="statuscol">
+        <!-- LoRa link -->
+        <div class="panel scard">
+          <div class="scard-head">
+            <span class="eyebrow">LoRa link</span>
+            <span class="ok-chip" id="link-quality">—</span>
+          </div>
+          <div class="two">
+            <div>
+              <div class="eyebrow2">RSSI</div>
+              <div class="big-num"><span class="n" id="rssi">–</span><span class="u">dBm</span></div>
+            </div>
+            <div>
+              <div class="eyebrow2">SNR</div>
+              <div class="big-num"><span class="n" id="snr">–</span><span class="u">dB</span></div>
+            </div>
+          </div>
+          <div class="rssi-chart" id="rssi-chart"></div>
+          <div class="foot-note" id="link-note">RSSI over range · EU868</div>
+        </div>
+
+        <!-- Battery (telemetry pending) -->
+        <div class="panel scard">
+          <div class="scard-head">
+            <span class="eyebrow">Battery</span>
+            <span class="mono" style="font-size:14px;color:var(--muted);">solar</span>
+          </div>
+          <div class="batt-big"><span class="n" id="batt-pct">—</span><span class="u">%</span></div>
+          <div class="batt-track"><div class="batt-fill" id="batt-fill"></div></div>
+          <div class="foot-note">No battery telemetry in the uplink yet — coming with the power board.</div>
+        </div>
+
+        <!-- Uplinks -->
+        <div class="panel scard">
+          <div class="eyebrow" style="margin-bottom:16px;">Uplinks</div>
+          <div class="ulist">
+            <div class="urow"><span class="k">Last packet</span><span class="v accent" id="last-seen">–</span></div>
+            <div class="urow"><span class="k">Received (24h)</span><span class="v" id="packets-rx">–</span></div>
+            <div class="urow"><span class="k">Lost</span><span class="v" id="packets-lost">—</span></div>
+            <div class="urow"><span class="k">Interval</span><span class="v" id="interval">30 min</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="credits">
+      <span>XIAO ESP32-S3 + Wio-SX1262 → The Things Network → RPi · Mosquitto / Node-RED / InfluxDB</span>
+      <span id="source-note">Live</span>
+    </footer>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

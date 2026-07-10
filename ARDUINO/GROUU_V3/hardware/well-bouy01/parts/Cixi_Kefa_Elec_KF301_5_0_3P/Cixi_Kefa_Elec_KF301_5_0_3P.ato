@@ -1,0 +1,22 @@
+import has_datasheet
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+
+component Cixi_Kefa_Elec_KF301_5_0_3P_package:
+    # Manually customized (added named pin aliases p1/p2/p3) -> auto-gen trait removed.
+
+    trait is_atomic_part<manufacturer="Cixi Kefa Elec", partnumber="KF301-5.0-3P", footprint="CONN-TH_3P-P5.00_KF301-5.0-3P.kicad_mod", symbol="KF301-5.0-3P.kicad_sym", model="CONN-TH_3P-P5.00_KF301-5.0-3P.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C474882", manufacturer="Cixi Kefa Elec", partno="KF301-5.0-3P">
+    trait has_designator_prefix<prefix="U">
+    trait has_datasheet<datasheet="https://www.lcsc.com/datasheet/lcsc_datasheet_2303171000_Cixi-Kefa-Elec-KF301-5-0-3P_C474882.pdf">
+
+    # pins
+    pin 1
+    pin 2
+    pin 3
+
+    # named aliases for wiring
+    signal p1 ~ pin 1
+    signal p2 ~ pin 2
+    signal p3 ~ pin 3
