@@ -8,119 +8,105 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{ margin:0; background:#e9f2ec; }
-    a{ color:#008a60; text-decoration:none; }
-    a:hover{ color:#00734f; }
-    ::selection{ background:#65c298; color:#122018; }
-    .imgslot{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
-              text-align:center; background:repeating-linear-gradient(45deg,#dcece2,#dcece2 12px,#d5e6dc 12px,#d5e6dc 24px);
-              color:#5c6b60; border:1.5px dashed #9dbfaa; }
-    .imgslot .ico{ font-size:30px; opacity:.65; }
-    .imgslot .cap{ font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.03em; padding:0 18px; max-width:320px; line-height:1.4; }
-    .relcard{ transition:border-color .15s; }
-    .relcard:hover{ border-color:#008a60; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div style="background:#e9f2ec;color:#3a423a;font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;">
+<div class="s1">
 
-  <nav style="position:sticky;top:0;z-index:50;background:rgba(233,242,236,0.82);backdrop-filter:blur(12px);border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;">
-      <a href="index.html" style="display:flex;align-items:center;gap:14px;"><img src="site/assets/wordmark-green.svg" alt="GROUU" style="height:26px;display:block;"></a>
-      <div style="display:flex;align-items:center;gap:30px;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;">
-        <a href="index.html#nodes" style="color:#4a524a;">← All nodes</a>
-        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V2/GROUUV2-SensorNodeLoRAWAN" target="_blank" rel="noopener" style="color:#f6f5f1;background:#008a60;border-radius:100px;padding:9px 20px;">Firmware ↗</a>
+  <nav class="s2">
+    <div class="s3">
+      <a href="index.html" class="s4"><img src="site/assets/wordmark-green.svg" alt="GROUU" class="s5"></a>
+      <div class="s6">
+        <a href="index.html#nodes" class="s7">← All nodes</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V2/GROUUV2-SensorNodeLoRAWAN" target="_blank" rel="noopener" class="s8">Firmware ↗</a>
       </div>
     </div>
   </nav>
 
-  <header style="border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:64px 40px 58px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#6b756b;margin-bottom:24px;"><a href="index.html" style="color:#6b756b;">GROUU</a> · <a href="index.html#nodes" style="color:#6b756b;">Nodes</a> · <span style="color:#008a60;">GROUUWAN</span></div>
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
-        <span style="width:9px;height:9px;border-radius:50%;background:#e0a020;box-shadow:0 0 0 4px rgba(224,160,32,0.16);"></span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#8a6d1f;">Under development · first node (WellBouy) deployed</span>
+  <header class="s9">
+    <div class="s10">
+      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#nodes" class="s12">Nodes</a> · <span class="s13">GROUUWAN</span></div>
+      <div class="s14">
+        <span class="s15"></span>
+        <span class="s16">Under development · first node (WellBouy) deployed</span>
       </div>
-      <h1 style="font-size:66px;font-weight:600;line-height:1.02;letter-spacing:-0.03em;color:#16201a;margin:0 0 22px;max-width:840px;">GROUUWAN — the LoRaWAN track</h1>
-      <p style="font-size:26px;line-height:1.45;color:#3a423a;margin:0 0 34px;max-width:800px;">Long-range, low-power sensing over LoRaWAN and The Things Network — the companion to the WiFi nodes, for sites WiFi can't reach. This page documents the architecture, hardware options and the TTN → MQTT bridge so it can be rebuilt on any stack. The first node on this track — <a href="wellbouy.html">WellBouy</a> — is deployed and streaming live.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">The Things Network</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">EU868 · OTAA</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">2–15 km range</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">Years on battery</span>
+      <h1 class="s17">GROUUWAN — the LoRaWAN track</h1>
+      <p class="s18">Long-range, low-power sensing over LoRaWAN and The Things Network — the companion to the WiFi nodes, for sites WiFi can't reach. This page documents the architecture, hardware options and the TTN → MQTT bridge so it can be rebuilt on any stack. The first node on this track — <a href="wellbouy.html">WellBouy</a> — is deployed and streaming live.</p>
+      <div class="s19">
+        <span class="s20">The Things Network</span>
+        <span class="s20">EU868 · OTAA</span>
+        <span class="s20">2–15 km range</span>
+        <span class="s20">Years on battery</span>
       </div>
     </div>
   </header>
 
   <!-- LEVEL OF DEVELOPMENT -->
-  <section style="background:#fff;border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Level of development</div>
-      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 12px;">What's published so far</h2>
-      <p style="font-size:20px;line-height:1.5;color:#4a524a;margin:0 0 40px;max-width:720px;">The track is defined, the integration path is documented, and the WellBouy node has validated it end-to-end. Additional node firmware is a working scaffold being filled out per sensor type.</p>
-      <div style="border:1px solid #d5e4da;border-radius:14px;overflow:hidden;">
-        <div style="display:grid;grid-template-columns:230px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
-          <span style="font-size:20px;font-weight:600;color:#16201a;">Node firmware</span>
-          <span style="font-size:17px;color:#4a524a;line-height:1.4;">WellBouy (RadioLib / XIAO) fully validated; general farm-sensing scaffold in progress.</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8a6d1f;background:#f5edd6;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">◑ In progress</span>
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Level of development</div>
+      <h2 class="s24">What's published so far</h2>
+      <p class="s25">The track is defined, the integration path is documented, and the WellBouy node has validated it end-to-end. Additional node firmware is a working scaffold being filled out per sensor type.</p>
+      <div class="s26">
+        <div class="s27">
+          <span class="s28">Node firmware</span>
+          <span class="s29">WellBouy (RadioLib / XIAO) fully validated; general farm-sensing scaffold in progress.</span>
+          <span class="s30">◑ In progress</span>
         </div>
-        <div style="display:grid;grid-template-columns:230px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
-          <span style="font-size:20px;font-weight:600;color:#16201a;">TTN → MQTT bridge</span>
-          <span style="font-size:17px;color:#4a524a;line-height:1.4;">Two integration recipes documented (Node-RED and Mosquitto bridge).</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Documented</span>
+        <div class="s27">
+          <span class="s28">TTN → MQTT bridge</span>
+          <span class="s29">Two integration recipes documented (Node-RED and Mosquitto bridge).</span>
+          <span class="s31">✓ Documented</span>
         </div>
-        <div style="display:grid;grid-template-columns:230px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
-          <span style="font-size:20px;font-weight:600;color:#16201a;">Hardware options</span>
-          <span style="font-size:17px;color:#4a524a;line-height:1.4;">Candidate radios researched and compared (below).</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Documented</span>
+        <div class="s27">
+          <span class="s28">Hardware options</span>
+          <span class="s29">Candidate radios researched and compared (below).</span>
+          <span class="s31">✓ Documented</span>
         </div>
-        <div style="display:grid;grid-template-columns:230px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;">
-          <span style="font-size:20px;font-weight:600;color:#16201a;">Naming &amp; topics</span>
-          <span style="font-size:17px;color:#4a524a;line-height:1.4;">Convention shared with the WiFi track.</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Defined</span>
+        <div class="s32">
+          <span class="s28">Naming &amp; topics</span>
+          <span class="s29">Convention shared with the WiFi track.</span>
+          <span class="s31">✓ Defined</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- WHY LORAWAN -->
-  <section style="border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Why LoRaWAN</div>
-      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 12px;">A companion to WiFi, not a replacement</h2>
-      <p style="font-size:20px;line-height:1.5;color:#4a524a;margin:0 0 40px;max-width:720px;">WiFi is fine where a router reaches. LoRaWAN covers everything beyond it, on power budgets WiFi can't touch.</p>
-      <div style="border:1px solid #d5e4da;border-radius:14px;overflow:hidden;background:#fff;">
-        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#6b756b;background:#f4f8f5;border-bottom:1px solid #eef2ef;">
-          <div style="padding:16px 24px;">Need</div><div style="padding:16px 24px;">WiFi</div><div style="padding:16px 24px;color:#008a60;">LoRaWAN</div>
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">Why LoRaWAN</div>
+      <h2 class="s24">A companion to WiFi, not a replacement</h2>
+      <p class="s25">WiFi is fine where a router reaches. LoRaWAN covers everything beyond it, on power budgets WiFi can't touch.</p>
+      <div class="s33">
+        <div class="s34">
+          <div class="s35">Need</div><div class="s35">WiFi</div><div class="s36">LoRaWAN</div>
         </div>
-        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;font-size:18px;border-bottom:1px solid #eef2ef;"><div style="padding:16px 24px;color:#16201a;">Long range (orchards, fields)</div><div style="padding:16px 24px;color:#a05a4a;">No</div><div style="padding:16px 24px;color:#0c6b4b;">2–15 km</div></div>
-        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;font-size:18px;border-bottom:1px solid #eef2ef;"><div style="padding:16px 24px;color:#16201a;">Battery / solar powered</div><div style="padding:16px 24px;color:#a05a4a;">Power hungry</div><div style="padding:16px 24px;color:#0c6b4b;">Years</div></div>
-        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;font-size:18px;border-bottom:1px solid #eef2ef;"><div style="padding:16px 24px;color:#16201a;">Internet backbone</div><div style="padding:16px 24px;color:#6b756b;">Local only</div><div style="padding:16px 24px;color:#0c6b4b;">Global (TTN)</div></div>
-        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;font-size:18px;"><div style="padding:16px 24px;color:#16201a;">New hardware needed</div><div style="padding:16px 24px;color:#6b756b;">Existing router</div><div style="padding:16px 24px;color:#8a6d1f;">LoRa gateway</div></div>
+        <div class="s37"><div class="s38">Long range (orchards, fields)</div><div class="s39">No</div><div class="s40">2–15 km</div></div>
+        <div class="s37"><div class="s38">Battery / solar powered</div><div class="s39">Power hungry</div><div class="s40">Years</div></div>
+        <div class="s37"><div class="s38">Internet backbone</div><div class="s41">Local only</div><div class="s40">Global (TTN)</div></div>
+        <div class="s42"><div class="s38">New hardware needed</div><div class="s41">Existing router</div><div class="s43">LoRa gateway</div></div>
       </div>
     </div>
   </section>
 
   <!-- ARCHITECTURE + IMAGE -->
-  <section style="background:#fff;border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+  <section class="s21">
+    <div class="s44">
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">How it works</div>
-        <h2 style="font-size:36px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 24px;">Node → gateway → TTN → backend</h2>
-        <div style="display:flex;flex-direction:column;gap:0;">
-          <div style="display:flex;gap:16px;align-items:flex-start;"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#008a60;width:76px;flex-shrink:0;padding-top:2px;">Node</span><p style="font-size:19px;line-height:1.4;color:#3a423a;margin:0;">ESP32 / Arduino + LoRa radio, OTAA-joined.</p></div>
-          <div style="width:1px;height:22px;background:#cbdccf;margin-left:37px;"></div>
-          <div style="display:flex;gap:16px;align-items:flex-start;"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#008a60;width:76px;flex-shrink:0;padding-top:2px;">Gateway</span><p style="font-size:19px;line-height:1.4;color:#3a423a;margin:0;">Any TTN-registered LoRa gateway, EU868.</p></div>
-          <div style="width:1px;height:22px;background:#cbdccf;margin-left:37px;"></div>
-          <div style="display:flex;gap:16px;align-items:flex-start;"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#008a60;width:76px;flex-shrink:0;padding-top:2px;">TTN</span><p style="font-size:19px;line-height:1.4;color:#3a423a;margin:0;">The Things Network v3 → MQTT bridge.</p></div>
-          <div style="width:1px;height:22px;background:#cbdccf;margin-left:37px;"></div>
-          <div style="display:flex;gap:16px;align-items:flex-start;"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#008a60;width:76px;flex-shrink:0;padding-top:2px;">Backend</span><p style="font-size:19px;line-height:1.4;color:#3a423a;margin:0;">Mosquitto → Node-RED → InfluxDB → Grafana.</p></div>
+        <div class="s23">How it works</div>
+        <h2 class="s45">Node → gateway → TTN → backend</h2>
+        <div class="s46">
+          <div class="s47"><span class="s48">Node</span><p class="s49">ESP32 / Arduino + LoRa radio, OTAA-joined.</p></div>
+          <div class="s50"></div>
+          <div class="s47"><span class="s48">Gateway</span><p class="s49">Any TTN-registered LoRa gateway, EU868.</p></div>
+          <div class="s50"></div>
+          <div class="s47"><span class="s48">TTN</span><p class="s49">The Things Network v3 → MQTT bridge.</p></div>
+          <div class="s50"></div>
+          <div class="s47"><span class="s48">Backend</span><p class="s49">Mosquitto → Node-RED → InfluxDB → Grafana.</p></div>
         </div>
       </div>
-      <div class="imgslot" style="aspect-ratio:4/3;border-radius:16px;">
+      <div class="imgslot s51">
         <span class="ico">🗺️📷</span>
         <span class="cap">Diagram: end-to-end topology — node → gateway → TTN → backend</span>
       </div>
@@ -128,82 +114,82 @@
   </section>
 
   <!-- NODE HARDWARE OPTIONS -->
-  <section style="border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Hardware options</div>
-      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 44px;">Pick a radio for the node</h2>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-        <div style="background:#fff;border:1px solid #d5e4da;border-radius:14px;padding:30px 32px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#008a60;margin-bottom:12px;">DIY · lowest cost</div>
-          <div style="font-size:23px;font-weight:600;color:#16201a;margin-bottom:8px;">Arduino Pro Mini + RFM95</div>
-          <p style="font-size:17px;line-height:1.45;color:#4a524a;margin:0;">Discrete build, OTAA. Most control, most wiring.</p>
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">Hardware options</div>
+      <h2 class="s52">Pick a radio for the node</h2>
+      <div class="s53">
+        <div class="s54">
+          <div class="s55">DIY · lowest cost</div>
+          <div class="s56">Arduino Pro Mini + RFM95</div>
+          <p class="s57">Discrete build, OTAA. Most control, most wiring.</p>
         </div>
-        <div style="background:#fff;border:1px solid #d5e4da;border-radius:14px;padding:30px 32px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#008a60;margin-bottom:12px;">XIAO · used in WellBouy</div>
-          <div style="font-size:23px;font-weight:600;color:#16201a;margin-bottom:8px;">XIAO ESP32-S3 + Wio-SX1262</div>
-          <p style="font-size:17px;line-height:1.45;color:#4a524a;margin:0;">Compact, deep-sleep friendly, RadioLib. The stack the WellBouy node runs.</p>
+        <div class="s54">
+          <div class="s55">XIAO · used in WellBouy</div>
+          <div class="s56">XIAO ESP32-S3 + Wio-SX1262</div>
+          <p class="s57">Compact, deep-sleep friendly, RadioLib. The stack the WellBouy node runs.</p>
         </div>
-        <div style="background:#fff;border:1px solid #d5e4da;border-radius:14px;padding:30px 32px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#008a60;margin-bottom:12px;">Dev board</div>
-          <div style="font-size:23px;font-weight:600;color:#16201a;margin-bottom:8px;">Arduino MKR WAN 1300</div>
-          <p style="font-size:17px;line-height:1.45;color:#4a524a;margin:0;">Built-in LoRa module, official toolchain.</p>
+        <div class="s54">
+          <div class="s55">Dev board</div>
+          <div class="s56">Arduino MKR WAN 1300</div>
+          <p class="s57">Built-in LoRa module, official toolchain.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- TTN BRIDGE -->
-  <section style="background:#122018;color:#eaf3ec;border-bottom:1px solid #0c150f;">
-    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#65c298;margin-bottom:16px;">How to reuse · TTN → MQTT bridge</div>
-      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;margin:0 0 40px;max-width:700px;">Two ways into the same pipeline</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-        <div style="background:#1a2a20;border:1px solid #274031;border-radius:14px;padding:32px 34px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#65c298;margin-bottom:14px;">Recommended</div>
-          <div style="font-size:24px;font-weight:600;margin-bottom:14px;">Node-RED subscription</div>
-          <p style="font-size:18px;line-height:1.5;color:#bcccc0;margin:0;">Subscribe to <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#eaf3ec;">v3/{app}/devices/{dev}/up</span> using TTN's MQTT integration, parse the decoded payload in a function node, write to InfluxDB.</p>
+  <section class="s58">
+    <div class="s22">
+      <div class="s59">How to reuse · TTN → MQTT bridge</div>
+      <h2 class="s60">Two ways into the same pipeline</h2>
+      <div class="s61">
+        <div class="s62">
+          <div class="s63">Recommended</div>
+          <div class="s64">Node-RED subscription</div>
+          <p class="s65">Subscribe to <span class="s66">v3/{app}/devices/{dev}/up</span> using TTN's MQTT integration, parse the decoded payload in a function node, write to InfluxDB.</p>
         </div>
-        <div style="background:#1a2a20;border:1px solid #274031;border-radius:14px;padding:32px 34px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#9fb2a4;margin-bottom:14px;">Alternative</div>
-          <div style="font-size:24px;font-weight:600;margin-bottom:14px;">Mosquitto bridge</div>
-          <p style="font-size:18px;line-height:1.5;color:#bcccc0;margin:0;">A <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#eaf3ec;">connection</span> block in mosquitto.conf bridges <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#eaf3ec;">eu1.cloud.thethings.network:8883</span> into local topics.</p>
+        <div class="s62">
+          <div class="s67">Alternative</div>
+          <div class="s64">Mosquitto bridge</div>
+          <p class="s65">A <span class="s66">connection</span> block in mosquitto.conf bridges <span class="s66">eu1.cloud.thethings.network:8883</span> into local topics.</p>
         </div>
       </div>
-      <div style="margin-top:30px;font-family:'IBM Plex Mono',monospace;font-size:15px;color:#7f9186;">Naming convention: <span style="color:#65c298;">Grouu[Installation][Type][ID]</span> → topic <span style="color:#65c298;">Grouu[Installation][Type][ID]/sensors</span></div>
+      <div class="s68">Naming convention: <span class="s69">Grouu[Installation][Type][ID]</span> → topic <span class="s69">Grouu[Installation][Type][ID]/sensors</span></div>
     </div>
   </section>
 
   <!-- SCENARIOS -->
-  <section style="background:#fff;border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Reference scenarios</div>
-      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 12px;">What the track is designed for</h2>
-      <p style="font-size:20px;line-height:1.5;color:#4a524a;margin:0 0 44px;max-width:720px;">Typical node types the design targets — a menu to compose from, not a fixed system.</p>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;">
-        <div style="border:1px solid #d5e4da;border-radius:14px;padding:28px 30px;"><div style="font-size:22px;font-weight:600;color:#16201a;margin-bottom:6px;">Orchard soil grid</div><p style="font-size:17px;color:#4a524a;margin:0;line-height:1.4;">Shallow + deep moisture per tree, weather station</p></div>
-        <div style="border:1px solid #d5e4da;border-radius:14px;padding:28px 30px;"><div style="font-size:22px;font-weight:600;color:#16201a;margin-bottom:6px;">Water source</div><p style="font-size:17px;color:#4a524a;margin:0;line-height:1.4;">TDS, turbidity, pH, temperature — the <a href="wellbouy.html">WellBouy</a> node</p></div>
-        <div style="border:1px solid #d5e4da;border-radius:14px;padding:28px 30px;"><div style="font-size:22px;font-weight:600;color:#16201a;margin-bottom:6px;">Remote field</div><p style="font-size:17px;color:#4a524a;margin:0;line-height:1.4;">Soil moisture and temperature, far from any router</p></div>
-        <div style="border:1px solid #d5e4da;border-radius:14px;padding:28px 30px;"><div style="font-size:22px;font-weight:600;color:#16201a;margin-bottom:6px;">Enclosed grow</div><p style="font-size:17px;color:#4a524a;margin:0;line-height:1.4;">Climate, light, moisture — when WiFi is insufficient</p></div>
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Reference scenarios</div>
+      <h2 class="s24">What the track is designed for</h2>
+      <p class="s70">Typical node types the design targets — a menu to compose from, not a fixed system.</p>
+      <div class="s71">
+        <div class="s72"><div class="s73">Orchard soil grid</div><p class="s74">Shallow + deep moisture per tree, weather station</p></div>
+        <div class="s72"><div class="s73">Water source</div><p class="s74">TDS, turbidity, pH, temperature — the <a href="wellbouy.html">WellBouy</a> node</p></div>
+        <div class="s72"><div class="s73">Remote field</div><p class="s74">Soil moisture and temperature, far from any router</p></div>
+        <div class="s72"><div class="s73">Enclosed grow</div><p class="s74">Climate, light, moisture — when WiFi is insufficient</p></div>
       </div>
     </div>
   </section>
 
   <!-- RELATED -->
-  <section style="background:#e9f2ec;border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:64px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:28px;">Related</div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
-        <a href="wellbouy.html" class="relcard" style="border:1px solid #d5e4da;border-radius:14px;padding:26px 28px;display:block;background:#fff;"><div style="font-size:21px;font-weight:600;color:#16201a;margin-bottom:6px;">WellBouy →</div><p style="font-size:16px;color:#4a524a;margin:0;line-height:1.4;">The first deployed node on this track.</p></a>
-        <a href="wifi-node.html" class="relcard" style="border:1px solid #d5e4da;border-radius:14px;padding:26px 28px;display:block;background:#fff;"><div style="font-size:21px;font-weight:600;color:#16201a;margin-bottom:6px;">WiFi Node →</div><p style="font-size:16px;color:#4a524a;margin:0;line-height:1.4;">The parallel local-sensing track.</p></a>
-        <a href="server-stack.html" class="relcard" style="border:1px solid #d5e4da;border-radius:14px;padding:26px 28px;display:block;background:#fff;"><div style="font-size:21px;font-weight:600;color:#16201a;margin-bottom:6px;">Server Stack →</div><p style="font-size:16px;color:#4a524a;margin:0;line-height:1.4;">The backend the bridge feeds.</p></a>
+  <section class="s75">
+    <div class="s76">
+      <div class="s77">Related</div>
+      <div class="s78">
+        <a href="wellbouy.html" class="relcard s79"><div class="s80">WellBouy →</div><p class="s81">The first deployed node on this track.</p></a>
+        <a href="wifi-node.html" class="relcard s79"><div class="s80">WiFi Node →</div><p class="s81">The parallel local-sensing track.</p></a>
+        <a href="server-stack.html" class="relcard s79"><div class="s80">Server Stack →</div><p class="s81">The backend the bridge feeds.</p></a>
       </div>
     </div>
   </section>
 
-  <footer style="background:#0e1712;color:#8ba192;">
-    <div style="max-width:1120px;margin:0 auto;padding:48px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-      <a href="index.html"><img src="site/assets/wordmark-white.svg" alt="GROUU" style="height:24px;display:block;"></a>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5f7568;letter-spacing:0.04em;">Open hardware &amp; software · GPL</span>
+  <footer class="s82">
+    <div class="s83">
+      <a href="index.html"><img src="site/assets/wordmark-white.svg" alt="GROUU" class="s84"></a>
+      <span class="s85">Open hardware &amp; software · GPLv3 + CC-BY-SA 4.0</span>
     </div>
   </footer>
 
