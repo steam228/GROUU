@@ -1,6 +1,6 @@
 # GROUU V3 — WellBouy · Well-Water-Quality LoRaWAN Node
 
-A battery/solar well-water-quality monitor. A **Seeed XIAO ESP32-S3** + **Wio-SX1262**
+A battery-powered well-water-quality monitor (the board is solar-capable). A **Seeed XIAO ESP32-S3** + **Wio-SX1262**
 LoRa node reads four water sensors, uplinks them to **The Things Network** (EU868,
 OTAA, CayenneLPP), and deep-sleeps between readings. On a **Raspberry Pi**, the data
 flows TTN → Node-RED → InfluxDB → Grafana, and a small **public dashboard**

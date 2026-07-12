@@ -1,25 +1,24 @@
-<WORK> (c) by <AUTHOR(S)>
+GROUU — Licensing
+=================
 
-<WORK> is licensed under a
-Creative Commons Attribution 4.0 International License.
+Copyright (c) 2026 GROUU (https://github.com/steam228)
 
-You should have received a copy of the license along with this
-work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
- 
- 
- 
-You are free:
+GROUU is an open hardware + software project and is dual-licensed so that
+each part is covered by the licence that fits it best:
 
-to Share — to copy, distribute and transmit the work
-to Remix — to adapt the work
+  • Software & firmware — all source code (Arduino / PlatformIO firmware,
+    server and stack configuration, the web dashboard, and scripts) is
+    licensed under the GNU General Public License, version 3.0 (GPLv3).
+    Full text: LICENSE-GPLv3.txt
+    https://www.gnu.org/licenses/gpl-3.0.html
 
-Under the following conditions:
+  • Hardware, documentation & creative content — schematics, PCB layouts
+    (atopile / KiCad), CAD, the documentation site, diagrams, images and
+    other non-code assets are licensed under the Creative Commons
+    Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+    Full text: LICENSE-CC-BY-SA-4.0.txt
+    https://creativecommons.org/licenses/by-sa/4.0/
 
-Attribution. 
-You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
-
-For any reuse or distribution, you must make clear to others the license terms of this work. The best way to do this is with a link to this web page.
-
-Any of the above conditions can be waived if you get permission from the copyright holder.
-
-Nothing in this license impairs or restricts the author's moral rights.
+Unless a file states otherwise, source-code files fall under GPLv3 and all
+other assets fall under CC BY-SA 4.0. Third-party components retain their
+own licences.

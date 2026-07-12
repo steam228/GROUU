@@ -8,238 +8,224 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{ margin:0; background:#e9f2ec; }
-    a{ color:#008a60; text-decoration:none; }
-    a:hover{ color:#00734f; }
-    ::selection{ background:#65c298; color:#122018; }
-    .imgslot{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
-              text-align:center; background:repeating-linear-gradient(45deg,#dcece2,#dcece2 12px,#d5e6dc 12px,#d5e6dc 24px);
-              color:#5c6b60; border:1.5px dashed #9dbfaa; }
-    .imgslot .ico{ font-size:30px; opacity:.65; }
-    .imgslot .cap{ font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.03em; padding:0 18px; max-width:320px; line-height:1.4; }
-    .relcard{ transition:border-color .15s; }
-    .relcard:hover{ border-color:#008a60; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div style="background:#e9f2ec;color:#3a423a;font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;">
+<div class="s1">
 
-  <nav style="position:sticky;top:0;z-index:50;background:rgba(233,242,236,0.82);backdrop-filter:blur(12px);border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;">
-      <a href="index.html" style="display:flex;align-items:center;gap:14px;"><img src="site/assets/wordmark-green.svg" alt="GROUU" style="height:26px;display:block;"></a>
-      <div style="display:flex;align-items:center;gap:30px;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;">
-        <a href="index.html#nodes" style="color:#4a524a;">← All nodes</a>
-        <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" style="color:#f6f5f1;background:#008a60;border-radius:100px;padding:9px 20px;">Source ↗</a>
+  <nav class="s2">
+    <div class="s3">
+      <a href="index.html" class="s4"><img src="site/assets/wordmark-green.svg" alt="GROUU" class="s5"></a>
+      <div class="s6">
+        <a href="index.html#nodes" class="s7">← All nodes</a>
+        <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s8">Source ↗</a>
       </div>
     </div>
   </nav>
 
-  <header style="border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:64px 40px 58px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#6b756b;margin-bottom:24px;"><a href="index.html" style="color:#6b756b;">GROUU</a> · <a href="index.html#nodes" style="color:#6b756b;">Nodes</a> · <span style="color:#008a60;">WellBouy</span></div>
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
-        <span style="width:9px;height:9px;border-radius:50%;background:#65c298;box-shadow:0 0 0 4px rgba(101,194,152,0.18);"></span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#0c6b4b;">Deployed · live dashboard</span>
+  <header class="s9">
+    <div class="s10">
+      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#nodes" class="s12">Nodes</a> · <span class="s13">WellBouy</span></div>
+      <div class="s14">
+        <span class="s153"></span>
+        <span class="s210">Deployed · live dashboard</span>
       </div>
-      <h1 style="font-size:66px;font-weight:600;line-height:1.02;letter-spacing:-0.03em;color:#16201a;margin:0 0 22px;max-width:840px;">WellBouy — well-water quality node</h1>
-      <p style="font-size:26px;line-height:1.45;color:#3a423a;margin:0 0 34px;max-width:780px;">An open reference design for monitoring a water source over LoRaWAN — temperature, dissolved solids, turbidity and pH. All four sensors are calibrated and validated, the node deep-sleeps and streams to a live dashboard, and the dedicated board is fabricated. This page documents how it works and how to reproduce it from the published source.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">XIAO ESP32-S3</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">Wio-SX1262</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">EU868 · OTAA</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">CayenneLPP</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 16px;">PlatformIO</span>
+      <h1 class="s17">WellBouy — well-water quality node</h1>
+      <p class="s233">An open reference design for monitoring a water source over LoRaWAN — temperature, dissolved solids, turbidity and pH. All four sensors are calibrated and validated, the node deep-sleeps and streams to a live dashboard, and the dedicated board is fabricated. This page documents how it works and how to reproduce it from the published source.</p>
+      <div class="s19">
+        <span class="s20">XIAO ESP32-S3</span>
+        <span class="s20">Wio-SX1262</span>
+        <span class="s20">EU868 · OTAA</span>
+        <span class="s20">CayenneLPP</span>
+        <span class="s20">PlatformIO</span>
       </div>
-      <div style="margin-top:30px;">
-        <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:#f6f5f1;background:#008a60;border-radius:100px;padding:13px 26px;">Open the live dashboard ↗</a>
+      <div class="s234">
+        <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" class="s235">Open the live dashboard ↗</a>
       </div>
     </div>
   </header>
 
   <!-- LEVEL OF DEVELOPMENT -->
-  <section style="background:#fff;border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Level of development</div>
-      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 12px;">What's published so far</h2>
-      <p style="font-size:20px;line-height:1.5;color:#4a524a;margin:0 0 40px;max-width:720px;">Firmware and the data pipeline are complete and running; the dedicated board is fabricated. Enclosure, full BOM and field deployment are the next deliverables.</p>
-      <div style="border:1px solid #d5e4da;border-radius:14px;overflow:hidden;">
-        <div style="display:grid;grid-template-columns:210px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
-          <span style="font-size:20px;font-weight:600;color:#16201a;">Firmware</span>
-          <span style="font-size:17px;color:#4a524a;line-height:1.4;">Staged PlatformIO envs — LoRaWAN, all four sensors, deep sleep, RTC session resume and downlink commands, validated and integrated.</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Complete</span>
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Level of development</div>
+      <h2 class="s24">What's published so far</h2>
+      <p class="s25">Firmware and the data pipeline are complete and running; the dedicated board is fabricated. Enclosure, full BOM and field deployment are the next deliverables.</p>
+      <div class="s26">
+        <div class="s236">
+          <span class="s28">Firmware</span>
+          <span class="s29">Staged PlatformIO envs — LoRaWAN, all four sensors, deep sleep, RTC session resume and downlink commands, validated and integrated.</span>
+          <span class="s31">✓ Complete</span>
         </div>
-        <div style="display:grid;grid-template-columns:210px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
-          <span style="font-size:20px;font-weight:600;color:#16201a;">Data pipeline</span>
-          <span style="font-size:17px;color:#4a524a;line-height:1.4;">TTN → Node-RED → InfluxDB → Grafana, plus a public dashboard — all live on the edge server.</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Live</span>
+        <div class="s236">
+          <span class="s28">Data pipeline</span>
+          <span class="s29">TTN → Node-RED → InfluxDB → Grafana, plus a public dashboard — all live on the edge server.</span>
+          <span class="s31">✓ Live</span>
         </div>
-        <div style="display:grid;grid-template-columns:210px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
-          <span style="font-size:20px;font-weight:600;color:#16201a;">Schematic (atopile)</span>
-          <span style="font-size:17px;color:#4a524a;line-height:1.4;">XIAO + radio, on-board ADS1115, switched 5 V rail, dividers, reverse-polarity + load-switch protection, Grove expansion.</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Done</span>
+        <div class="s236">
+          <span class="s28">Schematic (atopile)</span>
+          <span class="s29">XIAO + radio, on-board ADS1115, switched 5 V rail, dividers, reverse-polarity + load-switch protection, Grove expansion.</span>
+          <span class="s31">✓ Done</span>
         </div>
-        <div style="display:grid;grid-template-columns:210px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
-          <span style="font-size:20px;font-weight:600;color:#16201a;">PCB layout</span>
-          <span style="font-size:17px;color:#4a524a;line-height:1.4;">Round board with M4 mounts, laid out in KiCad and sent to fabrication; bring-up firmware validates it.</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Fabricated</span>
+        <div class="s236">
+          <span class="s28">PCB layout</span>
+          <span class="s29">Round board with M4 mounts, laid out in KiCad and sent to fabrication; bring-up firmware validates it.</span>
+          <span class="s31">✓ Fabricated</span>
         </div>
-        <div style="display:grid;grid-template-columns:210px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;border-bottom:1px solid #eef2ef;">
-          <span style="font-size:20px;font-weight:600;color:#16201a;">Enclosure (CAD)</span>
-          <span style="font-size:17px;color:#4a524a;line-height:1.4;">Sealed housing with sensor glands and antenna pass-through.</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#6b756b;background:#e6ede8;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">○ Planned</span>
+        <div class="s236">
+          <span class="s28">Enclosure (CAD)</span>
+          <span class="s29">Sealed housing with sensor glands and antenna pass-through.</span>
+          <span class="s237">○ Planned</span>
         </div>
-        <div style="display:grid;grid-template-columns:210px 1fr 160px;gap:20px;align-items:center;padding:20px 26px;">
-          <span style="font-size:20px;font-weight:600;color:#16201a;">Documentation</span>
-          <span style="font-size:17px;color:#4a524a;line-height:1.4;">Bring-up plan, board-design notes and this page published; grows with each stage.</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;justify-self:end;white-space:nowrap;">✓ Ongoing</span>
+        <div class="s238">
+          <span class="s28">Documentation</span>
+          <span class="s29">Bring-up plan, board-design notes and this page published; grows with each stage.</span>
+          <span class="s31">✓ Ongoing</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section style="border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">How it works</div>
-      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 12px;">Sense, encode, transmit, sleep</h2>
-      <p style="font-size:20px;line-height:1.5;color:#4a524a;margin:0 0 44px;max-width:760px;">Analog probes are conditioned by dedicated modules and scaled to ≤3.3 V into a shared <strong style="color:#16201a;">ADS1115</strong> 16-bit I²C ADC; temperature is read digitally over OneWire. Readings are packed as CayenneLPP and sent as a LoRaWAN uplink, after which the node deep-sleeps between cycles and resumes its session on wake.</p>
-      <div style="display:flex;align-items:stretch;gap:0;flex-wrap:wrap;">
-        <div style="flex:1;min-width:200px;background:#fff;border:1px solid #d5e4da;border-radius:12px;padding:26px 28px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#008a60;margin-bottom:10px;">Node</div>
-          <div style="font-size:21px;font-weight:600;line-height:1.25;color:#16201a;margin-bottom:6px;">XIAO ESP32-S3 + Wio-SX1262</div>
-          <div style="font-size:16px;color:#6b756b;">ADS1115 front-end · deep sleep</div>
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">How it works</div>
+      <h2 class="s24">Sense, encode, transmit, sleep</h2>
+      <p class="s239">Analog probes are conditioned by dedicated modules and scaled to ≤3.3 V into a shared <strong class="s218">ADS1115</strong> 16-bit I²C ADC; temperature is read digitally over OneWire. Readings are packed as CayenneLPP and sent as a LoRaWAN uplink, after which the node deep-sleeps between cycles and resumes its session on wake.</p>
+      <div class="s240">
+        <div class="s241">
+          <div class="s242">Node</div>
+          <div class="s243">XIAO ESP32-S3 + Wio-SX1262</div>
+          <div class="s244">ADS1115 front-end · deep sleep</div>
         </div>
-        <div style="display:flex;align-items:center;padding:0 12px;font-family:'IBM Plex Mono',monospace;font-size:24px;color:#008a60;">→</div>
-        <div style="flex:1;min-width:200px;background:#fff;border:1px solid #d5e4da;border-radius:12px;padding:26px 28px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#008a60;margin-bottom:10px;">Transport</div>
-          <div style="font-size:21px;font-weight:600;line-height:1.25;color:#16201a;margin-bottom:6px;">Gateway → TTN</div>
-          <div style="font-size:16px;color:#6b756b;">EU868 · OTAA join · v3</div>
+        <div class="s245">→</div>
+        <div class="s241">
+          <div class="s242">Transport</div>
+          <div class="s243">Gateway → TTN</div>
+          <div class="s244">EU868 · OTAA join · v3</div>
         </div>
-        <div style="display:flex;align-items:center;padding:0 12px;font-family:'IBM Plex Mono',monospace;font-size:24px;color:#008a60;">→</div>
-        <div style="flex:1.3;min-width:240px;background:#122018;border:1px solid #122018;border-radius:12px;padding:26px 28px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#65c298;margin-bottom:10px;">Backend</div>
-          <div style="font-size:21px;font-weight:600;line-height:1.25;color:#fff;margin-bottom:12px;">MQTT → storage → dashboards</div>
-          <div style="display:flex;gap:7px;flex-wrap:wrap;">
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;background:#1a2a20;border:1px solid #274031;color:#9fb2a4;border-radius:100px;padding:5px 12px;">Mosquitto</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;background:#1a2a20;border:1px solid #274031;color:#9fb2a4;border-radius:100px;padding:5px 12px;">Node-RED</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;background:#1a2a20;border:1px solid #274031;color:#9fb2a4;border-radius:100px;padding:5px 12px;">InfluxDB</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;background:#1a2a20;border:1px solid #274031;color:#9fb2a4;border-radius:100px;padding:5px 12px;">Grafana</span>
+        <div class="s245">→</div>
+        <div class="s246">
+          <div class="s247">Backend</div>
+          <div class="s248">MQTT → storage → dashboards</div>
+          <div class="s249">
+            <span class="s250">Mosquitto</span>
+            <span class="s250">Node-RED</span>
+            <span class="s250">InfluxDB</span>
+            <span class="s250">Grafana</span>
           </div>
         </div>
       </div>
-      <p style="font-size:16px;color:#6b756b;margin:18px 0 0;">The backend is the shared <a href="server-stack.html">GROUU Stack</a> — any TTN-connected application can consume the same uplinks.</p>
+      <p class="s251">The backend is the shared <a href="server-stack.html">GROUU Stack</a> — any TTN-connected application can consume the same uplinks.</p>
     </div>
   </section>
 
   <!-- SENSOR STACK -->
-  <section style="background:#fff;border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Hardware · sensor stack</div>
-      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 12px;">Four probes, one shared front-end</h2>
-      <p style="font-size:20px;line-height:1.5;color:#4a524a;margin:0 0 44px;max-width:720px;">All modules are off-the-shelf, so the design is reproducible without custom silicon. Every driver is written and calibrated.</p>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
-        <div style="border:1px solid #d5e4da;border-radius:14px;padding:30px 32px;">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:#008a60;">01 · Temperature</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;">✓ calibrated</span></div>
-          <div style="font-size:24px;font-weight:600;color:#16201a;margin-bottom:8px;">DS18B20 probe</div>
-          <p style="font-size:17px;line-height:1.45;color:#4a524a;margin:0;">Waterproof digital probe on OneWire, 4.7 kΩ pull-up, 3.3 V. Clean °C to serial and uplink.</p>
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Hardware · sensor stack</div>
+      <h2 class="s24">Four probes, one shared front-end</h2>
+      <p class="s70">All modules are off-the-shelf, so the design is reproducible without custom silicon. Every driver is written and calibrated.</p>
+      <div class="s211">
+        <div class="s252">
+          <div class="s253"><span class="s254">01 · Temperature</span><span class="s255">✓ calibrated</span></div>
+          <div class="s256">DS18B20 probe</div>
+          <p class="s57">Waterproof digital probe on OneWire, 4.7 kΩ pull-up, 3.3 V. Clean °C to serial and uplink.</p>
         </div>
-        <div style="border:1px solid #d5e4da;border-radius:14px;padding:30px 32px;">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:#008a60;">02 · TDS</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;">✓ calibrated</span></div>
-          <div style="font-size:24px;font-weight:600;color:#16201a;margin-bottom:8px;">Seeed Grove TDS</div>
-          <p style="font-size:17px;line-height:1.45;color:#4a524a;margin:0;">Analog Grove TDS on the switched 5 V rail, output into the ADS (A0). DFRobot Gravity two-point k-value algorithm, temp-compensated ppm.</p>
+        <div class="s252">
+          <div class="s253"><span class="s254">02 · TDS</span><span class="s255">✓ calibrated</span></div>
+          <div class="s256">Seeed Grove TDS</div>
+          <p class="s57">Analog Grove TDS on the switched 5 V rail, output into the ADS (A0). DFRobot Gravity two-point k-value algorithm, temp-compensated ppm.</p>
         </div>
-        <div style="border:1px solid #d5e4da;border-radius:14px;padding:30px 32px;">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:#008a60;">03 · Turbidity</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;">✓ calibrated</span></div>
-          <div style="font-size:24px;font-weight:600;color:#16201a;margin-bottom:8px;">DFRobot SEN0189</div>
-          <p style="font-size:17px;line-height:1.45;color:#4a524a;margin:0;">Optical head, cabled; a 10k / 6.8k divider brings the 5 V output into ADC range (A1) → NTU, anchored to clear water.</p>
+        <div class="s252">
+          <div class="s253"><span class="s254">03 · Turbidity</span><span class="s255">✓ calibrated</span></div>
+          <div class="s256">DFRobot SEN0189</div>
+          <p class="s57">Optical head, cabled; a 10k / 6.8k divider brings the 5 V output into ADC range (A1) → NTU, anchored to clear water.</p>
         </div>
-        <div style="border:1px solid #d5e4da;border-radius:14px;padding:30px 32px;">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:#008a60;">04 · pH</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;">✓ calibrated</span></div>
-          <div style="font-size:24px;font-weight:600;color:#16201a;margin-bottom:8px;">Phidgets 1130 + BNC probe</div>
-          <p style="font-size:17px;line-height:1.45;color:#4a524a;margin:0;">GigaΩ analog conditioner (pH 7 ≈ 2.5 V) through a 10k / 18k divider into the ADS (A2); two-point calibration at pH 4 &amp; 7.</p>
+        <div class="s252">
+          <div class="s253"><span class="s254">04 · pH</span><span class="s255">✓ calibrated</span></div>
+          <div class="s256">Phidgets 1130 + BNC probe</div>
+          <p class="s57">GigaΩ analog conditioner (pH 7 ≈ 2.5 V) through a 10k / 18k divider into the ADS (A2); two-point calibration at pH 4 &amp; 7.</p>
         </div>
       </div>
-      <div style="margin-top:20px;border:1px dashed #c2d3c8;border-radius:14px;padding:24px 30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#6b756b;">Shared ADC</span>
-        <span style="font-size:18px;color:#3a423a;"><strong style="color:#16201a;">ADS1115</strong> 16-bit I²C, addr 0x48, at 3.3 V — analog sensors on A0–A2, DS18B20 stays digital.</span>
+      <div class="s215">
+        <span class="s216">Shared ADC</span>
+        <span class="s217"><strong class="s218">ADS1115</strong> 16-bit I²C, addr 0x48, at 3.3 V — analog sensors on A0–A2, DS18B20 stays digital.</span>
       </div>
     </div>
   </section>
 
   <!-- POWER -->
-  <section style="border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
-      <div class="imgslot" style="aspect-ratio:4/3;border-radius:16px;order:-1;">
+  <section class="s9">
+    <div class="s44">
+      <div class="imgslot s219">
         <span class="ico">🔌📷</span>
         <span class="cap">Photo / diagram: the node's power rails &amp; 5 V load switch (breadboard or board close-up)</span>
       </div>
       <div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Hardware · power</div>
-        <h2 style="font-size:36px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#16201a;margin:0 0 22px;">Two rails, solar-fed</h2>
-        <div style="display:flex;flex-direction:column;gap:18px;">
-          <div style="display:flex;gap:16px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#008a60;flex-shrink:0;">3.3 V</span><p style="font-size:19px;line-height:1.45;color:#3a423a;margin:0;"><strong style="color:#16201a;">Always-on</strong> — MCU, radio, ADS1115 and the DS18B20.</p></div>
-          <div style="display:flex;gap:16px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#008a60;flex-shrink:0;">5 V</span><p style="font-size:19px;line-height:1.45;color:#3a423a;margin:0;"><strong style="color:#16201a;">Switched</strong> — analog conditioners powered ~1 s per cycle through a high-side load switch (GPIO1 / D0).</p></div>
-          <div style="display:flex;gap:16px;align-items:baseline;"><span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#008a60;flex-shrink:0;">Bat</span><p style="font-size:19px;line-height:1.45;color:#3a423a;margin:0;">1S Li-ion 18650 (LiFePO4 for cold sites), solar charger with MPPT — panel sized after bring-up current measurements.</p></div>
+        <div class="s23">Hardware · power</div>
+        <h2 class="s257">Two rails, battery-powered</h2>
+        <div class="s258">
+          <div class="s259"><span class="s260">3.3 V</span><p class="s261"><strong class="s218">Always-on</strong> — MCU, radio, ADS1115 and the DS18B20.</p></div>
+          <div class="s259"><span class="s260">5 V</span><p class="s261"><strong class="s218">Switched</strong> — analog conditioners powered ~1 s per cycle through a high-side load switch (GPIO1 / D0).</p></div>
+          <div class="s259"><span class="s260">Bat</span><p class="s261">1S LiPo (4500 mAh), mains-rechargeable — a fixed well site needs no panel. The board still exposes battery + solar inputs, so the same design runs off-grid elsewhere.</p></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- HOW TO REPRODUCE -->
-  <section style="background:#122018;color:#eaf3ec;border-bottom:1px solid #0c150f;">
-    <div style="max-width:1120px;margin:0 auto;padding:80px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#65c298;margin-bottom:16px;">How to reproduce</div>
-      <h2 style="font-size:38px;font-weight:600;line-height:1.1;letter-spacing:-0.02em;margin:0 0 16px;max-width:720px;">Prove the radio, then each sensor</h2>
-      <p style="font-size:20px;line-height:1.5;color:#bcccc0;margin:0 0 44px;max-width:720px;">The firmware is organised so anyone can rebuild it incrementally — flash one stage, confirm it on serial and TTN, move on. Register your own device on TTN (EU868, LoRaWAN 1.0.x, OTAA), set the payload formatter to CayenneLPP, and keep your keys in an untracked <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#eaf3ec;">secrets.h</span>.</p>
-      <div style="display:flex;flex-direction:column;gap:0;">
-        <div style="display:grid;grid-template-columns:130px 1fr 150px;gap:24px;align-items:center;padding:22px 6px;border-bottom:1px solid #274031;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#65c298;">Stage 0</span>
-          <div><div style="font-size:22px;font-weight:600;">TTN setup</div><div style="font-size:17px;color:#9fb2a4;">Gateway, application + device, keys, CayenneLPP formatter</div></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#65c298;justify-self:end;">✓ documented</span>
+  <section class="s58">
+    <div class="s22">
+      <div class="s59">How to reproduce</div>
+      <h2 class="s262">Prove the radio, then each sensor</h2>
+      <p class="s263">The firmware is organised so anyone can rebuild it incrementally — flash one stage, confirm it on serial and TTN, move on. Register your own device on TTN (EU868, LoRaWAN 1.0.x, OTAA), set the payload formatter to CayenneLPP, and keep your keys in an untracked <span class="s264">secrets.h</span>.</p>
+      <div class="s46">
+        <div class="s265">
+          <span class="s266">Stage 0</span>
+          <div><div class="s267">TTN setup</div><div class="s268">Gateway, application + device, keys, CayenneLPP formatter</div></div>
+          <span class="s269">✓ documented</span>
         </div>
-        <div style="display:grid;grid-template-columns:130px 1fr 150px;gap:24px;align-items:center;padding:22px 6px;border-bottom:1px solid #274031;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#65c298;">Stage 1</span>
-          <div><div style="font-size:22px;font-weight:600;">Firmware bring-up</div><div style="font-size:17px;color:#9fb2a4;">LoRaWAN ✓ · temp ✓ · TDS ✓ · turbidity ✓ · pH ✓ · integrated</div></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#65c298;justify-self:end;">✓ complete</span>
+        <div class="s265">
+          <span class="s266">Stage 1</span>
+          <div><div class="s267">Firmware bring-up</div><div class="s268">LoRaWAN ✓ · temp ✓ · TDS ✓ · turbidity ✓ · pH ✓ · integrated</div></div>
+          <span class="s269">✓ complete</span>
         </div>
-        <div style="display:grid;grid-template-columns:130px 1fr 150px;gap:24px;align-items:center;padding:22px 6px;border-bottom:1px solid #274031;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#65c298;">Stage 2</span>
-          <div><div style="font-size:22px;font-weight:600;">Dedicated board (atopile → KiCad)</div><div style="font-size:17px;color:#9fb2a4;">Schematic + layout done, board fabricated; re-run bring-up on the board</div></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#65c298;justify-self:end;">✓ fabricated</span>
+        <div class="s265">
+          <span class="s266">Stage 2</span>
+          <div><div class="s267">Dedicated board (atopile → KiCad)</div><div class="s268">Schematic + layout done, board fabricated; re-run bring-up on the board</div></div>
+          <span class="s269">✓ fabricated</span>
         </div>
-        <div style="display:grid;grid-template-columns:130px 1fr 150px;gap:24px;align-items:center;padding:22px 6px;border-bottom:1px solid #274031;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#5f7568;">Stage 3</span>
-          <div><div style="font-size:22px;font-weight:600;color:#bcccc0;">Enclosure</div><div style="font-size:17px;color:#9fb2a4;">Sensor glands, antenna, sealing; print &amp; fit check</div></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#7f9186;justify-self:end;">○ planned</span>
+        <div class="s265">
+          <span class="s270">Stage 3</span>
+          <div><div class="s271">Enclosure</div><div class="s268">Sensor glands, antenna, sealing; print &amp; fit check</div></div>
+          <span class="s272">○ planned</span>
         </div>
-        <div style="display:grid;grid-template-columns:130px 1fr 150px;gap:24px;align-items:center;padding:22px 6px;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#5f7568;">Stage 4</span>
-          <div><div style="font-size:22px;font-weight:600;color:#bcccc0;">Field assembly &amp; soak test</div><div style="font-size:17px;color:#9fb2a4;">End-to-end on TTN, tune interval, verify power budget</div></div>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#7f9186;justify-self:end;">○ planned</span>
+        <div class="s273">
+          <span class="s270">Stage 4</span>
+          <div><div class="s271">Field assembly &amp; soak test</div><div class="s268">End-to-end on TTN, tune interval, verify power budget</div></div>
+          <span class="s272">○ planned</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- RELATED -->
-  <section style="background:#fff;border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1120px;margin:0 auto;padding:64px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.16em;text-transform:uppercase;color:#008a60;margin-bottom:28px;">Related</div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
-        <a href="grouuwan.html" class="relcard" style="border:1px solid #d5e4da;border-radius:14px;padding:26px 28px;display:block;"><div style="font-size:21px;font-weight:600;color:#16201a;margin-bottom:6px;">GROUUWAN →</div><p style="font-size:16px;color:#4a524a;margin:0;line-height:1.4;">The LoRaWAN track this node builds on.</p></a>
-        <a href="server-stack.html" class="relcard" style="border:1px solid #d5e4da;border-radius:14px;padding:26px 28px;display:block;"><div style="font-size:21px;font-weight:600;color:#16201a;margin-bottom:6px;">Server Stack →</div><p style="font-size:16px;color:#4a524a;margin:0;line-height:1.4;">The open backend that stores &amp; shows uplinks.</p></a>
-        <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" class="relcard" style="border:1px solid #d5e4da;border-radius:14px;padding:26px 28px;display:block;"><div style="font-size:21px;font-weight:600;color:#16201a;margin-bottom:6px;">Live dashboard ↗</div><p style="font-size:16px;color:#4a524a;margin:0;line-height:1.4;">The node's water-quality data, live.</p></a>
+  <section class="s21">
+    <div class="s76">
+      <div class="s77">Related</div>
+      <div class="s78">
+        <a href="grouuwan.html" class="relcard s274"><div class="s80">GROUUWAN →</div><p class="s81">The LoRaWAN track this node builds on.</p></a>
+        <a href="server-stack.html" class="relcard s274"><div class="s80">Server Stack →</div><p class="s81">The open backend that stores &amp; shows uplinks.</p></a>
+        <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" class="relcard s274"><div class="s80">Live dashboard ↗</div><p class="s81">The node's water-quality data, live.</p></a>
       </div>
     </div>
   </section>
 
-  <footer style="background:#0e1712;color:#8ba192;">
-    <div style="max-width:1120px;margin:0 auto;padding:48px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
-      <a href="index.html"><img src="site/assets/wordmark-white.svg" alt="GROUU" style="height:24px;display:block;"></a>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5f7568;letter-spacing:0.04em;">Open hardware &amp; software · GPL</span>
+  <footer class="s82">
+    <div class="s83">
+      <a href="index.html"><img src="site/assets/wordmark-white.svg" alt="GROUU" class="s84"></a>
+      <span class="s85">Open hardware &amp; software · GPLv3 + CC-BY-SA 4.0</span>
     </div>
   </footer>
 

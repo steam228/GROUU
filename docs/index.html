@@ -9,82 +9,65 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; scroll-padding-top:88px; }
-    body{ margin:0; background:#e9f2ec; }
-    a{ color:#008a60; text-decoration:none; }
-    a:hover{ color:#00734f; }
-    ::selection{ background:#65c298; color:#122018; }
-    .hoverline{ transition:outline .15s; }
-    .hoverline:hover{ outline:1px solid #65c298; outline-offset:-1px; }
-    .hoverborder{ transition:border-color .15s; }
-    .hoverborder:hover{ border-color:#008a60 !important; }
-    /* captioned photo placeholder (swap for <img> when the photo arrives) */
-    .imgslot{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
-              text-align:center; background:repeating-linear-gradient(45deg,#dcece2,#dcece2 12px,#d5e6dc 12px,#d5e6dc 24px);
-              color:#5c6b60; border:1.5px dashed #9dbfaa; }
-    .imgslot .ico{ font-size:26px; opacity:.7; }
-    .imgslot .cap{ font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.03em; padding:0 14px; max-width:280px; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div style="background:#e9f2ec;color:#3a423a;font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;">
+<div class="s1">
 
   <!-- ── NAV ── -->
-  <nav style="position:sticky;top:0;z-index:50;background:rgba(233,242,236,0.82);backdrop-filter:blur(12px);border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1200px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;">
-      <a href="#top" style="display:flex;align-items:center;gap:14px;">
-        <img src="site/assets/wordmark-green.svg" alt="GROUU" style="height:36px;display:block;width:102px;">
+  <nav class="s2">
+    <div class="s86">
+      <a href="#top" class="s4">
+        <img src="site/assets/wordmark-green.svg" alt="GROUU" class="s87">
       </a>
-      <div style="display:flex;align-items:center;gap:34px;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;">
-        <a href="#overview" style="color:#4a524a;">Overview</a>
-        <a href="#system" style="color:#4a524a;">System</a>
-        <a href="#modules" style="color:#4a524a;">Modules</a>
-        <a href="#nodes" style="color:#4a524a;">Nodes</a>
-        <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" style="color:#f6f5f1;background:#008a60;border-radius:100px;padding:9px 20px;">GitHub ↗</a>
+      <div class="s88">
+        <a href="#overview" class="s7">Overview</a>
+        <a href="#system" class="s7">System</a>
+        <a href="#modules" class="s7">Modules</a>
+        <a href="#nodes" class="s7">Nodes</a>
+        <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s8">GitHub ↗</a>
       </div>
     </div>
   </nav>
 
   <!-- ── HERO ── -->
-  <header id="top" style="position:relative;overflow:hidden;border-bottom:1px solid #d5e4da;">
-    <img src="site/assets/emblem-green.svg" alt="" style="position:absolute;right:-90px;top:50%;transform:translateY(-50%);height:660px;opacity:0.06;pointer-events:none;">
-    <div style="max-width:1200px;margin:0 auto;padding:110px 40px 96px;position:relative;z-index:1;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.24em;text-transform:uppercase;color:#008a60;margin-bottom:30px;">Open source hardware · software · design</div>
-      <h1 style="font-size:82px;font-weight:600;line-height:1.02;letter-spacing:-0.03em;color:#16201a;margin:0 0 30px;max-width:960px;">Modular open <br>source agriculture</h1>
-      <p style="font-size:30px;line-height:1.4;color:#4a524a;margin:0 0 44px;max-width:760px;">GROUU brings precision agriculture and automation to personal and small-scale growers — a kit of sensor nodes, actuators, and an edge server you can build, deploy, and adapt yourself, developed as part of a PhD research-through-design process.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;">
-        <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.06em;text-transform:uppercase;color:#f6f5f1;background:#008a60;border-radius:100px;padding:15px 30px;">View the repository ↗</a>
-        <a href="#nodes" style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.06em;text-transform:uppercase;color:#16201a;background:transparent;border:1px solid #b9cfc1;border-radius:100px;padding:15px 30px;">Nodes in the field</a>
+  <header id="top" class="s89">
+    <img src="site/assets/emblem-green.svg" alt="" class="s90">
+    <div class="s91">
+      <div class="s92">Open source hardware · software · design</div>
+      <h1 class="s93">Modular open <br>source agriculture</h1>
+      <p class="s94">GROUU brings precision agriculture and automation to personal and small-scale growers — a kit of sensor nodes, actuators, and an edge server you can build, deploy, and adapt yourself, developed as part of a PhD research-through-design process.</p>
+      <div class="s95">
+        <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s96">View the repository ↗</a>
+        <a href="#nodes" class="s97">Nodes in the field</a>
       </div>
-      <div style="display:flex;gap:46px;flex-wrap:wrap;margin-top:70px;">
-        <div><div style="font-size:44px;font-weight:600;color:#16201a;letter-spacing:-0.02em;">3</div><div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:#6b756b;margin-top:4px;">Hardware generations</div></div>
-        <div style="width:1px;background:#cbdccf;"></div>
-        <div><div style="font-size:44px;font-weight:600;color:#16201a;letter-spacing:-0.02em;">WiFi + LoRaWAN</div><div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:#6b756b;margin-top:4px;">Node connectivity</div></div>
-        <div style="width:1px;background:#cbdccf;"></div>
-        <div><div style="font-size:44px;font-weight:600;color:#16201a;letter-spacing:-0.02em;">GPL</div><div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:#6b756b;margin-top:4px;">Free &amp; open licence</div></div>
+      <div class="s98">
+        <div><div class="s99">3</div><div class="s100">Hardware generations</div></div>
+        <div class="s101"></div>
+        <div><div class="s99">WiFi + LoRaWAN</div><div class="s100">Node connectivity</div></div>
+        <div class="s101"></div>
+        <div><div class="s99">Open</div><div class="s100">GPLv3 + CC-BY-SA</div></div>
       </div>
     </div>
   </header>
 
   <!-- ── OVERVIEW ── -->
-  <section id="overview" style="background:#ffffff;border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1200px;margin:0 auto;padding:96px 40px;">
-      <div style="display:grid;grid-template-columns:340px 1fr;gap:70px;">
+  <section id="overview" class="s102">
+    <div class="s103">
+      <div class="s104">
         <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.2em;text-transform:uppercase;color:#008a60;margin-bottom:18px;">01 — Overview</div>
-          <h2 style="font-size:46px;font-weight:600;line-height:1.06;letter-spacing:-0.02em;color:#16201a;margin:0;">Agriculture, at the scale of a person</h2>
+          <div class="s105">01 — Overview</div>
+          <h2 class="s106">Agriculture, at the scale of a person</h2>
         </div>
-        <div style="display:flex;flex-direction:column;gap:30px;padding-top:6px;">
-          <p style="font-size:26px;line-height:1.5;color:#3a423a;margin:0;">GROUU enables precision agriculture and automation for <strong style="color:#16201a;font-weight:600;">personal or small-scale growing</strong> — not industrial farms, but gardens, plots, greenhouses. Its development is integrated in a long-lasting personal research-through-design process.</p>
-          <p style="font-size:26px;line-height:1.5;color:#3a423a;margin:0;">The project is deliberately modular: sensor nodes, actuator modules, and a local edge server are designed as independent, mix-and-match templates. Scale and context dictate how many of each you use — <strong style="color:#16201a;font-weight:600;">there is no fixed system to buy into.</strong></p>
-          <p style="font-size:26px;line-height:1.5;color:#3a423a;margin:0;">As a situated research practice, the repository records the personal development and learning behind the work, and treats every exploration, at any scale, as a valid data generator.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;">
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 18px;">arduino</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 18px;">esp8266 / esp32</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 18px;">openhardware</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:8px 18px;">openag</span>
+        <div class="s107">
+          <p class="s108">GROUU enables precision agriculture and automation for <strong class="s109">personal or small-scale growing</strong> — not industrial farms, but gardens, plots, greenhouses. Its development is integrated in a long-lasting personal research-through-design process.</p>
+          <p class="s108">The project is deliberately modular: sensor nodes, actuator modules, and a local edge server are designed as independent, mix-and-match templates. Scale and context dictate how many of each you use — <strong class="s109">there is no fixed system to buy into.</strong></p>
+          <p class="s108">As a situated research practice, the repository records the personal development and learning behind the work, and treats every exploration, at any scale, as a valid data generator.</p>
+          <div class="s110">
+            <span class="s111">arduino</span>
+            <span class="s111">esp8266 / esp32</span>
+            <span class="s111">openhardware</span>
+            <span class="s111">openag</span>
           </div>
         </div>
       </div>
@@ -92,103 +75,103 @@
   </section>
 
   <!-- ── SYSTEM / ARCHITECTURE ── -->
-  <section id="system" style="background:#122018;color:#eaf3ec;border-bottom:1px solid #0c150f;">
-    <div style="max-width:1200px;margin:0 auto;padding:96px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.2em;text-transform:uppercase;color:#65c298;margin-bottom:18px;">02 — System</div>
-      <h2 style="font-size:46px;font-weight:600;line-height:1.06;letter-spacing:-0.02em;margin:0 0 16px;max-width:820px;">From soil to dashboard</h2>
-      <p style="font-size:24px;line-height:1.45;color:#bcccc0;margin:0 0 56px;max-width:800px;">Nodes sense and act in the field. <br>WiFi nodes report over local MQTT; LoRaWAN nodes reach the same server via The Things Network — two parallel tracks, one shared stack on a Raspberry Pi.</p>
+  <section id="system" class="s58">
+    <div class="s103">
+      <div class="s112">02 — System</div>
+      <h2 class="s113">From soil to dashboard</h2>
+      <p class="s114">Nodes sense and act in the field. <br>WiFi nodes report over local MQTT; LoRaWAN nodes reach the same server via The Things Network — two parallel tracks, one shared stack on a Raspberry Pi.</p>
 
-      <div style="display:flex;align-items:stretch;gap:0;flex-wrap:wrap;margin-bottom:56px;">
-        <div style="flex:1;min-width:220px;background:#1a2a20;border:1px solid #274031;border-radius:12px;padding:30px 30px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#65c298;margin-bottom:12px;">Nodes</div>
-          <div style="font-size:26px;font-weight:600;line-height:1.25;margin-bottom:8px;">Sensors &amp; actuators</div>
-          <div style="font-size:19px;color:#9fb2a4;line-height:1.4;">Soil, water, climate · valves &amp; pumps</div>
+      <div class="s115">
+        <div class="s116">
+          <div class="s117">Nodes</div>
+          <div class="s118">Sensors &amp; actuators</div>
+          <div class="s119">Soil, water, climate · valves &amp; pumps</div>
         </div>
-        <div style="display:flex;align-items:center;padding:0 14px;font-family:'IBM Plex Mono',monospace;font-size:30px;color:#008a60;">→</div>
-        <div style="flex:1;min-width:220px;background:#1a2a20;border:1px solid #274031;border-radius:12px;padding:30px 30px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#65c298;margin-bottom:12px;">Transport</div>
-          <div style="font-size:26px;font-weight:600;line-height:1.25;margin-bottom:8px;">WiFi · LoRaWAN</div>
-          <div style="font-size:19px;color:#9fb2a4;line-height:1.4;">MQTT messaging</div>
+        <div class="s120">→</div>
+        <div class="s116">
+          <div class="s117">Transport</div>
+          <div class="s118">WiFi · LoRaWAN</div>
+          <div class="s119">MQTT messaging</div>
         </div>
-        <div style="display:flex;align-items:center;padding:0 14px;font-family:'IBM Plex Mono',monospace;font-size:30px;color:#008a60;">→</div>
-        <div style="flex:1.4;min-width:260px;background:#008a60;border:1px solid #008a60;border-radius:12px;padding:30px 30px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#bff0d9;margin-bottom:12px;">Edge server · RPi</div>
-          <div style="font-size:26px;font-weight:600;line-height:1.25;margin-bottom:14px;color:#ffffff;">The GROUU Stack</div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;background:#0b6c4a;color:#eafaf1;border-radius:100px;padding:6px 14px;">Mosquitto</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;background:#0b6c4a;color:#eafaf1;border-radius:100px;padding:6px 14px;">Node-RED</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;background:#0b6c4a;color:#eafaf1;border-radius:100px;padding:6px 14px;">InfluxDB</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;background:#eafaf1;color:#0b6c4a;border-radius:100px;padding:6px 14px;">Grafana</span>
+        <div class="s120">→</div>
+        <div class="s121">
+          <div class="s122">Edge server · RPi</div>
+          <div class="s123">The GROUU Stack</div>
+          <div class="s124">
+            <span class="s125">Mosquitto</span>
+            <span class="s125">Node-RED</span>
+            <span class="s125">InfluxDB</span>
+            <span class="s126">Grafana</span>
           </div>
         </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
-        <div style="border-top:2px solid #274031;padding-top:20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:17px;color:#65c298;margin-bottom:8px;">Mosquitto</div><p style="font-size:18px;line-height:1.4;color:#9fb2a4;margin:0;">MQTT broker — messaging between nodes and the server.</p></div>
-        <div style="border-top:2px solid #274031;padding-top:20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:17px;color:#65c298;margin-bottom:8px;">Node-RED</div><p style="font-size:18px;line-height:1.4;color:#9fb2a4;margin:0;">Flow-based logic — process and route farm data.</p></div>
-        <div style="border-top:2px solid #274031;padding-top:20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:17px;color:#65c298;margin-bottom:8px;">InfluxDB</div><p style="font-size:18px;line-height:1.4;color:#9fb2a4;margin:0;">Time-series store for all sensor history.</p></div>
-        <div style="border-top:2px solid #274031;padding-top:20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:17px;color:#65c298;margin-bottom:8px;">Grafana</div><p style="font-size:18px;line-height:1.4;color:#9fb2a4;margin:0;">Dashboards to visualise everything, live.</p></div>
+      <div class="s127">
+        <div class="s128"><div class="s129">Mosquitto</div><p class="s130">MQTT broker — messaging between nodes and the server.</p></div>
+        <div class="s128"><div class="s129">Node-RED</div><p class="s130">Flow-based logic — process and route farm data.</p></div>
+        <div class="s128"><div class="s129">InfluxDB</div><p class="s130">Time-series store for all sensor history.</p></div>
+        <div class="s128"><div class="s129">Grafana</div><p class="s130">Dashboards to visualise everything, live.</p></div>
       </div>
 
-      <div style="margin-top:44px;font-family:'IBM Plex Mono',monospace;font-size:16px;color:#7f9186;">Deployed with Docker + Portainer · install guide in the <a href="https://github.com/steam228/GROUU#server-documentation" target="_blank" rel="noopener" style="color:#65c298;">repository README ↗</a></div>
+      <div class="s131">Deployed with Docker + Portainer · install guide in the <a href="https://github.com/steam228/GROUU#server-documentation" target="_blank" rel="noopener" class="s69">repository README ↗</a></div>
     </div>
   </section>
 
   <!-- ── MODULES ── -->
-  <section id="modules" style="background:#e9f2ec;border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1200px;margin:0 auto;padding:96px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.2em;text-transform:uppercase;color:#008a60;margin-bottom:18px;">03 — Modules</div>
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:50px;">
-        <h2 style="font-size:46px;font-weight:600;line-height:1.06;letter-spacing:-0.02em;color:#16201a;margin:0;">DiY templates</h2>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#6b756b;">GROUU V2 · in development</span>
+  <section id="modules" class="s75">
+    <div class="s103">
+      <div class="s105">03 — Modules</div>
+      <div class="s132">
+        <h2 class="s106">DiY templates</h2>
+        <span class="s133">GROUU V2 · in development</span>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px;">
+      <div class="s134">
 
-        <div style="background:#fff;border:1px solid #d5e4da;border-radius:14px;overflow:hidden;">
-          <div style="aspect-ratio:16/10;background:#dbe8df;overflow:hidden;"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0714.JPG" alt="WiFi sensor node" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-          <div style="padding:28px 30px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:#008a60;">Sensor node</span>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;">WiFi</span>
+        <div class="s135">
+          <div class="s136"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0714.JPG" alt="WiFi sensor node" loading="lazy" class="s137"></div>
+          <div class="s138">
+            <div class="s139">
+              <span class="s140">Sensor node</span>
+              <span class="s141">WiFi</span>
             </div>
-            <h3 style="font-size:27px;font-weight:600;color:#16201a;margin:0 0 8px;">WiFi Sensor Node</h3>
-            <p style="font-size:19px;line-height:1.45;color:#4a524a;margin:0;">A wireless sensor template reporting over WiFi + MQTT — for sites within reach of a network.</p>
+            <h3 class="s142">WiFi Sensor Node</h3>
+            <p class="s143">A wireless sensor template reporting over WiFi + MQTT — for sites within reach of a network.</p>
           </div>
         </div>
 
-        <div style="background:#fff;border:1px solid #d5e4da;border-radius:14px;overflow:hidden;">
-          <div style="aspect-ratio:16/10;background:#dbe8df;overflow:hidden;"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0717.JPG" alt="LoRa sensor node" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-          <div style="padding:28px 30px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:#008a60;">Sensor node</span>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;">LoRaWAN</span>
+        <div class="s135">
+          <div class="s136"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0717.JPG" alt="LoRa sensor node" loading="lazy" class="s137"></div>
+          <div class="s138">
+            <div class="s139">
+              <span class="s140">Sensor node</span>
+              <span class="s141">LoRaWAN</span>
             </div>
-            <h3 style="font-size:27px;font-weight:600;color:#16201a;margin:0 0 8px;">LoRa Sensor Node</h3>
-            <p style="font-size:19px;line-height:1.45;color:#4a524a;margin:0;">Long-range, low-power template for remote fields and wells beyond WiFi coverage.</p>
+            <h3 class="s142">LoRa Sensor Node</h3>
+            <p class="s143">Long-range, low-power template for remote fields and wells beyond WiFi coverage.</p>
           </div>
         </div>
 
-        <div style="background:#fff;border:1px solid #d5e4da;border-radius:14px;overflow:hidden;">
-          <div style="aspect-ratio:16/10;background:#dcece2;display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="site/assets/emblem-green.svg" alt="" style="height:56%;opacity:0.3;"></div>
-          <div style="padding:28px 30px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:#008a60;">Actuator</span>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#6b756b;background:#e6ede8;border-radius:100px;padding:5px 12px;">under development</span>
+        <div class="s135">
+          <div class="s144"><img src="site/assets/emblem-green.svg" alt="" class="s145"></div>
+          <div class="s138">
+            <div class="s139">
+              <span class="s140">Actuator</span>
+              <span class="s146">under development</span>
             </div>
-            <h3 style="font-size:27px;font-weight:600;color:#16201a;margin:0 0 8px;">Actuator Module</h3>
-            <p style="font-size:19px;line-height:1.45;color:#4a524a;margin:0;">Drives valves and pumps — e.g. a 1-in / 4-out electrovalve water router for micro-irrigation.</p>
+            <h3 class="s142">Actuator Module</h3>
+            <p class="s143">Drives valves and pumps — e.g. a 1-in / 4-out electrovalve water router for micro-irrigation.</p>
           </div>
         </div>
 
-        <div style="background:#fff;border:1px solid #d5e4da;border-radius:14px;overflow:hidden;">
-          <div style="aspect-ratio:16/10;background:#dbe8df;overflow:hidden;"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0878.JPG" alt="Edge server" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-          <div style="padding:28px 30px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:#008a60;">Server</span>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;">RPi</span>
+        <div class="s135">
+          <div class="s136"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0878.JPG" alt="Edge server" loading="lazy" class="s137"></div>
+          <div class="s138">
+            <div class="s139">
+              <span class="s140">Server</span>
+              <span class="s141">RPi</span>
             </div>
-            <h3 style="font-size:27px;font-weight:600;color:#16201a;margin:0 0 8px;">Edge Server</h3>
-            <p style="font-size:19px;line-height:1.45;color:#4a524a;margin:0;">A Raspberry Pi running the GROUU Stack — the local hub that ingests, stores, and visualises all node data.</p>
+            <h3 class="s142">Edge Server</h3>
+            <p class="s143">A Raspberry Pi running the GROUU Stack — the local hub that ingests, stores, and visualises all node data.</p>
           </div>
         </div>
 
@@ -197,95 +180,95 @@
   </section>
 
   <!-- ── NODES / DEPLOYMENTS ── -->
-  <section id="nodes" style="background:#ffffff;border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1200px;margin:0 auto;padding:96px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.2em;text-transform:uppercase;color:#008a60;margin-bottom:18px;">04 — Nodes &amp; modules</div>
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:50px;">
-        <h2 style="font-size:46px;font-weight:600;line-height:1.06;letter-spacing:-0.02em;color:#16201a;margin:0;max-width:640px;">Nodes &amp; modules</h2>
-        <p style="font-size:20px;color:#6b756b;margin:0;max-width:380px;line-height:1.4;">Open node and server designs at different stages — developed, under development, or planned. Each links to its documentation.</p>
+  <section id="nodes" class="s102">
+    <div class="s103">
+      <div class="s105">04 — Nodes &amp; modules</div>
+      <div class="s132">
+        <h2 class="s147">Nodes &amp; modules</h2>
+        <p class="s148">Open node and server designs at different stages — developed, under development, or planned. Each links to its documentation.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
+      <div class="s149">
 
         <!-- Well-water (feature → dedicated page) -->
-        <a href="wellbouy.html" class="hoverline" style="grid-column:span 3;background:#122018;color:#eaf3ec;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;">
-          <div style="padding:44px 46px;display:flex;flex-direction:column;justify-content:center;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
-              <span style="width:9px;height:9px;border-radius:50%;background:#65c298;box-shadow:0 0 0 4px rgba(101,194,152,0.18);"></span>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.1em;text-transform:uppercase;color:#65c298;">Deployed · live dashboard</span>
+        <a href="wellbouy.html" class="hoverline s150">
+          <div class="s151">
+            <div class="s152">
+              <span class="s153"></span>
+              <span class="s154">Deployed · live dashboard</span>
             </div>
-            <h3 style="font-size:38px;font-weight:600;letter-spacing:-0.02em;margin:0 0 14px;">WellBouy — Water-Quality Sensor</h3>
-            <p style="font-size:21px;line-height:1.45;color:#bcccc0;margin:0 0 24px;max-width:480px;">An open LoRaWAN reference design for a water source — DS18B20 temperature, TDS, turbidity (SEN0189) and pH (Phidgets), joining The Things Network over EU868. All four sensors are calibrated and validated; the node deep-sleeps, resumes its session and accepts downlink commands, streaming to a live dashboard. Dedicated PCB fabricated.</p>
-            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px;">
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;background:#1a2a20;border:1px solid #274031;color:#9fb2a4;border-radius:100px;padding:6px 14px;">XIAO ESP32-S3</span>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;background:#1a2a20;border:1px solid #274031;color:#9fb2a4;border-radius:100px;padding:6px 14px;">Wio-SX1262</span>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;background:#1a2a20;border:1px solid #274031;color:#9fb2a4;border-radius:100px;padding:6px 14px;">EU868 · OTAA</span>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;background:#1a2a20;border:1px solid #274031;color:#9fb2a4;border-radius:100px;padding:6px 14px;">The Things Network</span>
+            <h3 class="s155">WellBouy — Water-Quality Sensor</h3>
+            <p class="s156">An open LoRaWAN reference design for a water source — DS18B20 temperature, TDS, turbidity (SEN0189) and pH (Phidgets), joining The Things Network over EU868. All four sensors are calibrated and validated; the node deep-sleeps, resumes its session and accepts downlink commands, streaming to a live dashboard. Dedicated PCB fabricated.</p>
+            <div class="s157">
+              <span class="s158">XIAO ESP32-S3</span>
+              <span class="s158">Wio-SX1262</span>
+              <span class="s158">EU868 · OTAA</span>
+              <span class="s158">The Things Network</span>
             </div>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.06em;text-transform:uppercase;color:#65c298;">Explore the node →</span>
+            <span class="s159">Explore the node →</span>
           </div>
-          <div style="background:#0c150f;overflow:hidden;"><img src="site/img/wellbouy-board.png" alt="Well-water sensor board" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.92;"></div>
+          <div class="s160"><img src="site/img/wellbouy-board.png" alt="Well-water sensor board" loading="lazy" class="s161"></div>
         </a>
 
         <!-- WiFi sensor node -->
-        <a href="wifi-node.html" class="hoverborder" style="background:#f4f8f5;border:1px solid #d5e4da;border-radius:16px;overflow:hidden;display:block;color:inherit;">
-          <div style="aspect-ratio:16/11;background:#dbe8df;overflow:hidden;"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0714.JPG" alt="WiFi sensor node" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-          <div style="padding:26px 28px;">
-            <div style="display:flex;gap:8px;">
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;">● Developed</span>
+        <a href="wifi-node.html" class="hoverborder s162">
+          <div class="s163"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0714.JPG" alt="WiFi sensor node" loading="lazy" class="s137"></div>
+          <div class="s164">
+            <div class="s165">
+              <span class="s141">● Developed</span>
             </div>
-            <h3 style="font-size:25px;font-weight:600;color:#16201a;margin:16px 0 8px;">WiFi Sensor Node</h3>
-            <p style="font-size:18px;line-height:1.45;color:#4a524a;margin:0;">A reusable ESP32 + DHT22 template publishing JSON over WiFi &amp; MQTT, with reconnect logic and over-the-air updates. Complete, documented firmware.</p>
+            <h3 class="s166">WiFi Sensor Node</h3>
+            <p class="s167">A reusable ESP32 + DHT22 template publishing JSON over WiFi &amp; MQTT, with reconnect logic and over-the-air updates. Complete, documented firmware.</p>
           </div>
         </a>
 
         <!-- Aquaponics @ Home -->
-        <div style="background:#f4f8f5;border:1px solid #d5e4da;border-radius:16px;overflow:hidden;">
-          <div style="aspect-ratio:16/11;background:#dcece2;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #d5e4da;"><img src="site/assets/emblem-green.svg" alt="" style="height:56%;opacity:0.3;"></div>
-          <div style="padding:26px 28px;">
-            <div style="display:flex;gap:8px;">
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8a6d1f;background:#f5edd6;border-radius:100px;padding:5px 12px;">◑ Under development</span>
+        <div class="s168">
+          <div class="s169"><img src="site/assets/emblem-green.svg" alt="" class="s145"></div>
+          <div class="s164">
+            <div class="s165">
+              <span class="s170">◑ Under development</span>
             </div>
-            <h3 style="font-size:25px;font-weight:600;color:#16201a;margin:16px 0 8px;">Aquaponics</h3>
-            <p style="font-size:18px;line-height:1.45;color:#4a524a;margin:0;">A home aquaponics unit for aromatics, built around a recovered fish tank with a CNC-milled structure.</p>
+            <h3 class="s166">Aquaponics</h3>
+            <p class="s167">A home aquaponics unit for aromatics, built around a recovered fish tank with a CNC-milled structure.</p>
           </div>
         </div>
 
         <!-- GROUUWAN LoRaWAN -->
-        <a href="grouuwan.html" class="hoverborder" style="background:#f4f8f5;border:1px solid #d5e4da;border-radius:16px;overflow:hidden;display:block;color:inherit;">
-          <div style="aspect-ratio:16/11;background:#dcece2;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #d5e4da;"><img src="site/assets/emblem-green.svg" alt="" style="height:56%;opacity:0.3;"></div>
-          <div style="padding:26px 28px;">
-            <div style="display:flex;gap:8px;">
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8a6d1f;background:#f5edd6;border-radius:100px;padding:5px 12px;">◑ Under development</span>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#4a524a;background:#e6ede8;border-radius:100px;padding:5px 12px;">LoRaWAN</span>
+        <a href="grouuwan.html" class="hoverborder s162">
+          <div class="s169"><img src="site/assets/emblem-green.svg" alt="" class="s145"></div>
+          <div class="s164">
+            <div class="s165">
+              <span class="s170">◑ Under development</span>
+              <span class="s171">LoRaWAN</span>
             </div>
-            <h3 style="font-size:25px;font-weight:600;color:#16201a;margin:16px 0 8px;">GROUUWAN</h3>
-            <p style="font-size:18px;line-height:1.45;color:#4a524a;margin:0;">The long-range LoRaWAN track via The Things Network — gateway pattern and TTN bridge documented, first node tested, sensor firmware in progress.</p>
+            <h3 class="s166">GROUUWAN</h3>
+            <p class="s167">The long-range LoRaWAN track via The Things Network — gateway pattern and TTN bridge documented, first node tested, sensor firmware in progress.</p>
           </div>
         </a>
 
         <!-- Greenhouse IoT -->
-        <div style="background:#f4f8f5;border:1px solid #d5e4da;border-radius:16px;overflow:hidden;">
-          <div style="aspect-ratio:16/11;background:#dbe8df;overflow:hidden;"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/grouuView.png" alt="GROUU greenhouse" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-          <div style="padding:26px 28px;">
-            <div style="display:flex;gap:8px;">
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8a6d1f;background:#f5edd6;border-radius:100px;padding:5px 12px;">◑ Under development</span>
+        <div class="s168">
+          <div class="s163"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/grouuView.png" alt="GROUU greenhouse" loading="lazy" class="s137"></div>
+          <div class="s164">
+            <div class="s165">
+              <span class="s170">◑ Under development</span>
             </div>
-            <h3 style="font-size:25px;font-weight:600;color:#16201a;margin:16px 0 8px;">Greenhouse IoT</h3>
-            <p style="font-size:18px;line-height:1.45;color:#4a524a;margin:0;">Local automation — DHT, light and moisture sensors driving fan, servo and pump actuators.</p>
+            <h3 class="s166">Greenhouse IoT</h3>
+            <p class="s167">Local automation — DHT, light and moisture sensors driving fan, servo and pump actuators.</p>
           </div>
         </div>
 
         <!-- Edge server -->
-        <a href="server-stack.html" class="hoverborder" style="background:#f4f8f5;border:1px solid #d5e4da;border-radius:16px;overflow:hidden;display:block;color:inherit;">
-          <div style="aspect-ratio:16/11;background:#dbe8df;overflow:hidden;"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0878.JPG" alt="Edge server" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-          <div style="padding:26px 28px;">
-            <div style="display:flex;gap:8px;">
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#0c6b4b;background:#e2f1e9;border-radius:100px;padding:5px 12px;">● Developed</span>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#4a524a;background:#e6ede8;border-radius:100px;padding:5px 12px;">Docker</span>
+        <a href="server-stack.html" class="hoverborder s162">
+          <div class="s163"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0878.JPG" alt="Edge server" loading="lazy" class="s137"></div>
+          <div class="s164">
+            <div class="s165">
+              <span class="s141">● Developed</span>
+              <span class="s171">Docker</span>
             </div>
-            <h3 style="font-size:25px;font-weight:600;color:#16201a;margin:16px 0 8px;">Edge Server</h3>
-            <p style="font-size:18px;line-height:1.45;color:#4a524a;margin:0;">The open containerised GROUU Stack — Mosquitto, Node-RED, InfluxDB and Grafana — deployable on any Linux host or Raspberry Pi.</p>
+            <h3 class="s166">Edge Server</h3>
+            <p class="s167">The open containerised GROUU Stack — Mosquitto, Node-RED, InfluxDB and Grafana — deployable on any Linux host or Raspberry Pi.</p>
           </div>
         </a>
 
@@ -294,49 +277,49 @@
   </section>
 
   <!-- ── VERSIONS ── -->
-  <section style="background:#e9f2ec;border-bottom:1px solid #d5e4da;">
-    <div style="max-width:1200px;margin:0 auto;padding:96px 40px;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.2em;text-transform:uppercase;color:#008a60;margin-bottom:18px;">05 — Evolution</div>
-      <h2 style="font-size:46px;font-weight:600;line-height:1.06;letter-spacing:-0.02em;color:#16201a;margin:0 0 50px;">Research-through-design process evolution</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;">
+  <section class="s75">
+    <div class="s103">
+      <div class="s105">05 — Evolution</div>
+      <h2 class="s172">Research-through-design process evolution</h2>
+      <div class="s173">
 
-        <div style="background:#fff;border:1px solid #d5e4da;border-radius:16px;padding:34px 34px;display:flex;flex-direction:column;">
-          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px;">
-            <span style="font-size:30px;font-weight:600;color:#16201a;letter-spacing:-0.02em;">V0</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#6b756b;">2012 – 2014</span>
+        <div class="s174">
+          <div class="s175">
+            <span class="s176">V0</span>
+            <span class="s177">2012 – 2014</span>
           </div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Centralized Greenhouse</div>
-          <p style="font-size:19px;line-height:1.5;color:#4a524a;margin:0 0 18px;flex:1;">Centralized Arduino automation for a controlled lab environment — the search for a single "universal solution" to greenhouse management.</p>
-          <div style="display:flex;gap:9px;flex-wrap:wrap;">
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#4a524a;border:1px solid #cbdccf;border-radius:100px;padding:5px 12px;">Arduino</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#4a524a;border:1px solid #cbdccf;border-radius:100px;padding:5px 12px;">Monolithic</span>
+          <div class="s178">Centralized Greenhouse</div>
+          <p class="s179">Centralized Arduino automation for a controlled lab environment — the search for a single "universal solution" to greenhouse management.</p>
+          <div class="s180">
+            <span class="s181">Arduino</span>
+            <span class="s181">Monolithic</span>
           </div>
         </div>
 
-        <div style="background:#fff;border:1px solid #d5e4da;border-radius:16px;padding:34px 34px;display:flex;flex-direction:column;">
-          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px;">
-            <span style="font-size:30px;font-weight:600;color:#16201a;letter-spacing:-0.02em;">V1</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#6b756b;">2017 – 2021</span>
+        <div class="s174">
+          <div class="s175">
+            <span class="s176">V1</span>
+            <span class="s177">2017 – 2021</span>
           </div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:#008a60;margin-bottom:16px;">Modular Hardware</div>
-          <p style="font-size:19px;line-height:1.5;color:#4a524a;margin:0 0 18px;flex:1;">The monolith broken into independent, interconnectable nodes. Node-RED logic, Fusion 360 CAD, and custom PCBs — the Soil Probe REV0 among them.</p>
-          <div style="display:flex;gap:9px;flex-wrap:wrap;">
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#4a524a;border:1px solid #cbdccf;border-radius:100px;padding:5px 12px;">ESP8266</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#4a524a;border:1px solid #cbdccf;border-radius:100px;padding:5px 12px;">Custom PCB</span>
+          <div class="s178">Modular Hardware</div>
+          <p class="s179">The monolith broken into independent, interconnectable nodes. Node-RED logic, Fusion 360 CAD, and custom PCBs — the Soil Probe REV0 among them.</p>
+          <div class="s180">
+            <span class="s181">ESP8266</span>
+            <span class="s181">Custom PCB</span>
           </div>
         </div>
 
-        <div style="background:#122018;color:#eaf3ec;border-radius:16px;padding:34px 34px;position:relative;overflow:hidden;display:flex;flex-direction:column;">
-          <img src="site/assets/emblem-light.svg" alt="" style="position:absolute;right:-30px;bottom:-40px;height:190px;opacity:0.08;">
-          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px;position:relative;z-index:1;">
-            <span style="font-size:30px;font-weight:600;letter-spacing:-0.02em;">V2</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#65c298;">2023 – now</span>
+        <div class="s182">
+          <img src="site/assets/emblem-light.svg" alt="" class="s183">
+          <div class="s184">
+            <span class="s185">V2</span>
+            <span class="s186">2023 – now</span>
           </div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:#65c298;margin-bottom:16px;position:relative;z-index:1;">Situated Practice</div>
-          <p style="font-size:19px;line-height:1.5;color:#bcccc0;margin:0 0 18px;flex:1;position:relative;z-index:1;">The designer's own position inside an open knowledge ecosystem — WiFi and LoRaWAN nodes feeding a containerised server stack, tested across real, inhabited sites.</p>
-          <div style="display:flex;gap:9px;flex-wrap:wrap;position:relative;z-index:1;">
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#bcccc0;border:1px solid #274031;border-radius:100px;padding:5px 12px;">XIAO ESP32-S3</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#bcccc0;border:1px solid #274031;border-radius:100px;padding:5px 12px;">WiFi + LoRaWAN</span>
+          <div class="s187">Situated Practice</div>
+          <p class="s188">The designer's own position inside an open knowledge ecosystem — WiFi and LoRaWAN nodes feeding a containerised server stack, tested across real, inhabited sites.</p>
+          <div class="s189">
+            <span class="s190">XIAO ESP32-S3</span>
+            <span class="s190">WiFi + LoRaWAN</span>
           </div>
         </div>
 
@@ -345,48 +328,48 @@
   </section>
 
   <!-- ── CONTRIBUTE / CTA ── -->
-  <section id="contribute" style="background:#008a60;color:#eafaf1;">
-    <div style="max-width:1200px;margin:0 auto;padding:100px 40px;text-align:center;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.2em;text-transform:uppercase;color:#bff0d9;margin-bottom:24px;">Call for collaboration — permanent</div>
-      <h2 style="font-size:60px;font-weight:600;line-height:1.05;letter-spacing:-0.03em;margin:0 auto 26px;max-width:900px;color:#ffffff;">Develop whatever you want, whenever you want.</h2>
-      <p style="font-size:24px;line-height:1.45;color:#d3f2e3;margin:0 auto 44px;max-width:640px;">GROUU is open hardware and open software. Fork it, build a node, deploy it in your own context — and let us know if you'd like to collaborate.</p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.06em;text-transform:uppercase;color:#08694a;background:#ffffff;border-radius:100px;padding:16px 32px;">GitHub repository ↗</a>
-        <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.06em;text-transform:uppercase;color:#ffffff;border:1px solid rgba(255,255,255,0.5);border-radius:100px;padding:16px 32px;">Live dashboard ↗</a>
+  <section id="contribute" class="s191">
+    <div class="s192">
+      <div class="s193">Call for collaboration — permanent</div>
+      <h2 class="s194">Develop whatever you want, whenever you want.</h2>
+      <p class="s195">GROUU is open hardware and open software. Fork it, build a node, deploy it in your own context — and let us know if you'd like to collaborate.</p>
+      <div class="s196">
+        <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s197">GitHub repository ↗</a>
+        <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" class="s198">Live dashboard ↗</a>
       </div>
     </div>
   </section>
 
   <!-- ── FOOTER ── -->
-  <footer style="background:#0e1712;color:#8ba192;">
-    <div style="max-width:1200px;margin:0 auto;padding:56px 40px 44px;">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;">
-        <div style="max-width:360px;">
-          <img src="site/assets/wordmark-white.svg" alt="GROUU" style="height:46px;display:block;margin-bottom:18px;width:104px;">
-          <p style="font-size:17px;line-height:1.5;margin:0;">Modular open source agriculture for personal and small-scale growers.</p>
+  <footer class="s82">
+    <div class="s199">
+      <div class="s200">
+        <div class="s201">
+          <img src="site/assets/wordmark-white.svg" alt="GROUU" class="s202">
+          <p class="s203">Modular open source agriculture for personal and small-scale growers.</p>
         </div>
-        <div style="display:flex;gap:70px;flex-wrap:wrap;">
+        <div class="s204">
           <div>
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#5f7568;margin-bottom:16px;">Explore</div>
-            <div style="display:flex;flex-direction:column;gap:11px;font-size:17px;">
-              <a href="#overview" style="color:#c3d3c9;">Overview</a>
-              <a href="#system" style="color:#c3d3c9;">System</a>
-              <a href="#modules" style="color:#c3d3c9;">Modules</a>
-              <a href="#nodes" style="color:#c3d3c9;">Nodes</a>
+            <div class="s205">Explore</div>
+            <div class="s206">
+              <a href="#overview" class="s207">Overview</a>
+              <a href="#system" class="s207">System</a>
+              <a href="#modules" class="s207">Modules</a>
+              <a href="#nodes" class="s207">Nodes</a>
             </div>
           </div>
           <div>
-            <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#5f7568;margin-bottom:16px;">Project</div>
-            <div style="display:flex;flex-direction:column;gap:11px;font-size:17px;">
-              <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" style="color:#c3d3c9;">GitHub ↗</a>
-              <a href="https://github.com/steam228/GROUU/releases" target="_blank" rel="noopener" style="color:#c3d3c9;">Releases ↗</a>
-              <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" style="color:#c3d3c9;">Live dashboard ↗</a>
+            <div class="s205">Project</div>
+            <div class="s206">
+              <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s207">GitHub ↗</a>
+              <a href="https://github.com/steam228/GROUU/releases" target="_blank" rel="noopener" class="s207">Releases ↗</a>
+              <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" class="s207">Live dashboard ↗</a>
             </div>
           </div>
         </div>
       </div>
-      <div style="border-top:1px solid #1e2c23;margin-top:44px;padding-top:26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#5f7568;">
-        <span>© 2026 GROUU · Open hardware &amp; software · GPL licence</span>
+      <div class="s208">
+        <span>© 2026 GROUU · Open hardware &amp; software · GPLv3 (code) + CC-BY-SA 4.0 (hardware &amp; docs)</span>
         <span>Precision agriculture, at the scale of a person</span>
       </div>
     </div>
