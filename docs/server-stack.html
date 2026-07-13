@@ -145,6 +145,40 @@
     </div>
   </section>
 
+  <!-- REFERENCE FILES -->
+  <section class="s75">
+    <div class="s22">
+      <div class="s23">Reference files</div>
+      <h2 class="s24">The files behind the stack</h2>
+      <div class="reciperow">
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3/server" target="_blank" rel="noopener" class="reciperepo">⟶ server/ — Node-RED flows · TTN formatter · Grafana dashboard</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3/webapp" target="_blank" rel="noopener" class="reciperepo">⟶ webapp/ — public dashboard container</a>
+      </div>
+      <p class="codecap">docker-compose.yml — the four-service stack (representative; full file in the repo)</p>
+      <div class="codewrap">
+<pre class="code">services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    ports: ["1883:1883"]
+    restart: always
+  nodered:
+    image: nodered/node-red:latest
+    ports: ["1880:1880"]
+    volumes: ["nodered-data:/data"]
+    restart: always
+  influxdb:
+    image: influxdb:2
+    ports: ["8086:8086"]
+    volumes: ["influxdb-data:/var/lib/influxdb2"]
+    restart: always
+  grafana:
+    image: grafana/grafana:latest
+    ports: ["3000:3000"]
+    restart: always</pre>
+      </div>
+    </div>
+  </section>
+
   <!-- REQUIREMENTS -->
   <section class="s21">
     <div class="s76">

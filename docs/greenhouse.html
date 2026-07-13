@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Greenhouse IoT (archived) · GROUU</title>
+  <link rel="icon" href="site/assets/emblem-green.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="s1">
+
+  <nav class="s2">
+    <div class="s3">
+      <a href="index.html" class="s4"><img src="site/assets/wordmark-green.svg" alt="GROUU" class="s5"></a>
+      <div class="s6">
+        <a href="index.html#nodes" class="s7">← All nodes</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V2/GROUUV2-SensorNodeWiFi" target="_blank" rel="noopener" class="s8">Reference firmware ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="s9">
+    <div class="s10">
+      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#nodes" class="s12">Nodes</a> · <span class="s13">Greenhouse IoT</span></div>
+      <div class="s14">
+        <span class="arch">▢ Archived</span>
+      </div>
+      <h1 class="s17">Greenhouse IoT</h1>
+      <p class="s18">Local automation for a greenhouse — air and soil sensing driving fans, a vent servo, grow lights and a pump, all over WiFi and MQTT. This was an early GROUU strand; it is archived and not in active development, kept here as reference for the reusable pieces it fed into.</p>
+      <div class="s19">
+        <span class="s20">ESP32</span>
+        <span class="s20">DHT · LDR · moisture</span>
+        <span class="s20">WiFi + MQTT</span>
+        <span class="s20">Archived</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARCHIVE NOTICE + HOW IT WORKED -->
+  <section class="s21">
+    <div class="s22">
+      <div class="archbanner mb28">▢&nbsp; <strong>Archived.</strong>&nbsp; This node isn't in active development. Records and files are being added soon — the material below is the design as it stood, and its reusable parts live on in the WiFi node and actuator module.</div>
+      <div class="s23">How it worked</div>
+      <h2 class="s24">Sense the room, drive the room</h2>
+      <p class="s25">A single local controller reads the greenhouse climate and root zone, publishes it over MQTT, and switches the actuators that keep conditions in range. It stays on the local WiFi track — deliberately separate from the long-range LoRaWAN nodes — and its reference implementation is the GROUU WiFi node.</p>
+      <p class="codecap">Intended local architecture (from the design notes)</p>
+      <div class="codewrap">
+<pre class="code">[ DHT22 · LDR · soil-moisture ×2 ]
+              │
+           ESP32 controller  ──►  fan · vent servo · grow-LED ×2 · pump
+              │
+           Mosquitto  ──►  InfluxDB  ──►  Grafana</pre>
+      </div>
+      <p class="s25 mt24">No greenhouse-specific firmware is committed; the sensing follows the WiFi node and the switching follows the <a href="actuator.html">actuator module</a>. Pin assignments were never finalised — one of the loose ends the archive leaves open.</p>
+    </div>
+  </section>
+
+  <!-- BOM -->
+  <section class="s58">
+    <div class="s22">
+      <div class="s59">Bill of materials</div>
+      <h2 class="s60">The parts it was designed around</h2>
+      <p class="s263">Design-level, archival — no priced BOM was published. Left here so the reference is not lost.</p>
+      <div class="bomwrap">
+        <table class="bomtable">
+          <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td class="part">ESP32 controller</td><td>Reads sensors, drives actuators over WiFi + MQTT</td><td>—</td></tr>
+            <tr><td class="part">DHT22</td><td>Air temperature + humidity</td><td>—</td></tr>
+            <tr><td class="part">DS18B20 (or DHT11)</td><td>Root-zone / secondary temperature</td><td>—</td></tr>
+            <tr><td class="part">LDR / photoresistor</td><td>Ambient light (voltage divider)</td><td>—</td></tr>
+            <tr><td class="part">Capacitive soil moisture ×2</td><td>Dual-depth moisture (preferred over resistive)</td><td>—</td></tr>
+            <tr><td class="part">Servo · fan · grow-LED ×2 · pump</td><td>Vent, cooling, lighting, micro-irrigation</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="s75">
+    <div class="s76">
+      <div class="s77">Related</div>
+      <div class="s78">
+        <a href="wifi-node.html" class="relcard s79"><div class="s80">WiFi Node →</div><p class="s81">The reference implementation it fed into.</p></a>
+        <a href="actuator.html" class="relcard s79"><div class="s80">Actuator Module →</div><p class="s81">Where the fan / pump / servo control lives on.</p></a>
+        <a href="aquaponics.html" class="relcard s79"><div class="s80">Aquaponics →</div><p class="s81">The active successor reusing this sensor set.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="s82">
+    <div class="s83">
+      <a href="index.html"><img src="site/assets/wordmark-white.svg" alt="GROUU" class="s84"></a>
+      <span class="s85">Open hardware &amp; software · GPLv3 + CC-BY-SA 4.0</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

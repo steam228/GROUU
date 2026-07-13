@@ -20,13 +20,14 @@
       <a href="#top" class="s4">
         <img src="site/assets/wordmark-green.svg" alt="GROUU" class="s87">
       </a>
-      <div class="s88">
+      <div class="s88" id="navlinks">
         <a href="#overview" class="s7">Overview</a>
         <a href="#system" class="s7">System</a>
         <a href="#modules" class="s7">Modules</a>
         <a href="#nodes" class="s7">Nodes</a>
         <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s8">GitHub ↗</a>
       </div>
+      <button id="burger" class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">☰</button>
     </div>
   </nav>
 
@@ -36,7 +37,7 @@
     <div class="s91">
       <div class="s92">Open source hardware · software · design</div>
       <h1 class="s93">Modular open <br>source agriculture</h1>
-      <p class="s94">GROUU brings precision agriculture and automation to personal and small-scale growers — a kit of sensor nodes, actuators, and an edge server you can build, deploy, and adapt yourself, developed as part of a PhD research-through-design process.</p>
+      <p class="s94">GROUU is precision agriculture and automation for personal and small-scale growers — a kit of open sensor nodes, actuators, and an edge server, each documented so you can build, deploy and adapt it yourself. Developed as a PhD research-through-design process.</p>
       <div class="s95">
         <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s96">View the repository ↗</a>
         <a href="#nodes" class="s97">Nodes in the field</a>
@@ -127,7 +128,7 @@
       </div>
       <div class="s134">
 
-        <div class="s135">
+        <a href="wifi-node.html" class="s135 cardlink hoverborder">
           <div class="s136"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0714.JPG" alt="WiFi sensor node" loading="lazy" class="s137"></div>
           <div class="s138">
             <div class="s139">
@@ -137,9 +138,9 @@
             <h3 class="s142">WiFi Sensor Node</h3>
             <p class="s143">A wireless sensor template reporting over WiFi + MQTT — for sites within reach of a network.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="s135">
+        <a href="grouuwan.html" class="s135 cardlink hoverborder">
           <div class="s136"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0717.JPG" alt="LoRa sensor node" loading="lazy" class="s137"></div>
           <div class="s138">
             <div class="s139">
@@ -149,9 +150,9 @@
             <h3 class="s142">LoRa Sensor Node</h3>
             <p class="s143">Long-range, low-power template for remote fields and wells beyond WiFi coverage.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="s135">
+        <a href="actuator.html" class="s135 cardlink hoverborder">
           <div class="s144"><img src="site/assets/emblem-green.svg" alt="" class="s145"></div>
           <div class="s138">
             <div class="s139">
@@ -161,9 +162,9 @@
             <h3 class="s142">Actuator Module</h3>
             <p class="s143">Drives valves and pumps — e.g. a 1-in / 4-out electrovalve water router for micro-irrigation.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="s135">
+        <a href="server-stack.html" class="s135 cardlink hoverborder">
           <div class="s136"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0878.JPG" alt="Edge server" loading="lazy" class="s137"></div>
           <div class="s138">
             <div class="s139">
@@ -173,7 +174,7 @@
             <h3 class="s142">Edge Server</h3>
             <p class="s143">A Raspberry Pi running the GROUU Stack — the local hub that ingests, stores, and visualises all node data.</p>
           </div>
-        </div>
+        </a>
 
       </div>
     </div>
@@ -223,7 +224,7 @@
         </a>
 
         <!-- Aquaponics @ Home -->
-        <div class="s168">
+        <a href="aquaponics.html" class="s168 cardlink hoverborder">
           <div class="s169"><img src="site/assets/emblem-green.svg" alt="" class="s145"></div>
           <div class="s164">
             <div class="s165">
@@ -232,7 +233,7 @@
             <h3 class="s166">Aquaponics</h3>
             <p class="s167">A home aquaponics unit for aromatics, built around a recovered fish tank with a CNC-milled structure.</p>
           </div>
-        </div>
+        </a>
 
         <!-- GROUUWAN LoRaWAN -->
         <a href="grouuwan.html" class="hoverborder s162">
@@ -247,17 +248,17 @@
           </div>
         </a>
 
-        <!-- Greenhouse IoT -->
-        <div class="s168">
+        <!-- Greenhouse IoT (archived) -->
+        <a href="greenhouse.html" class="s168 cardlink hoverborder">
           <div class="s163"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/grouuView.png" alt="GROUU greenhouse" loading="lazy" class="s137"></div>
           <div class="s164">
             <div class="s165">
-              <span class="s170">◑ Under development</span>
+              <span class="arch">▢ Archived</span>
             </div>
             <h3 class="s166">Greenhouse IoT</h3>
-            <p class="s167">Local automation — DHT, light and moisture sensors driving fan, servo and pump actuators.</p>
+            <p class="s167">Local automation — DHT, light and moisture sensors driving fan, servo and pump actuators. Archived — records coming soon.</p>
           </div>
-        </div>
+        </a>
 
         <!-- Edge server -->
         <a href="server-stack.html" class="hoverborder s162">
@@ -331,8 +332,8 @@
   <section id="contribute" class="s191">
     <div class="s192">
       <div class="s193">Call for collaboration — permanent</div>
-      <h2 class="s194">Develop whatever you want, whenever you want.</h2>
-      <p class="s195">GROUU is open hardware and open software. Fork it, build a node, deploy it in your own context — and let us know if you'd like to collaborate.</p>
+      <h2 class="s194">Build on it</h2>
+      <p class="s195">GROUU is open hardware and open software — every node, module and the server stack is documented to be rebuilt and adapted. Fork it, deploy it in your own context, and get in touch if you'd like to collaborate.</p>
       <div class="s196">
         <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s197">GitHub repository ↗</a>
         <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" class="s198">Live dashboard ↗</a>
@@ -376,5 +377,6 @@
   </footer>
 
 </div>
+<script src="menu.js"></script>
 </body>
 </html>
