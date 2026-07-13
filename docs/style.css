@@ -313,8 +313,8 @@ a:hover{color:#00734f}
 .s294{background:#1a2a20;border:1px solid #274031;border-radius:14px;padding:28px 28px;}
 
 /* ── nav burger button (mobile) + archived badge ── */
-.burger{display:none;background:none;border:1px solid #cbdccf;border-radius:9px;color:#16201a;font-size:20px;line-height:1;padding:5px 11px;cursor:pointer;}
-.burger:hover{border-color:#008a60;color:#008a60;}
+.burger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:none;color:#16201a;font-size:23px;line-height:1;padding:0;margin-right:-8px;cursor:pointer;}
+.burger:hover{color:#008a60;}
 .arch{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#6b756b;background:#e6ede8;border:1px solid #cdd8d0;border-radius:100px;padding:4px 11px;}
 
 /* ── recipe pages: repo link · code block · BOM table · archive banner ── */
@@ -408,10 +408,12 @@ a:hover{color:#00734f}
 .s78{grid-template-columns:1fr!important}
 .s83{padding-left:20px!important;padding-right:20px!important}
 .s86{padding-left:20px!important;padding-right:20px!important}
-.burger{display:block!important}
-.s88{position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;background:#e9f2ec;border-bottom:1px solid #d5e4da;padding:6px 20px 14px;display:none!important;box-shadow:0 12px 26px rgba(18,32,24,0.09)}
+.burger{display:flex!important}
+.s88{position:absolute;top:100%;left:0;right:0;flex-direction:column!important;align-items:stretch!important;gap:0!important;background:#e9f2ec;border-bottom:1px solid #d5e4da;padding:4px 20px 12px;display:none!important;box-shadow:0 12px 26px rgba(18,32,24,0.09)}
 .s88.open{display:flex!important}
-.s88 a{padding:13px 2px!important;border-top:1px solid #dce8e0;justify-content:flex-start}
+.s88 a{padding:15px 0!important;border-top:1px solid #dce8e0;text-align:left;color:#16201a!important}
+.s88 a:first-child{border-top:none}
+.s88 .s8{background:none!important;color:#008a60!important;border-radius:0!important}
 .s115,.s240{flex-direction:column!important}
 .s116,.s121,.s241,.s246{width:100%!important}
 .s120,.s245{transform:rotate(90deg);padding:12px 0!important;align-self:center}
