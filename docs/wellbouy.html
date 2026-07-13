@@ -174,6 +174,52 @@
     </div>
   </section>
 
+  <!-- FIRMWARE & BOM -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Firmware &amp; parts</div>
+      <h2 class="s24">Encode four readings, uplink, sleep</h2>
+      <p class="s70">The whole node is in one PlatformIO project — staged bring-up sketches plus the integrated production firmware. Below is the heart of it, and the full parts list with links.</p>
+      <div class="reciperow">
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3" target="_blank" rel="noopener" class="reciperepo">⟶ GROUU_V3 firmware (RadioLib · CayenneLPP)</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3/hardware/well-bouy01" target="_blank" rel="noopener" class="reciperepo">⟶ well-bouy01 board (atopile / KiCad)</a>
+      </div>
+      <p class="codecap">src/main.cpp — CayenneLPP encode + uplink (TDS &amp; turbidity ride the Luminosity type, 0–65535, because Analog Input overflows above 327.67)</p>
+      <div class="codewrap">
+<pre class="code">CayenneLPP lpp(51);
+lpp.reset();
+lpp.addTemperature(1, isnan(r.temperatureC) ? 0.0f : r.temperatureC);
+lpp.addAnalogInput(2, r.ph);
+lpp.addLuminosity (3, (uint16_t)(r.turbidityNtu + 0.5f));   // turbidity
+lpp.addLuminosity (4, (uint16_t)(r.tdsPpm + 0.5f));         // TDS
+if (bootCount == 1 || (bootCount % 24) == 0)
+  lpp.addGPS(5, FIXED_LATITUDE, FIXED_LONGITUDE, FIXED_ALTITUDE);
+
+int16_t state = node.sendReceive(lpp.getBuffer(), lpp.getSize(),
+                                 LPP_FPORT, dnData, &amp;dnLen, /*confirmed=*/false);</pre>
+      </div>
+      <div class="bomwrap mt24">
+        <table class="bomtable">
+          <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td class="part">Seeed XIAO ESP32-S3 + Wio-SX1262</td><td>MCU + LoRa radio (SX1262 via RadioLib)</td><td><a href="https://www.seeedstudio.com/Wio-SX1262-with-XIAO-ESP32S3-p-5982.html" target="_blank" rel="noopener">Seeed ↗</a></td></tr>
+            <tr><td class="part">ADS1115</td><td>Shared 16-bit I²C ADC @ 0x48 — analog sensors on A0–A2</td><td>—</td></tr>
+            <tr><td class="part">DS18B20 (waterproof)</td><td>Water temperature — 1-Wire (GPIO4) + 4.7k pull-up</td><td><a href="https://www.adafruit.com/product/381" target="_blank" rel="noopener">Adafruit ↗</a><span class="tag-have">in stock</span></td></tr>
+            <tr><td class="part">Seeed Grove TDS</td><td>Dissolved solids (A0) — DFRobot Gravity algorithm, temp-compensated</td><td><a href="https://www.seeedstudio.com/Grove-TDS-Sensor-p-4400.html" target="_blank" rel="noopener">Seeed ↗</a><span class="tag-have">in stock</span></td></tr>
+            <tr><td class="part">DFRobot SEN0189</td><td>Turbidity (A1) via 10k/6.8k divider, 5 V</td><td><a href="https://wiki.dfrobot.com/Turbidity_sensor_SKU__SEN0189" target="_blank" rel="noopener">DFRobot ↗</a><span class="tag-have">in stock</span></td></tr>
+            <tr><td class="part">Phidgets ASP200 pH probe</td><td>pH 0–14, gel-filled BNC probe</td><td><a href="https://www.phidgets.com/?prodid=412" target="_blank" rel="noopener">Phidgets ↗</a><span class="tag-have">in stock</span></td></tr>
+            <tr><td class="part">Phidgets 1130 pH/ORP adapter</td><td>BNC → analog (A2) via 10k/18k divider, 5 V</td><td><a href="https://www.phidgets.com/?prodid=103" target="_blank" rel="noopener">Phidgets ↗</a><span class="tag-have">in stock</span></td></tr>
+            <tr><td class="part">Grove Shield for XIAO</td><td>Sensor carrier (in lieu of a custom PCB)</td><td><a href="https://www.seeedstudio.com/Grove-Shield-for-Seeeduino-XIAO-p-4621.html" target="_blank" rel="noopener">Seeed ↗</a><span class="tag-order">to order</span></td></tr>
+            <tr><td class="part">LiPo 1S 4500 mAh</td><td>Battery — mains-rechargeable, no solar (B1)</td><td><a href="https://mauser.pt/035-5302/bateria-3-7v-4500mah-li-po-34x97x12mm" target="_blank" rel="noopener">Mauser ↗</a><span class="tag-order">to order</span></td></tr>
+            <tr><td class="part">Dividers 10k/6.8k · 10k/18k</td><td>Level-shift turbidity &amp; pH into ADC range</td><td>—</td></tr>
+            <tr><td class="part">M12 glands · BNC bulkhead · O-rings</td><td>Hull pass-throughs &amp; seal</td><td><span class="tag-order">to order</span></td></tr>
+            <tr><td class="part">pH buffers 4 / 7 · TDS KCl 84 / 1413 µS/cm</td><td>Two-point calibration standards</td><td><span class="tag-order">to order</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <!-- HOW TO REPRODUCE -->
   <section class="s58">
     <div class="s22">

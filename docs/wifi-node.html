@@ -126,6 +126,45 @@
     </div>
   </section>
 
+  <!-- FIRMWARE & BOM -->
+  <section class="s75">
+    <div class="s22">
+      <div class="s23">Firmware &amp; parts</div>
+      <h2 class="s24">Clone it, wire two parts</h2>
+      <div class="reciperow">
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V2/GROUUV2-SensorNodeWiFi" target="_blank" rel="noopener" class="reciperepo">⟶ GROUUV2-SensorNodeWiFi (PlatformIO)</a>
+      </div>
+      <p class="codecap">src/main.cpp — read the DHT22, publish JSON over MQTT</p>
+      <div class="codewrap">
+<pre class="code">void publishValues() {
+  JsonDocument doc;
+  char output[80];
+  float newT = dht.readTemperature();
+  float newH = dht.readHumidity();
+  if (isnan(newT)) {
+    Serial.println("Failed to read from DHT sensor!");
+  } else {
+    doc["t2"] = newT;
+    doc["h2"] = newH;
+    serializeJson(doc, output);
+    client.publish(MQTT_room_sensors_PUBLISH_TOPIC.c_str(), output);
+  }
+}</pre>
+      </div>
+      <div class="bomwrap mt24">
+        <table class="bomtable">
+          <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td class="part">ESP32 dev board</td><td>MCU + WiFi (the PlatformIO env targets a XIAO ESP32-C3)</td><td>—</td></tr>
+            <tr><td class="part">DHT22 (AM2302)</td><td>Temperature + humidity, data on pin D7</td><td>—</td></tr>
+            <tr><td class="part">4.7k–10k pull-up</td><td>On the DHT data line</td><td>—</td></tr>
+            <tr><td class="part">MQTT broker</td><td>Any — e.g. the GROUU Stack</td><td><a href="server-stack.html">Server Stack</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <!-- HOW TO REUSE -->
   <section class="s58">
     <div class="s22">

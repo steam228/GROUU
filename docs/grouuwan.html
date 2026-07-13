@@ -138,6 +138,43 @@
     </div>
   </section>
 
+  <!-- REFERENCE FIRMWARE & BOM -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Reference firmware &amp; parts</div>
+      <h2 class="s24">The committed V2 node</h2>
+      <p class="s25">The firmware in the repo drives a Grove <strong class="s218">Wio-E5</strong> (LoRa-E5) module over UART with AT commands — an OTAA join then a hex uplink. It is distinct from the <a href="wellbouy.html">WellBouy</a> V3 path, which talks to a Wio-SX1262 directly through RadioLib; both reach the same TTN application.</p>
+      <div class="reciperow">
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V2/GROUUV2-SensorNodeLoRAWAN" target="_blank" rel="noopener" class="reciperepo">⟶ GROUUV2-SensorNodeLoRAWAN (PlatformIO)</a>
+      </div>
+      <p class="codecap">src/main.cpp — OTAA join + hex uplink over the Wio-E5 AT interface</p>
+      <div class="codewrap">
+<pre class="code">// OTAA join
+at_send_check_response("+MODE: LWOTAA", 1000, "AT+MODE=LWOTAA\r\n");
+at_send_check_response("+DR: EU868",    1000, "AT+DR=EU868\r\n");
+at_send_check_response("+CH: NUM",      1000, "AT+CH=NUM,0-2\r\n");
+at_send_check_response("+CLASS: A",     1000, "AT+CLASS=A\r\n");
+
+// pack temp + humidity, send as a hex uplink
+char cmd[128];
+sprintf(cmd, "AT+CMSGHEX=\"%04X%04X\"\r\n", (int)temp, (int)humi);
+ret = at_send_check_response("Done", 5000, cmd);</pre>
+      </div>
+      <div class="bomwrap mt24">
+        <table class="bomtable">
+          <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td class="part">XIAO ESP32-C3</td><td>MCU driving the radio + sensors</td><td>—</td></tr>
+            <tr><td class="part">Grove Wio-E5 (LoRa-E5)</td><td>LoRa radio — UART AT, OTAA, EU868</td><td>—</td></tr>
+            <tr><td class="part">Sensirion SHT4x</td><td>Temperature + humidity (I²C)</td><td>—</td></tr>
+            <tr><td class="part">SSD1306 OLED 128×64</td><td>Local status display (I²C)</td><td>—</td></tr>
+            <tr><td class="part">LoRa gateway + TTN</td><td>The uplink path off-site</td><td>The Things Network</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <!-- TTN BRIDGE -->
   <section class="s58">
     <div class="s22">
