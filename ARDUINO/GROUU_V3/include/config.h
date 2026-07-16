@@ -121,15 +121,20 @@
 //  standard solutions, solve k for each, and average. Default 1.0 = factory.
 #define TDS_KVALUE           1.000f
 
-// --- pH (two-point: pH 4.0 and pH 7.0 buffers) ------------------------------
-//  Voltages are measured AT THE ADS PIN (post 10k/18k divider); the two-point
-//  fit absorbs the divider ratio, so no ratio constant is needed. This adapter
-//  runs "acidic = lower voltage" (pH 4 < pH 7). Measured 2026-07-08 on the
-//  bench rig. Re-run the pH4/pH7 dip and update if the probe/electrode changes.
+// --- pH (three-point: pH 4.0 / 7.0 / 10.0 buffers) --------------------------
+//  Voltages are measured AT THE ADS PIN (post 10k/18k divider); the fit absorbs
+//  the divider ratio, so no ratio constant is needed. This adapter runs
+//  "acidic = lower voltage" (pH 4 < pH 7 < pH 10). The fit is SEGMENTED at pH 7:
+//  an acid slope (pH4..pH7) below V7 and a base slope (pH7..pH10) above it, so
+//  the electrode's lower alkaline slope is handled (measured 177 vs 153 mV/pH).
+//  Measured 2026-07-16 on the bench rig (buffers 4/7/10). Re-dip and update if
+//  the probe/electrode changes.
 #define PH_CAL_PH4           4.00f
 #define PH_CAL_PH7           7.00f
-#define PH_CAL_V4            1.078f        // volts at ADS in pH 4.0 buffer
-#define PH_CAL_V7            1.591f        // volts at ADS in pH 7.0 buffer
+#define PH_CAL_PH10         10.00f
+#define PH_CAL_V4            0.987f        // volts at ADS in pH 4.0 buffer
+#define PH_CAL_V7            1.519f        // volts at ADS in pH 7.0 buffer
+#define PH_CAL_V10           1.980f        // volts at ADS in pH 10.0 buffer
 
 // --- Turbidity (SEN0189 through a 10k / 6.8k divider) -----------------------
 //  Divider ratio = R2 / (R1 + R2) = 6.8k / (10k + 6.8k) = 0.4048.

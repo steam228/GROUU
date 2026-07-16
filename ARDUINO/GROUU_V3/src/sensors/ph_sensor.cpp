@@ -9,8 +9,12 @@ void phSetup() {
 
 float phFromMilliVolts(float mv) {
   float voltage = mv / 1000.0f;
-  // Two-point linear fit through (V7, pH7) and (V4, pH4).
-  float slope = (PH_CAL_PH7 - PH_CAL_PH4) / (PH_CAL_V7 - PH_CAL_V4);
+  // Three-point segmented fit, pivoting at pH 7 (the electrode's zero point).
+  // Acidic (V <= V7) uses the pH4..pH7 slope; basic (V > V7) uses pH7..pH10.
+  // Continuous at pH 7 and exact at all three buffers.
+  float slope = (voltage <= PH_CAL_V7)
+              ? (PH_CAL_PH7  - PH_CAL_PH4) / (PH_CAL_V7  - PH_CAL_V4)
+              : (PH_CAL_PH10 - PH_CAL_PH7) / (PH_CAL_V10 - PH_CAL_V7);
   return slope * (voltage - PH_CAL_V7) + PH_CAL_PH7;
 }
 
