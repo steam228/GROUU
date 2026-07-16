@@ -1,8 +1,8 @@
 // ============================================================================
 //  ph_sensor.h - Phidgets 1130 pH adapter (analog).
 //
-//  Linear two-point calibration using pH 4.0 and pH 7.0 buffers; calibration
-//  voltages live in config.h.
+//  Three-point calibration (pH 4.0 / 7.0 / 10.0), segmented at pH 7 to handle
+//  the electrode's differing acid/base slopes; calibration voltages in config.h.
 // ============================================================================
 #pragma once
 
@@ -11,7 +11,7 @@
 // Prepare the ADC for the pH pin. Call once in setup().
 void phSetup();
 
-// Convert a millivolt reading taken AT THE ADC into pH via the two-point fit.
+// Convert a millivolt reading taken AT THE ADC into pH via the segmented fit.
 // Source-agnostic, so ADS1115-based firmware can reuse the calibration.
 float phFromMilliVolts(float mv);
 

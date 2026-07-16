@@ -77,8 +77,8 @@ void setup() {
   uint32_t t0 = millis();
   while (!Serial && (millis() - t0) < 2000) {}
   Serial.println("\n=== WellBouy bring-up 05: pH via I2C ADS1115 (A2) ===");
-  Serial.printf("current cal: pH%.1f@%.3fV, pH%.1f@%.3fV  (edit config.h after dipping)\n",
-                PH_CAL_PH7, PH_CAL_V7, PH_CAL_PH4, PH_CAL_V4);
+  Serial.printf("current cal: pH%.1f@%.3fV, pH%.1f@%.3fV, pH%.1f@%.3fV\n",
+                PH_CAL_PH4, PH_CAL_V4, PH_CAL_PH7, PH_CAL_V7, PH_CAL_PH10, PH_CAL_V10);
 #if SEND_LORA
   Serial.println("mode: SERIAL + LoRaWAN uplink");
   loraJoin();
