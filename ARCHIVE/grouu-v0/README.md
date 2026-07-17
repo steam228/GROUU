@@ -64,6 +64,11 @@ InfluxDB → Grafana** in V2/V3.
   — the Yún/probe/Temboo sketches (`fullprobe_TEMBOO`, `GROUU_CENTRAL_GDRIVE_VF`,
   `Servo_Escotilha_Topo`, `Bombas_beta0`, `read_pH`, …). Temboo/Google credentials
   in the `TembooAccount.h` / sketch files have been **redacted**.
+- **`solidworks/`** — the reorganised, dependency-resolved SolidWorks model tree
+  (master + `Dependencies/` + `Detached Modules/`), recovered and audited from a
+  2017 bulk archive. See [`solidworks/README.md`](solidworks/README.md) for the
+  full forensic audit; the master is the November 2013 state and five 2014
+  subsystems were never integrated.
 - **This folder (design archive):** `GROUU OUTLINE .pdf` (the envisioned master
   plan); `drawings/` (structure & connector details, the fertigation schematic,
   presentation, base models); `photos/` (web-sized build photos — full-res on

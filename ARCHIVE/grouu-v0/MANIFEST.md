@@ -17,7 +17,7 @@ A complete file-by-file listing with sizes is in
 | Folder | Size | Files | What it is | In git? |
 |---|---|---|---|---|
 | `3D` | 699 M | 46 | 3D models & renders (SketchUp etc.) | backup only |
-| `SOLID` | 175 M | 417 | SolidWorks parts / assemblies / drawings | backup only |
+| `SOLID` | 175 M | 417 | SolidWorks parts / assemblies / drawings | reorganised subset committed → `solidworks/` |
 | `CAD` | 15 M | 99 | AutoCAD 2D drawings (`.dwg`) | backup only |
 | `RHINO` | 27 M | 10 | Rhino 3D models | backup only |
 | `DP` | 253 M | 141 | Project development — construction photos, wiring schematic, task lists, pump/valve specs | schematic committed; photos backup only |
@@ -35,6 +35,9 @@ A complete file-by-file listing with sizes is in
 - **Firmware** — the real GrouuPro code lives at
   [`firmware/`](firmware) (Yún +
   probe + Temboo sketches, servo/pump actuation). Credentials redacted.
+- **`solidworks/`** — reorganised, dependency-resolved SolidWorks model tree
+  (~197 MB, 188 files; master + `Dependencies/` + `Detached Modules/`), recovered
+  and audited from the 2017 archive. Full audit in `solidworks/README.md`.
 - **`GROUU OUTLINE .pdf`** — the envisioned master plan (app modules + system
   architecture; most of it designed but never built).
 - **`ARCHIVE/grouu-v0/drawings/`** — EXP renders, connector & structure details,
