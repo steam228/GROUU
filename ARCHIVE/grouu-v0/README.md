@@ -60,7 +60,7 @@ InfluxDB → Grafana** in V2/V3.
 
 ## Where the code and files are
 
-- **Firmware (the real code):** [`../arduino/GROUU_GREENHOUSE_0/`](../arduino/GROUU_GREENHOUSE_0)
+- **Firmware (the real code):** [`firmware/`](firmware)
   — the Yún/probe/Temboo sketches (`fullprobe_TEMBOO`, `GROUU_CENTRAL_GDRIVE_VF`,
   `Servo_Escotilha_Topo`, `Bombas_beta0`, `read_pH`, …). Temboo/Google credentials
   in the `TembooAccount.h` / sketch files have been **redacted**.

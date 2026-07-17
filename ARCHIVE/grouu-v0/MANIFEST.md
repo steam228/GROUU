@@ -33,7 +33,7 @@ A complete file-by-file listing with sizes is in
 ## Committed to this repo
 
 - **Firmware** — the real GrouuPro code lives at
-  [`ARCHIVE/arduino/GROUU_GREENHOUSE_0/`](../arduino/GROUU_GREENHOUSE_0) (Yún +
+  [`firmware/`](firmware) (Yún +
   probe + Temboo sketches, servo/pump actuation). Credentials redacted.
 - **`GROUU OUTLINE .pdf`** — the envisioned master plan (app modules + system
   architecture; most of it designed but never built).
