@@ -1,0 +1,33 @@
+!!!
+html(ng-app="myApp")
+  head
+    meta(charset='utf8')
+    base(href='/')
+    title GROW-LAB
+    link(rel='stylesheet', href='lib/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+  div.container(ng-controller="MenuCtrl")
+    nav(role="navigation").navbar.navbar-default
+      div.navbar-header
+        button( type="button" , data-toggle="collapse", data-target=".navbar-ex1-collapse").navbar-toggle
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a(href="#").navbar-brand GROW
+      div.collapse.navbar-collapse.navbar-ex1-collapse
+        ul.nav.navbar-nav
+          li(ng-class="{active:isActive('/environment')}")
+            a(href="/environment") Environment
+          li(ng-class="{active:isActive('/trial')}")
+            a(href="/trial") Trial
+          li(ng-class="{active:isActive('/watering')}")
+            a(href="/watering") Watering
+          li(ng-class="{active:isActive('/reports')}")
+            a(href="/reports") Reports
+          li(ng-class="{active:isActive('/journal')}")
+            a(href="/journal") Journal
+          li(ng-class="{active:isActive('/dashboard')}")
+            a(href="/dashboard") Dashboard           
+    block body

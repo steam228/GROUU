@@ -1,0 +1,14 @@
+{
+	"name": "angularJS-IL",
+	"version": "1.0.0",
+	"dependencies": {
+		"bootstrap": "x"
+		,"angular": "x"
+		,"angular-unstable": "x"
+		,"jquery": "x"
+		,"d3":"x"
+		,"rickshaw":"x"
+		,"socket.io":"x"
+		,"socket.io-client":"x"
+	}
+}
