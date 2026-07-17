@@ -6,8 +6,8 @@ alongside your sketch. To do so, make a new tab in Arduino, call it TembooAccoun
 and copy this content into it. 
 */
 
-#define TEMBOO_ACCOUNT "steam228"  // Your Temboo account name 
-#define TEMBOO_APP_KEY_NAME "myFirstApp"  // Your Temboo app key name
+#define TEMBOO_ACCOUNT "REDACTED"  // Your Temboo account name 
+#define TEMBOO_APP_KEY_NAME "REDACTED"  // Your Temboo app key name
 #define TEMBOO_APP_KEY "REDACTED"  // Your Temboo app key
 
 /* 

@@ -18,7 +18,7 @@
       <a href="index.html" class="s4"><img src="site/assets/wordmark-green.svg" alt="GROUU" class="s5"></a>
       <div class="s6">
         <a href="index.html#nodes" class="s7">← All nodes</a>
-        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0" target="_blank" rel="noopener" class="s8">V0 archive ↗</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/arduino/GROUU_GREENHOUSE_0" target="_blank" rel="noopener" class="s8">Firmware ↗</a>
       </div>
     </div>
   </nav>
@@ -30,12 +30,12 @@
         <span class="arch">▢ Archived</span>
       </div>
       <h1 class="s17">GrouuPro — the V0 greenhouse</h1>
-      <p class="s18">Circa 2013–2014, GrouuPro was a fully-built, full-stack IoT greenhouse — a physical structure, a custom control board, an Arduino front-end and a real-time web dashboard. It is the direct ancestor of everything GROUU became: the same sense → serve → store → visualise architecture the current stack rebuilds with modern tools. Sole-authored, with build assistance from Rui Lopes.</p>
+      <p class="s18">Circa 2013–2014, GrouuPro was a built greenhouse with an automated fertigation cabinet feeding four raised beds. It collected a rich set of readings, published them to the cloud, and drove its pumps and vent locally — the earliest sense → publish → visualise system in the GROUU line. Sole-authored, with build assistance from Rui Lopes.</p>
       <div class="s19">
-        <span class="s20">Arduino</span>
-        <span class="s20">Node.js · socket.io</span>
-        <span class="s20">Angular · d3</span>
-        <span class="s20">Raspberry Pi</span>
+        <span class="s20">Arduino Yún</span>
+        <span class="s20">Arduino Uno · I²C</span>
+        <span class="s20">Temboo</span>
+        <span class="s20">Google Sheets</span>
         <span class="s20">Archived</span>
       </div>
     </div>
@@ -44,49 +44,49 @@
   <!-- ARCHITECTURE -->
   <section class="s21">
     <div class="s22">
-      <div class="archbanner mb28">▢&nbsp; <strong>Archived.</strong>&nbsp; Not in active development — kept as the origin of the GROUU lineage. The light IP (code, board, drawings) is in the repo; the heavy CAD, photos and presentation are catalogued and live on backup.</div>
+      <div class="archbanner mb28">▢&nbsp; <strong>Archived.</strong>&nbsp; Not in active development — kept as the origin of the GROUU lineage. Data collection, cloud publication and local actuation all worked; remote control and automation were never implemented — the project ended first.</div>
       <div class="s23">How it worked</div>
-      <h2 class="s24">The architecture GROUU still uses</h2>
-      <p class="s25">An Arduino streamed analog sensor values over serial to a Node.js server on a Raspberry Pi, which stored them and pushed live updates to an Angular dashboard. Ten years on, the current stack is the same shape — only the parts changed.</p>
+      <h2 class="s24">Sense on the Yún, publish through Temboo</h2>
+      <p class="s25">Arduino Uno probe boards read the sensors and handed values to an Arduino Yún over I²C; the Yún — with its Linux/network side — pushed them through Temboo, a cloud middleware, into a Google Spreadsheet that logged and charted the data. (The final <span class="mono">fullprobe_TEMBOO</span> sketch read every sensor on the Yún itself.) The same sense → publish → visualise shape GROUU still uses — only the parts changed.</p>
       <p class="codecap">GrouuPro data path (2013 tooling)</p>
       <div class="codewrap">
-<pre class="code">Arduino  (analog sensors, serial "A0:value" @ 9600)
-   │  USB serial
-Node.js on a Raspberry Pi
-   Express · serialport · socket.io · Mongoose → MongoDB · Passport
-   │  socket.io (live)
-Angular.js + d3 / rickshaw dashboard
-   views: environment · watering · reports · journal · probe · trials</pre>
+<pre class="code">PROBE   Arduino Uno — DHT22 · LDR · soil moisture · leaf wetness · DS18B20 · pH
+   │  I²C  (I2C_Anything, central @ addr 42)
+GATEWAY Arduino Yún  (Bridge + Temboo)
+   │  Temboo "AppendRow" Choreo
+Google Spreadsheet "GROUU_EXP"  — timestamped rows; its charts were the dashboard</pre>
       </div>
       <div class="bomwrap mt24">
         <table class="bomtable v0table">
           <thead><tr><th>Layer</th><th>GrouuPro · V0 (2013)</th><th>GROUU · now (V2 / V3)</th></tr></thead>
           <tbody>
-            <tr><td class="part">Node</td><td class="was">Arduino → USB serial</td><td>ESP32 / XIAO → WiFi &amp; LoRaWAN → MQTT</td></tr>
-            <tr><td class="part">Ingest</td><td class="was">Node.js + socket.io</td><td>Mosquitto + Node-RED</td></tr>
-            <tr><td class="part">Store</td><td class="was">MongoDB (Mongoose)</td><td>InfluxDB</td></tr>
-            <tr><td class="part">Dashboard</td><td class="was">Angular + d3 / rickshaw</td><td>Grafana + web dashboard</td></tr>
+            <tr><td class="part">Node</td><td class="was">Arduino Yún + Uno probes (I²C)</td><td>ESP32 / XIAO → WiFi &amp; LoRaWAN → MQTT</td></tr>
+            <tr><td class="part">Publish</td><td class="was">Temboo (cloud middleware)</td><td>Mosquitto + Node-RED</td></tr>
+            <tr><td class="part">Store</td><td class="was">Google Spreadsheet</td><td>InfluxDB</td></tr>
+            <tr><td class="part">Dashboard</td><td class="was">Google Sheets charts</td><td>Grafana + web dashboard</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- HARDWARE -->
+  <!-- HARDWARE & FERTIGATION -->
   <section class="s58">
     <div class="s22">
       <div class="s59">Hardware</div>
-      <h2 class="s60">A real greenhouse, not a breadboard</h2>
-      <p class="s263">GrouuPro was engineered and built as a product — glazed structure, plumbing, and a custom control board — with the design work in SolidWorks, Rhino, SketchUp and AutoCAD.</p>
+      <h2 class="s60">A greenhouse and a fertigation cabinet</h2>
+      <p class="s263">Engineered and built as a product — a glazed structure plus a four-level ferti-rega cabinet — with the design work in SolidWorks, Rhino, SketchUp and AutoCAD. It sensed a lot and actuated locally; there was no custom PCB — pumps and motors ran on perfboard MOSFETs.</p>
       <div class="bomwrap">
         <table class="bomtable">
           <thead><tr><th>Part</th><th>Role</th></tr></thead>
           <tbody>
-            <tr><td class="part">LEXAN 8 mm polycarbonate</td><td>Glazing panels</td></tr>
-            <tr><td class="part">BWF aluminium profiles</td><td>Structural frame &amp; connectors</td></tr>
-            <tr><td class="part">SHURFLO pump + solenoid valves</td><td>Watering / irrigation</td></tr>
-            <tr><td class="part">Hex motor controller (custom EAGLE PCB)</td><td>Drives the motors / valves</td></tr>
-            <tr><td class="part">Arduino + Raspberry Pi</td><td>Sensing front-end + server</td></tr>
+            <tr><td class="part">DHT22 · LDR · soil moisture · leaf wetness · DS18B20 · pH</td><td>The sensor "probe" — air, light, soil &amp; leaf</td></tr>
+            <tr><td class="part">Tank level sensors + flow sensor</td><td>Water &amp; ferti-rega tanks; irrigation flow</td></tr>
+            <tr><td class="part">LEXAN 8 mm polycarbonate + BWF aluminium</td><td>Greenhouse glazing &amp; structural frame</td></tr>
+            <tr><td class="part">6× peristaltic pumps (BPER_1–6)</td><td>Dose concentrated nutrient solutions</td></tr>
+            <tr><td class="part">Main irrigation pump + electrovalves</td><td>Distribute fertigated water to 4 raised beds</td></tr>
+            <tr><td class="part">Top-hatch servo</td><td>Ventilation (local actuation)</td></tr>
+            <tr><td class="part">MOSFETs on perfboard</td><td>Drive the DC pumps / motors — no custom PCB</td></tr>
           </tbody>
         </table>
       </div>
@@ -101,11 +101,11 @@ Angular.js + d3 / rickshaw dashboard
       <p class="s25">Placeholders below — the raw originals live on backup. Captions mark what each slot is for.</p>
       <div class="photogrid">
         <div class="imgslot photoslot"><span class="ico">🏡📷</span><span class="cap">The built greenhouse — LEXAN + aluminium structure</span></div>
-        <div class="imgslot photoslot"><span class="ico">🔌📷</span><span class="cap">The hex motor controller board (assembled)</span></div>
-        <div class="imgslot photoslot"><span class="ico">📊📷</span><span class="cap">The Angular / d3 dashboard (screenshot)</span></div>
+        <div class="imgslot photoslot"><span class="ico">🚰📷</span><span class="cap">The fertigation cabinet — pumps, tanks, valves</span></div>
+        <div class="imgslot photoslot"><span class="ico">🔌📷</span><span class="cap">The control electronics — Yún / Uno + perfboard MOSFETs</span></div>
         <div class="imgslot photoslot"><span class="ico">🔧📷</span><span class="cap">Construction — frame &amp; glazing going up</span></div>
-        <div class="imgslot photoslot"><span class="ico">💧📷</span><span class="cap">Watering — pump &amp; valve plumbing</span></div>
-        <div class="imgslot photoslot"><span class="ico">🌱📷</span><span class="cap">In use — a growing trial (ensaio)</span></div>
+        <div class="imgslot photoslot"><span class="ico">🌱📷</span><span class="cap">The raised beds — fertigation lines in use</span></div>
+        <div class="imgslot photoslot"><span class="ico">📊📷</span><span class="cap">The Google Sheets "GROUU_EXP" dashboard</span></div>
       </div>
     </div>
   </section>
@@ -115,11 +115,11 @@ Angular.js + d3 / rickshaw dashboard
     <div class="s22">
       <div class="s23">In the archive</div>
       <h2 class="s24">What's kept, and where</h2>
-      <p class="s25">The code, board and key drawings are committed (~2 MB). The 1.5 GB of CAD, photos and presentation are catalogued in the manifest and referenced on backup — nothing is lost.</p>
+      <p class="s25">The firmware and key drawings are committed; the 1.5 GB of CAD, renders, raw photos and presentation are catalogued in the manifest and referenced on backup — nothing is lost. (Temboo/Google credentials in the sketches are redacted.)</p>
       <div class="reciperow">
-        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0" target="_blank" rel="noopener" class="reciperepo">⟶ V0 archive (all committed files)</a>
-        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0/code/grow" target="_blank" rel="noopener" class="reciperepo">⟶ Grow web app + Arduino</a>
-        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0/hardware/hex-motor-controller" target="_blank" rel="noopener" class="reciperepo">⟶ Control board (EAGLE)</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/arduino/GROUU_GREENHOUSE_0" target="_blank" rel="noopener" class="reciperepo">⟶ Firmware (Yún · probe · Temboo sketches)</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/arduino/GROUU_GREENHOUSE_0/fullprobe_TEMBOO" target="_blank" rel="noopener" class="reciperepo">⟶ fullprobe_TEMBOO (the probe → Temboo)</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0/drawings" target="_blank" rel="noopener" class="reciperepo">⟶ Drawings + fertigation schematic</a>
         <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/MANIFEST.md" target="_blank" rel="noopener" class="reciperepo">⟶ Full manifest (1.5 GB catalogued)</a>
       </div>
     </div>
@@ -130,7 +130,7 @@ Angular.js + d3 / rickshaw dashboard
     <div class="s76">
       <div class="s77">Related</div>
       <div class="s78">
-        <a href="server-stack.html" class="relcard s79"><div class="s80">Server Stack →</div><p class="s81">What GrouuPro's Node/Mongo/Angular stack became.</p></a>
+        <a href="server-stack.html" class="relcard s79"><div class="s80">Server Stack →</div><p class="s81">What Temboo → Sheets became: MQTT → InfluxDB → Grafana.</p></a>
         <a href="wifi-node.html" class="relcard s79"><div class="s80">WiFi Node →</div><p class="s81">The modern local-sensing template.</p></a>
         <a href="index.html" class="relcard s79"><div class="s80">GROUU home →</div><p class="s81">The V0 → V3 evolution in full.</p></a>
       </div>

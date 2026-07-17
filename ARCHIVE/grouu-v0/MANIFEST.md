@@ -26,23 +26,26 @@ A complete file-by-file listing with sizes is in
 | `GR` | 6.2 M | 120 | Graphics / UI assets (Flat-UI) | backup only |
 | `OR` | 6.6 M | 38 | Original / misc source material | backup only |
 | `SEND` | 2.3 M | 38 | Deliverables sent | backup only |
-| `CODE` | 28 M | 688 | **Grow web app + Arduino** | **trimmed → `code/grow/`** |
-| `BOARDS` | 2.4 M | 22 | **EAGLE PCB (hex motor controller)** | **→ `hardware/`** |
+| `CODE` | 28 M | 688 | `Grow-git` self-host dashboard experiment | purged (not the deployed system) |
+| `BOARDS` | 2.4 M | 22 | `hex-motor-controller` EAGLE PCB | excluded — unrelated to GrouuPro |
 | top-level | — | — | Presentation (`.ai`/`.pdf`), structure/connector PNGs, base-model PDFs | **key ones → `drawings/`** |
 
-## Committed to this repo (`ARCHIVE/grouu-v0/`)
+## Committed to this repo
 
-- `code/grow/` — Grow web app (`app.js`, models, routes, jade views, Angular
-  front-end) + `Arduino/Arduino.ino`. Stripped: the OneDrive-mangled git folder
-  (`002egit`, 17 M) and vendored libs (`public/lib`, 10 M).
-- `hardware/hex-motor-controller/` — EAGLE `.sch`/`.brd`/gerbers/PDF/render.
-  Stripped: numbered EAGLE autosave backups and the redundant `.zip`.
-- `drawings/` — EXP renders, connector & structure details, `apresentação 1.pdf`,
-  base-model PDFs, GrouuPro wiring schematic.
+- **Firmware** — the real GrouuPro code lives at
+  [`ARCHIVE/arduino/GROUU_GREENHOUSE_0/`](../arduino/GROUU_GREENHOUSE_0) (Yún +
+  probe + Temboo sketches, servo/pump actuation). Credentials redacted.
+- **`ARCHIVE/grouu-v0/drawings/`** — EXP renders, connector & structure details,
+  `apresentação 1.pdf`, base-model PDFs, and the GrouuPro fertigation schematic.
+- `README.md`, this manifest, `full-file-index.txt`, and `photos/` (placeholders).
 
 ## Deliberately excluded
 
-- **Third-party supplier brochures** (Lexan Thermoclear, BWF profiles) — retained
-  in the backup, not committed (their copyright).
-- **Vendored front-end libraries** — declared in `package.json` / `bower.json`.
+- **`Grow-git`** (a self-hosted Node/Angular dashboard experiment) — *not* the
+  deployed system (Temboo → Google Sheets was), and of no consequence to V0.
+  Purged; it survives only on the backup.
+- **The `hex-motor-controller` EAGLE PCB** — unrelated to GrouuPro. No custom
+  board was ever designed; pumps/motors ran on perfboard MOSFETs.
+- **Third-party supplier brochures** (Lexan Thermoclear, BWF profiles) — kept on
+  backup, not committed (their copyright).
 - **Heavy CAD / 3D / raw photos / Keynote** — backup only, catalogued above.

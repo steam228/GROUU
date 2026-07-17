@@ -46,7 +46,7 @@
 // Note that for additional security and reusability, you could
 // use #define statements to specify these values in a .h file.
 
-const String GOOGLE_USERNAME = "steam228@gmail.com";
+const String GOOGLE_USERNAME = "REDACTED";
 const String GOOGLE_PASSWORD = "REDACTED";
 
 // the title of the spreadsheet you want to send data to
@@ -164,9 +164,9 @@ unsigned long getSensorValue() {
   by inserting your own Temboo account name and app key information. The contents of the file should
   look like:
 
-  #define TEMBOO_ACCOUNT "myTembooAccountName"  // your Temboo account name
-  #define TEMBOO_APP_KEY_NAME "myFirstApp"  // your Temboo app key name
-  #define TEMBOO_APP_KEY  "xxx-xxx-xxx-xx-xxx"  // your Temboo app key
+  #define TEMBOO_ACCOUNT "REDACTED"  // your Temboo account name
+  #define TEMBOO_APP_KEY_NAME "REDACTED"  // your Temboo app key name
+  #define TEMBOO_APP_KEY  "REDACTED"  // your Temboo app key
 
   You can find your Temboo App Key information on the Temboo website,
   under My Account > Application Keys

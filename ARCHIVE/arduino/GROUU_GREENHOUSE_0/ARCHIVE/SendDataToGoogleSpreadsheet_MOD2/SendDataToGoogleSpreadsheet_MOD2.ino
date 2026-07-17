@@ -42,8 +42,8 @@
 
 
 
-const String GOOGLE_USERNAME = "your-google-username";
-const String GOOGLE_PASSWORD = "your-google-password";
+const String GOOGLE_USERNAME = "REDACTED";
+const String GOOGLE_PASSWORD = "REDACTED";
 
 // the title of the spreadsheet you want to send data to
 // (Note that this must actually be the title of a Google spreadsheet

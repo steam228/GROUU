@@ -1,68 +1,61 @@
-# GROUU V0 — GrouuPro (centralized greenhouse)
+# GROUU V0 — GrouuPro (greenhouse + fertigation)
 
 **Status: archived.** Circa 2013–2014. Not in active development — kept as the
 origin of the GROUU lineage.
 
-GrouuPro was a fully-built, full-stack IoT greenhouse: a physical structure, a
-custom control board, an Arduino front-end, and a real-time web dashboard. It is
-the direct ancestor of everything GROUU became — the same **sensor → server →
-storage → dashboard** architecture that V2/V3 rebuild with modern tooling.
+GrouuPro was a built greenhouse with an automated **fertigation (ferti-rega)
+cabinet** feeding four raised beds. It did rich **data collection**, **published**
+readings to the cloud, and performed **local actuation** — but remote control and
+closed-loop automation were never implemented; the project ended before them.
 
 - **Sole author:** the GROUU maintainer ([github.com/steam228](https://github.com/steam228)).
 - **Build assistance:** Rui Lopes.
 
-## Architecture (2013 tech)
+## Architecture (as built — from the firmware & schematic)
 
-```
-Arduino (analog sensors, serial "A0:value" @9600)
-        │  USB serial
-   Node.js on a Raspberry Pi
-     Express 3 · serialport · socket.io · Mongoose → MongoDB · Passport auth
-        │  socket.io (live)
-   Angular.js + d3 / rickshaw dashboard
-```
+**Sensing (the "probe"):** DHT22 (air temperature + humidity), LDR light
+(calibrated with an `exp()` curve), analog soil moisture, analog leaf wetness,
+DS18B20 soil temperature (OneWire), analog pH. Tank level sensors (`SNA_DP/FR`)
+and a flow sensor (`FLUX_1`) on the fertigation side.
 
-The same shape as the current stack — only the parts changed:
+**Boards & comms:** an **Arduino Yún** as the network gateway (`Bridge.h` +
+`Temboo.h`) with **Arduino Uno**-class probe boards. Inter-board is **I²C**
+(`I2C_Anything`, central at address 42) in the multi-board sketches; the final
+`fullprobe_TEMBOO` reads all sensors on the Yún directly.
 
-| GrouuPro (V0, 2013) | GROUU Stack (V2/V3) |
-|---|---|
-| Arduino → serial | ESP32 / XIAO → WiFi/LoRaWAN → MQTT |
-| Node.js + socket.io | Mosquitto + Node-RED |
-| MongoDB (Mongoose) | InfluxDB |
-| Angular + d3 / rickshaw | Grafana + web dashboard |
+**Publication:** **Temboo** (cloud middleware, discontinued ~2019) appended
+timestamped rows to a **Google Spreadsheet ("GROUU_EXP")** via the AppendRow
+Choreo — the spreadsheet was the log/plot "dashboard".
 
-The web app (`code/grow/`) already modelled the greenhouse as data:
-`temp`, `humidity`, `moisture`, `light`, `leaf`, and `ensaio` (trial/experiment),
-with dashboard views for **environment, watering, reports, journal, probe and
-trials**. The Arduino sketch itself was an early serial streamer; the depth was
-in the server and dashboard.
+**Local actuation (only):** a top-hatch **servo** (ventilation), and **DC pumps /
+motors** driven by PWM through **MOSFETs on perfboard** — the six peristaltic
+nutrient-dosing pumps, the main irrigation pump, and electrovalves feeding the
+four raised beds. **No custom PCB was ever designed.**
 
-## Hardware
+**Fertigation cabinet** (from `drawings/…Esquema Ligações GrouuPro.pdf`): a
+four-level cabinet — electronics · 6 peristaltic pumps · water + ferti-rega tanks
+with level sensors · valves, main pump, flow sensor → 4 raised beds + drains.
 
-- **Structure:** LEXAN 8 mm polycarbonate glazing on BWF aluminium profiles.
-- **Water:** SHURFLO pump + solenoid valves.
-- **Control board:** a custom EAGLE-designed PCB — the *hex motor controller*
-  (`hardware/hex-motor-controller/`), driving the motors/valves.
+## Lineage
 
-## What's in this archive
+The same **sense → publish → visualise** shape GROUU still uses — the parts just
+changed: Yún → **Temboo → Google Sheets** here became **MQTT → Node-RED →
+InfluxDB → Grafana** in V2/V3.
 
-Committed here (light, ~2 MB — the actual IP):
+## Where the code and files are
 
-- `code/grow/` — the Grow web app + `Arduino/Arduino.ino`, with the OneDrive-mangled
-  git folder and vendored front-end libraries (jQuery/Angular/d3/…) stripped;
-  `package.json` / `bower.json` still declare them.
-- `hardware/hex-motor-controller/` — EAGLE schematic, board, gerbers, render, PDF.
-- `drawings/` — structure & connector detail drawings, the project presentation
-  (`apresentação 1.pdf`), base models, and the GrouuPro wiring schematic.
-
-**Not committed** (heavy binary source — 3D/CAD, raw photos, Keynote; ~1.5 GB):
-these live on the maintainer's backup. Everything is catalogued in
-[`MANIFEST.md`](MANIFEST.md) and indexed file-by-file in
-[`full-file-index.txt`](full-file-index.txt), so nothing is lost — the originals
-are just referenced, not stored in git.
+- **Firmware (the real code):** [`../arduino/GROUU_GREENHOUSE_0/`](../arduino/GROUU_GREENHOUSE_0)
+  — the Yún/probe/Temboo sketches (`fullprobe_TEMBOO`, `GROUU_CENTRAL_GDRIVE_VF`,
+  `Servo_Escotilha_Topo`, `Bombas_beta0`, `read_pH`, …). Temboo/Google credentials
+  in the `TembooAccount.h` / sketch files have been **redacted**.
+- **This folder (design archive):** `drawings/` (structure & connector details,
+  the fertigation schematic, the project presentation, base models); `photos/`
+  (placeholders — see its README); `MANIFEST.md` + `full-file-index.txt`
+  cataloguing the full **1.5 GB** of CAD / renders / raw photos / Keynote, which
+  stay on the maintainer's OneDrive backup rather than in git.
 
 ## Licence
 
-Part of GROUU — GPLv3 for code, CC-BY-SA 4.0 for hardware & docs (see the repo
-root `LICENSE.txt`). Third-party material (Lexan/BWF supplier brochures, vendored
-libraries) is intentionally excluded and retains its own licensing.
+Part of GROUU — GPLv3 for code, CC-BY-SA 4.0 for hardware & docs (repo root
+`LICENSE.txt`). Third-party material (Lexan/BWF supplier brochures, Arduino
+libraries) retains its own licensing.
