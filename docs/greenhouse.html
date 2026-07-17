@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Greenhouse IoT (archived) · GROUU</title>
+  <title>Greenhouse V0 — GrouuPro (archived) · GROUU</title>
   <link rel="icon" href="site/assets/emblem-green.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,77 +18,121 @@
       <a href="index.html" class="s4"><img src="site/assets/wordmark-green.svg" alt="GROUU" class="s5"></a>
       <div class="s6">
         <a href="index.html#nodes" class="s7">← All nodes</a>
-        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V2/GROUUV2-SensorNodeWiFi" target="_blank" rel="noopener" class="s8">Reference firmware ↗</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0" target="_blank" rel="noopener" class="s8">V0 archive ↗</a>
       </div>
     </div>
   </nav>
 
   <header class="s9">
     <div class="s10">
-      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#nodes" class="s12">Nodes</a> · <span class="s13">Greenhouse IoT</span></div>
+      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html" class="s12">Evolution</a> · <span class="s13">V0 · GrouuPro</span></div>
       <div class="s14">
         <span class="arch">▢ Archived</span>
       </div>
-      <h1 class="s17">Greenhouse IoT</h1>
-      <p class="s18">Local automation for a greenhouse — air and soil sensing driving fans, a vent servo, grow lights and a pump, all over WiFi and MQTT. This was an early GROUU strand; it is archived and not in active development, kept here as reference for the reusable pieces it fed into.</p>
+      <h1 class="s17">GrouuPro — the V0 greenhouse</h1>
+      <p class="s18">Circa 2013–2014, GrouuPro was a fully-built, full-stack IoT greenhouse — a physical structure, a custom control board, an Arduino front-end and a real-time web dashboard. It is the direct ancestor of everything GROUU became: the same sense → serve → store → visualise architecture the current stack rebuilds with modern tools. Sole-authored, with build assistance from Rui Lopes.</p>
       <div class="s19">
-        <span class="s20">ESP32</span>
-        <span class="s20">DHT · LDR · moisture</span>
-        <span class="s20">WiFi + MQTT</span>
+        <span class="s20">Arduino</span>
+        <span class="s20">Node.js · socket.io</span>
+        <span class="s20">Angular · d3</span>
+        <span class="s20">Raspberry Pi</span>
         <span class="s20">Archived</span>
       </div>
     </div>
   </header>
 
-  <!-- ARCHIVE NOTICE + HOW IT WORKED -->
+  <!-- ARCHITECTURE -->
   <section class="s21">
     <div class="s22">
-      <div class="archbanner mb28">▢&nbsp; <strong>Archived.</strong>&nbsp; This node isn't in active development. Records and files are being added soon — the material below is the design as it stood, and its reusable parts live on in the WiFi node and actuator module.</div>
+      <div class="archbanner mb28">▢&nbsp; <strong>Archived.</strong>&nbsp; Not in active development — kept as the origin of the GROUU lineage. The light IP (code, board, drawings) is in the repo; the heavy CAD, photos and presentation are catalogued and live on backup.</div>
       <div class="s23">How it worked</div>
-      <h2 class="s24">Sense the room, drive the room</h2>
-      <p class="s25">A single local controller reads the greenhouse climate and root zone, publishes it over MQTT, and switches the actuators that keep conditions in range. It stays on the local WiFi track — deliberately separate from the long-range LoRaWAN nodes — and its reference implementation is the GROUU WiFi node.</p>
-      <p class="codecap">Intended local architecture (from the design notes)</p>
+      <h2 class="s24">The architecture GROUU still uses</h2>
+      <p class="s25">An Arduino streamed analog sensor values over serial to a Node.js server on a Raspberry Pi, which stored them and pushed live updates to an Angular dashboard. Ten years on, the current stack is the same shape — only the parts changed.</p>
+      <p class="codecap">GrouuPro data path (2013 tooling)</p>
       <div class="codewrap">
-<pre class="code">[ DHT22 · LDR · soil-moisture ×2 ]
-              │
-           ESP32 controller  ──►  fan · vent servo · grow-LED ×2 · pump
-              │
-           Mosquitto  ──►  InfluxDB  ──►  Grafana</pre>
+<pre class="code">Arduino  (analog sensors, serial "A0:value" @ 9600)
+   │  USB serial
+Node.js on a Raspberry Pi
+   Express · serialport · socket.io · Mongoose → MongoDB · Passport
+   │  socket.io (live)
+Angular.js + d3 / rickshaw dashboard
+   views: environment · watering · reports · journal · probe · trials</pre>
       </div>
-      <p class="s25 mt24">No greenhouse-specific firmware is committed; the sensing follows the WiFi node and the switching follows the <a href="actuator.html">actuator module</a>. Pin assignments were never finalised — one of the loose ends the archive leaves open.</p>
-    </div>
-  </section>
-
-  <!-- BOM -->
-  <section class="s58">
-    <div class="s22">
-      <div class="s59">Bill of materials</div>
-      <h2 class="s60">The parts it was designed around</h2>
-      <p class="s263">Design-level, archival — no priced BOM was published. Left here so the reference is not lost.</p>
-      <div class="bomwrap">
-        <table class="bomtable">
-          <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
+      <div class="bomwrap mt24">
+        <table class="bomtable v0table">
+          <thead><tr><th>Layer</th><th>GrouuPro · V0 (2013)</th><th>GROUU · now (V2 / V3)</th></tr></thead>
           <tbody>
-            <tr><td class="part">ESP32 controller</td><td>Reads sensors, drives actuators over WiFi + MQTT</td><td>—</td></tr>
-            <tr><td class="part">DHT22</td><td>Air temperature + humidity</td><td>—</td></tr>
-            <tr><td class="part">DS18B20 (or DHT11)</td><td>Root-zone / secondary temperature</td><td>—</td></tr>
-            <tr><td class="part">LDR / photoresistor</td><td>Ambient light (voltage divider)</td><td>—</td></tr>
-            <tr><td class="part">Capacitive soil moisture ×2</td><td>Dual-depth moisture (preferred over resistive)</td><td>—</td></tr>
-            <tr><td class="part">Servo · fan · grow-LED ×2 · pump</td><td>Vent, cooling, lighting, micro-irrigation</td><td>—</td></tr>
+            <tr><td class="part">Node</td><td class="was">Arduino → USB serial</td><td>ESP32 / XIAO → WiFi &amp; LoRaWAN → MQTT</td></tr>
+            <tr><td class="part">Ingest</td><td class="was">Node.js + socket.io</td><td>Mosquitto + Node-RED</td></tr>
+            <tr><td class="part">Store</td><td class="was">MongoDB (Mongoose)</td><td>InfluxDB</td></tr>
+            <tr><td class="part">Dashboard</td><td class="was">Angular + d3 / rickshaw</td><td>Grafana + web dashboard</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- RELATED -->
+  <!-- HARDWARE -->
+  <section class="s58">
+    <div class="s22">
+      <div class="s59">Hardware</div>
+      <h2 class="s60">A real greenhouse, not a breadboard</h2>
+      <p class="s263">GrouuPro was engineered and built as a product — glazed structure, plumbing, and a custom control board — with the design work in SolidWorks, Rhino, SketchUp and AutoCAD.</p>
+      <div class="bomwrap">
+        <table class="bomtable">
+          <thead><tr><th>Part</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td class="part">LEXAN 8 mm polycarbonate</td><td>Glazing panels</td></tr>
+            <tr><td class="part">BWF aluminium profiles</td><td>Structural frame &amp; connectors</td></tr>
+            <tr><td class="part">SHURFLO pump + solenoid valves</td><td>Watering / irrigation</td></tr>
+            <tr><td class="part">Hex motor controller (custom EAGLE PCB)</td><td>Drives the motors / valves</td></tr>
+            <tr><td class="part">Arduino + Raspberry Pi</td><td>Sensing front-end + server</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">The build</div>
+      <h2 class="s24">Photos</h2>
+      <p class="s25">Placeholders below — the raw originals live on backup. Captions mark what each slot is for.</p>
+      <div class="photogrid">
+        <div class="imgslot photoslot"><span class="ico">🏡📷</span><span class="cap">The built greenhouse — LEXAN + aluminium structure</span></div>
+        <div class="imgslot photoslot"><span class="ico">🔌📷</span><span class="cap">The hex motor controller board (assembled)</span></div>
+        <div class="imgslot photoslot"><span class="ico">📊📷</span><span class="cap">The Angular / d3 dashboard (screenshot)</span></div>
+        <div class="imgslot photoslot"><span class="ico">🔧📷</span><span class="cap">Construction — frame &amp; glazing going up</span></div>
+        <div class="imgslot photoslot"><span class="ico">💧📷</span><span class="cap">Watering — pump &amp; valve plumbing</span></div>
+        <div class="imgslot photoslot"><span class="ico">🌱📷</span><span class="cap">In use — a growing trial (ensaio)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IN THE ARCHIVE -->
   <section class="s75">
+    <div class="s22">
+      <div class="s23">In the archive</div>
+      <h2 class="s24">What's kept, and where</h2>
+      <p class="s25">The code, board and key drawings are committed (~2 MB). The 1.5 GB of CAD, photos and presentation are catalogued in the manifest and referenced on backup — nothing is lost.</p>
+      <div class="reciperow">
+        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0" target="_blank" rel="noopener" class="reciperepo">⟶ V0 archive (all committed files)</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0/code/grow" target="_blank" rel="noopener" class="reciperepo">⟶ Grow web app + Arduino</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0/hardware/hex-motor-controller" target="_blank" rel="noopener" class="reciperepo">⟶ Control board (EAGLE)</a>
+        <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/MANIFEST.md" target="_blank" rel="noopener" class="reciperepo">⟶ Full manifest (1.5 GB catalogued)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="s102">
     <div class="s76">
       <div class="s77">Related</div>
       <div class="s78">
-        <a href="wifi-node.html" class="relcard s79"><div class="s80">WiFi Node →</div><p class="s81">The reference implementation it fed into.</p></a>
-        <a href="actuator.html" class="relcard s79"><div class="s80">Actuator Module →</div><p class="s81">Where the fan / pump / servo control lives on.</p></a>
-        <a href="aquaponics.html" class="relcard s79"><div class="s80">Aquaponics →</div><p class="s81">The active successor reusing this sensor set.</p></a>
+        <a href="server-stack.html" class="relcard s79"><div class="s80">Server Stack →</div><p class="s81">What GrouuPro's Node/Mongo/Angular stack became.</p></a>
+        <a href="wifi-node.html" class="relcard s79"><div class="s80">WiFi Node →</div><p class="s81">The modern local-sensing template.</p></a>
+        <a href="index.html" class="relcard s79"><div class="s80">GROUU home →</div><p class="s81">The V0 → V3 evolution in full.</p></a>
       </div>
     </div>
   </section>

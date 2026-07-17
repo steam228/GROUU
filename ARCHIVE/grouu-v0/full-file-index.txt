@@ -1,0 +1,1938 @@
+GROUU V0 (GrouuPro) — full archive file index
+Source (backup, not committed): OneDrive/.../06 - ASFERT GROUU PRO
+Generated from 1.5 GB / 1656 files. Heavy CAD/media live on backup; see MANIFEST.md.
+------------------------------------------------------------
+1.5G	.
+ 12K	.DS_Store
+ 64K	2013.01.24 estufa base.skp
+ 76K	2013.01.24 EXP1.png
+ 40K	2013.01.24 EXP2.png
+ 44K	2013.01.24 EXP3.png
+699M	3D
+ 12K	3D/.DS_Store
+ 64K	3D/2013.01.24 estufa base.skp
+4.0K	3D/3D.mxp
+1.2M	3D/apresentação 1.ai
+468K	3D/apresentação 1.pdf
+489M	3D/autoback
+3.3M	3D/autoback/AutoBackup01.max
+3.3M	3D/autoback/AutoBackup02.max
+310M	3D/autoback/AutoBackup03.max
+172M	3D/autoback/MaxBack.bak
+ 96K	3D/estufa.max
+9.7M	3D/import
+1.7M	3D/import/devi.3ds
+8.0M	3D/import/probe.stl
+1.2M	3D/maps
+1.2M	3D/maps/IMG_2627_Pano_HDR.jpg
+ 20K	3D/materiallibraries
+ 20K	3D/materiallibraries/brass.mat
+4.3M	3D/mats
+1.6M	3D/mats/al
+644K	3D/mats/al/Aluminio_NRM.jpg
+988K	3D/mats/al/Aluminio_SPEC.jpg
+ 32K	3D/mats/al/Aluminium - Brushed.mat
+ 28K	3D/mats/anodizing aluminium.mat
+2.0M	3D/mats/ARQ
+4.0K	3D/mats/ARQ/Apple Mac Aluminum_by_fodordask1862.zip
+1.7M	3D/mats/ARQ/HQ Brushed Aluminium  _by_mcamerasc5919.zip
+160K	3D/mats/ARQ/Plastic Transparent_by_dubritici309.zip
+152K	3D/mats/ARQ/Watch INOX Metal by AMLETO74_by_Amleto74472 (1).zip
+ 20K	3D/mats/mac_aluminium_by_fodordask_aka_aninfid.mat
+188K	3D/mats/Plastic Transparent
+180K	3D/mats/Plastic Transparent/Plastic Transparent.jpg
+8.0K	3D/mats/Plastic Transparent/Plastic transparent.mat
+140K	3D/mats/Vray Sample.jpg
+248K	3D/mats/Watch INOX Metal by AMLETO74
+144K	3D/mats/Watch INOX Metal by AMLETO74/Watch INOX Metal by AMLETO74.jpg
+104K	3D/mats/Watch INOX Metal by AMLETO74/Watch INOX Metal by AMLETO74.mat
+4.3M	3D/renderoutput
+1.5M	3D/renderoutput/1.png
+1.4M	3D/renderoutput/2.png
+1.4M	3D/renderoutput/3.png
+ 11M	3D/renders
+116K	3D/renders/1.jpg
+1.5M	3D/renders/10.jpg
+1.7M	3D/renders/11.jpg
+1.5M	3D/renders/12.jpg
+1.6M	3D/renders/13.jpg
+1.7M	3D/renders/2.jpg
+180K	3D/renders/3.jpg
+588K	3D/renders/5.jpg
+688K	3D/renders/6.jpg
+640K	3D/renders/7.jpg
+192K	3D/renders/8.jpg
+156K	3D/renders/9.jpg
+ 60K	3D/sceneassets
+ 60K	3D/sceneassets/images
+ 60K	3D/sceneassets/images/Metal_Bump02.jpg
+179M	3D/scenes
+3.3M	3D/scenes/2014.07.28 primeiro PROBE.max
+176M	3D/scenes/estufa.max
+1.2M	apresentação 1.ai
+468K	apresentação 1.pdf
+2.4M	BOARDS
+2.0M	BOARDS/hex-motor-controler
+460K	BOARDS/hex-motor-controler.zip
+1.7M	BOARDS/hex-motor-controler/eagle
+108K	BOARDS/hex-motor-controler/eagle/hex-motor-controler - Modify.b00231
+104K	BOARDS/hex-motor-controler/eagle/hex-motor-controler - Modify.b00232
+104K	BOARDS/hex-motor-controler/eagle/hex-motor-controler - Modify.b00233
+104K	BOARDS/hex-motor-controler/eagle/hex-motor-controler - Modify.b00234
+104K	BOARDS/hex-motor-controler/eagle/hex-motor-controler - Modify.b00235
+100K	BOARDS/hex-motor-controler/eagle/hex-motor-controler - Modify.b00236
+100K	BOARDS/hex-motor-controler/eagle/hex-motor-controler - Modify.b00237
+104K	BOARDS/hex-motor-controler/eagle/hex-motor-controler - Modify.b00238
+104K	BOARDS/hex-motor-controler/eagle/hex-motor-controler - Modify.b00239
+204K	BOARDS/hex-motor-controler/eagle/hex-motor-controler - Modify.s00231
+200K	BOARDS/hex-motor-controler/eagle/hex-motor-controler - Modify.s00232
+108K	BOARDS/hex-motor-controler/eagle/hex-motor-controler.brd
+ 32K	BOARDS/hex-motor-controler/eagle/hex-motor-controler.pdf
+204K	BOARDS/hex-motor-controler/eagle/hex-motor-controler.sch
+8.0K	BOARDS/hex-motor-controler/eagle/my_lib - Modify.l00231
+8.0K	BOARDS/hex-motor-controler/eagle/my_lib - Modify.l00232
+8.0K	BOARDS/hex-motor-controler/eagle/my_lib.lbr
+328K	BOARDS/hex-motor-controler/media
+ 92K	BOARDS/hex-motor-controler/media/complete.png
+ 60K	BOARDS/hex-motor-controler/media/components.png
+ 76K	BOARDS/hex-motor-controler/media/coppper.png
+100K	BOARDS/hex-motor-controler/media/instructions.png
+1.0M	BWF Profiles_standard_profiles_01-2012.pdf
+144K	bwf_profiles_04_2012_verb_u_abschluss_connecting_and_edge.pdf
+ 15M	CAD
+116K	CAD/2013.09.24 Placas LEXAN.bak
+120K	CAD/2013.09.24 Placas LEXAN.dwg
+104K	CAD/2013.10.02 Placas LEXAN_RL.dwg
+104K	CAD/2013.10.14 Esquemático Raised Beds_RL.bak
+104K	CAD/2013.10.14 Esquemático Raised Beds_RL.dwg
+ 92K	CAD/2013.10.24 Peça de Suporte RB.bak
+ 92K	CAD/2013.10.24 Peça de Suporte RB.dwg
+ 12K	CAD/2013.10.24 Peça de Suporte RB.eps
+104K	CAD/2013.11.04 Esquemático Raised Beds_RL.dwg
+104K	CAD/2013.11.22 Frente estufa (porta).bak
+104K	CAD/2013.11.22 Frente estufa (porta).dwg
+ 32K	CAD/2014.02.28 Componentes para Probe.bak
+ 32K	CAD/2014.02.28 Componentes para Probe.dwg
+212K	CAD/2014.03.20 Ventilação (aberturas, ventoinha e caixilhos).bak
+212K	CAD/2014.03.20 Ventilação (aberturas, ventoinha e caixilhos).dwg
+340K	CAD/2014.04.02  Esquema Ligações GrouuPro (DAR_OPENLAB’s iMac's conflicted copy 2014-07-03).bak
+340K	CAD/2014.04.02  Esquema Ligações GrouuPro (DAR_OPENLAB’s iMac's conflicted copy 2014-07-03).dwg
+372K	CAD/2014.04.02  Esquema Ligações GrouuPro.bak
+372K	CAD/2014.04.02  Esquema Ligações GrouuPro.dwg
+188K	CAD/2014.04.02  Esquema substituição da porta (darserver.lan's conflicted copy 2014-04-10).bak
+188K	CAD/2014.04.02  Esquema substituição da porta (darserver.lan's conflicted copy 2014-04-10).dwg
+188K	CAD/2014.04.02  Esquema substituição da porta.bak
+188K	CAD/2014.04.02  Esquema substituição da porta.dwg
+4.0K	CAD/2014.04.02  Esquema substituição da porta.dwl
+4.0K	CAD/2014.04.02  Esquema substituição da porta.dwl2
+196K	CAD/2014.04.22 Ventilação (aberturas, ventoinha e caixilhos).bak
+208K	CAD/2014.04.22 Ventilação (aberturas, ventoinha e caixilhos).dwg
+4.0K	CAD/2014.04.22 Ventilação (aberturas, ventoinha e caixilhos).dwl
+4.0K	CAD/2014.04.22 Ventilação (aberturas, ventoinha e caixilhos).dwl2
+4.0K	CAD/2014.05.08 Portas Armário.dwl
+4.0K	CAD/2014.05.08 Portas Armário.dwl2
+188K	CAD/2014.05.09 Ventilação (aberturas, ventoinha e caixilhos).bak
+196K	CAD/2014.05.09 Ventilação (aberturas, ventoinha e caixilhos).dwg
+320K	CAD/2014.06.09  Esquema Ligações GrouuPro.bak
+320K	CAD/2014.06.09  Esquema Ligações GrouuPro.dwg
+288K	CAD/2014.06.23  Esquema Ligações GrouuPro.bak
+292K	CAD/2014.06.23  Esquema Ligações GrouuPro.dwg
+9.2M	CAD/ARQUIVO
+100K	CAD/ARQUIVO/2013.09.24 Placas LEXAN.dwg
+104K	CAD/ARQUIVO/2013.10.14 Esquemático Raised Beds_RL.bak
+104K	CAD/ARQUIVO/2013.10.14 Esquemático Raised Beds_RL.dwg
+104K	CAD/ARQUIVO/2013.11.04 Esquemático Raised Beds_RL.dwg
+328K	CAD/ARQUIVO/2013.12.06  Esquema Ligações GrouuPro.bak
+328K	CAD/ARQUIVO/2013.12.06  Esquema Ligações GrouuPro.dwg
+116K	CAD/ARQUIVO/2014.01.29 Ventilação (aberturas e ventoinha).bak
+116K	CAD/ARQUIVO/2014.01.29 Ventilação (aberturas e ventoinha).dwg
+196K	CAD/ARQUIVO/2014.02.05  Esquema Ligações GrouuPro.bak
+136K	CAD/ARQUIVO/2014.02.05  Esquema Ligações GrouuPro.dwg
+160K	CAD/ARQUIVO/2014.02.06  Esquema Ligações GrouuPro.bak
+152K	CAD/ARQUIVO/2014.02.06  Esquema Ligações GrouuPro.dwg
+116K	CAD/ARQUIVO/2014.02.06 Ventilação (aberturas, ventoinha e caixilhos).bak
+136K	CAD/ARQUIVO/2014.02.06 Ventilação (aberturas, ventoinha e caixilhos).dwg
+136K	CAD/ARQUIVO/2014.02.13 Ventilação (aberturas, ventoinha e caixilhos).bak
+132K	CAD/ARQUIVO/2014.02.13 Ventilação (aberturas, ventoinha e caixilhos).dwg
+ 28K	CAD/ARQUIVO/2014.02.21  Esquema Ligações GrouuPro - Esquema Armário.pdf
+ 16K	CAD/ARQUIVO/2014.02.21  Esquema Ligações GrouuPro Dreno Escoamento Água.pdf
+ 28K	CAD/ARQUIVO/2014.02.21  Esquema Ligações GrouuPro Esquema de Rega.pdf
+172K	CAD/ARQUIVO/2014.02.21  Esquema Ligações GrouuPro.bak
+172K	CAD/ARQUIVO/2014.02.21  Esquema Ligações GrouuPro.dwg
+140K	CAD/ARQUIVO/2014.02.21 Ventilação (aberturas, ventoinha e caixilhos).dwg
+172K	CAD/ARQUIVO/2014.02.25  Esquema Ligações GrouuPro.bak
+172K	CAD/ARQUIVO/2014.02.25  Esquema Ligações GrouuPro.dwg
+152K	CAD/ARQUIVO/2014.02.25 Ventilação (aberturas, ventoinha e caixilhos).bak
+156K	CAD/ARQUIVO/2014.02.25 Ventilação (aberturas, ventoinha e caixilhos).dwg
+168K	CAD/ARQUIVO/2014.02.26 Ventilação (aberturas, ventoinha e caixilhos).bak
+168K	CAD/ARQUIVO/2014.02.26 Ventilação (aberturas, ventoinha e caixilhos).dwg
+180K	CAD/ARQUIVO/2014.02.27 Ventilação (aberturas, ventoinha e caixilhos).bak
+180K	CAD/ARQUIVO/2014.02.27 Ventilação (aberturas, ventoinha e caixilhos).dwg
+200K	CAD/ARQUIVO/2014.02.28 Ventilação (aberturas, ventoinha e caixilhos).bak
+200K	CAD/ARQUIVO/2014.02.28 Ventilação (aberturas, ventoinha e caixilhos).dwg
+184K	CAD/ARQUIVO/2014.03.018  Esquema Ligações GrouuPro.bak
+184K	CAD/ARQUIVO/2014.03.018  Esquema Ligações GrouuPro.dwg
+172K	CAD/ARQUIVO/2014.03.04  Esquema Ligações GrouuPro.dwg
+212K	CAD/ARQUIVO/2014.03.10 Ventilação (aberturas, ventoinha e caixilhos).bak
+212K	CAD/ARQUIVO/2014.03.10 Ventilação (aberturas, ventoinha e caixilhos).dwg
+208K	CAD/ARQUIVO/2014.03.20  Esquema Ligações GrouuPro.bak
+208K	CAD/ARQUIVO/2014.03.20  Esquema Ligações GrouuPro.dwg
+4.0K	CAD/ARQUIVO/2014.03.20  Esquema Ligações GrouuPro.dwl
+4.0K	CAD/ARQUIVO/2014.03.20  Esquema Ligações GrouuPro.dwl2
+212K	CAD/ARQUIVO/2014.03.20 Ventilação (aberturas, ventoinha e caixilhos) (DAR_OPENLAB’s iMac's conflicted copy 2014-07-03).bak
+188K	CAD/ARQUIVO/2014.03.20 Ventilação (aberturas, ventoinha e caixilhos) (DARSERVER's conflicted copy 2014-04-04).dwg
+216K	CAD/ARQUIVO/2014.03.20 Ventilação (aberturas, ventoinha e caixilhos).bak
+212K	CAD/ARQUIVO/2014.03.20 Ventilação (aberturas, ventoinha e caixilhos).dwg
+224K	CAD/ARQUIVO/2014.03.25  Esquema Ligações GrouuPro.bak
+244K	CAD/ARQUIVO/2014.03.25  Esquema Ligações GrouuPro.dwg
+236K	CAD/ARQUIVO/2014.03.26  Esquema Ligações GrouuPro.bak
+312K	CAD/ARQUIVO/2014.03.26  Esquema Ligações GrouuPro.dwg
+140K	CAD/ARQUIVO/2014.03.26  Esquema substituição da porta.bak
+164K	CAD/ARQUIVO/2014.03.26  Esquema substituição da porta.dwg
+312K	CAD/ARQUIVO/2014.03.28  Esquema Ligações GrouuPro.bak
+288K	CAD/ARQUIVO/2014.03.28  Esquema Ligações GrouuPro.dwg
+188K	CAD/ARQUIVO/2014.04.02  Esquema substituição da porta (darserver.lan's conflicted copy 2014-04-10).bak
+188K	CAD/ARQUIVO/2014.04.02  Esquema substituição da porta.bak
+188K	CAD/ARQUIVO/2014.04.02  Esquema substituição da porta.dwg
+ 80K	CAD/Esquemático Estufas II (EVOL07's conflicted copy 2013-04-08).dwg
+ 60K	CAD/Esquemático Estufas II.bak
+ 84K	CAD/Esquemático Estufas II.dwg
+ 28K	CAD/Esquemático Estufas.bak
+ 28K	CAD/Esquemático Estufas.dwg
+8.0K	CAD/plot.log
+ 28M	CODE
+ 28M	CODE/Grow-git
+8.0K	CODE/Grow-git/.DS_Store
+ 17M	CODE/Grow-git/002egit - Modify
+4.0K	CODE/Grow-git/002egit - Modify/config
+4.0K	CODE/Grow-git/002egit - Modify/FETCH_HEAD
+4.0K	CODE/Grow-git/002egit - Modify/HEAD
+ 76K	CODE/Grow-git/002egit - Modify/index
+ 16K	CODE/Grow-git/002egit - Modify/logs
+4.0K	CODE/Grow-git/002egit - Modify/logs/HEAD
+ 12K	CODE/Grow-git/002egit - Modify/logs/refs
+4.0K	CODE/Grow-git/002egit - Modify/logs/refs/heads
+4.0K	CODE/Grow-git/002egit - Modify/logs/refs/heads/master
+8.0K	CODE/Grow-git/002egit - Modify/logs/refs/remotes
+8.0K	CODE/Grow-git/002egit - Modify/logs/refs/remotes/origin
+4.0K	CODE/Grow-git/002egit - Modify/logs/refs/remotes/origin/HEAD
+4.0K	CODE/Grow-git/002egit - Modify/logs/refs/remotes/origin/master
+ 17M	CODE/Grow-git/002egit - Modify/objects
+4.0K	CODE/Grow-git/002egit - Modify/objects/08
+4.0K	CODE/Grow-git/002egit - Modify/objects/08/3ecb9e6d51e6cb0bcf541b3de093f7ef98f8ff
+4.0K	CODE/Grow-git/002egit - Modify/objects/0a
+4.0K	CODE/Grow-git/002egit - Modify/objects/0a/0bf2594573cc0e73f9934dc59e32d82ac36c13
+4.0K	CODE/Grow-git/002egit - Modify/objects/10
+4.0K	CODE/Grow-git/002egit - Modify/objects/10/050ec8c4d47ba1300f9465021dc984ebb4ddf0
+8.0K	CODE/Grow-git/002egit - Modify/objects/12
+4.0K	CODE/Grow-git/002egit - Modify/objects/12/7bbfff6d916bf5696fd1210d033c0d5a902fbb
+4.0K	CODE/Grow-git/002egit - Modify/objects/12/b0688f6893b9b33638497ec804dad2d0e24ea3
+4.0K	CODE/Grow-git/002egit - Modify/objects/14
+4.0K	CODE/Grow-git/002egit - Modify/objects/14/0a3f574f3147f559fa02957159b05d76a6ff31
+4.0K	CODE/Grow-git/002egit - Modify/objects/15
+4.0K	CODE/Grow-git/002egit - Modify/objects/15/8c01f96a66c2c32cb9c8cb1d6ae16ed8f62a83
+4.0K	CODE/Grow-git/002egit - Modify/objects/17
+4.0K	CODE/Grow-git/002egit - Modify/objects/17/65d5efcad583c188c55dfdcaaf5f3e10290505
+4.0K	CODE/Grow-git/002egit - Modify/objects/1e
+4.0K	CODE/Grow-git/002egit - Modify/objects/1e/74c35078073044240fe1708de25d346c1ff479
+4.0K	CODE/Grow-git/002egit - Modify/objects/2e
+4.0K	CODE/Grow-git/002egit - Modify/objects/2e/7fde74759c7ebb513f457f8a82c98ba32271f8
+4.0K	CODE/Grow-git/002egit - Modify/objects/37
+4.0K	CODE/Grow-git/002egit - Modify/objects/37/d532ad99fe5ebb0e28be368473b8d85805ebbe
+4.0K	CODE/Grow-git/002egit - Modify/objects/3b
+4.0K	CODE/Grow-git/002egit - Modify/objects/3b/39e07dccc167f20fd4561178988de364f68799
+4.0K	CODE/Grow-git/002egit - Modify/objects/3e
+4.0K	CODE/Grow-git/002egit - Modify/objects/3e/4bdb66ed05e5868f3b1c6a3b610fa644077657
+4.0K	CODE/Grow-git/002egit - Modify/objects/44
+4.0K	CODE/Grow-git/002egit - Modify/objects/44/97a3c26c2c34a7dfa8d91e3a2b8eae82deb977
+8.0K	CODE/Grow-git/002egit - Modify/objects/47
+4.0K	CODE/Grow-git/002egit - Modify/objects/47/2fe46c6772568dd8eee7bfe680d637d7902671
+4.0K	CODE/Grow-git/002egit - Modify/objects/47/ca86a84303947bb8e9aadc1598f734b9f34057
+4.0K	CODE/Grow-git/002egit - Modify/objects/4a
+4.0K	CODE/Grow-git/002egit - Modify/objects/4a/43a68af22c52dea5d72f2b50986bd6d3d37ee7
+4.0K	CODE/Grow-git/002egit - Modify/objects/4f
+4.0K	CODE/Grow-git/002egit - Modify/objects/4f/02cfba199087f156188d6992a31a3c13a7e28f
+4.0K	CODE/Grow-git/002egit - Modify/objects/53
+4.0K	CODE/Grow-git/002egit - Modify/objects/53/a437b4eb5654356b8dc9999fc101f1336e6367
+4.0K	CODE/Grow-git/002egit - Modify/objects/54
+4.0K	CODE/Grow-git/002egit - Modify/objects/54/ff7c80ff63422a7cf9931bc828b2beeb02a060
+4.0K	CODE/Grow-git/002egit - Modify/objects/55
+4.0K	CODE/Grow-git/002egit - Modify/objects/55/4f67e793477c45a0de2fb965c5480d8e3b833a
+4.0K	CODE/Grow-git/002egit - Modify/objects/5c
+4.0K	CODE/Grow-git/002egit - Modify/objects/5c/74b09879588256542d9ef0682f10ce3217756c
+4.0K	CODE/Grow-git/002egit - Modify/objects/67
+4.0K	CODE/Grow-git/002egit - Modify/objects/67/d1fc1a52fb54368ff52fafe743fca84fb4facc
+4.0K	CODE/Grow-git/002egit - Modify/objects/69
+4.0K	CODE/Grow-git/002egit - Modify/objects/69/ffb75831c9ca5ad5e839b30bcafd6d34cf4ada
+4.0K	CODE/Grow-git/002egit - Modify/objects/6d
+4.0K	CODE/Grow-git/002egit - Modify/objects/6d/52e77ebed94bbbfc9394837e0af344a18e6b9a
+4.0K	CODE/Grow-git/002egit - Modify/objects/70
+4.0K	CODE/Grow-git/002egit - Modify/objects/70/808686d36a10f45038f6ecb312640c52310d68
+4.0K	CODE/Grow-git/002egit - Modify/objects/7c
+4.0K	CODE/Grow-git/002egit - Modify/objects/7c/8e15b3ecba67c062089d821e0e09ad8d077c30
+4.0K	CODE/Grow-git/002egit - Modify/objects/81
+4.0K	CODE/Grow-git/002egit - Modify/objects/81/1496c5dc531964b368e670d358a0dac9eb020b
+4.0K	CODE/Grow-git/002egit - Modify/objects/87
+4.0K	CODE/Grow-git/002egit - Modify/objects/87/513df79fb044f0f5eddd898924bd7537dff448
+8.0K	CODE/Grow-git/002egit - Modify/objects/8d
+4.0K	CODE/Grow-git/002egit - Modify/objects/8d/3fb5a1ed8eede84c6dfca0b3b819d3e680a300
+4.0K	CODE/Grow-git/002egit - Modify/objects/8d/49fd28d75eae8327339dc806a5ae93ae5e45d7
+4.0K	CODE/Grow-git/002egit - Modify/objects/8f
+4.0K	CODE/Grow-git/002egit - Modify/objects/8f/87ca97152f27cc04c57b597b40913749ad781e
+4.0K	CODE/Grow-git/002egit - Modify/objects/91
+4.0K	CODE/Grow-git/002egit - Modify/objects/91/32829cc33285bf51bc741b914ba63f60bfa831
+4.0K	CODE/Grow-git/002egit - Modify/objects/93
+4.0K	CODE/Grow-git/002egit - Modify/objects/93/471f2fcc54d46a16ff335e62dd446293191ec7
+4.0K	CODE/Grow-git/002egit - Modify/objects/94
+4.0K	CODE/Grow-git/002egit - Modify/objects/94/998904d20e1533417f6db43840a9d6600c36af
+4.0K	CODE/Grow-git/002egit - Modify/objects/98
+4.0K	CODE/Grow-git/002egit - Modify/objects/98/ab02f19e897185fb68d8298fc4de84d1173718
+4.0K	CODE/Grow-git/002egit - Modify/objects/9b
+4.0K	CODE/Grow-git/002egit - Modify/objects/9b/a62f34d886f2dc2d4bca2f1ed54d16bf4a97de
+8.0K	CODE/Grow-git/002egit - Modify/objects/9e
+4.0K	CODE/Grow-git/002egit - Modify/objects/9e/967fdd584b4c05ecab6cccd6f20ef5fcae8b17
+4.0K	CODE/Grow-git/002egit - Modify/objects/9e/a78bb5d5cc38c5eedcf5f2d68af2de2877548e
+4.0K	CODE/Grow-git/002egit - Modify/objects/a4
+4.0K	CODE/Grow-git/002egit - Modify/objects/a4/e2d042abb260ad9d672ca7c169e68bf9311519
+4.0K	CODE/Grow-git/002egit - Modify/objects/a7
+4.0K	CODE/Grow-git/002egit - Modify/objects/a7/956e199ff89936774f8dc909e9900a79b2cb12
+4.0K	CODE/Grow-git/002egit - Modify/objects/a9
+4.0K	CODE/Grow-git/002egit - Modify/objects/a9/e8a59aab820f45efbc4430417dd6057147151a
+4.0K	CODE/Grow-git/002egit - Modify/objects/b0
+4.0K	CODE/Grow-git/002egit - Modify/objects/b0/6b820eb534f17dc21352ab2275a2abc250b3e1
+4.0K	CODE/Grow-git/002egit - Modify/objects/bc
+4.0K	CODE/Grow-git/002egit - Modify/objects/bc/12fb2ba3d25fe1b8b1304e3319fb854b68a0b6
+ 12K	CODE/Grow-git/002egit - Modify/objects/bd
+4.0K	CODE/Grow-git/002egit - Modify/objects/bd/1cf87919e7f69a6cbea4e270d554998f55deaa
+4.0K	CODE/Grow-git/002egit - Modify/objects/bd/6cb8b479ef9371457abecfd63432322d85b67a
+4.0K	CODE/Grow-git/002egit - Modify/objects/bd/ed12d6532759e7b58459bc6b38f9f2aec1d158
+4.0K	CODE/Grow-git/002egit - Modify/objects/bf
+4.0K	CODE/Grow-git/002egit - Modify/objects/bf/908fcc60d1e4a0cbb8821aee34c6b26dd0d165
+8.0K	CODE/Grow-git/002egit - Modify/objects/c3
+4.0K	CODE/Grow-git/002egit - Modify/objects/c3/59cbed42730b477ae060b1a8062e993b2649bc
+4.0K	CODE/Grow-git/002egit - Modify/objects/c3/68b549144bce0e2237353aa9755132a078fb21
+4.0K	CODE/Grow-git/002egit - Modify/objects/c4
+4.0K	CODE/Grow-git/002egit - Modify/objects/c4/6853d45c46fd9762b87da9cb3ee0ad2f71d324
+4.0K	CODE/Grow-git/002egit - Modify/objects/c5
+4.0K	CODE/Grow-git/002egit - Modify/objects/c5/4383b5edb7dbcf5ade6f6dccf14a09bbbf03fc
+4.0K	CODE/Grow-git/002egit - Modify/objects/d3
+4.0K	CODE/Grow-git/002egit - Modify/objects/d3/29f85b05e2111a9d95fde17a1a3eafb3d3f4f4
+4.0K	CODE/Grow-git/002egit - Modify/objects/e0
+4.0K	CODE/Grow-git/002egit - Modify/objects/e0/d69183ac318292399998d8d1f5f84027a60ea1
+4.0K	CODE/Grow-git/002egit - Modify/objects/e1
+4.0K	CODE/Grow-git/002egit - Modify/objects/e1/82552813b5c589b5be022975000f33c1a45cc0
+4.0K	CODE/Grow-git/002egit - Modify/objects/e4
+4.0K	CODE/Grow-git/002egit - Modify/objects/e4/d5f98d7c9fd2636b42cff64ca2fb330e661558
+4.0K	CODE/Grow-git/002egit - Modify/objects/ec
+4.0K	CODE/Grow-git/002egit - Modify/objects/ec/3c79d371f6821f4534e0ee6bc4a607276db201
+4.0K	CODE/Grow-git/002egit - Modify/objects/ed
+4.0K	CODE/Grow-git/002egit - Modify/objects/ed/4e101b46167799b592deb06a05cefad128c8ba
+4.0K	CODE/Grow-git/002egit - Modify/objects/f0
+4.0K	CODE/Grow-git/002egit - Modify/objects/f0/1d73a1656b695015b71df6a3195519e9dd033e
+4.0K	CODE/Grow-git/002egit - Modify/objects/fb
+4.0K	CODE/Grow-git/002egit - Modify/objects/fb/3eb9a3929b1b851afae20f5bd5de9e59898617
+ 17M	CODE/Grow-git/002egit - Modify/objects/pack
+176K	CODE/Grow-git/002egit - Modify/objects/pack/pack-98c92b50ff15c6c06fc4675f54c63a075537f50c.idx
+ 17M	CODE/Grow-git/002egit - Modify/objects/pack/pack-98c92b50ff15c6c06fc4675f54c63a075537f50c.pack
+4.0K	CODE/Grow-git/002egit - Modify/ORIG_HEAD
+4.0K	CODE/Grow-git/002egit - Modify/packed-refs
+ 12K	CODE/Grow-git/002egit - Modify/refs
+4.0K	CODE/Grow-git/002egit - Modify/refs/heads
+4.0K	CODE/Grow-git/002egit - Modify/refs/heads/master
+8.0K	CODE/Grow-git/002egit - Modify/refs/remotes
+8.0K	CODE/Grow-git/002egit - Modify/refs/remotes/origin
+4.0K	CODE/Grow-git/002egit - Modify/refs/remotes/origin/HEAD
+4.0K	CODE/Grow-git/002egit - Modify/refs/remotes/origin/master
+4.0K	CODE/Grow-git/app.js
+4.0K	CODE/Grow-git/Arduino
+4.0K	CODE/Grow-git/Arduino/Arduino.ino
+4.0K	CODE/Grow-git/bower.json
+ 24K	CODE/Grow-git/models
+4.0K	CODE/Grow-git/models/ensaio.js
+4.0K	CODE/Grow-git/models/humidity.js
+4.0K	CODE/Grow-git/models/leaf.js
+4.0K	CODE/Grow-git/models/light.js
+4.0K	CODE/Grow-git/models/moisture.js
+4.0K	CODE/Grow-git/models/temp.js
+4.0K	CODE/Grow-git/package.json
+ 10M	CODE/Grow-git/public
+ 20K	CODE/Grow-git/public/javascripts
+4.0K	CODE/Grow-git/public/javascripts/app.js
+4.0K	CODE/Grow-git/public/javascripts/controllers.js
+4.0K	CODE/Grow-git/public/javascripts/directives.js
+4.0K	CODE/Grow-git/public/javascripts/filters.js
+4.0K	CODE/Grow-git/public/javascripts/services.js
+ 10M	CODE/Grow-git/public/lib
+572K	CODE/Grow-git/public/lib/angular
+664K	CODE/Grow-git/public/lib/angular-unstable
+4.0K	CODE/Grow-git/public/lib/angular-unstable/002ebower - Modify.json
+564K	CODE/Grow-git/public/lib/angular-unstable/angular.js
+ 88K	CODE/Grow-git/public/lib/angular-unstable/angular.min.js
+4.0K	CODE/Grow-git/public/lib/angular-unstable/bower.json
+4.0K	CODE/Grow-git/public/lib/angular-unstable/README.md
+4.0K	CODE/Grow-git/public/lib/angular/002ebower - Modify.json
+484K	CODE/Grow-git/public/lib/angular/angular.js
+ 80K	CODE/Grow-git/public/lib/angular/angular.min.js
+4.0K	CODE/Grow-git/public/lib/angular/bower.json
+3.6M	CODE/Grow-git/public/lib/bootstrap
+4.0K	CODE/Grow-git/public/lib/bootstrap/_config.yml
+ 48K	CODE/Grow-git/public/lib/bootstrap/_includes
+4.0K	CODE/Grow-git/public/lib/bootstrap/_includes/ads.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/_includes/footer.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/_includes/header.html
+8.0K	CODE/Grow-git/public/lib/bootstrap/_includes/nav-components.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/_includes/nav-css.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/_includes/nav-customize.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/_includes/nav-getting-started.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/_includes/nav-javascript.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/_includes/nav-main.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/_includes/old-bs-docs.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/_includes/social-buttons.html
+8.0K	CODE/Grow-git/public/lib/bootstrap/_layouts
+4.0K	CODE/Grow-git/public/lib/bootstrap/_layouts/default.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/_layouts/home.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/002ebower - Modify.json
+888K	CODE/Grow-git/public/lib/bootstrap/assets
+ 80K	CODE/Grow-git/public/lib/bootstrap/assets/css
+ 76K	CODE/Grow-git/public/lib/bootstrap/assets/css/docs.css
+4.0K	CODE/Grow-git/public/lib/bootstrap/assets/css/pygments-manni.css
+ 20K	CODE/Grow-git/public/lib/bootstrap/assets/ico
+4.0K	CODE/Grow-git/public/lib/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png
+4.0K	CODE/Grow-git/public/lib/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png
+4.0K	CODE/Grow-git/public/lib/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png
+4.0K	CODE/Grow-git/public/lib/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png
+4.0K	CODE/Grow-git/public/lib/bootstrap/assets/ico/favicon.png
+788K	CODE/Grow-git/public/lib/bootstrap/assets/js
+4.0K	CODE/Grow-git/public/lib/bootstrap/assets/js/application.js
+ 12K	CODE/Grow-git/public/lib/bootstrap/assets/js/customizer.js
+8.0K	CODE/Grow-git/public/lib/bootstrap/assets/js/filesaver.js
+ 16K	CODE/Grow-git/public/lib/bootstrap/assets/js/holder.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/assets/js/html5shiv.js
+ 92K	CODE/Grow-git/public/lib/bootstrap/assets/js/jquery.js
+ 52K	CODE/Grow-git/public/lib/bootstrap/assets/js/jszip.js
+ 60K	CODE/Grow-git/public/lib/bootstrap/assets/js/less.js
+484K	CODE/Grow-git/public/lib/bootstrap/assets/js/raw-files.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/assets/js/respond.min.js
+ 52K	CODE/Grow-git/public/lib/bootstrap/assets/js/uglify.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/bower.json
+4.0K	CODE/Grow-git/public/lib/bootstrap/browserstack.json
+4.0K	CODE/Grow-git/public/lib/bootstrap/CNAME
+128K	CODE/Grow-git/public/lib/bootstrap/components.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/composer.json
+4.0K	CODE/Grow-git/public/lib/bootstrap/CONTRIBUTING.md
+ 92K	CODE/Grow-git/public/lib/bootstrap/css.html
+ 72K	CODE/Grow-git/public/lib/bootstrap/customize.html
+472K	CODE/Grow-git/public/lib/bootstrap/dist
+252K	CODE/Grow-git/public/lib/bootstrap/dist/css
+ 20K	CODE/Grow-git/public/lib/bootstrap/dist/css/bootstrap-theme.css
+ 16K	CODE/Grow-git/public/lib/bootstrap/dist/css/bootstrap-theme.min.css
+120K	CODE/Grow-git/public/lib/bootstrap/dist/css/bootstrap.css
+ 96K	CODE/Grow-git/public/lib/bootstrap/dist/css/bootstrap.min.css
+132K	CODE/Grow-git/public/lib/bootstrap/dist/fonts
+ 16K	CODE/Grow-git/public/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot
+ 64K	CODE/Grow-git/public/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg
+ 32K	CODE/Grow-git/public/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf
+ 20K	CODE/Grow-git/public/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff
+ 88K	CODE/Grow-git/public/lib/bootstrap/dist/js
+ 60K	CODE/Grow-git/public/lib/bootstrap/dist/js/bootstrap.js
+ 28K	CODE/Grow-git/public/lib/bootstrap/dist/js/bootstrap.min.js
+1.0M	CODE/Grow-git/public/lib/bootstrap/examples
+ 16K	CODE/Grow-git/public/lib/bootstrap/examples/carousel
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/carousel/carousel.css
+ 12K	CODE/Grow-git/public/lib/bootstrap/examples/carousel/index.html
+ 12K	CODE/Grow-git/public/lib/bootstrap/examples/grid
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/grid/grid.css
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/grid/index.html
+ 12K	CODE/Grow-git/public/lib/bootstrap/examples/jumbotron
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/jumbotron-narrow
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/jumbotron-narrow/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/jumbotron-narrow/jumbotron-narrow.css
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/jumbotron/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/jumbotron/jumbotron.css
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/justified-nav
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/justified-nav/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/justified-nav/justified-nav.css
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/navbar
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/navbar-fixed-top
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/navbar-fixed-top/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/navbar-fixed-top/navbar-fixed-top.css
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/navbar-static-top
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/navbar-static-top/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/navbar-static-top/navbar-static-top.css
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/navbar/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/navbar/navbar.css
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/non-responsive
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/non-responsive/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/non-responsive/non-responsive.css
+ 16K	CODE/Grow-git/public/lib/bootstrap/examples/offcanvas
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/offcanvas/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/offcanvas/offcanvas.css
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/offcanvas/offcanvas.js
+912K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots
+ 84K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/carousel.jpg
+100K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/grid.jpg
+ 68K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/jumbotron-narrow.jpg
+ 80K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/jumbotron.jpg
+ 80K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/justified-nav.jpg
+ 40K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/navbar-fixed.jpg
+ 40K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/navbar-static.jpg
+ 44K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/navbar.jpg
+ 60K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/non-responsive.jpg
+112K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/offcanvas.jpg
+ 16K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/sign-in.jpg
+ 24K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/starter-template.jpg
+ 40K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/sticky-footer-navbar.jpg
+ 28K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/sticky-footer.jpg
+ 96K	CODE/Grow-git/public/lib/bootstrap/examples/screenshots/theme.jpg
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/signin
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/signin/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/signin/signin.css
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/starter-template
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/starter-template/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/starter-template/starter-template.css
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/sticky-footer
+8.0K	CODE/Grow-git/public/lib/bootstrap/examples/sticky-footer-navbar
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/sticky-footer-navbar/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/sticky-footer-navbar/sticky-footer-navbar.css
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/sticky-footer/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/sticky-footer/sticky-footer.css
+ 24K	CODE/Grow-git/public/lib/bootstrap/examples/theme
+ 20K	CODE/Grow-git/public/lib/bootstrap/examples/theme/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/examples/theme/theme.css
+132K	CODE/Grow-git/public/lib/bootstrap/fonts
+ 16K	CODE/Grow-git/public/lib/bootstrap/fonts/glyphicons-halflings-regular.eot
+ 64K	CODE/Grow-git/public/lib/bootstrap/fonts/glyphicons-halflings-regular.svg
+ 32K	CODE/Grow-git/public/lib/bootstrap/fonts/glyphicons-halflings-regular.ttf
+ 20K	CODE/Grow-git/public/lib/bootstrap/fonts/glyphicons-halflings-regular.woff
+ 44K	CODE/Grow-git/public/lib/bootstrap/getting-started.html
+8.0K	CODE/Grow-git/public/lib/bootstrap/Gruntfile.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/index.html
+ 88K	CODE/Grow-git/public/lib/bootstrap/javascript.html
+324K	CODE/Grow-git/public/lib/bootstrap/js
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/affix.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/alert.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/button.js
+8.0K	CODE/Grow-git/public/lib/bootstrap/js/carousel.js
+8.0K	CODE/Grow-git/public/lib/bootstrap/js/collapse.js
+8.0K	CODE/Grow-git/public/lib/bootstrap/js/dropdown.js
+8.0K	CODE/Grow-git/public/lib/bootstrap/js/modal.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/popover.js
+8.0K	CODE/Grow-git/public/lib/bootstrap/js/scrollspy.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/tab.js
+248K	CODE/Grow-git/public/lib/bootstrap/js/tests
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/index.html
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/phantom.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/server.js
+ 96K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/affix.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/alert.js
+8.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/button.js
+8.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/carousel.js
+8.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/collapse.js
+ 12K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/dropdown.js
+8.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/modal.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/phantom.js
+8.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/popover.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/scrollspy.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/tab.js
+ 20K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/tooltip.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/unit/transition.js
+140K	CODE/Grow-git/public/lib/bootstrap/js/tests/vendor
+ 92K	CODE/Grow-git/public/lib/bootstrap/js/tests/vendor/jquery.js
+8.0K	CODE/Grow-git/public/lib/bootstrap/js/tests/vendor/qunit.css
+ 40K	CODE/Grow-git/public/lib/bootstrap/js/tests/vendor/qunit.js
+ 12K	CODE/Grow-git/public/lib/bootstrap/js/tooltip.js
+4.0K	CODE/Grow-git/public/lib/bootstrap/js/transition.js
+268K	CODE/Grow-git/public/lib/bootstrap/less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/alerts.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/badges.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/bootstrap.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/breadcrumbs.less
+8.0K	CODE/Grow-git/public/lib/bootstrap/less/button-groups.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/buttons.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/carousel.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/close.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/code.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/component-animations.less
+8.0K	CODE/Grow-git/public/lib/bootstrap/less/dropdowns.less
+ 12K	CODE/Grow-git/public/lib/bootstrap/less/forms.less
+ 16K	CODE/Grow-git/public/lib/bootstrap/less/glyphicons.less
+ 12K	CODE/Grow-git/public/lib/bootstrap/less/grid.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/input-groups.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/jumbotron.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/labels.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/list-group.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/media.less
+ 24K	CODE/Grow-git/public/lib/bootstrap/less/mixins.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/modals.less
+ 16K	CODE/Grow-git/public/lib/bootstrap/less/navbar.less
+8.0K	CODE/Grow-git/public/lib/bootstrap/less/navs.less
+8.0K	CODE/Grow-git/public/lib/bootstrap/less/normalize.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/pager.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/pagination.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/panels.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/popovers.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/print.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/progress-bars.less
+8.0K	CODE/Grow-git/public/lib/bootstrap/less/responsive-utilities.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/scaffolding.less
+8.0K	CODE/Grow-git/public/lib/bootstrap/less/tables.less
+8.0K	CODE/Grow-git/public/lib/bootstrap/less/theme.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/thumbnails.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/tooltip.less
+8.0K	CODE/Grow-git/public/lib/bootstrap/less/type.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/utilities.less
+ 20K	CODE/Grow-git/public/lib/bootstrap/less/variables.less
+4.0K	CODE/Grow-git/public/lib/bootstrap/less/wells.less
+ 12K	CODE/Grow-git/public/lib/bootstrap/LICENSE
+4.0K	CODE/Grow-git/public/lib/bootstrap/package.json
+8.0K	CODE/Grow-git/public/lib/bootstrap/README.md
+460K	CODE/Grow-git/public/lib/d3
+4.0K	CODE/Grow-git/public/lib/d3/002ebower - Modify.json
+4.0K	CODE/Grow-git/public/lib/d3/bower.json
+304K	CODE/Grow-git/public/lib/d3/d3.js
+140K	CODE/Grow-git/public/lib/d3/d3.min.js
+4.0K	CODE/Grow-git/public/lib/d3/LICENSE
+4.0K	CODE/Grow-git/public/lib/d3/README.md
+496K	CODE/Grow-git/public/lib/jquery
+4.0K	CODE/Grow-git/public/lib/jquery/002ebower - Modify.json
+4.0K	CODE/Grow-git/public/lib/jquery/bower.json
+4.0K	CODE/Grow-git/public/lib/jquery/component.json
+4.0K	CODE/Grow-git/public/lib/jquery/composer.json
+ 16K	CODE/Grow-git/public/lib/jquery/jquery-migrate.js
+8.0K	CODE/Grow-git/public/lib/jquery/jquery-migrate.min.js
+240K	CODE/Grow-git/public/lib/jquery/jquery.js
+ 84K	CODE/Grow-git/public/lib/jquery/jquery.min.js
+124K	CODE/Grow-git/public/lib/jquery/jquery.min.map
+4.0K	CODE/Grow-git/public/lib/jquery/package.json
+4.0K	CODE/Grow-git/public/lib/jquery/README.md
+1.6M	CODE/Grow-git/public/lib/rickshaw
+4.0K	CODE/Grow-git/public/lib/rickshaw/002ebower - Modify.json
+4.0K	CODE/Grow-git/public/lib/rickshaw/002erock - Modify.yml
+4.0K	CODE/Grow-git/public/lib/rickshaw/CONTRIBUTING.md
+868K	CODE/Grow-git/public/lib/rickshaw/examples
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/ajax.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/bars.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/colors.html
+8.0K	CODE/Grow-git/public/lib/rickshaw/examples/css
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/css/extensions.css
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/css/lines.css
+ 20K	CODE/Grow-git/public/lib/rickshaw/examples/data
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/data/data.json
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/data/data.jsonp
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/data/data2.json
+8.0K	CODE/Grow-git/public/lib/rickshaw/examples/data/status.json
+8.0K	CODE/Grow-git/public/lib/rickshaw/examples/extensions.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/fixed.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/formatter.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/gaps.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/hover.html
+ 60K	CODE/Grow-git/public/lib/rickshaw/examples/images
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/interp_cardinal.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/interp_linear.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/interp_step.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/offset_pct.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/offset_stack.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/offset_stream.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/offset_value.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/om_bar.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/om_curves.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/om_lines.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/om_percent.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/om_scatter.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/om_stack.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/om_step.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/images/om_stream.png
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/inconsistent.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/index.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/js
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/js/extensions.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/jsonp.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/lineplot.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/lines.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/logscale.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/multi.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/negative.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/refresh.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/resize.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/scaled.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/scatterplot.html
+656K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots
+ 32K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots/ajax.png
+160K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots/colors.png
+112K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots/extensions.png
+ 68K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots/lines.png
+ 24K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots/logscale.png
+ 16K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots/scaled.png
+ 36K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots/scatterplot.png
+ 36K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots/simple.png
+ 16K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots/start.png
+ 48K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots/status.png
+ 68K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots/stops.png
+ 40K	CODE/Grow-git/public/lib/rickshaw/examples/screenshots/y_axis.png
+8.0K	CODE/Grow-git/public/lib/rickshaw/examples/series.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/simple.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/sparse.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/start.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/status.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/stops.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/x_axis.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/examples/y_axis.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/LICENSE
+4.0K	CODE/Grow-git/public/lib/rickshaw/Makefile
+4.0K	CODE/Grow-git/public/lib/rickshaw/package.json
+8.0K	CODE/Grow-git/public/lib/rickshaw/README.md
+8.0K	CODE/Grow-git/public/lib/rickshaw/rickshaw.css
+ 80K	CODE/Grow-git/public/lib/rickshaw/rickshaw.js
+8.0K	CODE/Grow-git/public/lib/rickshaw/rickshaw.min.css
+ 60K	CODE/Grow-git/public/lib/rickshaw/rickshaw.min.js
+164K	CODE/Grow-git/public/lib/rickshaw/src
+ 12K	CODE/Grow-git/public/lib/rickshaw/src/css
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/css/detail.css
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/css/graph.css
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/css/legend.css
+152K	CODE/Grow-git/public/lib/rickshaw/src/js
+8.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Class.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Color.Palette.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Compat.ClassList.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Fixtures.Color.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Fixtures.Number.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Fixtures.RandomData.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Fixtures.Time.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Fixtures.Time.Local.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Ajax.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Annotate.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Axis.Time.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Axis.X.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Axis.Y.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Axis.Y.Scaled.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Behavior.Series.Highlight.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Behavior.Series.Order.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Behavior.Series.Toggle.js
+8.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.HoverDetail.js
+8.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.JSONP.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Legend.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.RangeSlider.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Renderer.Area.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Renderer.Bar.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Renderer.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Renderer.Line.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Renderer.LinePlot.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Renderer.Multi.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Renderer.ScatterPlot.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Renderer.Stack.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Smoother.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Graph.Unstacker.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Series.FixedDuration.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/src/js/Rickshaw.Series.js
+ 32K	CODE/Grow-git/public/lib/rickshaw/tests
+4.0K	CODE/Grow-git/public/lib/rickshaw/tests/data
+4.0K	CODE/Grow-git/public/lib/rickshaw/tests/data/simple.svg
+4.0K	CODE/Grow-git/public/lib/rickshaw/tests/Rickshaw.Class.js
+8.0K	CODE/Grow-git/public/lib/rickshaw/tests/Rickshaw.Graph.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/tests/Rickshaw.Graph.Renderer.js
+4.0K	CODE/Grow-git/public/lib/rickshaw/tests/Rickshaw.Series.FixedDuration.js
+8.0K	CODE/Grow-git/public/lib/rickshaw/tests/Rickshaw.Series.js
+116K	CODE/Grow-git/public/lib/rickshaw/tutorial
+4.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/example_01.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/example_02.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/example_03.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/example_04.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/example_05.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/example_06.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/example_07.html
+8.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/introduction.html
+4.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/style.css
+4.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/transform_epoch.pl
+4.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/transform_region.pl
+4.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/transform.pl
+ 64K	CODE/Grow-git/public/lib/rickshaw/tutorial/vendor
+ 64K	CODE/Grow-git/public/lib/rickshaw/tutorial/vendor/prettify
+4.0K	CODE/Grow-git/public/lib/rickshaw/tutorial/vendor/prettify/prettify.css
+ 60K	CODE/Grow-git/public/lib/rickshaw/tutorial/vendor/prettify/prettify.js
+312K	CODE/Grow-git/public/lib/rickshaw/vendor
+ 20K	CODE/Grow-git/public/lib/rickshaw/vendor/d3.layout.min.js
+ 56K	CODE/Grow-git/public/lib/rickshaw/vendor/d3.min.js
+236K	CODE/Grow-git/public/lib/rickshaw/vendor/d3.v2.js
+644K	CODE/Grow-git/public/lib/socket.io
+2.4M	CODE/Grow-git/public/lib/socket.io-client
+4.0K	CODE/Grow-git/public/lib/socket.io-client/002ebower - Modify.json
+ 12K	CODE/Grow-git/public/lib/socket.io-client/bin
+ 12K	CODE/Grow-git/public/lib/socket.io-client/bin/builder.js
+488K	CODE/Grow-git/public/lib/socket.io-client/dist
+100K	CODE/Grow-git/public/lib/socket.io-client/dist/socket.io.js
+ 44K	CODE/Grow-git/public/lib/socket.io-client/dist/socket.io.min.js
+172K	CODE/Grow-git/public/lib/socket.io-client/dist/WebSocketMain.swf
+172K	CODE/Grow-git/public/lib/socket.io-client/dist/WebSocketMainInsecure.swf
+8.0K	CODE/Grow-git/public/lib/socket.io-client/History.md
+1.6M	CODE/Grow-git/public/lib/socket.io-client/lib
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/events.js
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/io.js
+ 12K	CODE/Grow-git/public/lib/socket.io-client/lib/json.js
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/namespace.js
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/parser.js
+ 16K	CODE/Grow-git/public/lib/socket.io-client/lib/socket.js
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/transport.js
+ 40K	CODE/Grow-git/public/lib/socket.io-client/lib/transports
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/transports/flashsocket.js
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/transports/htmlfile.js
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/transports/jsonp-polling.js
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/transports/websocket.js
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/transports/xhr-polling.js
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/transports/xhr.js
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/util.js
+1.5M	CODE/Grow-git/public/lib/socket.io-client/lib/vendor
+1.5M	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js
+1.1M	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/build.sh
+1.0M	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/adobe
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/adobe/net
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/adobe/net/proxies
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/adobe/net/proxies/RFC2817Socket.as
+ 16K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/gsolo
+ 16K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/gsolo/encryption
+ 16K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/gsolo/encryption/MD5.as
+1.0M	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant
+916K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto
+228K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert
+216K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/MozillaRootCertificates.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/X509Certificate.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/X509CertificateCollection.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/Crypto.as
+ 44K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/HMAC.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/IHash.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/IHMAC.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MAC.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MD2.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MD5.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA1.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA224.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA256.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHABase.as
+ 16K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/ARC4.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/IPRNG.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/Random.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/TLSPRF.as
+ 12K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/rsa
+ 12K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/rsa/RSAKey.as
+300K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric
+120K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/AESKey.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/aeskey.pl
+ 20K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/BlowFishKey.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CBCMode.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CFB8Mode.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CFBMode.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CTRMode.as
+ 16K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/DESKey.as
+ 64K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/dump.txt
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ECBMode.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ICipher.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IMode.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IPad.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IStreamCipher.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ISymmetricKey.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IVMode.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/NullPad.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/OFBMode.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/PKCS5.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/SimpleIVMode.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/SSLPad.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/TLSPad.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/TripleDESKey.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/XTeaKey.as
+172K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests
+ 56K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/AESKeyTest.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ARC4Test.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/BigIntegerTest.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/BlowFishKeyTest.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CBCModeTest.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CFB8ModeTest.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CFBModeTest.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CTRModeTest.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/DESKeyTest.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ECBModeTest.as
+ 12K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/HMACTest.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ITestHarness.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/MD2Test.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/MD5Test.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/OFBModeTest.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/RSAKeyTest.as
+ 16K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA1Test.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA224Test.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA256Test.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TestCase.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TLSPRFTest.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TripleDESKeyTest.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/XTeaKeyTest.as
+136K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/BulkCiphers.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/CipherSuites.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/IConnectionState.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/ISecurityParameters.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/KeyExchanges.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/MACs.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLConnectionState.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLEvent.as
+ 12K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLSecurityParameters.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSConfig.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSConnectionState.as
+ 32K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSEngine.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSError.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSEvent.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSecurityParameters.as
+ 12K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSocket.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSocketEvent.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSTest.as
+ 60K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/BarrettReduction.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/bi_internal.as
+ 36K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/BigInteger.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/ClassicReduction.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/IReduction.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/MontgomeryReduction.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/NullReduction.as
+ 72K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/ArrayUtil.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/Base64.as
+ 52K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/ByteString.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/DER.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/IAsn1Type.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Integer.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/ObjectIdentifier.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/OID.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/PEM.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/PrintableString.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Sequence.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Set.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Type.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/UTCTime.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/Hex.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/Memory.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/IWebSocketLogger.as
+ 16K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/WebSocket.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/WebSocketEvent.as
+8.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/WebSocketMain.as
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/flash-src/WebSocketMainInsecure.as
+ 12K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/README.md
+4.0K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/sample.html
+ 12K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/swfobject.js
+ 12K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/web_socket.js
+172K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/WebSocketMain.swf
+164K	CODE/Grow-git/public/lib/socket.io-client/lib/vendor/web-socket-js/WebSocketMainInsecure.zip
+4.0K	CODE/Grow-git/public/lib/socket.io-client/Makefile
+4.0K	CODE/Grow-git/public/lib/socket.io-client/package.json
+8.0K	CODE/Grow-git/public/lib/socket.io-client/README.md
+304K	CODE/Grow-git/public/lib/socket.io-client/support
+ 36K	CODE/Grow-git/public/lib/socket.io-client/support/should.js
+268K	CODE/Grow-git/public/lib/socket.io-client/support/test-runner
+8.0K	CODE/Grow-git/public/lib/socket.io-client/support/test-runner/app.js
+4.0K	CODE/Grow-git/public/lib/socket.io-client/support/test-runner/index.jade
+256K	CODE/Grow-git/public/lib/socket.io-client/support/test-runner/public
+248K	CODE/Grow-git/public/lib/socket.io-client/support/test-runner/public/javascript
+236K	CODE/Grow-git/public/lib/socket.io-client/support/test-runner/public/javascript/jquery.js
+8.0K	CODE/Grow-git/public/lib/socket.io-client/support/test-runner/public/javascript/runner.js
+4.0K	CODE/Grow-git/public/lib/socket.io-client/support/test-runner/public/javascript/script.js
+8.0K	CODE/Grow-git/public/lib/socket.io-client/support/test-runner/public/stylesheets
+4.0K	CODE/Grow-git/public/lib/socket.io-client/support/test-runner/public/stylesheets/main.css
+4.0K	CODE/Grow-git/public/lib/socket.io-client/support/test-runner/public/stylesheets/main.styl
+ 52K	CODE/Grow-git/public/lib/socket.io-client/test
+4.0K	CODE/Grow-git/public/lib/socket.io-client/test/events.test.js
+4.0K	CODE/Grow-git/public/lib/socket.io-client/test/io.test.js
+8.0K	CODE/Grow-git/public/lib/socket.io-client/test/node
+4.0K	CODE/Grow-git/public/lib/socket.io-client/test/node/builder.common.js
+4.0K	CODE/Grow-git/public/lib/socket.io-client/test/node/builder.test.js
+ 12K	CODE/Grow-git/public/lib/socket.io-client/test/parser.test.js
+ 12K	CODE/Grow-git/public/lib/socket.io-client/test/socket.test.js
+8.0K	CODE/Grow-git/public/lib/socket.io-client/test/util.test.js
+4.0K	CODE/Grow-git/public/lib/socket.io-client/test/worker.js
+4.0K	CODE/Grow-git/public/lib/socket.io/002ebower - Modify.json
+4.0K	CODE/Grow-git/public/lib/socket.io/002etravis - Modify.yml
+ 12K	CODE/Grow-git/public/lib/socket.io/benchmarks
+4.0K	CODE/Grow-git/public/lib/socket.io/benchmarks/decode.bench.js
+4.0K	CODE/Grow-git/public/lib/socket.io/benchmarks/encode.bench.js
+4.0K	CODE/Grow-git/public/lib/socket.io/benchmarks/runner.js
+ 48K	CODE/Grow-git/public/lib/socket.io/examples
+ 28K	CODE/Grow-git/public/lib/socket.io/examples/chat
+4.0K	CODE/Grow-git/public/lib/socket.io/examples/chat/app.js
+4.0K	CODE/Grow-git/public/lib/socket.io/examples/chat/index.jade
+4.0K	CODE/Grow-git/public/lib/socket.io/examples/chat/package.json
+ 16K	CODE/Grow-git/public/lib/socket.io/examples/chat/public
+ 16K	CODE/Grow-git/public/lib/socket.io/examples/chat/public/stylesheets
+4.0K	CODE/Grow-git/public/lib/socket.io/examples/chat/public/stylesheets/mixins.styl
+8.0K	CODE/Grow-git/public/lib/socket.io/examples/chat/public/stylesheets/style.css
+4.0K	CODE/Grow-git/public/lib/socket.io/examples/chat/public/stylesheets/style.styl
+ 20K	CODE/Grow-git/public/lib/socket.io/examples/irc-output
+4.0K	CODE/Grow-git/public/lib/socket.io/examples/irc-output/app.js
+4.0K	CODE/Grow-git/public/lib/socket.io/examples/irc-output/index.jade
+4.0K	CODE/Grow-git/public/lib/socket.io/examples/irc-output/irc.js
+4.0K	CODE/Grow-git/public/lib/socket.io/examples/irc-output/package.json
+4.0K	CODE/Grow-git/public/lib/socket.io/examples/irc-output/public
+4.0K	CODE/Grow-git/public/lib/socket.io/examples/irc-output/public/stylesheets
+4.0K	CODE/Grow-git/public/lib/socket.io/examples/irc-output/public/stylesheets/style.styl
+ 12K	CODE/Grow-git/public/lib/socket.io/History.md
+4.0K	CODE/Grow-git/public/lib/socket.io/index.js
+176K	CODE/Grow-git/public/lib/socket.io/lib
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/logger.js
+ 24K	CODE/Grow-git/public/lib/socket.io/lib/manager.js
+8.0K	CODE/Grow-git/public/lib/socket.io/lib/namespace.js
+8.0K	CODE/Grow-git/public/lib/socket.io/lib/parser.js
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/socket.io.js
+8.0K	CODE/Grow-git/public/lib/socket.io/lib/socket.js
+ 12K	CODE/Grow-git/public/lib/socket.io/lib/static.js
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/store.js
+ 12K	CODE/Grow-git/public/lib/socket.io/lib/stores
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/stores/memory.js
+8.0K	CODE/Grow-git/public/lib/socket.io/lib/stores/redis.js
+ 12K	CODE/Grow-git/public/lib/socket.io/lib/transport.js
+ 76K	CODE/Grow-git/public/lib/socket.io/lib/transports
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/transports/flashsocket.js
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/transports/htmlfile.js
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/transports/http-polling.js
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/transports/http.js
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/transports/index.js
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/transports/jsonp-polling.js
+ 44K	CODE/Grow-git/public/lib/socket.io/lib/transports/websocket
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/transports/websocket.js
+8.0K	CODE/Grow-git/public/lib/socket.io/lib/transports/websocket/default.js
+ 16K	CODE/Grow-git/public/lib/socket.io/lib/transports/websocket/hybi-07-12.js
+ 16K	CODE/Grow-git/public/lib/socket.io/lib/transports/websocket/hybi-16.js
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/transports/websocket/index.js
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/transports/xhr-polling.js
+4.0K	CODE/Grow-git/public/lib/socket.io/lib/util.js
+4.0K	CODE/Grow-git/public/lib/socket.io/LICENSE
+4.0K	CODE/Grow-git/public/lib/socket.io/Makefile
+4.0K	CODE/Grow-git/public/lib/socket.io/package.json
+ 12K	CODE/Grow-git/public/lib/socket.io/Readme.md
+ 76K	CODE/Grow-git/public/lib/socket.io/support
+ 76K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client
+ 12K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/examples
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/examples/client-unix.js
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/examples/client.js
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/examples/server-unix.js
+ 20K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/lib
+ 20K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/lib/websocket.js
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/LICENSE
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/Makefile
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/package.json
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/README.md
+ 28K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/test
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/test/test-basic.js
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/test/test-client-close.js
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/test/test-readonly-attrs.js
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/test/test-ready-state.js
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/test/test-server-close.js
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/test/test-unix-send-fd.js
+4.0K	CODE/Grow-git/public/lib/socket.io/support/node-websocket-client/test/test-unix-sockets.js
+284K	CODE/Grow-git/public/lib/socket.io/test
+8.0K	CODE/Grow-git/public/lib/socket.io/test/common.js
+8.0K	CODE/Grow-git/public/lib/socket.io/test/fixtures
+4.0K	CODE/Grow-git/public/lib/socket.io/test/fixtures/cert.crt
+4.0K	CODE/Grow-git/public/lib/socket.io/test/fixtures/key.key
+4.0K	CODE/Grow-git/public/lib/socket.io/test/hybi-common.js
+4.0K	CODE/Grow-git/public/lib/socket.io/test/io.test.js
+4.0K	CODE/Grow-git/public/lib/socket.io/test/leaks
+4.0K	CODE/Grow-git/public/lib/socket.io/test/leaks/socket.leaktest.js
+ 16K	CODE/Grow-git/public/lib/socket.io/test/manager.test.js
+8.0K	CODE/Grow-git/public/lib/socket.io/test/namespace.test.js
+8.0K	CODE/Grow-git/public/lib/socket.io/test/parser.test.js
+ 20K	CODE/Grow-git/public/lib/socket.io/test/static.test.js
+8.0K	CODE/Grow-git/public/lib/socket.io/test/stores.memory.test.js
+8.0K	CODE/Grow-git/public/lib/socket.io/test/stores.redis.test.js
+8.0K	CODE/Grow-git/public/lib/socket.io/test/transports.flashsocket.test.js
+ 12K	CODE/Grow-git/public/lib/socket.io/test/transports.htmlfile.test.js
+ 20K	CODE/Grow-git/public/lib/socket.io/test/transports.jsonp-polling.test.js
+ 12K	CODE/Grow-git/public/lib/socket.io/test/transports.websocket.hybi07-12.parser.test.js
+ 12K	CODE/Grow-git/public/lib/socket.io/test/transports.websocket.hybi16.parser.test.js
+ 48K	CODE/Grow-git/public/lib/socket.io/test/transports.websocket.test.js
+ 76K	CODE/Grow-git/public/lib/socket.io/test/transports.xhr-polling.test.js
+8.0K	CODE/Grow-git/public/stylesheets
+4.0K	CODE/Grow-git/public/stylesheets/style.css
+4.0K	CODE/Grow-git/public/stylesheets/style.less
+4.0K	CODE/Grow-git/README.md
+ 12K	CODE/Grow-git/routes
+4.0K	CODE/Grow-git/routes/index.js
+4.0K	CODE/Grow-git/routes/socket.js
+4.0K	CODE/Grow-git/routes/user.js
+ 44K	CODE/Grow-git/views
+4.0K	CODE/Grow-git/views/index.jade
+4.0K	CODE/Grow-git/views/layout.jade
+ 36K	CODE/Grow-git/views/partials
+4.0K	CODE/Grow-git/views/partials/dashboard.jade
+4.0K	CODE/Grow-git/views/partials/environment.jade
+4.0K	CODE/Grow-git/views/partials/index.jade
+4.0K	CODE/Grow-git/views/partials/journal.jade
+4.0K	CODE/Grow-git/views/partials/probe.jade
+4.0K	CODE/Grow-git/views/partials/reports.jade
+4.0K	CODE/Grow-git/views/partials/trial.jade
+4.0K	CODE/Grow-git/views/partials/trialONE.jade
+4.0K	CODE/Grow-git/views/partials/watering.jade
+ 48K	Detalhe Conector EXT travessas.png
+ 88K	Detalhe Conector EXT.png
+244K	Detalhe estrutura estufa.png
+253M	DP
+8.0K	DP (desenvolvimento projecto)
+8.0K	DP (desenvolvimento projecto)/Bomba SHURFLO
+4.0K	DP (desenvolvimento projecto)/Bomba SHURFLO/002e_911-622-J_Extreme ProBlaster 12v 5901-2202, 2212 - Modify.pdf
+4.0K	DP (desenvolvimento projecto)/Bomba SHURFLO/002e_pds-Extreme ProBlaster 12v 5901-2202 12 - Modify.pdf
+8.0K	DP/.DS_Store
+ 68K	DP/2014.03.13 Hipotese 1 fix porta em LEXAN 8mm.jpg
+ 68K	DP/2014.03.13 Hipotese 2 fix porta em LEXAN 8mm.jpg
+ 16K	DP/2014.06.20 Tarefas em Falta.xlsx
+ 88K	DP/2014.06.23  Esquema Ligações GrouuPro.pdf
+528K	DP/ARQUIVO
+ 12K	DP/ARQUIVO/2014.02.04 Lista de Tarefas e Tempos_RL.xlsx
+ 12K	DP/ARQUIVO/2014.02.10 Lista de Tarefas e Tempos_RL.xlsx
+ 16K	DP/ARQUIVO/2014.03.18 Válvulas e Bombas de rega.xlsx
+ 16K	DP/ARQUIVO/2014.03.24  Ligações estre válvulas.xlsx
+ 28K	DP/ARQUIVO/2014.03.24  REF.s Válvulas, Bombas de rega e Servos.pdf
+ 12K	DP/ARQUIVO/2014.03.24  REF.s Válvulas, Bombas de rega e Servos.xlsx
+ 28K	DP/ARQUIVO/2014.03.26  Esquema Ligações GrouuPro_Esquema Armário.pdf
+8.0K	DP/ARQUIVO/2014.03.26  Esquema substituição da porta_Peça de policarbonato.pdf
+ 12K	DP/ARQUIVO/2014.03.26  Esquema substituição da porta_Vistas.pdf
+ 20K	DP/ARQUIVO/2014.03.26 Tarefas em Falta.pdf
+ 28K	DP/ARQUIVO/2014.03.28  Esquema Ligações GrouuPro Esquema Arm.pdf
+ 12K	DP/ARQUIVO/2014.03.28 Tarefas em Falta.xlsx
+ 12K	DP/ARQUIVO/2014.04.01 Tarefas em Falta.xlsx
+ 12K	DP/ARQUIVO/2014.04.04  REF.s Válvulas, Bombas de rega e Servos.xlsx
+ 16K	DP/ARQUIVO/2014.04.10 Tarefas em Falta (DARSERVER's conflicted copy 2014-04-14).xlsx
+ 12K	DP/ARQUIVO/2014.04.10 Tarefas em Falta.xlsx
+ 16K	DP/ARQUIVO/2014.04.14 Tarefas em Falta.xlsx
+ 16K	DP/ARQUIVO/2014.04.23 Tarefas em Falta.xlsx
+ 16K	DP/ARQUIVO/2014.04.29 Tarefas em Falta.xlsx
+ 16K	DP/ARQUIVO/2014.05.05 Tarefas em Falta.xlsx
+ 16K	DP/ARQUIVO/2014.05.08 Tarefas em Falta.xlsx
+8.0K	DP/ARQUIVO/2014.06.09 - Material em Falta.docx
+184K	DP/ARQUIVO/2014.06.20  REF.s Válvulas, Bombas de rega e Servos.pdf
+448K	DP/Bomba SHURFLO
+220K	DP/Bomba SHURFLO/911-622-J_Extreme ProBlaster 12v 5901-2202, 2212.pdf
+228K	DP/Bomba SHURFLO/pds-Extreme ProBlaster 12v 5901-2202 12.pdf
+572K	DP/Fotografia0064.jpg
+496K	DP/Fotografia0065.jpg
+532K	DP/Fotografia0066.jpg
+276K	DP/Fotografia0067.jpg
+396K	DP/Fotografia0068.jpg
+376K	DP/Fotografia0069.jpg
+328K	DP/Fotografia0070.jpg
+388K	DP/Fotografia0071.jpg
+404K	DP/Fotografia0072.jpg
+404K	DP/Fotografia0073.jpg
+400K	DP/Fotografia0074.jpg
+ 66M	DP/fotos construção estufa
+3.7M	DP/fotos construção estufa/P1100472.JPG
+3.7M	DP/fotos construção estufa/P1100473.JPG
+3.7M	DP/fotos construção estufa/P1100474.JPG
+3.8M	DP/fotos construção estufa/P1100476.JPG
+3.7M	DP/fotos construção estufa/P1100530.JPG
+3.7M	DP/fotos construção estufa/P1100531.JPG
+3.8M	DP/fotos construção estufa/P1100532.JPG
+3.8M	DP/fotos construção estufa/P1100533.JPG
+3.7M	DP/fotos construção estufa/P1100534.JPG
+3.8M	DP/fotos construção estufa/P1100535.JPG
+3.8M	DP/fotos construção estufa/P1100536.JPG
+3.8M	DP/fotos construção estufa/P1100537.JPG
+3.3M	DP/fotos construção estufa/P1100538.JPG
+3.3M	DP/fotos construção estufa/P1100539.JPG
+3.0M	DP/fotos construção estufa/P1100540.JPG
+3.7M	DP/fotos construção estufa/P1100541.JPG
+3.7M	DP/fotos construção estufa/P1100542.JPG
+3.8M	DP/fotos construção estufa/P1100543.JPG
+180M	DP/Fotos GROUU
+ 88M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL
+2.7M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09676.JPG
+2.9M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09677.JPG
+2.8M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09678.JPG
+2.4M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09679.JPG
+2.5M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09680.JPG
+2.7M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09681.JPG
+2.7M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09684.JPG
+2.4M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09685.JPG
+2.4M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09686.JPG
+2.7M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09687.JPG
+2.8M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09688.JPG
+2.6M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09689.JPG
+2.5M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09690.JPG
+2.5M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09691.JPG
+2.5M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09693.JPG
+2.5M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09694.JPG
+2.8M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09695.JPG
+2.4M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09696.JPG
+2.4M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09697.JPG
+2.5M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09698.JPG
+2.4M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09699.JPG
+2.7M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09700.JPG
+2.7M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09701.JPG
+2.8M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09702.JPG
+2.7M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09703.JPG
+2.3M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09704.JPG
+2.5M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09705.JPG
+2.7M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09706.JPG
+2.4M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09707.JPG
+2.3M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09708.JPG
+2.6M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09710.JPG
+2.6M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09711.JPG
+2.6M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09712.JPG
+2.5M	DP/Fotos GROUU/2014.02.14 Fotos estufa_RL/DSC09713.JPG
+ 92M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL
+2.7M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09795.JPG
+2.7M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09796.JPG
+2.8M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09797.JPG
+2.8M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09799.JPG
+2.7M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09800.JPG
+2.5M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09801.JPG
+2.3M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09802.JPG
+2.5M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09803.JPG
+2.7M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09804.JPG
+2.5M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09805.JPG
+2.6M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09807.JPG
+2.9M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09808.JPG
+2.8M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09809.JPG
+2.6M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09810.JPG
+2.7M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09811.JPG
+2.7M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09812.JPG
+2.6M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09813.JPG
+2.9M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09815.JPG
+2.6M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09816.JPG
+2.8M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09817.JPG
+2.6M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09818.JPG
+2.5M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09820.JPG
+2.5M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09821.JPG
+2.3M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09822.JPG
+2.6M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09823.JPG
+2.7M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09824.JPG
+2.7M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09825.JPG
+2.6M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09826.JPG
+2.6M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09827.JPG
+2.6M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09828.JPG
+2.6M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09829.JPG
+2.6M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09830.JPG
+2.7M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09831.JPG
+2.7M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09832.JPG
+2.6M	DP/Fotos GROUU/2014.03.11 Caixilhos Abertura_RL/DSC09833.JPG
+2.1M	DP/Válvulas
+188K	DP/Válvulas/2014.06.23  REF.s Válvulas, Bombas de rega e Servos.pdf
+ 16K	DP/Válvulas/2014.07.31  REF.s Válvulas, Bombas de rega e Servos.xlsx
+224K	DP/Válvulas/2WSL - Gravity Valve.pdf
+880K	DP/Válvulas/Bomba SHURFLO
+4.0K	DP/Válvulas/Bomba SHURFLO/002e_911-622-J_Extreme ProBlaster 12v 5901-2202, 2212 - Modify.pdf
+4.0K	DP/Válvulas/Bomba SHURFLO/002e_pds-Extreme ProBlaster 12v 5901-2202 12 - Modify.pdf
+220K	DP/Válvulas/Bomba SHURFLO/911-622-J_Extreme ProBlaster 12v 5901-2202, 2212.pdf
+ 16K	DP/Válvulas/Bomba SHURFLO/Bomba de rega - preços.xlsx
+228K	DP/Válvulas/Bomba SHURFLO/pds-Extreme ProBlaster 12v 5901-2202 12.pdf
+ 88K	DP/Válvulas/Bomba SHURFLO/SHURFLO SLV Pump - 911-585-C_105-003.pdf
+320K	DP/Válvulas/Bomba SHURFLO/SHURFLO_2088-403-143_12v.pdf
+280K	DP/Válvulas/Solenoid Valve - V4 series.pdf
+148K	DP/Válvulas/solenoid_valves_001.pdf
+460K	DP/Válvulas/Ventilador Sodeca HC_31_4M.H
+214M	FOTO
+214M	FOTO/Geek Stuff
+ 24M	FOTO/Geek Stuff/IMG_1839.CR2
+6.1M	FOTO/Geek Stuff/IMG_1839.JPG
+ 21M	FOTO/Geek Stuff/IMG_1840.CR2
+4.7M	FOTO/Geek Stuff/IMG_1840.JPG
+ 22M	FOTO/Geek Stuff/IMG_1841.CR2
+5.2M	FOTO/Geek Stuff/IMG_1841.JPG
+ 22M	FOTO/Geek Stuff/IMG_1842.CR2
+5.1M	FOTO/Geek Stuff/IMG_1842.JPG
+ 20M	FOTO/Geek Stuff/IMG_1843.CR2
+4.4M	FOTO/Geek Stuff/IMG_1843.JPG
+ 21M	FOTO/Geek Stuff/IMG_1844.CR2
+5.4M	FOTO/Geek Stuff/IMG_1844.JPG
+ 21M	FOTO/Geek Stuff/IMG_1845.CR2
+4.5M	FOTO/Geek Stuff/IMG_1845.JPG
+ 21M	FOTO/Geek Stuff/IMG_1846.CR2
+5.1M	FOTO/Geek Stuff/IMG_1846.JPG
+6.2M	GR
+8.0K	GR/.DS_Store
+2.2M	GR/present device para placa
+284K	GR/present device para placa/1.AI
+1.8M	GR/present device para placa/GROUU probe explica rodr.ai
+ 76K	GR/present device para placa/GROUU probe explica rodr.pdf
+3.2M	GR/resources
+2.3M	GR/resources/Flat-UI-master
+896K	GR/resources/Flat-UI-master.zip
+240K	GR/resources/Flat-UI-master/bootstrap
+180K	GR/resources/Flat-UI-master/bootstrap/css
+ 24K	GR/resources/Flat-UI-master/bootstrap/css/bootstrap-docs.css
+ 24K	GR/resources/Flat-UI-master/bootstrap/css/bootstrap-responsive.css
+128K	GR/resources/Flat-UI-master/bootstrap/css/bootstrap.css
+4.0K	GR/resources/Flat-UI-master/bootstrap/css/prettify.css
+ 28K	GR/resources/Flat-UI-master/bootstrap/img
+ 12K	GR/resources/Flat-UI-master/bootstrap/img/glyphicons-halflings-white.png
+ 16K	GR/resources/Flat-UI-master/bootstrap/img/glyphicons-halflings.png
+ 32K	GR/resources/Flat-UI-master/bootstrap/js
+4.0K	GR/resources/Flat-UI-master/bootstrap/js/application.js
+ 16K	GR/resources/Flat-UI-master/bootstrap/js/google-code-prettify
+ 16K	GR/resources/Flat-UI-master/bootstrap/js/google-code-prettify/prettify.js
+ 12K	GR/resources/Flat-UI-master/bootstrap/js/holder.js
+ 88K	GR/resources/Flat-UI-master/css
+ 88K	GR/resources/Flat-UI-master/css/flat-ui.css
+996K	GR/resources/Flat-UI-master/fonts
+ 20K	GR/resources/Flat-UI-master/fonts/Flat-UI-Icons.dev.svg
+8.0K	GR/resources/Flat-UI-master/fonts/Flat-UI-Icons.eot
+ 20K	GR/resources/Flat-UI-master/fonts/Flat-UI-Icons.svg
+8.0K	GR/resources/Flat-UI-master/fonts/Flat-UI-Icons.ttf
+8.0K	GR/resources/Flat-UI-master/fonts/Flat-UI-Icons.woff
+932K	GR/resources/Flat-UI-master/fonts/icomoon-session.json
+612K	GR/resources/Flat-UI-master/images
+280K	GR/resources/Flat-UI-master/images/demo
+4.0K	GR/resources/Flat-UI-master/images/demo/browser-2x.png
+4.0K	GR/resources/Flat-UI-master/images/demo/browser-author.jpg
+ 16K	GR/resources/Flat-UI-master/images/demo/browser-pic-1.jpg
+8.0K	GR/resources/Flat-UI-master/images/demo/browser-pic-2.jpg
+8.0K	GR/resources/Flat-UI-master/images/demo/browser-pic-3.jpg
+8.0K	GR/resources/Flat-UI-master/images/demo/browser-pic-4.jpg
+8.0K	GR/resources/Flat-UI-master/images/demo/browser-pic-5.jpg
+ 12K	GR/resources/Flat-UI-master/images/demo/browser-pic-6.jpg
+4.0K	GR/resources/Flat-UI-master/images/demo/browser.png
+8.0K	GR/resources/Flat-UI-master/images/demo/html-icon.png
+ 20K	GR/resources/Flat-UI-master/images/demo/logo-mask-2x.png
+8.0K	GR/resources/Flat-UI-master/images/demo/logo-mask.png
+172K	GR/resources/Flat-UI-master/images/demo/video.jpg
+4.0K	GR/resources/Flat-UI-master/images/favicon.ico
+ 12K	GR/resources/Flat-UI-master/images/footer
+ 12K	GR/resources/Flat-UI-master/images/footer/logo.png
+140K	GR/resources/Flat-UI-master/images/icons
+4.0K	GR/resources/Flat-UI-master/images/icons/Book@2x.png
+8.0K	GR/resources/Flat-UI-master/images/icons/Calendar@2x.png
+8.0K	GR/resources/Flat-UI-master/images/icons/Chat@2x.png
+4.0K	GR/resources/Flat-UI-master/images/icons/Clipboard@2x.png
+ 20K	GR/resources/Flat-UI-master/images/icons/Compas@2x.png
+ 12K	GR/resources/Flat-UI-master/images/icons/Gift-Box@2x.png
+ 12K	GR/resources/Flat-UI-master/images/icons/Infinity-Loop@2x.png
+8.0K	GR/resources/Flat-UI-master/images/icons/Mail@2x.png
+ 12K	GR/resources/Flat-UI-master/images/icons/Map@2x.png
+ 12K	GR/resources/Flat-UI-master/images/icons/Pensils@2x.png
+8.0K	GR/resources/Flat-UI-master/images/icons/Pocket@2x.png
+ 12K	GR/resources/Flat-UI-master/images/icons/Retina-Ready@2x.png
+8.0K	GR/resources/Flat-UI-master/images/icons/Toilet-Paper@2x.png
+ 12K	GR/resources/Flat-UI-master/images/icons/Watches@2x.png
+ 40K	GR/resources/Flat-UI-master/images/login
+8.0K	GR/resources/Flat-UI-master/images/login/icon.png
+ 24K	GR/resources/Flat-UI-master/images/login/imac-2x.png
+8.0K	GR/resources/Flat-UI-master/images/login/imac.png
+8.0K	GR/resources/Flat-UI-master/images/switch
+4.0K	GR/resources/Flat-UI-master/images/switch/mask-square.png
+4.0K	GR/resources/Flat-UI-master/images/switch/mask.png
+ 12K	GR/resources/Flat-UI-master/images/tile
+8.0K	GR/resources/Flat-UI-master/images/tile/ribbon-2x.png
+4.0K	GR/resources/Flat-UI-master/images/tile/ribbon.png
+ 24K	GR/resources/Flat-UI-master/images/todo
+4.0K	GR/resources/Flat-UI-master/images/todo/done-2x.png
+4.0K	GR/resources/Flat-UI-master/images/todo/done.png
+4.0K	GR/resources/Flat-UI-master/images/todo/search-2x.png
+4.0K	GR/resources/Flat-UI-master/images/todo/search.png
+4.0K	GR/resources/Flat-UI-master/images/todo/todo-2x.png
+4.0K	GR/resources/Flat-UI-master/images/todo/todo.png
+ 92K	GR/resources/Flat-UI-master/images/video
+4.0K	GR/resources/Flat-UI-master/images/video/fullscreen-2x.png
+4.0K	GR/resources/Flat-UI-master/images/video/fullscreen.png
+4.0K	GR/resources/Flat-UI-master/images/video/pause-2x.png
+4.0K	GR/resources/Flat-UI-master/images/video/pause.png
+4.0K	GR/resources/Flat-UI-master/images/video/play-2x.png
+4.0K	GR/resources/Flat-UI-master/images/video/play.png
+ 52K	GR/resources/Flat-UI-master/images/video/poster.jpg
+4.0K	GR/resources/Flat-UI-master/images/video/volume-full-2x.png
+4.0K	GR/resources/Flat-UI-master/images/video/volume-full.png
+4.0K	GR/resources/Flat-UI-master/images/video/volume-off-2x.png
+4.0K	GR/resources/Flat-UI-master/images/video/volume-off.png
+ 32K	GR/resources/Flat-UI-master/index.html
+252K	GR/resources/Flat-UI-master/js
+4.0K	GR/resources/Flat-UI-master/js/application.js
+ 20K	GR/resources/Flat-UI-master/js/bootstrap-select.js
+ 12K	GR/resources/Flat-UI-master/js/bootstrap-switch.js
+ 32K	GR/resources/Flat-UI-master/js/bootstrap.min.js
+4.0K	GR/resources/Flat-UI-master/js/flatui-checkbox.js
+4.0K	GR/resources/Flat-UI-master/js/flatui-radio.js
+4.0K	GR/resources/Flat-UI-master/js/html5shiv.js
+4.0K	GR/resources/Flat-UI-master/js/icon-font-ie7.js
+ 92K	GR/resources/Flat-UI-master/js/jquery-1.8.3.min.js
+ 48K	GR/resources/Flat-UI-master/js/jquery-ui-1.10.3.custom.min.js
+8.0K	GR/resources/Flat-UI-master/js/jquery.placeholder.js
+4.0K	GR/resources/Flat-UI-master/js/jquery.stacktable.js
+ 12K	GR/resources/Flat-UI-master/js/jquery.tagsinput.js
+4.0K	GR/resources/Flat-UI-master/js/jquery.ui.touch-punch.min.js
+136K	GR/resources/Flat-UI-master/less
+4.0K	GR/resources/Flat-UI-master/less/config.less
+4.0K	GR/resources/Flat-UI-master/less/flat-ui.less
+4.0K	GR/resources/Flat-UI-master/less/icon-font.less
+8.0K	GR/resources/Flat-UI-master/less/mixins.less
+112K	GR/resources/Flat-UI-master/less/modules
+4.0K	GR/resources/Flat-UI-master/less/modules/buttons.less
+4.0K	GR/resources/Flat-UI-master/less/modules/caret.less
+4.0K	GR/resources/Flat-UI-master/less/modules/checkbox-and-radio.less
+8.0K	GR/resources/Flat-UI-master/less/modules/demo.less
+8.0K	GR/resources/Flat-UI-master/less/modules/dropdown.less
+4.0K	GR/resources/Flat-UI-master/less/modules/footer.less
+4.0K	GR/resources/Flat-UI-master/less/modules/input.less
+4.0K	GR/resources/Flat-UI-master/less/modules/login.less
+ 12K	GR/resources/Flat-UI-master/less/modules/navbar.less
+4.0K	GR/resources/Flat-UI-master/less/modules/pager.less
+4.0K	GR/resources/Flat-UI-master/less/modules/pagination.less
+4.0K	GR/resources/Flat-UI-master/less/modules/palette.less
+4.0K	GR/resources/Flat-UI-master/less/modules/progress.less
+4.0K	GR/resources/Flat-UI-master/less/modules/select.less
+4.0K	GR/resources/Flat-UI-master/less/modules/share.less
+4.0K	GR/resources/Flat-UI-master/less/modules/switch.less
+4.0K	GR/resources/Flat-UI-master/less/modules/tagsinput.less
+4.0K	GR/resources/Flat-UI-master/less/modules/tile.less
+4.0K	GR/resources/Flat-UI-master/less/modules/todo.less
+4.0K	GR/resources/Flat-UI-master/less/modules/tooltip.less
+4.0K	GR/resources/Flat-UI-master/less/modules/type.less
+4.0K	GR/resources/Flat-UI-master/less/modules/ui-slider.less
+8.0K	GR/resources/Flat-UI-master/less/modules/video.less
+4.0K	GR/resources/Flat-UI-master/less/spaces.less
+4.0K	GR/resources/Flat-UI-master/README.md
+868K	GR/Vinil
+764K	GR/Vinil/2014.01.15 folha de corte.ai
+104K	GR/Vinil/LAYOUT.ai
+102M	KEY
+102M	KEY/estufa1.bip
+916K	Leaxn Thermoclear Brochure part2.pdf
+764K	Lexan Thermoclear Brochure.pdf
+448K	lexan_datasheet.pdf
+ 32K	Modelo Base de DT Base.pdf
+152K	Modelo Base de Estufa - Sheet1.pdf
+6.6M	OR
+8.0K	OR/.DS_Store
+ 76K	OR/2013.01.24 EXP1.png
+ 40K	OR/2013.01.24 EXP2.png
+ 44K	OR/2013.01.24 EXP3.png
+ 32K	OR/2013.12.06 contas asfert grouu.pdf
+ 44K	OR/2013.12.06 contas asfert_BACK.xls
+ 36K	OR/2013.12.06 contas asfert.xls
+ 24K	OR/2014.02.19 - Material em falta.xlsx
+ 20K	OR/2014.02.25 - Material em falta.xlsx
+ 16K	OR/2014.03.20 Preços Lexan Alveolar Termoclear.xlsx
+1.7M	OR/2014.04.03 Valvulas.pdf
+ 20K	OR/2014.09.12 PDS cliente e adicionais.xlsx
+120K	OR/ARQUIVO
+ 12K	OR/ARQUIVO/2013.12.16 - Material armário e rega.xlsx
+ 20K	OR/ARQUIVO/2014.02.03 - Material armário e rega.xls
+ 20K	OR/ARQUIVO/2014.02.04 - Material armário e rega.xlsx
+ 20K	OR/ARQUIVO/2014.02.05 - Material em falta.xlsx
+ 24K	OR/ARQUIVO/2014.02.13 - Material em falta.xlsx
+ 24K	OR/ARQUIVO/2014.02.17 - Material em falta.xlsx
+ 36K	OR/BOF fase I - Estrutura iddented.xls
+ 32K	OR/BOF fase I - Estrutura.xls
+1.0M	OR/BWF Profiles_standard_profiles_01-2012.pdf
+144K	OR/bwf_profiles_04_2012_verb_u_abschluss_connecting_and_edge.pdf
+916K	OR/Leaxn Thermoclear Brochure part2.pdf
+764K	OR/Lexan Thermoclear Brochure.pdf
+448K	OR/lexan_datasheet.pdf
+972K	OR/LG
+ 36K	OR/LG/BOM assemblies IDENT.xls
+148K	OR/LG/EXT1.C1.STEP
+ 56K	OR/LG/EXT1.C2.1.STEP
+108K	OR/LG/EXT1.C2.2.STEP
+ 40K	OR/LG/EXT1.CC.1.B.STEP
+ 64K	OR/LG/EXT1.CC.1.STEP
+ 52K	OR/LG/EXT1.LEXAN8MM.1.STEP
+ 72K	OR/LG/EXT1.TAE1.STEP
+176K	OR/LG/EXT1.WFS.1.STEP
+ 76K	OR/LG/Reforço de águas II.STEP
+144K	OR/LG/Reforço de águas.STEP
+ 32K	OR/Modelo Base de DT Base.pdf
+152K	OR/Modelo Base de Estufa - Sheet1.pdf
+ 27M	RHINO
+2.4M	RHINO/3DPRINT
+1.4M	RHINO/3DPRINT/probe temp 1.stl
+988K	RHINO/3DPRINT/probe temp 2.stl
+1.2M	RHINO/export logo rhino.ai
+5.6M	RHINO/PROBE REDUX.3dm
+5.6M	RHINO/PROBE REDUX.3dmbak
+2.6M	RHINO/PROBE_NURBS.3dm
+2.7M	RHINO/PROBE_NURBS.3dmbak
+4.2M	RHINO/PROBE_PEÇAS.3dm
+2.6M	RHINO/PROBE_PEÇAS.3dmbak
+292K	RHINO/PROBE.3dm
+2.3M	SEND
+8.0K	SEND/.DS_Store
+ 80K	SEND/2013.10.02 Suporte1000LEXAN_LG.STEP
+ 80K	SEND/2013.10.02 Suporte1250LEXAN_LG.STEP
+ 68K	SEND/2013.10.02 Suporte150LEXAN_LG.STEP
+ 76K	SEND/2013.10.07 EXT1.CC.2.STEP
+1.2M	SEND/2013.11.27 SEND LASER
+112K	SEND/2013.11.27 SEND LASER/GROUUpro_Calha.STEP
+ 72K	SEND/2013.11.27 SEND LASER/GROUUpro_EXT1.TAE1.STEP
+224K	SEND/2013.11.27 SEND LASER/GROUUpro_Prateleira 3x3.STEP
+116K	SEND/2013.11.27 SEND LASER/GROUUpro_PratoBalança.STEP
+ 96K	SEND/2013.11.27 SEND LASER/GROUUpro_REFPAV 30x30.STEP
+100K	SEND/2013.11.27 SEND LASER/GROUUpro_REFPAV 30x60.STEP
+ 84K	SEND/2013.11.27 SEND LASER/GROUUpro_SupGarrafa.STEP
+340K	SEND/2013.11.27 SEND LASER/GROUUpro_Suporte Balança.STEP
+ 56K	SEND/2013.11.27 SEND LASER/GROUUpro_SupPolia.STEP
+116K	SEND/2013.12.03 GROUUpro_REFPAV 60x60.STEP
+ 16K	SEND/2014.02.04 Ventilação Grouu Pro.pdf
+128K	SEND/2014.03.18 SEND LASER
+ 68K	SEND/2014.03.18 SEND LASER/GROUUPro_Patim Frontal.STEP
+ 60K	SEND/2014.03.18 SEND LASER/GROUUPro_Reforço LEXAN.STEP
+ 28K	SEND/2014.09.12 PDS adicionais.pdf
+600K	SEND/Corte Laser Acrilico
+ 28K	SEND/Corte Laser Acrilico/2014.05.05 rack spur.dwg
+ 28K	SEND/Corte Laser Acrilico/2014.05.05 Roda cremalheira.dwg
+ 28K	SEND/Corte Laser Acrilico/2014.05.05 roda grande.dwg
+ 28K	SEND/Corte Laser Acrilico/2014.05.05 roda pequena.bak
+ 28K	SEND/Corte Laser Acrilico/2014.05.05 roda pequena.dwg
+ 72K	SEND/Corte Laser Acrilico/2014.05.08 Acrilico - Rodas Dentadas.ai
+ 32K	SEND/Corte Laser Acrilico/2014.05.08 Acrilico - Rodas Dentadas.svg
+ 44K	SEND/Corte Laser Acrilico/2014.05.08 Policarbonato - Suporte.ai
+ 12K	SEND/Corte Laser Acrilico/2014.05.08 Policarbonato - Suporte.svg
+ 40K	SEND/Corte Laser Acrilico/2014.05.08 Policarbonato - Tampa.ai
+ 12K	SEND/Corte Laser Acrilico/2014.05.08 Policarbonato - Tampa.svg
+ 28K	SEND/Corte Laser Acrilico/2014.05.09 Tampa Cremalheira.dwg
+ 32K	SEND/Corte Laser Acrilico/Acrilico - Rodas Dentadas.bak
+ 48K	SEND/Corte Laser Acrilico/Acrilico - Rodas Dentadas.dwg
+ 28K	SEND/Corte Laser Acrilico/Apoio Cremalheira.dwg
+ 28K	SEND/Corte Laser Acrilico/Policarbonato - Suporte.bak
+ 28K	SEND/Corte Laser Acrilico/Policarbonato - Suporte.dwg
+ 28K	SEND/Corte Laser Acrilico/Policarbonato - Tampa.bak
+ 28K	SEND/Corte Laser Acrilico/Policarbonato - Tampa.dwg
+175M	SOLID
+ 12K	SOLID/.DS_Store
+2.8M	SOLID/2013.08.28 Modelo Base de Estufa_AR.SLDASM
+2.6M	SOLID/2013.09.28 Modelo Base de Estufa_AR (dar-design-advanced-resources-associations-mac-mini's conflicted copy 2013-10-03).SLDASM
+2.7M	SOLID/2013.09.28 Modelo Base de Estufa_AR.SLDASM
+ 27M	SOLID/Armário
+8.0K	SOLID/Armário/.DS_Store
+440K	SOLID/Armário/2012.11.28 Conjunto Armário e Depósitos.SLDASM
+268K	SOLID/Armário/2013.11.27 Conjunto Balança_RL - Direita.SLDASM
+268K	SOLID/Armário/2013.11.27 Conjunto Balança_RL - Esquerda.SLDASM
+292K	SOLID/Armário/2013.11.27 Conjunto Balança_RL.SLDASM
+304K	SOLID/Armário/2013.11.27 Conjunto Prateleira garrafas_RL.SLDASM
+180K	SOLID/Armário/2013.11.27 Depósito principal_RL.SLDPRT
+172K	SOLID/Armário/2013.11.27 Depósito Rega_RL.SLDPRT
+164K	SOLID/Armário/2013.11.27 Garrafa Solução concentrada_RL.SLDPRT
+356K	SOLID/Armário/2013.11.27 Prateleira 6 garrafas_RL.SLDPRT
+256K	SOLID/Armário/2013.11.27 Prato Balança_RL.SLDPRT
+556K	SOLID/Armário/2013.11.27 Suporte Balança_RL - Direita.SLDPRT
+568K	SOLID/Armário/2013.11.27 Suporte Balança_RL - Esquerda.SLDPRT
+496K	SOLID/Armário/2013.11.27 Suporte Balança_RL.SLDPRT
+248K	SOLID/Armário/2013.11.27 Suporte Garrafa_RL.SLDPRT
+436K	SOLID/Armário/2013.11.28 Estrutura Ripas.SLDPRT
+232K	SOLID/Armário/2013.12.19 Balança Central (conjunto).SLDASM
+188K	SOLID/Armário/2013.12.19 Conjunto Depósito Inferior.bak
+336K	SOLID/Armário/2013.12.19 Conjunto Depósito Inferior.DWG
+412K	SOLID/Armário/2013.12.19 Conjunto Depósito Inferior.SLDASM
+372K	SOLID/Armário/2013.12.19 Conjunto Depósito Inferior.SLDDRW
+ 92K	SOLID/Armário/2013.12.19 Nova Estrutura Ripas.bak
+ 92K	SOLID/Armário/2013.12.19 Nova Estrutura Ripas.DWG
+312K	SOLID/Armário/2013.12.19 Nova Estrutura Ripas.SLDDRW
+508K	SOLID/Armário/2013.12.19 Nova Estrutura Ripas.SLDPRT
+1.0M	SOLID/Armário/2013.12.19 Suporte Balança (central).SLDPRT
+296K	SOLID/Armário/2014.01.29 Estrutura Ripas 20x40.SLDPRT
+440K	SOLID/Armário/Backup of 2012.11.28 Conjunto Armário e Depósitos.SLDASM
+376K	SOLID/Armário/Backup of 2012.11.28Armário e Depósitos.SLDASM
+292K	SOLID/Armário/Backup of 2013.11.27 Conjunto Balança_RL - Copy.SLDASM
+228K	SOLID/Armário/Backup of 2013.11.27 Conjunto Balança_RL - Direita.SLDASM
+204K	SOLID/Armário/Backup of 2013.11.27 Conjunto Balança_RL - Esquerda.SLDASM
+292K	SOLID/Armário/Backup of 2013.11.27 Conjunto Balança_RL.SLDASM
+308K	SOLID/Armário/Backup of 2013.11.27 Conjunto Prateleira garrafas_RL.SLDASM
+172K	SOLID/Armário/Backup of 2013.11.27 Depósito principal_RL.SLDPRT
+128K	SOLID/Armário/Backup of 2013.11.27 Estrutura armário (8mm)_RL.SLDPRT
+532K	SOLID/Armário/Backup of 2013.11.27 Suporte Balança_RL - Copy.SLDPRT
+544K	SOLID/Armário/Backup of 2013.11.27 Suporte Balança_RL - Esquerda.SLDPRT
+368K	SOLID/Armário/Backup of 2013.11.28 Estrutura Armário.SLDPRT
+488K	SOLID/Armário/Backup of 2013.11.28 Nova Estrutura - Copy.SLDPRT
+432K	SOLID/Armário/Backup of 2013.11.28 Nova Estrutura.SLDPRT
+416K	SOLID/Armário/Backup of 2013.12.18 Conjunto depósito inferior.SLDASM
+232K	SOLID/Armário/Backup of 2013.12.19 Balança Central (conjunto).SLDASM
+416K	SOLID/Armário/Backup of 2013.12.19 Conjunto Depósito Inferior.SLDASM
+368K	SOLID/Armário/Backup of 2013.12.19 Conjunto Depósito Inferior.SLDDRW
+296K	SOLID/Armário/Backup of 2013.12.19 Nova Estrutura Ripas.SLDDRW
+520K	SOLID/Armário/Backup of 2013.12.19 Nova Estrutura Ripas.SLDPRT
+524K	SOLID/Armário/Backup of 2013.12.19 Suporte Balança (central).SLDPRT
+8.7M	SOLID/Armário/Conjunto armário
+8.0K	SOLID/Armário/Conjunto armário/.DS_Store
+164K	SOLID/Armário/Conjunto armário/2013.11.27 Garrafa Solução concentrada_RL.SLDPRT
+296K	SOLID/Armário/Conjunto armário/2014.01.29 Estrutura Ripas 20x40.SLDPRT
+204K	SOLID/Armário/Conjunto armário/2014.03.25 Prateleira Depósitos.SLDPRT
+104K	SOLID/Armário/Conjunto armário/2014.03.26 Prateleira Dep. Principal.SLDPRT
+156K	SOLID/Armário/Conjunto armário/2014.03.26 Prateleira Ferti-Rega.SLDPRT
+156K	SOLID/Armário/Conjunto armário/2014.03.26 Prateleira Fundo.SLDPRT
+184K	SOLID/Armário/Conjunto armário/2014.03.26 Prateleira Garrafas.SLDPRT
+152K	SOLID/Armário/Conjunto armário/2014.03.26 Suporte Bombas Peristálticas.SLDPRT
+796K	SOLID/Armário/Conjunto armário/2014.03.27 Assembly Armário.SLDASM
+128K	SOLID/Armário/Conjunto armário/2014.03.27 Prateleira Quadro eléctrico.SLDPRT
+336K	SOLID/Armário/Conjunto armário/2014.03.28 Assembly Prateleira Válvulas.SLDASM
+ 96K	SOLID/Armário/Conjunto armário/2014.04.02 Caixa de derivação.SLDPRT
+152K	SOLID/Armário/Conjunto armário/2014.08.04 Suporte Entrada Água.SLDPRT
+764K	SOLID/Armário/Conjunto armário/ARQUIVO
+764K	SOLID/Armário/Conjunto armário/ARQUIVO/2014.03.27 Assembly Armário - Níveis diferentes.SLDASM
+1.2M	SOLID/Armário/Conjunto armário/Depósitos
+160K	SOLID/Armário/Conjunto armário/Depósitos/2013.11.27 Garrafa Solução concentrada_RL.SLDPRT
+248K	SOLID/Armário/Conjunto armário/Depósitos/2013.11.27 Suporte Garrafa_RL.SLDPRT
+340K	SOLID/Armário/Conjunto armário/Depósitos/2014.03.27 Assembly Prateleira e Garrafas.SLDASM
+208K	SOLID/Armário/Conjunto armário/Depósitos/2014.03.28 Depósito Ferti-rega.SLDPRT
+248K	SOLID/Armário/Conjunto armário/Depósitos/2014.03.28 Depósito principal.SLDPRT
+1.5M	SOLID/Armário/Conjunto armário/Valchromat
+120K	SOLID/Armário/Conjunto armário/Valchromat/2013.12.19 Caixa Valchromat.SLDASM
+184K	SOLID/Armário/Conjunto armário/Valchromat/2013.12.19 Fundo.SLDPRT
+124K	SOLID/Armário/Conjunto armário/Valchromat/2013.12.19 Lateral Direita.SLDPRT
+132K	SOLID/Armário/Conjunto armário/Valchromat/2013.12.19 Lateral Esquerda.SLDPRT
+140K	SOLID/Armário/Conjunto armário/Valchromat/2013.12.19 Topo.SLDPRT
+128K	SOLID/Armário/Conjunto armário/Valchromat/2014.03.27 Assembly Valchromat.SLDASM
+112K	SOLID/Armário/Conjunto armário/Valchromat/Backup of 2013.12.19 Bases Interiores.SLDPRT
+116K	SOLID/Armário/Conjunto armário/Valchromat/Backup of 2013.12.19 Caixa Valchromat.SLDASM
+ 96K	SOLID/Armário/Conjunto armário/Valchromat/Backup of 2013.12.19 Fundo.SLDPRT
+216K	SOLID/Armário/Conjunto armário/Valchromat/Backup of 2013.12.19 Lateral Esquerda.SLDPRT
+100K	SOLID/Armário/Conjunto armário/Valchromat/Backup of Caixa Valchromat.SLDASM
+100K	SOLID/Armário/Conjunto armário/Valchromat/Backup of Lateral Direita.SLDPRT
+2.4M	SOLID/Armário/Conjunto armário/Válvulas
+176K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.27 Bomba Peristáltica BPER_00.SLDPRT
+120K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.28 Apoio Válvulas EV_00.SLDPRT
+172K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.28 Apoio Válvulas EV_4S.SLDPRT
+260K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.28 Bomba BR_P.SLDPRT
+152K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.28 Rega Joelho.SLDPRT
+160K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.28 Rega Redução com Joelho.SLDPRT
+104K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.28 Rega Redução.SLDPRT
+112K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.28 Rega Tê.SLDPRT
+304K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.28 Válvula EV_3S.SLDPRT
+348K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.28 Válvula EV_4SR.SLDPRT
+188K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.28 Válvula EV_EA.SLDPRT
+168K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.28 Válvula VG_00.SLDPRT
+180K	SOLID/Armário/Conjunto armário/Válvulas/2014.03.31 Apoio Válvulas EV_EA.SLDPRT
+120K	SOLID/Armário/Espaçador Medidor.SLDPRT
+124K	SOLID/Armário/Medidor.SLDPRT
+384K	SOLID/Armário/Portas
+ 96K	SOLID/Armário/Portas/2014.05.08 Porta 1.SLDPRT
+ 96K	SOLID/Armário/Portas/2014.05.08 Porta 2.SLDPRT
+ 96K	SOLID/Armário/Portas/2014.05.08 Porta 3.SLDPRT
+ 96K	SOLID/Armário/Portas/2014.05.08 Porta 4.SLDPRT
+1.5M	SOLID/Armário/Valchromat
+120K	SOLID/Armário/Valchromat/2013.12.19 Bases Interiores.SLDPRT
+120K	SOLID/Armário/Valchromat/2013.12.19 Caixa Valchromat.SLDASM
+132K	SOLID/Armário/Valchromat/2013.12.19 Fundo.SLDPRT
+100K	SOLID/Armário/Valchromat/2013.12.19 Lateral Direita.SLDPRT
+216K	SOLID/Armário/Valchromat/2013.12.19 Lateral Esquerda.SLDPRT
+108K	SOLID/Armário/Valchromat/2013.12.19 Topo.SLDPRT
+112K	SOLID/Armário/Valchromat/Backup of 2013.12.19 Bases Interiores.SLDPRT
+116K	SOLID/Armário/Valchromat/Backup of 2013.12.19 Caixa Valchromat.SLDASM
+ 96K	SOLID/Armário/Valchromat/Backup of 2013.12.19 Fundo.SLDPRT
+216K	SOLID/Armário/Valchromat/Backup of 2013.12.19 Lateral Esquerda.SLDPRT
+100K	SOLID/Armário/Valchromat/Backup of Caixa Valchromat.SLDASM
+100K	SOLID/Armário/Valchromat/Backup of Lateral Direita.SLDPRT
+ 14M	SOLID/ARQUIVO
+1.5M	SOLID/ARQUIVO/Backup of Esttufa Base 3000x3500x2500.SLDASM
+556K	SOLID/ARQUIVO/Backup of Industrial Wheel.SLDPRT
+688K	SOLID/ARQUIVO/Backup of LT2UV82RS15 LEXAN PARA ESTUFAS SUBCONFIGS ii.SLDPRT
+728K	SOLID/ARQUIVO/Backup of LT2UV82RS15 LEXAN PARA ESTUFAS SUBCONFIGS.SLDPRT
+248K	SOLID/ARQUIVO/Backup of VISA MULTIWALL cx exterior - lateral.SLDPRT
+ 64K	SOLID/ARQUIVO/Backup of WISA MULTIWALL cx exterior -agua.SLDPRT
+140K	SOLID/ARQUIVO/Backup of WISA MULTIWALL cx exterior -frente.SLDPRT
+332K	SOLID/ARQUIVO/Esteretoromia do Pavimento.SLDASM
+1.5M	SOLID/ARQUIVO/Esttufa Base 3000x3500x2500.SLDASM
+316K	SOLID/ARQUIVO/Lateral RB1 EXT.SLDPRT
+332K	SOLID/ARQUIVO/Lateral RB1 INT.SLDPRT
+308K	SOLID/ARQUIVO/Lateral RB2 EXT - PORTAX2.SLDPRT
+308K	SOLID/ARQUIVO/Lateral RB2 INT - PORTAX2.SLDPRT
+1.4M	SOLID/ARQUIVO/LT2UV82RS15 LEXAN PARA ESTUFAS SUBCONFIGS ii.SLDPRT
+656K	SOLID/ARQUIVO/LT2UV82RS15 LEXAN PARA ESTUFAS SUBCONFIGS iii.SLDPRT
+872K	SOLID/ARQUIVO/LT2UV82RS15 LEXAN PARA ESTUFAS SUBCONFIGS iv ag.SLDPRT
+496K	SOLID/ARQUIVO/LT2UV82RS15 LEXAN PARA ESTUFAS SUBCONFIGS Telhado i.SLDPRT
+508K	SOLID/ARQUIVO/LT2UV82RS15 LEXAN PARA ESTUFAS SUBCONFIGS Telhado ii.SLDPRT
+724K	SOLID/ARQUIVO/LT2UV82RS15 LEXAN PARA ESTUFAS SUBCONFIGS.SLDPRT
+2.0M	SOLID/ARQUIVO/Modelo Base de Estufa (EVOL07's conflicted copy 2013-04-01).SLDASM
+332K	SOLID/ARQUIVO/Pavimento 1Unid.SLDPRT
+2.9M	SOLID/Backup of 2013.08.28 Modelo Base de Estufa_AR.SLDASM
+2.8M	SOLID/Backup of 2013.09.28 Modelo Base de Estufa_AR.SLDASM
+136K	SOLID/Backup of BWF ESX108.SLDPRT
+144K	SOLID/Backup of BWF HSX108.SLDPRT
+928K	SOLID/Backup of Caixa exterior esys.SLDASM
+1.5M	SOLID/Backup of LT2UV102RS17_lateral1.SLDPRT
+1.0M	SOLID/Backup of LT2UV102RS17.SLDPRT
+3.4M	SOLID/Backup of Modelo Base de Estufa.SLDASM
+4.6M	SOLID/Backup of Modelo Base de Estufa.SLDDRW
+908K	SOLID/Backup of Pavimento Estufa.SLDPRT
+148K	SOLID/Backup of Pavimento.SLDASM
+272K	SOLID/Backup of Reforço de águas.SLDASM
+232K	SOLID/Backup of Reforço de águasII.SLDASM
+652K	SOLID/Backup of Reforço de Cumeeira.SLDASM
+208K	SOLID/Backup of Suporte2000LEXAN.SLDPRT
+344K	SOLID/Backup of Suporte300LEXAN.SLDPRT
+116K	SOLID/BWF ESX108.SLDPRT
+144K	SOLID/BWF HSX108.SLDPRT
+1.3M	SOLID/Caixa exterior esys.SLDASM
+392K	SOLID/Chapa LEXAN.SLDPRT
+ 48K	SOLID/Detalhe Conector EXT travessas.png
+ 88K	SOLID/Detalhe Conector EXT.png
+244K	SOLID/Detalhe estrutura estufa.png
+ 60K	SOLID/Estudos para Raised beds.SLDASM
+ 92K	SOLID/Ground Plane.SLDPRT
+560K	SOLID/Industrial Wheel.SLDPRT
+2.4M	SOLID/LT2UV102RS17_lateral1.SLDPRT
+1.0M	SOLID/LT2UV102RS17.SLDPRT
+2.9M	SOLID/Modelo Base de Estufa_revPV_1.SLDASM
+3.3M	SOLID/Modelo Base de Estufa_revPV.SLDASM
+3.4M	SOLID/Modelo Base de Estufa.SLDASM
+7.4M	SOLID/Modelo Base de Estufa.SLDDRW
+412K	SOLID/Patins de Inox
+212K	SOLID/Patins de Inox/2014.03.18 Patim Frontal.SLDPRT
+200K	SOLID/Patins de Inox/2014.03.18 Reforço LEXAN.SLDPRT
+ 13M	SOLID/Pavimento
+192K	SOLID/Pavimento (dar-design-advanced-resources-associations-mac-mini's conflicted copy 2013-10-03).SLDASM
+956K	SOLID/Pavimento Estufa.SLDPRT
+148K	SOLID/Pavimento.SLDASM
+1.7M	SOLID/Pavimento/2013.11.06 Estrutura Base_RL.SLDASM
+340K	SOLID/Pavimento/2013.11.06 Estrutura para Reforço-5 Travessas_RL.bak
+340K	SOLID/Pavimento/2013.11.06 Estrutura para Reforço-5 Travessas_RL.DWG
+2.1M	SOLID/Pavimento/2013.11.06 Estrutura para Reforço-5 Travessas_RL.SLDASM
+488K	SOLID/Pavimento/2013.11.06 Estrutura para Reforço-5 Travessas_RL.SLDDRW
+308K	SOLID/Pavimento/2013.11.27 GROUUpro_REFPAV.SLDDRW
+952K	SOLID/Pavimento/2013.11.27 GROUUpro_REFPAV.SLDPRT
+676K	SOLID/Pavimento/2013.12.03 GROUUpro_REFPAV 60x60.SLDPRT
+2.1M	SOLID/Pavimento/Backup of 2013.11.06 Estrutura para Reforço_RL.SLDASM
+2.1M	SOLID/Pavimento/Backup of 2013.11.06 Estrutura para Reforço-5 Travessas_RL.SLDASM
+488K	SOLID/Pavimento/Backup of 2013.11.06 Estrutura para Reforço-5 Travessas_RL.SLDDRW
+372K	SOLID/Pavimento/Backup of 2013.11.27 GROUUpro_REFPAV 60x60.SLDPRT
+640K	SOLID/Pavimento/Backup of 2013.11.27 GROUUpro_REFPAV.SLDPRT
+372K	SOLID/Pavimento/Backup of 2013.12.03 GROUUpro_REFPAV 60x60.SLDPRT
+4.0K	SOLID/Pavimento/plot.log
+ 32K	SOLID/Pavimento/REFPAV 60x60 Autocad.DWG
+112K	SOLID/perfil H.SLDPRT
+180K	SOLID/perfil L_90.SLDPRT
+380K	SOLID/Perfis Policarbonato
+104K	SOLID/Perfis Policarbonato/perfil L_90_união lateral e tecto.SLDPRT
+104K	SOLID/Perfis Policarbonato/perfil L_90_união placas laterais.SLDPRT
+172K	SOLID/Perfis Policarbonato/perfil L_90.SLDPRT
+9.3M	SOLID/Porta e Calha
+148K	SOLID/Porta e Calha/2013.11.22 Valcromat Frente_RL.SLDPRT
+288K	SOLID/Porta e Calha/2013.11.27 Calha (varão + chapa)_RL.SLDPRT
+136K	SOLID/Porta e Calha/2013.11.27 Chapa Calha_RL.SLDPRT
+312K	SOLID/Porta e Calha/2013.11.27 Conjunto Frente de estufa_RL.SLDASM
+104K	SOLID/Porta e Calha/2013.11.27 Lexan Frente_RL.SLDPRT
+192K	SOLID/Porta e Calha/2013.11.27 Polia_RL.SLDPRT
+224K	SOLID/Porta e Calha/2013.11.27 Porta_RL - Ripado.SLDPRT
+ 76K	SOLID/Porta e Calha/2013.11.27 Porta_RL - Valchromat.SLDPRT
+312K	SOLID/Porta e Calha/2013.11.27 Porta_RL.SLDPRT
+164K	SOLID/Porta e Calha/2013.11.27 Suporte Polia_RL.SLDPRT
+ 88K	SOLID/Porta e Calha/2013.11.27 Varão Inox_RL.SLDPRT
+248K	SOLID/Porta e Calha/2013.11.31 Porta_RL - Ripado Des. Téc..SLDDRW
+236K	SOLID/Porta e Calha/2013.12.30 Conjunto Porta.SLDASM
+ 96K	SOLID/Porta e Calha/2013.12.30 Porta_RL - Valchromat.SLDPRT
+100K	SOLID/Porta e Calha/2014.01.02 Porta_RL - Ripado.bak
+100K	SOLID/Porta e Calha/2014.01.02 Porta_RL - Ripado.DWG
+188K	SOLID/Porta e Calha/2014.02.03 Patin Frontal em Inox.SLDPRT
+148K	SOLID/Porta e Calha/2014.02.03 Testa Valchromat.SLDPRT
+136K	SOLID/Porta e Calha/Backup of 2013.11.22 Valcromat Frente_RL.SLDPRT
+304K	SOLID/Porta e Calha/Backup of 2013.11.27 Conjunto Frente de estufa_RL.SLDASM
+460K	SOLID/Porta e Calha/Backup of 2013.11.27 Porta_RL - Copy (2).SLDPRT
+216K	SOLID/Porta e Calha/Backup of 2013.11.27 Porta_RL - Copy.SLDPRT
+248K	SOLID/Porta e Calha/Backup of 2013.11.27 Porta_RL - Ripado.SLDDRW
+208K	SOLID/Porta e Calha/Backup of 2013.11.27 Porta_RL - Ripado.SLDPRT
+ 88K	SOLID/Porta e Calha/Backup of 2013.11.27 Porta_RL - Valchromat.SLDPRT
+272K	SOLID/Porta e Calha/Backup of 2013.11.27 Porta_RL.SLDPRT
+236K	SOLID/Porta e Calha/Backup of 2013.12.30 Conjunto Porta.SLDASM
+188K	SOLID/Porta e Calha/Backup of 2014.02.03 Patin Frontal em Inox.SLDPRT
+148K	SOLID/Porta e Calha/Backup of 2014.02.03 Testa Valchromat.SLDPRT
+288K	SOLID/Porta e Calha/Backup of Calha (varão + chapa).SLDPRT
+160K	SOLID/Porta e Calha/Backup of Calha.SLDPRT
+276K	SOLID/Porta e Calha/Backup of Conjunto Frente.SLDASM
+100K	SOLID/Porta e Calha/Backup of Lexan Frente.SLDPRT
+160K	SOLID/Porta e Calha/Backup of Peça Batente.SLDPRT
+ 60K	SOLID/Porta e Calha/Backup of Polia.SLDPRT
+304K	SOLID/Porta e Calha/Backup of Porta.SLDPRT
+308K	SOLID/Porta e Calha/Backup of Suporte Polia_RL.SLDPRT
+ 88K	SOLID/Porta e Calha/Esys Batente.SLDPRT
+524K	SOLID/Porta e Calha/EXT1.TAE1.SLDPRT
+4.0K	SOLID/Porta e Calha/plot.log
+1.6M	SOLID/Porta e Calha/Substituição da porta
+224K	SOLID/Porta e Calha/Substituição da porta/2013.11.27 Porta_RL - Ripado.SLDPRT
+280K	SOLID/Porta e Calha/Substituição da porta/2014.03.27 Pega policarbonato_Sem rebaixo.SLDPRT
+ 32K	SOLID/Porta e Calha/Substituição da porta/2014.03.27 Pega policarbonato.PDF
+284K	SOLID/Porta e Calha/Substituição da porta/2014.03.27 Pega policarbonato.SLDDRW
+208K	SOLID/Porta e Calha/Substituição da porta/2014.03.27 Pega policarbonato.SLDPRT
+128K	SOLID/Porta e Calha/Substituição da porta/2014.03.27 Suportes porta policarbonato_Sem rebaixo.SLDPRT
+ 32K	SOLID/Porta e Calha/Substituição da porta/2014.03.27 Suportes porta policarbonato.PDF
+260K	SOLID/Porta e Calha/Substituição da porta/2014.03.27 Suportes porta policarbonato.SLDDRW
+180K	SOLID/Porta e Calha/Substituição da porta/2014.03.27 Suportes porta policarbonato.SLDPRT
+ 17M	SOLID/Raised Beds
+528K	SOLID/Raised Beds/2013.10.14 Raised Bed 01 Divisória.SLDPRT
+152K	SOLID/Raised Beds/2013.10.14 Raised Bed 01-1.SLDPRT
+168K	SOLID/Raised Beds/2013.10.14 Raised Bed 01-2.SLDPRT
+ 96K	SOLID/Raised Beds/2013.10.14 Raised Bed 01-Tampa.SLDPRT
+304K	SOLID/Raised Beds/2013.10.14 Raised Bed 01.SLDDRW
+708K	SOLID/Raised Beds/2013.10.14 Raised Bed 01.SLDPRT
+484K	SOLID/Raised Beds/2013.10.14 Raised Bed 02  Divisória.SLDPRT
+168K	SOLID/Raised Beds/2013.10.14 Raised Bed 02-1.SLDPRT
+148K	SOLID/Raised Beds/2013.10.14 Raised Bed 02-2.SLDPRT
+600K	SOLID/Raised Beds/2013.10.14 Raised Bed 02.SLDDRW
+664K	SOLID/Raised Beds/2013.10.14 Raised Bed 02.SLDPRT
+168K	SOLID/Raised Beds/2013.10.14 Raised Bed 03-1.SLDPRT
+148K	SOLID/Raised Beds/2013.10.14 Raised Bed 03-2.SLDPRT
+276K	SOLID/Raised Beds/2013.10.14 Raised Bed 03.SLDDRW
+664K	SOLID/Raised Beds/2013.10.14 Raised Bed 03.SLDPRT
+580K	SOLID/Raised Beds/2013.10.14 Raised Bed 04  Divisória.SLDPRT
+156K	SOLID/Raised Beds/2013.10.14 Raised Bed 04-1.SLDPRT
+144K	SOLID/Raised Beds/2013.10.14 Raised Bed 04-2.SLDPRT
+164K	SOLID/Raised Beds/2013.10.14 Raised Bed 04-3.SLDPRT
+ 96K	SOLID/Raised Beds/2013.10.14 Raised Bed 04-Tampa.SLDPRT
+324K	SOLID/Raised Beds/2013.10.14 Raised Bed 04.SLDDRW
+864K	SOLID/Raised Beds/2013.10.14 Raised Bed 04.SLDPRT
+ 88K	SOLID/Raised Beds/2013.11.04 Pés.SLDPRT
+416K	SOLID/Raised Beds/2013.11.04 Raised Beds com Pés e Pavimento.SLDASM
+516K	SOLID/Raised Beds/2014.02.05 Raised Bed 01.SLDPRT
+528K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 01 Divisória.SLDPRT
+100K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 01-Tampa.SLDPRT
+304K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 01.SLDDRW
+708K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 01.SLDPRT
+476K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 02  Divisória.SLDPRT
+288K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 02.SLDDRW
+664K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 02.SLDPRT
+268K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 03.SLDDRW
+664K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 03.SLDPRT
+580K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 04  Divisória.SLDPRT
+100K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 04-Tampa.SLDPRT
+304K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 04.SLDDRW
+864K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed 04.SLDPRT
+216K	SOLID/Raised Beds/Backup of 2013.10.14 Raised Bed.SLDPRT
+372K	SOLID/Raised Beds/Backup of 2013.11.04 Conjunto Raised Beds.SLDASM
+252K	SOLID/Raised Beds/Backup of 2013.11.04 Raised Bed 4.1.sldprt
+228K	SOLID/Raised Beds/Backup of 2013.11.04 Raised Bed 4.2.sldprt
+404K	SOLID/Raised Beds/Backup of 2013.11.04 Raised Beds com Pés e Pavimento.SLDASM
+656K	SOLID/Raised Beds/Backup of Backup of 2013.10.14 Raised Bed 01.SLDPRT
+932K	SOLID/Raised Beds/Pés
+ 92K	SOLID/Raised Beds/Pés/2013.11.04 Pé 01.SLDPRT
+ 96K	SOLID/Raised Beds/Pés/2013.11.04 Pé 02.SLDPRT
+ 92K	SOLID/Raised Beds/Pés/2013.11.04 Pé 03.SLDPRT
+ 92K	SOLID/Raised Beds/Pés/2013.11.04 Pé 04.SLDPRT
+ 88K	SOLID/Raised Beds/Pés/2013.11.04 Pé 05.SLDPRT
+ 96K	SOLID/Raised Beds/Pés/2013.11.04 Pé 06.SLDPRT
+ 96K	SOLID/Raised Beds/Pés/2013.11.04 Pé 07.SLDPRT
+ 96K	SOLID/Raised Beds/Pés/2013.11.04 Pé 08.SLDPRT
+ 92K	SOLID/Raised Beds/Pés/2013.11.04 Pé 09.SLDPRT
+ 92K	SOLID/Raised Beds/Pés/2013.11.04 Pé 10.SLDPRT
+236K	SOLID/Reforço de águas II.SLDPRT
+272K	SOLID/Reforço de águas.SLDASM
+376K	SOLID/Reforço de águas.SLDPRT
+228K	SOLID/Reforço de águasII.SLDASM
+652K	SOLID/Reforço de Cumeeira.SLDASM
+188K	SOLID/suporte_lexan_fundo.SLDPRT
+204K	SOLID/suporte_lexan_topo.SLDPRT
+200K	SOLID/Suporte000LEXAN.SLDPRT
+200K	SOLID/Suporte1000LEXAN.SLDPRT
+228K	SOLID/Suporte150LEXAN.SLDPRT
+200K	SOLID/Suporte2000LEXAN.SLDPRT
+228K	SOLID/Suporte300LEXAN.SLDPRT
+768K	SOLID/Suportes - mangueiras de rega
+156K	SOLID/Suportes - mangueiras de rega/2014.04.22 Suporte 1 mangueira.SLDPRT
+156K	SOLID/Suportes - mangueiras de rega/2014.04.22 Suporte 2 mangueiras.SLDPRT
+ 28K	SOLID/Suportes - mangueiras de rega/2014.04.22 Suporte 3 mangueiras.PDF
+264K	SOLID/Suportes - mangueiras de rega/2014.04.22 Suporte 3 mangueiras.SLDDRW
+164K	SOLID/Suportes - mangueiras de rega/2014.04.22 Suporte 3 mangueiras.SLDPRT
+ 37M	SOLID/Ventilação (caixilhos)
+8.0K	SOLID/Ventilação (caixilhos)/.DS_Store
+6.0M	SOLID/Ventilação (caixilhos)/ARQUIVO
+136K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.13 Estrutura madeira - baixo.SLDPRT
+132K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.13 Estrutura madeira.SLDPRT
+1.3M	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.13 Placa Lexan Telhado.SLDPRT
+456K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.18 Escotilha tecto.SLDASM
+1.2M	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.18 Placa Lexan escotilha.SLDPRT
+500K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.25 Abertura Tecto.SLDASM
+180K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.25 Apoio Motor.SLDPRT
+688K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.25 Encaixe Ventilação Tecto.SLDASM
+444K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.25 Escotilha Tecto.SLDASM
+132K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.25 Perfil em T.SLDPRT
+172K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.25 Perfil em U.SLDPRT
+180K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.25 Suport LEXAN.SLDPRT
+284K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.25 Suporte batente motor.SLDPRT
+164K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.26 motor.SLDPRT
+160K	SOLID/Ventilação (caixilhos)/ARQUIVO/Backup of 2014.02.26 U da escotilha (17mm).SLDPRT
+4.3M	SOLID/Ventilação (caixilhos)/Escotilha LATERAL
+128K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.25 Dobradiça.SLDPRT
+260K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.25 Perfil em T.SLDPRT
+236K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.25 Perfil em U.SLDPRT
+384K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.26 Apoio Motor Escotilha.SLDPRT
+216K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.26 Conjunto escotilha Lateral.SLDASM
+176K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.26 motor.SLDPRT
+104K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.26 PC Escotilha.SLDPRT
+ 96K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.26 PC lateral.SLDPRT
+260K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.26 Suport LEXAN (escotilha).SLDPRT
+628K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.26 Suport LEXAN (lateral) (EVOL07's conflicted copy 2014-02-28).SLDPRT
+152K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.26 Suport LEXAN (lateral).SLDPRT
+160K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.26 U da escotilha (17mm).SLDPRT
+152K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.26 U do motor (15mm).SLDPRT
+132K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.02.28 Gancho motor lateral.SLDPRT
+180K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.03.24 Apoio Motor Lateral.SLDPRT
+100K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.03.24 Batente Janela.SLDPRT
+236K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.03.24 Conjunto Lateral - ELIPSE pequena.SLDASM
+248K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.03.24 Conjunto Lateral - ELIPSE.SLDASM
+104K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.03.24 ELIPSE motor recortada.SLDPRT
+ 24K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.03.24 ELIPSE motor.DWG
+136K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.03.24 ELIPSE motor.SLDDRW
+144K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.03.24 ELIPSE motor.SLDPRT
+108K	SOLID/Ventilação (caixilhos)/Escotilha LATERAL/2014.03.24 ELIPSE pequena motor.SLDPRT
+ 27M	SOLID/Ventilação (caixilhos)/Escotilha TECTO
+508K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.25 Abertura Tecto.SLDASM
+204K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.25 Apoio Motor.SLDPRT
+700K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.25 Conjunto Ventilação Tecto.SLDASM
+128K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.25 Dobradiça.SLDPRT
+448K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.25 Escotilha Tecto.SLDASM
+488K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.25 Perfil em T.SLDPRT
+236K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.25 Perfil em U.SLDPRT
+1.2M	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.25 Placa Lexan escotilha.SLDPRT
+1.3M	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.25 Placa Lexan Telhado.SLDPRT
+240K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.25 Suport LEXAN.SLDPRT
+280K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.25 Suporte batente motor.SLDPRT
+100K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.25 Suporte Dobradiças.SLDPRT
+176K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.26 motor.SLDPRT
+160K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.26 U da escotilha (17mm).SLDPRT
+152K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/2014.02.26 U do motor (15mm).SLDPRT
+504K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Backup of 2014.02.25 Abertura Tecto.SLDASM
+612K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Backup of 2014.02.25 Encaixe Ventilação Tecto.SLDASM
+448K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Backup of 2014.02.25 Escotilha Tecto.SLDASM
+348K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Backup of 2014.02.25 Perfil em T.SLDPRT
+1.2M	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Backup of 2014.02.25 Placa Lexan escotilha.SLDPRT
+ 18M	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada
+204K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.02.25 Apoio Motor.SLDPRT
+176K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.02.26 motor.SLDPRT
+124K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.22 Alavanca - batente.SLDPRT
+104K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.22 Alavanca.SLDPRT
+140K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.22 Apoio Alavanca.SLDPRT
+660K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.22 Conjunto Escotilha - simples.SLDASM
+128K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.22 Dobradiça.SLDPRT
+156K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.22 PC escotilha.SLDPRT
+208K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.22 PC tecto.SLDPRT
+1.2M	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.22 Placa Lexan escotilha.SLDPRT
+1.3M	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.22 Placa Lexan Telhado.SLDPRT
+112K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.23 Alavanca - 2.SLDPRT
+644K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.23 Conjunto Escotilha - circular.SLDASM
+116K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.23 Eixo Circular.SLDPRT
+260K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.23 Gear.SLDASM
+2.1M	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.04.24 Roda 90º.SLDPRT
+284K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.05.05 Cremalheira.SLDASM
+740K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.05.05 rack spur.SLDPRT
+1.1M	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.05.05 Roda cremalheira.SLDPRT
+828K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.05.05 roda grande.SLDPRT
+964K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/2014.05.05 roda pequena.SLDPRT
+6.1M	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira
+176K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/2014.02.26 motor.SLDPRT
+660K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/2014.04.22 Conjunto Escotilha - simples.SLDASM
+764K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/2014.05.05 rack spur.SLDPRT
+1.1M	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/2014.05.05 Roda cremalheira.SLDPRT
+828K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/2014.05.05 roda grande.SLDPRT
+964K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/2014.05.05 roda pequena.SLDPRT
+544K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/2014.05.09 Apoio Cremalheira.SLDPRT
+144K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/2014.05.09 Apoio Motor.SLDPRT
+352K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/2014.05.09 Conjunto Cremalheira.SLDASM
+ 96K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/2014.05.09 Pino Motor.SLDPRT
+180K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/2014.05.09 Tampa Cremalheira.SLDPRT
+132K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/2014.05.09 Tubo Latão.SLDPRT
+252K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/Desenhos técnicos
+ 36K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/Desenhos técnicos/2014.05.05 rack spur.bak
+ 28K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/Desenhos técnicos/2014.05.05 rack spur.DWG
+ 40K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/Desenhos técnicos/2014.05.05 Roda cremalheira.DWG
+ 40K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/Desenhos técnicos/2014.05.05 roda grande.DWG
+ 36K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/Desenhos técnicos/2014.05.05 roda pequena.DWG
+ 40K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/Desenhos técnicos/2014.05.09 Apoio Cremalheira.DWG
+ 32K	SOLID/Ventilação (caixilhos)/Escotilha TECTO/Escotilha melhorada/Cremalheira/Desenhos técnicos/2014.05.09 Tampa Cremalheira.DWG
+280K	SOLID/VISA MULTIWALL cx exterior - lateral.SLDPRT
+180K	SOLID/WISA - Multifloor.SLDPRT
+140K	SOLID/WISA MULTIWALL cx exterior -agua.SLDPRT
+140K	SOLID/WISA MULTIWALL cx exterior -frente.SLDPRT
+ 12K	Untitled.png
