@@ -35,9 +35,13 @@ A complete file-by-file listing with sizes is in
 - **Firmware** — the real GrouuPro code lives at
   [`ARCHIVE/arduino/GROUU_GREENHOUSE_0/`](../arduino/GROUU_GREENHOUSE_0) (Yún +
   probe + Temboo sketches, servo/pump actuation). Credentials redacted.
+- **`GROUU OUTLINE .pdf`** — the envisioned master plan (app modules + system
+  architecture; most of it designed but never built).
 - **`ARCHIVE/grouu-v0/drawings/`** — EXP renders, connector & structure details,
   `apresentação 1.pdf`, base-model PDFs, and the GrouuPro fertigation schematic.
-- `README.md`, this manifest, `full-file-index.txt`, and `photos/` (placeholders).
+- **`ARCHIVE/grouu-v0/photos/`** — web-sized build photos (full-res on backup);
+  the same set is served on the docs page at `docs/site/img/v0/`.
+- `README.md`, this manifest, `full-file-index.txt`.
 
 ## Deliberately excluded
 

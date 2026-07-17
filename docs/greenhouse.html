@@ -30,42 +30,33 @@
         <span class="arch">▢ Archived</span>
       </div>
       <h1 class="s17">GrouuPro — the V0 greenhouse</h1>
-      <p class="s18">Circa 2013–2014, GrouuPro was a built greenhouse with an automated fertigation cabinet feeding four raised beds. It collected a rich set of readings, published them to the cloud, and drove its pumps and vent locally — the earliest sense → publish → visualise system in the GROUU line. Sole-authored, with build assistance from Rui Lopes.</p>
+      <p class="s18">Circa 2013–2014, GrouuPro was a built greenhouse with an automated fertigation cabinet feeding four raised beds. It collected a rich set of readings, published them to the cloud and drove its pumps and vent locally — behind a far larger master plan that was designed in full but never finished. The earliest sense → publish → visualise system in the GROUU line. Sole-authored, with build assistance from Rui Lopes.</p>
       <div class="s19">
         <span class="s20">Arduino Yún</span>
         <span class="s20">Arduino Uno · I²C</span>
-        <span class="s20">Temboo</span>
-        <span class="s20">Google Sheets</span>
+        <span class="s20">Temboo → Google Sheets</span>
+        <span class="s20">Fertigation</span>
         <span class="s20">Archived</span>
       </div>
     </div>
   </header>
 
-  <!-- ARCHITECTURE -->
+  <img src="site/img/v0/built.jpg" alt="The GrouuPro greenhouse, built" class="v0hero" loading="lazy" />
+
+  <!-- AS DEPLOYED -->
   <section class="s21">
     <div class="s22">
-      <div class="archbanner mb28">▢&nbsp; <strong>Archived.</strong>&nbsp; Not in active development — kept as the origin of the GROUU lineage. Data collection, cloud publication and local actuation all worked; remote control and automation were never implemented — the project ended first.</div>
-      <div class="s23">How it worked</div>
+      <div class="archbanner mb28">▢&nbsp; <strong>Archived.</strong>&nbsp; Not in active development. What was <em>built</em> — sensing, cloud publication, local actuation — worked; the full software, remote control and automation were designed but never implemented. The project ended first.</div>
+      <div class="s23">How it worked · as deployed</div>
       <h2 class="s24">Sense on the Yún, publish through Temboo</h2>
-      <p class="s25">Arduino Uno probe boards read the sensors and handed values to an Arduino Yún over I²C; the Yún — with its Linux/network side — pushed them through Temboo, a cloud middleware, into a Google Spreadsheet that logged and charted the data. (The final <span class="mono">fullprobe_TEMBOO</span> sketch read every sensor on the Yún itself.) The same sense → publish → visualise shape GROUU still uses — only the parts changed.</p>
-      <p class="codecap">GrouuPro data path (2013 tooling)</p>
+      <p class="s25">Arduino Uno probe boards read the sensors and handed values to an Arduino Yún over I²C; the Yún — with its Linux/network side — pushed them through Temboo, a cloud middleware, into a Google Spreadsheet that logged and charted the data. (The final <span class="mono">fullprobe_TEMBOO</span> sketch read every sensor on the Yún itself.) Temboo → Sheets was the working stand-in while the full server was still being built.</p>
+      <p class="codecap">GrouuPro data path (as it actually ran)</p>
       <div class="codewrap">
 <pre class="code">PROBE   Arduino Uno — DHT22 · LDR · soil moisture · leaf wetness · DS18B20 · pH
    │  I²C  (I2C_Anything, central @ addr 42)
 GATEWAY Arduino Yún  (Bridge + Temboo)
    │  Temboo "AppendRow" Choreo
 Google Spreadsheet "GROUU_EXP"  — timestamped rows; its charts were the dashboard</pre>
-      </div>
-      <div class="bomwrap mt24">
-        <table class="bomtable v0table">
-          <thead><tr><th>Layer</th><th>GrouuPro · V0 (2013)</th><th>GROUU · now (V2 / V3)</th></tr></thead>
-          <tbody>
-            <tr><td class="part">Node</td><td class="was">Arduino Yún + Uno probes (I²C)</td><td>ESP32 / XIAO → WiFi &amp; LoRaWAN → MQTT</td></tr>
-            <tr><td class="part">Publish</td><td class="was">Temboo (cloud middleware)</td><td>Mosquitto + Node-RED</td></tr>
-            <tr><td class="part">Store</td><td class="was">Google Spreadsheet</td><td>InfluxDB</td></tr>
-            <tr><td class="part">Dashboard</td><td class="was">Google Sheets charts</td><td>Grafana + web dashboard</td></tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </section>
@@ -93,32 +84,70 @@ Google Spreadsheet "GROUU_EXP"  — timestamped rows; its charts were the dashbo
     </div>
   </section>
 
-  <!-- PHOTOS -->
+  <!-- THE MASTER PLAN -->
   <section class="s21">
+    <div class="s22">
+      <div class="s23">What was envisioned</div>
+      <h2 class="s24">The master plan</h2>
+      <p class="s25">GrouuPro was designed as a full product, laid out module by module in the <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/GROUU%20OUTLINE%20.pdf" target="_blank" rel="noopener">GROUU OUTLINE</a>. Only the sensing + Temboo logging half was reached — but the intended architecture is almost exactly what GROUU became years later.</p>
+      <p class="codecap">Envisioned architecture (GROUU OUTLINE, p.10)</p>
+      <div class="codewrap">
+<pre class="code">PROBE 1..4  ──►  Arduino Yún  (Arduino + Node client)
+                      │
+             Raspberry Pi + Node server
+                      │
+             Web server — front end   ──►  other units register · other users</pre>
+      </div>
+      <p class="s25 mt24">The planned web app (never finished) specced: <strong class="s218">login &amp; profiles</strong> with admin/user roles; <strong class="s218">environmental definitions</strong> (temperature, humidity, photoperiod limits, µEinsteins); <strong class="s218">tests</strong> — per raised-bed experiments with goals (crop / blooming / rooting / fruit set), moisture-stress overrides and fertirrigation scheduling; <strong class="s218">watering solutions</strong> (six-product nutrient mixes); <strong class="s218">log &amp; annotation</strong> — autolog with photos and archive-to-PDF; and a <strong class="s218">real-time dashboard</strong> with anomaly alerts.</p>
+      <div class="bomwrap mt24">
+        <table class="bomtable v0table">
+          <thead><tr><th>Layer</th><th>GrouuPro master plan (2013)</th><th>GROUU · now (V2 / V3)</th></tr></thead>
+          <tbody>
+            <tr><td class="part">Node</td><td class="was">Yún + 4 probes (Node client)</td><td>ESP32 / XIAO → WiFi &amp; LoRaWAN → MQTT</td></tr>
+            <tr><td class="part">Server</td><td class="was">Raspberry Pi + Node server</td><td>Mosquitto + Node-RED + InfluxDB</td></tr>
+            <tr><td class="part">Dashboard</td><td class="was">Web front end + anomaly alerts</td><td>Grafana + web dashboard + alerts</td></tr>
+            <tr><td class="part">Scale</td><td class="was">Many units register, many users</td><td>Many nodes, one shared stack</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="s25 mt24">What actually shipped: data collection ✅ · Temboo → Sheets publication ✅ · local actuation ✅. Remote control ❌ · automation ❌ · the full server &amp; app ❌ — the project ended before them.</p>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section class="s75">
     <div class="s22">
       <div class="s23">The build</div>
       <h2 class="s24">Photos</h2>
-      <p class="s25">Placeholders below — the raw originals live on backup. Captions mark what each slot is for.</p>
       <div class="photogrid">
-        <div class="imgslot photoslot"><span class="ico">🏡📷</span><span class="cap">The built greenhouse — LEXAN + aluminium structure</span></div>
-        <div class="imgslot photoslot"><span class="ico">🚰📷</span><span class="cap">The fertigation cabinet — pumps, tanks, valves</span></div>
-        <div class="imgslot photoslot"><span class="ico">🔌📷</span><span class="cap">The control electronics — Yún / Uno + perfboard MOSFETs</span></div>
-        <div class="imgslot photoslot"><span class="ico">🔧📷</span><span class="cap">Construction — frame &amp; glazing going up</span></div>
-        <div class="imgslot photoslot"><span class="ico">🌱📷</span><span class="cap">The raised beds — fertigation lines in use</span></div>
-        <div class="imgslot photoslot"><span class="ico">📊📷</span><span class="cap">The Google Sheets "GROUU_EXP" dashboard</span></div>
+        <figure class="pfig"><img src="site/img/v0/built2.jpg" alt="" loading="lazy"><figcaption>The greenhouse, built</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/built3.jpg" alt="" loading="lazy"><figcaption>The greenhouse in place</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/construction.jpg" alt="" loading="lazy"><figcaption>Construction — frame &amp; glazing</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/building2.jpg" alt="" loading="lazy"><figcaption>Assembly</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/window1.jpg" alt="" loading="lazy"><figcaption>Top ventilation hatch (servo-driven)</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/window2.jpg" alt="" loading="lazy"><figcaption>The vent</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/fertirrigation.jpg" alt="" loading="lazy"><figcaption>The fertigation cabinet</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/pumps1.jpg" alt="" loading="lazy"><figcaption>Peristaltic dosing pumps</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/waterElectricityinlets.jpg" alt="" loading="lazy"><figcaption>Water &amp; electricity inlets</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/yuncontrolUnit.jpg" alt="" loading="lazy"><figcaption>The Arduino Yún control unit</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/probe.jpg" alt="" loading="lazy"><figcaption>A sensor probe</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/probe2.jpg" alt="" loading="lazy"><figcaption>Probe detail</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/raisedBeds1.jpg" alt="" loading="lazy"><figcaption>Raised beds — fertigation lines</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/raisedBeds2.jpg" alt="" loading="lazy"><figcaption>Raised beds</figcaption></figure>
+        <figure class="pfig"><img src="site/img/v0/raisedBeds3.jpg" alt="" loading="lazy"><figcaption>Raised beds, planted</figcaption></figure>
       </div>
     </div>
   </section>
 
   <!-- IN THE ARCHIVE -->
-  <section class="s75">
+  <section class="s102">
     <div class="s22">
       <div class="s23">In the archive</div>
       <h2 class="s24">What's kept, and where</h2>
-      <p class="s25">The firmware and key drawings are committed; the 1.5 GB of CAD, renders, raw photos and presentation are catalogued in the manifest and referenced on backup — nothing is lost. (Temboo/Google credentials in the sketches are redacted.)</p>
+      <p class="s25">The firmware, the master-plan outline and key drawings are committed; the 1.5 GB of CAD, renders and raw photos are catalogued in the manifest and referenced on backup. (Temboo/Google credentials in the sketches are redacted.)</p>
       <div class="reciperow">
         <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/arduino/GROUU_GREENHOUSE_0" target="_blank" rel="noopener" class="reciperepo">⟶ Firmware (Yún · probe · Temboo sketches)</a>
-        <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/arduino/GROUU_GREENHOUSE_0/fullprobe_TEMBOO" target="_blank" rel="noopener" class="reciperepo">⟶ fullprobe_TEMBOO (the probe → Temboo)</a>
+        <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/GROUU%20OUTLINE%20.pdf" target="_blank" rel="noopener" class="reciperepo">⟶ GROUU OUTLINE (the master plan)</a>
         <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0/drawings" target="_blank" rel="noopener" class="reciperepo">⟶ Drawings + fertigation schematic</a>
         <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/MANIFEST.md" target="_blank" rel="noopener" class="reciperepo">⟶ Full manifest (1.5 GB catalogued)</a>
       </div>
@@ -126,11 +155,11 @@ Google Spreadsheet "GROUU_EXP"  — timestamped rows; its charts were the dashbo
   </section>
 
   <!-- RELATED -->
-  <section class="s102">
+  <section class="s75">
     <div class="s76">
       <div class="s77">Related</div>
       <div class="s78">
-        <a href="server-stack.html" class="relcard s79"><div class="s80">Server Stack →</div><p class="s81">What Temboo → Sheets became: MQTT → InfluxDB → Grafana.</p></a>
+        <a href="server-stack.html" class="relcard s79"><div class="s80">Server Stack →</div><p class="s81">What the master plan became: MQTT → InfluxDB → Grafana.</p></a>
         <a href="wifi-node.html" class="relcard s79"><div class="s80">WiFi Node →</div><p class="s81">The modern local-sensing template.</p></a>
         <a href="index.html" class="relcard s79"><div class="s80">GROUU home →</div><p class="s81">The V0 → V3 evolution in full.</p></a>
       </div>

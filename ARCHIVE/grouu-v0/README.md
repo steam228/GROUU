@@ -36,6 +36,22 @@ four raised beds. **No custom PCB was ever designed.**
 four-level cabinet — electronics · 6 peristaltic pumps · water + ferti-rega tanks
 with level sensors · valves, main pump, flow sensor → 4 raised beds + drains.
 
+## The master plan (designed, never built)
+
+`GROUU OUTLINE .pdf` lays out the full intended product. Only the sensing +
+Temboo-logging half was reached; the rest was designed and shelved:
+
+- **Architecture (p.10):** `4 probes → Arduino Yún (Node client) → Raspberry Pi +
+  Node server → web front end`, multi-unit and multi-user — almost exactly what
+  GROUU became in V2/V3.
+- **App:** login &amp; profiles (admin/user roles); environmental definitions
+  (temperature / humidity / photoperiod limits, µEinsteins); tests (per raised-bed
+  experiments with goals, moisture-stress overrides, fertirrigation scheduling);
+  watering solutions (six-product nutrient mixes); log &amp; annotation (autolog +
+  photos + archive-to-PDF); and a real-time dashboard with anomaly alerts.
+
+Remote control and automation were part of this plan and were never implemented.
+
 ## Lineage
 
 The same **sense → publish → visualise** shape GROUU still uses — the parts just
@@ -48,11 +64,12 @@ InfluxDB → Grafana** in V2/V3.
   — the Yún/probe/Temboo sketches (`fullprobe_TEMBOO`, `GROUU_CENTRAL_GDRIVE_VF`,
   `Servo_Escotilha_Topo`, `Bombas_beta0`, `read_pH`, …). Temboo/Google credentials
   in the `TembooAccount.h` / sketch files have been **redacted**.
-- **This folder (design archive):** `drawings/` (structure & connector details,
-  the fertigation schematic, the project presentation, base models); `photos/`
-  (placeholders — see its README); `MANIFEST.md` + `full-file-index.txt`
-  cataloguing the full **1.5 GB** of CAD / renders / raw photos / Keynote, which
-  stay on the maintainer's OneDrive backup rather than in git.
+- **This folder (design archive):** `GROUU OUTLINE .pdf` (the envisioned master
+  plan); `drawings/` (structure & connector details, the fertigation schematic,
+  presentation, base models); `photos/` (web-sized build photos — full-res on
+  backup); `MANIFEST.md` + `full-file-index.txt` cataloguing the full **1.5 GB**
+  of CAD / renders / raw photos / Keynote that stay on the maintainer's OneDrive
+  backup rather than in git.
 
 ## Licence
 
