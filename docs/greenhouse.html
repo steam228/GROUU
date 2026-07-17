@@ -84,12 +84,12 @@ Google Spreadsheet "GROUU_EXP"  — timestamped rows; its charts were the dashbo
     </div>
   </section>
 
-  <!-- THE MASTER PLAN -->
+  <!-- THE STACK -->
   <section class="s21">
     <div class="s22">
-      <div class="s23">What was envisioned</div>
+      <div class="s23">What was envisioned · the stack</div>
       <h2 class="s24">The master plan</h2>
-      <p class="s25">GrouuPro was designed as a full product, laid out module by module in the <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/GROUU%20OUTLINE%20.pdf" target="_blank" rel="noopener">GROUU OUTLINE</a>. Only the sensing + Temboo logging half was reached — but the intended architecture is almost exactly what GROUU became years later.</p>
+      <p class="s25">GrouuPro was designed as a full product, laid out module by module in the <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/GROUU%20OUTLINE%20.pdf" target="_blank" rel="noopener">GROUU OUTLINE</a>. Only the sensing + Temboo-logging half was reached — but the intended stack is almost exactly what GROUU became years later.</p>
       <p class="codecap">Envisioned architecture (GROUU OUTLINE, p.10)</p>
       <div class="codewrap">
 <pre class="code">PROBE 1..4  ──►  Arduino Yún  (Arduino + Node client)
@@ -98,8 +98,19 @@ Google Spreadsheet "GROUU_EXP"  — timestamped rows; its charts were the dashbo
                       │
              Web server — front end   ──►  other units register · other users</pre>
       </div>
-      <p class="s25 mt24">The planned web app (never finished) specced: <strong class="s218">login &amp; profiles</strong> with admin/user roles; <strong class="s218">environmental definitions</strong> (temperature, humidity, photoperiod limits, µEinsteins); <strong class="s218">tests</strong> — per raised-bed experiments with goals (crop / blooming / rooting / fruit set), moisture-stress overrides and fertirrigation scheduling; <strong class="s218">watering solutions</strong> (six-product nutrient mixes); <strong class="s218">log &amp; annotation</strong> — autolog with photos and archive-to-PDF; and a <strong class="s218">real-time dashboard</strong> with anomaly alerts.</p>
       <div class="bomwrap mt24">
+        <table class="bomtable">
+          <thead><tr><th>Layer</th><th>Hardware / software</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td class="part">Probes</td><td>4× Arduino Uno + sensors</td><td>Read air / soil / light / leaf per raised bed; hand values up over I²C</td></tr>
+            <tr><td class="part">Gateway</td><td>Arduino Yún (Arduino + Node client)</td><td>Aggregate the probes, run the local Node client, reach the network</td></tr>
+            <tr><td class="part">Server</td><td>Raspberry Pi + Node server</td><td>Store readings, run the app logic, serve the front end</td></tr>
+            <tr><td class="part">Front end</td><td>Web server</td><td>The browser app — dashboards, tests, controls; multi-unit, multi-user</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="s25 mt24">Only the sensing layer shipped: the Yún published to <strong class="s218">Temboo → Google Sheets</strong> as a stand-in while the Node server and web app were still being built. The lineage to today is direct:</p>
+      <div class="bomwrap">
         <table class="bomtable v0table">
           <thead><tr><th>Layer</th><th>GrouuPro master plan (2013)</th><th>GROUU · now (V2 / V3)</th></tr></thead>
           <tbody>
@@ -110,7 +121,30 @@ Google Spreadsheet "GROUU_EXP"  — timestamped rows; its charts were the dashbo
           </tbody>
         </table>
       </div>
-      <p class="s25 mt24">What actually shipped: data collection ✅ · Temboo → Sheets publication ✅ · local actuation ✅. Remote control ❌ · automation ❌ · the full server &amp; app ❌ — the project ended before them.</p>
+    </div>
+  </section>
+
+  <!-- THE APP MAP -->
+  <section class="s75">
+    <div class="s22">
+      <div class="s23">What was envisioned · the app</div>
+      <h2 class="s24">The app map</h2>
+      <p class="s25">The web app was specced in full — seven modules — but never built beyond the data logging. Straight from the <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/GROUU%20OUTLINE%20.pdf" target="_blank" rel="noopener">outline</a>:</p>
+      <div class="bomwrap">
+        <table class="bomtable">
+          <thead><tr><th>Module</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td class="part">Login</td><td>User + password entry.</td></tr>
+            <tr><td class="part">Profile</td><td>Name, email, password; Admin / User roles — admin edits, user consults.</td></tr>
+            <tr><td class="part">Environmental definitions</td><td>Global set-points &amp; limits: temperature, humidity, photoperiod (start / end), light (µEinsteins).</td></tr>
+            <tr><td class="part">Tests</td><td>Per-raised-bed experiments — plant, goal (crop / blooming / rooting / fruit-set), data-collection interval, moisture; plus moisture-stress overrides and fertirrigation scheduling.</td></tr>
+            <tr><td class="part">Watering solutions</td><td>Named nutrient recipes — up to six products with concentrations; insert → mix → save → available to fertirrigation.</td></tr>
+            <tr><td class="part">Log &amp; annotation</td><td>Per-test autolog (timestamped probe + greenhouse data), qualitative / quantitative notes and photos; archive a finished test to PDF.</td></tr>
+            <tr><td class="part">Dashboard</td><td>Real-time charts with anomaly alerts — global (temperature, humidity, photoperiod, luminance) and per-test (+ soil temp, moisture, leaf wetness &amp; hours).</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="s25 mt24">What shipped: data collection ✅ · Temboo → Sheets publication ✅ · local actuation ✅. Remote control ❌ · automation ❌ · the full server &amp; app ❌ — the project ended before them.</p>
     </div>
   </section>
 
