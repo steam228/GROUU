@@ -1,0 +1,8 @@
+﻿Name,Quantity,Component
+"U1",1," Timer"
+"BAT1",1," 9V Battery"
+"C1, C2",2,"10 uF, 16 V Polarized Capacitor"
+"R1",1,"1 kΩ Resistor"
+"Rpot1",1,"100 kΩ Potentiometer"
+"PIEZO1",1," Piezo"
+"C3",1,"100 nF Capacitor"

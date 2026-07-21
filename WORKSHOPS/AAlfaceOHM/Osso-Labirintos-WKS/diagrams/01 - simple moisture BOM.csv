@@ -1,0 +1,5 @@
+﻿Name,Quantity,Component
+"D1",1,"Red LED"
+"BAT1",1," 9V Battery"
+"R1",1,"220 Ω Resistor"
+"JP1",1," 8 Pin Header"
