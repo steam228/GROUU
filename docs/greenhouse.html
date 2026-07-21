@@ -126,31 +126,39 @@
   <!-- 1c · ENVISIONED ARCHITECTURE -->
   <section class="s58">
     <div class="s22">
-      <div class="s59">Designed, not built</div>
+      <div class="s59">Designed 2014, never fully built</div>
       <h2 class="s60">Envisioned architecture</h2>
-      <p class="schcap">The 2014 master plan (<a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/GROUU%20OUTLINE%20.pdf" target="_blank" rel="noopener">GROUU OUTLINE</a>, p.10), and what each layer became in today's GROUU.</p>
-      <div class="schgrid4">
-        <div class="schprobe">Probe 1</div>
-        <div class="schprobe">Probe 2</div>
-        <div class="schprobe">Probe 3</div>
-        <div class="schprobe">Probe 4</div>
+      <p class="schcap">One central core, wired probes. A limited set of probes cables into the Yún — the Arduino MCU runs sensing + global actuation (multiplexed I/O); Linux is the server: local edge, or — as deployed — Temboo publishing to a Google Sheet.</p>
+      <div class="schcanvaswrap">
+        <div class="c1canvas">
+          <svg viewBox="0 0 680 640" preserveAspectRatio="none">
+            <line x1="67" y1="82" x2="300" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
+            <line x1="239" y1="82" x2="330" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
+            <line x1="419" y1="82" x2="360" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
+            <line x1="587" y1="82" x2="390" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
+            <line x1="260" y1="356" x2="160" y2="446" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
+            <line x1="420" y1="356" x2="510" y2="426" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
+            <line x1="420" y1="356" x2="445" y2="516" stroke="#65c298" stroke-width="2" opacity="0.5"></line>
+          </svg>
+          <div class="c1p c1p1"><div class="c1pk">PROBE 1</div><div class="c1pn">Sensor board</div><div class="c1ps">wired · I²C</div></div>
+          <div class="c1p c1p2"><div class="c1pk">PROBE 2</div><div class="c1pn">Sensor board</div><div class="c1ps">wired · I²C</div></div>
+          <div class="c1p c1p3"><div class="c1pk">PROBE 3</div><div class="c1pn">Sensor board</div><div class="c1ps">wired · I²C</div></div>
+          <div class="c1p c1p4"><div class="c1pk">PROBE 4</div><div class="c1pn">Sensor board</div><div class="c1ps">wired · I²C</div></div>
+          <div class="c1note">fixed set — bus limit, not modular</div>
+          <div class="c1yun">
+            <div class="c1yunh"><div class="c1yunt">Arduino Yún</div><div class="c1yuntag">CENTRAL CORE · DUAL ROLE</div></div>
+            <div class="c1yunr">
+              <div class="c1sub"><div class="c1subk">MCU</div><div class="c1subn">Sensing + actuation</div><div class="c1subs">+ multiplexing shield for more ports</div></div>
+              <div class="c1sub"><div class="c1subk">LINUX</div><div class="c1subn">Server / bridge</div><div class="c1subs">local edge server or cloud publish</div></div>
+            </div>
+          </div>
+          <div class="c1card c1act"><div class="c1ck">GLOBAL ACTUATORS</div><div class="c1cn">Irrigation cabinet · top-hatch vents</div><div class="c1cs">MOSFETs · pumps · valves · servo</div></div>
+          <div class="c1card c1pa"><div class="c1ck">PATH A — ENVISIONED</div><div class="c1cn">Local edge server</div><div class="c1cs">Node server + web front end on the LAN</div></div>
+          <div class="c1or">or</div>
+          <div class="c1card dash c1pb"><div class="c1ck">PATH B — AS DEPLOYED</div><div class="c1cn">Temboo → Google Sheet</div><div class="c1cs">"GROUU_EXP" · one probe's data</div></div>
+          <div class="c1legend"><span class="wire"></span>wired link &nbsp;·&nbsp; today's vision instead → fully modular Wi-Fi / LoRaWAN sensor &amp; actuator nodes + MQTT server stack</div>
+        </div>
       </div>
-      <div class="schdown lite"><span class="l"></span><span class="c">▼</span></div>
-      <div class="schrow2">
-        <div class="schbox cream"><div class="schn">Arduino Yún</div><div class="schs">Arduino + Node client</div></div>
-        <div class="schtoday">today → MQTT nodes</div>
-      </div>
-      <div class="schdown lite"><span class="l"></span><span class="c">▼</span></div>
-      <div class="schrow2">
-        <div class="schbox cream"><div class="schn">Raspberry Pi</div><div class="schs">Node server</div></div>
-        <div class="schtoday">today → Node-RED + InfluxDB</div>
-      </div>
-      <div class="schdown lite"><span class="l"></span><span class="c">▼</span></div>
-      <div class="schrow2">
-        <div class="schbox cream"><div class="schn">Web server — front end</div><div class="schs">other units register · other users</div></div>
-        <div class="schtoday">today → Grafana + dashboard</div>
-      </div>
-      <div class="schnote">The 2014 plan maps almost 1:1 onto today's stack.</div>
     </div>
   </section>
 
