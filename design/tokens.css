@@ -1,0 +1,58 @@
+/* ==========================================================================
+   GROUU design tokens — extracted from the docs site (docs/style.css).
+   Import this, then build with the var(--grouu-*) values below.
+   Fonts: load Space Grotesk (400–700) + IBM Plex Mono (400–600) from Google Fonts.
+   ========================================================================== */
+:root {
+  /* ── brand green ── */
+  --grouu-green:        #008a60;  /* primary accent · links · CTAs · "on" state */
+  --grouu-green-hover:  #00734f;  /* link/hover darken */
+  --grouu-green-deep:   #0c6b4b;  /* green text on pale-green pills */
+  --grouu-green-light:  #65c298;  /* accent on dark surfaces · ::selection */
+  --grouu-green-pale:   #e2f1e9;  /* pale-green pill / chip background */
+
+  /* ── ink (text) ── */
+  --grouu-ink:          #16201a;  /* headings, strong text */
+  --grouu-ink-body:     #3a423a;  /* default body text */
+  --grouu-ink-muted:    #4a524a;  /* secondary body text */
+  --grouu-ink-meta:     #6b756b;  /* mono labels, captions, meta */
+  --grouu-ink-on-dark:      #eaf3ec;  /* text on dark surfaces */
+  --grouu-ink-muted-on-dark:#bcccc0;  /* muted text on dark surfaces */
+
+  /* ── surfaces ── */
+  --grouu-bg:           #e9f2ec;  /* page + light-green sections */
+  --grouu-bg-white:     #ffffff;  /* white sections / cards */
+  --grouu-bg-tint:      #f4f8f5;  /* subtle green surface (table headers) */
+  --grouu-bg-dark:      #122018;  /* dark sections / code blocks */
+  --grouu-bg-darker:    #0c150f;  /* deepest (dark borders) */
+
+  /* ── lines ── */
+  --grouu-line:         #d5e4da;  /* default border / divider */
+  --grouu-line-soft:    #eef2ef;  /* subtle divider (table rows) */
+  --grouu-line-dark:    #274031;  /* border on dark surfaces */
+
+  /* ── status ── (dot / text / background) */
+  --grouu-ok:    #008a60;  --grouu-ok-bg:   #e2f1e9;  --grouu-ok-text:   #0c6b4b;  /* developed / live */
+  --grouu-warn:  #8a6d1f;  --grouu-warn-bg: #f5edd6;  --grouu-warn-dot:  #e0a020;  /* under development */
+  --grouu-idle:  #6b756b;  --grouu-idle-bg: #e6ede8;  --grouu-idle-line: #cdd8d0;  /* archived / n-a */
+
+  /* ── semantic tints (schematics) ── */
+  --grouu-water: #dbe7f0;  /* water / blue */
+  --grouu-ferti: #e7edd4;  /* nutrient / warm green */
+
+  /* ── type ── */
+  --grouu-font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --grouu-font-mono: 'IBM Plex Mono', monospace;
+
+  /* ── radii ── */
+  --grouu-r-pill: 100px;  /* badges / buttons */
+  --grouu-r-lg:   16px;   /* large cards */
+  --grouu-r-md:   14px;   /* cards / panels */
+  --grouu-r-sm:   12px;   /* boxes / code blocks */
+  --grouu-r-xs:   8px;    /* small boxes / inputs */
+
+  /* ── layout ── */
+  --grouu-maxw:      1120px;  /* content column (nav bar uses 1200px) */
+  --grouu-pad-y:     80px;    /* section vertical padding (desktop) */
+  --grouu-pad-x:     40px;    /* section horizontal padding (→ 20px on mobile) */
+}
