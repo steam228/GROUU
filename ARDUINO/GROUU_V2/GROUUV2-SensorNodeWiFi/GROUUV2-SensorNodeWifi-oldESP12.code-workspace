@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../GROUUV2-SensorNodeWifi-oldESP12"
+		},
+		{
+			"name": "GROUUV2-SensorNodeWiFi",
+			"path": "."
+		},
+		{
+			"name": "GROUUV2-SensorNodeLoRAWAN",
+			"path": "../GROUUV2-SensorNodeLoRAWAN"
+		}
+	],
+	"settings": {}
+}
