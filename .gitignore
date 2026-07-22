@@ -1,0 +1,24 @@
+# ─────────────────────────────────────────────────────────────
+#  GROUU — repo-wide ignore.
+#  Real secrets never get committed; *.example / *.template stay tracked.
+# ─────────────────────────────────────────────────────────────
+
+# macOS / OS junk
+.DS_Store
+._*
+Thumbs.db
+
+# Secrets & credentials  (templates/examples are kept)
+secrets.h
+.env
+.env.local
+TembooAccount.h
+*.pem
+id_rsa*
+
+# Build output & dependencies
+node_modules/
+.pio/
+.pioenvs/
+__pycache__/
+*.pyc
