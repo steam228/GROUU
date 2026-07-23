@@ -18,7 +18,7 @@
       <a href="index.html" class="s4"><img src="site/assets/wordmark-green.svg" alt="GROUU" class="s5"></a>
       <div class="s6">
         <a href="index.html#projects" class="s7">← All projects</a>
-        <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s8">Source ↗</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3" target="_blank" rel="noopener" class="s8">Source ↗</a>
       </div>
     </div>
   </nav>
@@ -28,10 +28,10 @@
       <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#projects" class="s12">Projects</a> · <span class="s13">WellBouy</span></div>
       <div class="s14">
         <span class="s153"></span>
-        <span class="s210">Deployed · live dashboard</span>
+        <span class="s210">Active · V3 · deployed &amp; live</span>
       </div>
       <h1 class="s17">WellBouy — well-water quality node</h1>
-      <p class="s233">An open reference design for monitoring a water source over LoRaWAN — temperature, dissolved solids, turbidity and pH. All four sensors are calibrated and validated, the node deep-sleeps and streams to a live dashboard, and the dedicated board is fabricated. This page documents how it works and how to reproduce it from the published source.</p>
+      <p class="s233">An open reference design for monitoring a water source over LoRaWAN — temperature, dissolved solids, turbidity and pH. All four sensors are calibrated and validated, the node deep-sleeps and streams to a live dashboard, and the dedicated board is fabricated.</p>
       <div class="s19">
         <span class="s20">XIAO ESP32-S3</span>
         <span class="s20">Wio-SX1262</span>
@@ -45,65 +45,24 @@
     </div>
   </header>
 
-  <!-- LEVEL OF DEVELOPMENT -->
+  <!-- 01 · OVERVIEW -->
   <section class="s21">
     <div class="s22">
-      <div class="s23">Level of development</div>
-      <h2 class="s24">What's published so far</h2>
-      <p class="s25">Firmware and the data pipeline are complete and running; the dedicated board is fabricated. Enclosure, full BOM and field deployment are the next deliverables.</p>
-      <div class="s26">
-        <div class="s236">
-          <span class="s28">Firmware</span>
-          <span class="s29">Staged PlatformIO envs — LoRaWAN, all four sensors, deep sleep, RTC session resume and downlink commands, validated and integrated.</span>
-          <span class="s31">✓ Complete</span>
-        </div>
-        <div class="s236">
-          <span class="s28">Data pipeline</span>
-          <span class="s29">TTN → Node-RED → InfluxDB → Grafana, plus a public dashboard — all live on the edge server.</span>
-          <span class="s31">✓ Live</span>
-        </div>
-        <div class="s236">
-          <span class="s28">Schematic (atopile)</span>
-          <span class="s29">XIAO + radio, on-board ADS1115, switched 5 V rail, dividers, reverse-polarity + load-switch protection, Grove expansion.</span>
-          <span class="s31">✓ Done</span>
-        </div>
-        <div class="s236">
-          <span class="s28">PCB layout</span>
-          <span class="s29">Round board with M4 mounts, laid out in KiCad and sent to fabrication; bring-up firmware validates it.</span>
-          <span class="s31">✓ Fabricated</span>
-        </div>
-        <div class="s236">
-          <span class="s28">Enclosure (CAD)</span>
-          <span class="s29">Sealed housing with sensor glands and antenna pass-through.</span>
-          <span class="s237">○ Planned</span>
-        </div>
-        <div class="s238">
-          <span class="s28">Documentation</span>
-          <span class="s29">Bring-up plan, board-design notes and this page published; grows with each stage.</span>
-          <span class="s31">✓ Ongoing</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OVERVIEW · system-level schemes -->
-  <section class="s9">
-    <div class="s22">
-      <div class="s23">Overview</div>
-      <h2 class="s24">The bouy in a wider system</h2>
-      <p class="s239">Where the node sits and how the pieces connect. The runtime, firmware and dashboard views appear with their own sections below.</p>
-
+      <div class="s23">01 · Overview</div>
+      <h2 class="s24">What it is</h2>
+      <p class="s25">WellBouy is the <strong class="s218">V3</strong> GROUU node for water — a deployed, battery-powered LoRaWAN sensor that measures temperature, dissolved solids, turbidity and pH at a source and streams to a live dashboard. Firmware and the data pipeline are complete and running; the dedicated board is fabricated. It is one node in a wider, shared system.</p>
+      <div class="reciperow"><a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3" target="_blank" rel="noopener" class="reciperepo">⟶ GROUU_V3 — firmware, hardware, server, webapp</a></div>
       <div class="schsec">
-        <div class="schtag">2a · Ecosystem</div>
-        <div class="schtitle">Block diagram — one node among many</div>
+        <div class="schtag">Ecosystem</div>
+        <div class="schtitle">One node among many</div>
         <p class="schcap">WellBouy feeds the shared GROUU server stack; the same infrastructure serves gardens, greenhouses and wells.</p>
         <div class="schcanvaswrap">
           <div class="schflow schmid">
             <div class="schbox"><div class="schk">Node · at the well</div><div class="schn">WellBouy</div><div class="schs">temp · TDS · turbidity · pH · XIAO ESP32-S3 + Wio-SX1262 · ADS1115 · switched 5 V · deep sleep 30 min</div></div>
             <div class="schlab"><span>LoRaWAN</span><span>→</span><span>EU868</span></div>
-            <div class="schbox"><div class="schk">Network</div><div class="schn">The Things Network</div><div class="schs">OTAA · CayenneLPP → semantic fields (uplink formatter)</div></div>
+            <div class="schbox"><div class="schk">Network</div><div class="schn">The Things Network</div><div class="schs">OTAA · CayenneLPP → semantic fields</div></div>
             <div class="schlab"><span>MQTT</span><span>→</span><span>TLS 8883</span></div>
-            <div class="schbox dark"><div class="schk">GROUU server · V2 stack</div><div class="schn">Node-RED → InfluxDB</div><div class="schs">parse → bucket "wellbouy" · self-hosted Raspberry Pi</div></div>
+            <div class="schbox dark"><div class="schk">GROUU server · V2 stack</div><div class="schn">Node-RED → InfluxDB</div><div class="schs">parse → bucket "wellbouy" · Raspberry Pi</div></div>
           </div>
         </div>
         <div class="schflow"><div class="schbox dash"><div class="schs">+ garden nodes · greenhouse nodes · other wells — same uplink, same stack</div></div></div>
@@ -113,15 +72,25 @@
           <div class="schbox lite"><div class="schn">Public dashboard</div><div class="schs">grouuwell01.hacktoimprove.com</div></div>
           <div class="schbox dash"><div class="schn">Open data</div><div class="schs">other researchers · municipalities</div></div>
         </div>
-        <p class="schcap">← downlink: Node-RED → TTN queue → node RX window · 0x01 set interval (min) · 0x02 reboot — applied next wake (Class A).</p>
+        <p class="schcap">← downlink: Node-RED → TTN queue → node RX window · 0x01 set interval · 0x02 reboot — applied next wake (Class A).</p>
       </div>
+    </div>
+  </section>
+
+  <!-- 02 · DESIGN -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">02 · Design</div>
+      <h2 class="s24">Architecture &amp; enclosure</h2>
+      <p class="s239">How the system is shaped: the radio-per-context architecture it belongs to, and the board + enclosure modelled in Fusion.</p>
+      <div class="reciperow"><a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3/hardware/well-bouy01" target="_blank" rel="noopener" class="reciperepo">⟶ well-bouy01 — atopile · KiCad · 3D</a></div>
 
       <div class="schsec">
-        <div class="schtag">2b · Architecture · V2 + V3</div>
+        <div class="schtag">Architecture · V2 + V3</div>
         <div class="schtitle">Radio per context</div>
         <p class="schcap">Modular nodes choose their radio by context: Wi-Fi where a network exists, LoRaWAN where it doesn't. Both land in the same server stack — the 2014 vision (V0), finally modular.</p>
         <div class="schg2">
-          <div class="schbox"><div class="schk">Context A · network available</div><div class="schn">Wi-Fi module</div><div class="schs">garden · greenhouse · home · mains or solar · MQTT direct to broker · high rate, rich payloads</div></div>
+          <div class="schbox"><div class="schk">Context A · network available</div><div class="schn">Wi-Fi module</div><div class="schs">garden · greenhouse · home · mains or solar · MQTT direct · rich payloads</div></div>
           <div class="schbox"><div class="schk">Context B · off-grid</div><div class="schn">LoRaWAN module</div><div class="schs">well · field · remote · battery + deep sleep · TTN uplink · few bytes, km range — WellBouy's case</div></div>
         </div>
         <div class="schg2">
@@ -130,15 +99,24 @@
         </div>
         <div class="schbox dark tc"><div class="schk">Shared · unchanged since V2</div><div class="schn">One server stack</div><div class="schs">MQTT broker · Node-RED · InfluxDB · Grafana · public web — Raspberry Pi edge, or any host</div></div>
       </div>
+
+      <div class="schsec">
+        <div class="schtag">Industrial design</div>
+        <div class="schtitle">Enclosure &amp; live 3D model</div>
+        <p class="schcap">The board and enclosure are modelled in Autodesk Fusion; the viewer always shows the latest version. Component layout and sketching studies are in the gallery below.</p>
+        <div class="embed3d"><iframe src="https://a360.co/4wkWMu1" title="WellBouy — Fusion 360 model" allowfullscreen loading="lazy"></iframe></div>
+      </div>
     </div>
   </section>
 
-  <!-- SENSING -->
+  <!-- 03 · HARDWARE -->
   <section class="s21">
     <div class="s22">
-      <div class="s23">Hardware · sensing</div>
-      <h2 class="s24">Four probes, one shared front-end</h2>
+      <div class="s23">03 · Hardware</div>
+      <h2 class="s24">Sensors, front-end, power</h2>
       <p class="s70">All modules are off-the-shelf, so the design is reproducible without custom silicon. Every driver is written and calibrated.</p>
+      <div class="reciperow"><a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3/hardware/well-bouy01" target="_blank" rel="noopener" class="reciperepo">⟶ board + BOM (well-bouy01)</a></div>
+
       <div class="s211">
         <div class="s252">
           <div class="s253"><span class="s254">01 · Temperature</span><span class="s255">✓ calibrated</span></div>
@@ -165,41 +143,48 @@
         <span class="s216">Shared ADC</span>
         <span class="s217"><strong class="s218">ADS1115</strong> 16-bit I²C, addr 0x48, at 3.3 V — analog sensors on A0–A2, DS18B20 stays digital.</span>
       </div>
-    </div>
-  </section>
 
-  <!-- POWER -->
-  <section class="s9">
-    <div class="s44">
-      <figure class="pfig">
-        <img src="site/img/wellbouy/boards-fabricated.jpg" alt="Fabricated well-bouy01 boards, fresh from JLCPCB" loading="lazy">
-        <figcaption>The fabricated well-bouy01 boards.</figcaption>
-      </figure>
-      <div>
-        <div class="s23">Hardware · power</div>
-        <h2 class="s257">Two rails, battery-powered</h2>
-        <div class="s258">
-          <div class="s259"><span class="s260">3.3 V</span><p class="s261"><strong class="s218">Always-on</strong> — MCU, radio, ADS1115 and the DS18B20.</p></div>
-          <div class="s259"><span class="s260">5 V</span><p class="s261"><strong class="s218">Switched</strong> — analog conditioners powered ~1 s per cycle through a high-side load switch (GPIO1 / D0).</p></div>
-          <div class="s259"><span class="s260">Bat</span><p class="s261">1S LiPo (4500 mAh), mains-rechargeable — a fixed well site needs no panel. The board still exposes battery + solar inputs, so the same design runs off-grid elsewhere.</p></div>
-        </div>
+      <div class="s258 mt24">
+        <div class="s259"><span class="s260">3.3 V</span><p class="s261"><strong class="s218">Always-on</strong> — MCU, radio, ADS1115 and the DS18B20.</p></div>
+        <div class="s259"><span class="s260">5 V</span><p class="s261"><strong class="s218">Switched</strong> — analog conditioners powered ~1 s per cycle through a high-side load switch (GPIO1 / D0).</p></div>
+        <div class="s259"><span class="s260">Bat</span><p class="s261">1S LiPo (4500 mAh), mains-rechargeable — a fixed well site needs no panel. The board still exposes battery + solar inputs, so the same design runs off-grid elsewhere.</p></div>
+      </div>
+
+      <div class="bomwrap mt24">
+        <table class="bomtable">
+          <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td class="part">Seeed XIAO ESP32-S3 + Wio-SX1262</td><td>MCU + LoRa radio (SX1262 via RadioLib)</td><td><a href="https://www.seeedstudio.com/Wio-SX1262-with-XIAO-ESP32S3-p-5982.html" target="_blank" rel="noopener">Seeed ↗</a></td></tr>
+            <tr><td class="part">ADS1115</td><td>Shared 16-bit I²C ADC @ 0x48 — analog sensors on A0–A2</td><td>—</td></tr>
+            <tr><td class="part">DS18B20 (waterproof)</td><td>Water temperature — 1-Wire (GPIO4) + 4.7k pull-up</td><td><a href="https://www.adafruit.com/product/381" target="_blank" rel="noopener">Adafruit ↗</a><span class="tag-have">in stock</span></td></tr>
+            <tr><td class="part">Seeed Grove TDS</td><td>Dissolved solids (A0) — DFRobot Gravity algorithm, temp-compensated</td><td><a href="https://www.seeedstudio.com/Grove-TDS-Sensor-p-4400.html" target="_blank" rel="noopener">Seeed ↗</a><span class="tag-have">in stock</span></td></tr>
+            <tr><td class="part">DFRobot SEN0189</td><td>Turbidity (A1) via 10k/6.8k divider, 5 V</td><td><a href="https://wiki.dfrobot.com/Turbidity_sensor_SKU__SEN0189" target="_blank" rel="noopener">DFRobot ↗</a><span class="tag-have">in stock</span></td></tr>
+            <tr><td class="part">Phidgets ASP200 pH probe</td><td>pH 0–14, gel-filled BNC probe</td><td><a href="https://www.phidgets.com/?prodid=412" target="_blank" rel="noopener">Phidgets ↗</a><span class="tag-have">in stock</span></td></tr>
+            <tr><td class="part">Phidgets 1130 pH/ORP adapter</td><td>BNC → analog (A2) via 10k/18k divider, 5 V</td><td><a href="https://www.phidgets.com/?prodid=103" target="_blank" rel="noopener">Phidgets ↗</a><span class="tag-have">in stock</span></td></tr>
+            <tr><td class="part">Grove Shield for XIAO</td><td>Bring-up carrier; final build uses the fabricated well-bouy01 board</td><td><a href="https://www.seeedstudio.com/Grove-Shield-for-Seeeduino-XIAO-p-4621.html" target="_blank" rel="noopener">Seeed ↗</a><span class="tag-order">to order</span></td></tr>
+            <tr><td class="part">LiPo 1S 4500 mAh</td><td>Battery — mains-rechargeable, no solar (B1)</td><td><a href="https://mauser.pt/035-5302/bateria-3-7v-4500mah-li-po-34x97x12mm" target="_blank" rel="noopener">Mauser ↗</a><span class="tag-order">to order</span></td></tr>
+            <tr><td class="part">Dividers 10k/6.8k · 10k/18k</td><td>Level-shift turbidity &amp; pH into ADC range</td><td>—</td></tr>
+            <tr><td class="part">M12 glands · BNC bulkhead · O-rings</td><td>Hull pass-throughs &amp; seal</td><td><span class="tag-order">to order</span></td></tr>
+            <tr><td class="part">pH buffers 4 / 7 / 10 · TDS KCl 84 / 1413 µS/cm</td><td>pH three-point + TDS two-point calibration standards</td><td><span class="tag-order">to order</span></td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- FIRMWARE · SOFTWARE DESIGN -->
-  <section class="s21">
+  <!-- 04 · SOFTWARE -->
+  <section class="s9">
     <div class="s22">
-      <div class="s23">Firmware · software design</div>
-      <h2 class="s24">One cycle per wake</h2>
-      <p class="s70">The whole node is one PlatformIO project — staged bring-up sketches plus the integrated production firmware. Its runtime lifecycle and module structure, then the heart of the encode/uplink.</p>
+      <div class="s23">04 · Software</div>
+      <h2 class="s24">Firmware &amp; interface</h2>
+      <p class="s239">One PlatformIO project — staged bring-up sketches plus the integrated production firmware — and the dashboard that renders it.</p>
       <div class="reciperow">
-        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3" target="_blank" rel="noopener" class="reciperepo">⟶ GROUU_V3 firmware (RadioLib · CayenneLPP)</a>
-        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3/hardware/well-bouy01" target="_blank" rel="noopener" class="reciperepo">⟶ well-bouy01 board (atopile / KiCad)</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3/src" target="_blank" rel="noopener" class="reciperepo">⟶ src/ — firmware (RadioLib · CayenneLPP)</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3/server" target="_blank" rel="noopener" class="reciperepo">⟶ server/ + webapp/ — pipeline &amp; dashboard</a>
       </div>
 
       <div class="schsec">
-        <div class="schtag">2c · Lifecycle</div>
+        <div class="schtag">Lifecycle</div>
         <div class="schtitle">Node lifecycle — state machine</div>
         <p class="schcap">Wake, measure, transmit, sleep — as implemented in <span class="mono">src/main.cpp</span>: sensors are read and powered down before the radio wakes.</p>
         <div class="schpath">
@@ -233,8 +218,8 @@
       </div>
 
       <div class="schsec">
-        <div class="schtag">2e · Firmware</div>
-        <div class="schtitle">Module map</div>
+        <div class="schtag">Module map</div>
+        <div class="schtitle">Firmware UML</div>
         <p class="schcap">Procedural C++ (PlatformIO), one cycle per wake: <span class="mono">main.cpp</span> orchestrates the duty cycle, each sensor is a small two-function module, every field-tunable constant lives in <span class="mono">config.h</span>.</p>
         <div class="schcanvaswrap">
           <div class="schg3">
@@ -258,7 +243,6 @@
             </div>
           </div>
         </div>
-        <p class="schcap">setup() → readAllSensors() → sensors/* → CayenneLPP → loraConnect() → sendReceive() → handleDownlink() → goToSleep() · loop() never runs — deep sleep restarts setup().</p>
       </div>
 
       <p class="codecap">src/main.cpp — CayenneLPP encode + uplink (TDS &amp; turbidity ride the Luminosity type, 0–65535, because Analog Input overflows above 327.67)</p>
@@ -275,17 +259,9 @@ if (bootCount == 1 || (bootCount % 24) == 0)
 int16_t state = node.sendReceive(lpp.getBuffer(), lpp.getSize(),
                                  LPP_FPORT, dnData, &amp;dnLen, /*confirmed=*/false);</pre>
       </div>
-    </div>
-  </section>
 
-  <!-- DATA & DASHBOARD -->
-  <section class="s9">
-    <div class="s22">
-      <div class="s23">Data · dashboard</div>
-      <h2 class="s24">From uplink to public page</h2>
-      <p class="s239">How the numbers reach the live dashboard — implemented and running.</p>
       <div class="schsec">
-        <div class="schtag">2d · Dashboard</div>
+        <div class="schtag">Interface</div>
         <div class="schtitle">Online dashboard — implementation</div>
         <p class="schcap">InfluxDB feeds both the internal Grafana boards and the public page.</p>
         <div class="schbox"><div class="schn">InfluxDB</div><div class="schs">2.x · bucket "wellbouy" · fields named by the TTN formatter</div></div>
@@ -305,58 +281,11 @@ int16_t state = node.sendReceive(lpp.getBuffer(), lpp.getSize(),
     </div>
   </section>
 
-  <!-- BILL OF MATERIALS -->
-  <section class="s21">
-    <div class="s22">
-      <div class="s23">Bill of materials</div>
-      <h2 class="s24">Parts &amp; where to get them</h2>
-      <p class="s70">Off-the-shelf modules plus the fabricated carrier board — reproducible without custom silicon.</p>
-      <div class="bomwrap">
-        <table class="bomtable">
-          <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
-          <tbody>
-            <tr><td class="part">Seeed XIAO ESP32-S3 + Wio-SX1262</td><td>MCU + LoRa radio (SX1262 via RadioLib)</td><td><a href="https://www.seeedstudio.com/Wio-SX1262-with-XIAO-ESP32S3-p-5982.html" target="_blank" rel="noopener">Seeed ↗</a></td></tr>
-            <tr><td class="part">ADS1115</td><td>Shared 16-bit I²C ADC @ 0x48 — analog sensors on A0–A2</td><td>—</td></tr>
-            <tr><td class="part">DS18B20 (waterproof)</td><td>Water temperature — 1-Wire (GPIO4) + 4.7k pull-up</td><td><a href="https://www.adafruit.com/product/381" target="_blank" rel="noopener">Adafruit ↗</a><span class="tag-have">in stock</span></td></tr>
-            <tr><td class="part">Seeed Grove TDS</td><td>Dissolved solids (A0) — DFRobot Gravity algorithm, temp-compensated</td><td><a href="https://www.seeedstudio.com/Grove-TDS-Sensor-p-4400.html" target="_blank" rel="noopener">Seeed ↗</a><span class="tag-have">in stock</span></td></tr>
-            <tr><td class="part">DFRobot SEN0189</td><td>Turbidity (A1) via 10k/6.8k divider, 5 V</td><td><a href="https://wiki.dfrobot.com/Turbidity_sensor_SKU__SEN0189" target="_blank" rel="noopener">DFRobot ↗</a><span class="tag-have">in stock</span></td></tr>
-            <tr><td class="part">Phidgets ASP200 pH probe</td><td>pH 0–14, gel-filled BNC probe</td><td><a href="https://www.phidgets.com/?prodid=412" target="_blank" rel="noopener">Phidgets ↗</a><span class="tag-have">in stock</span></td></tr>
-            <tr><td class="part">Phidgets 1130 pH/ORP adapter</td><td>BNC → analog (A2) via 10k/18k divider, 5 V</td><td><a href="https://www.phidgets.com/?prodid=103" target="_blank" rel="noopener">Phidgets ↗</a><span class="tag-have">in stock</span></td></tr>
-            <tr><td class="part">Grove Shield for XIAO</td><td>Bring-up carrier; final build uses the fabricated well-bouy01 board</td><td><a href="https://www.seeedstudio.com/Grove-Shield-for-Seeeduino-XIAO-p-4621.html" target="_blank" rel="noopener">Seeed ↗</a><span class="tag-order">to order</span></td></tr>
-            <tr><td class="part">LiPo 1S 4500 mAh</td><td>Battery — mains-rechargeable, no solar (B1)</td><td><a href="https://mauser.pt/035-5302/bateria-3-7v-4500mah-li-po-34x97x12mm" target="_blank" rel="noopener">Mauser ↗</a><span class="tag-order">to order</span></td></tr>
-            <tr><td class="part">Dividers 10k/6.8k · 10k/18k</td><td>Level-shift turbidity &amp; pH into ADC range</td><td>—</td></tr>
-            <tr><td class="part">M12 glands · BNC bulkhead · O-rings</td><td>Hull pass-throughs &amp; seal</td><td><span class="tag-order">to order</span></td></tr>
-            <tr><td class="part">pH buffers 4 / 7 / 10 · TDS KCl 84 / 1413 µS/cm</td><td>pH three-point + TDS two-point calibration standards</td><td><span class="tag-order">to order</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3D MODEL & ENCLOSURE -->
-  <section class="s9">
-    <div class="s22">
-      <div class="s23">Industrial design · 3D</div>
-      <h2 class="s24">Enclosure &amp; live 3D model</h2>
-      <p class="s70">The board and enclosure are modelled in Autodesk Fusion; the viewer below always shows the latest version. Under it: the component layout the hull has to wrap, and a timelapse sketching shapes over that arrangement.</p>
-      <div class="embed3d"><iframe src="https://a360.co/4wkWMu1" title="WellBouy — Fusion 360 model" allowfullscreen loading="lazy"></iframe></div>
-      <div class="photogrid mt24">
-        <figure class="pfig"><img src="site/img/wellbouy/components-01.jpg" alt="WellBouy components laid out in the Fusion model" loading="lazy"><figcaption>Component layout</figcaption></figure>
-        <figure class="pfig"><img src="site/img/wellbouy/components-02.jpg" alt="WellBouy component arrangement, alternate view" loading="lazy"><figcaption>Arrangement</figcaption></figure>
-        <figure class="pfig"><img src="site/img/wellbouy/components-03.jpg" alt="WellBouy component arrangement, packed for the hull" loading="lazy"><figcaption>Packing study</figcaption></figure>
-      </div>
-      <figure class="pfig mt24">
-        <video autoplay muted loop playsinline preload="metadata"><source src="site/img/wellbouy/enclosure-sketch.mp4" type="video/mp4"></video>
-        <figcaption>Timelapse — sketching enclosure shapes over the component layout (iPad).</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- HOW TO REPRODUCE -->
+  <!-- 05 · PROCESS -->
   <section class="s58">
     <div class="s22">
-      <div class="s59">How to reproduce</div>
-      <h2 class="s262">Prove the radio, then each sensor</h2>
+      <div class="s59">05 · Process</div>
+      <h2 class="s262">Done, how, and what's left</h2>
       <p class="s263">The firmware is organised so anyone can rebuild it incrementally — flash one stage, confirm it on serial and TTN, move on. Register your own device on TTN (EU868, LoRaWAN 1.0.x, OTAA), set the payload formatter to CayenneLPP, and keep your keys in an untracked <span class="s264">secrets.h</span>.</p>
       <div class="s46">
         <div class="s265">
@@ -385,18 +314,39 @@ int16_t state = node.sendReceive(lpp.getBuffer(), lpp.getSize(),
           <span class="s272">○ planned</span>
         </div>
       </div>
+      <div class="reciperow"><a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3/src/bringup" target="_blank" rel="noopener" class="reciperepo">⟶ src/bringup — the staged ladder</a></div>
     </div>
   </section>
 
-  <!-- RELATED -->
+  <!-- GALLERY -->
   <section class="s21">
-    <div class="s76">
-      <div class="s77">Related</div>
+    <div class="s22">
+      <div class="s23">Gallery</div>
+      <h2 class="s24">Boards, renders, sketching</h2>
+      <div class="photogrid">
+        <figure class="pfig"><img src="site/img/wellbouy/boards-fabricated.jpg" alt="Fabricated well-bouy01 boards from JLCPCB" loading="lazy"><figcaption>Fabricated well-bouy01 boards</figcaption></figure>
+        <figure class="pfig"><img src="site/img/wellbouy/components-01.jpg" alt="WellBouy components laid out in the Fusion model" loading="lazy"><figcaption>Component layout</figcaption></figure>
+        <figure class="pfig"><img src="site/img/wellbouy/components-02.jpg" alt="WellBouy component arrangement, alternate view" loading="lazy"><figcaption>Arrangement</figcaption></figure>
+        <figure class="pfig"><img src="site/img/wellbouy/components-03.jpg" alt="WellBouy component arrangement packed for the hull" loading="lazy"><figcaption>Packing study</figcaption></figure>
+      </div>
+      <figure class="pfig mt24">
+        <video autoplay muted loop playsinline preload="metadata"><source src="site/img/wellbouy/enclosure-sketch.mp4" type="video/mp4"></video>
+        <figcaption>Timelapse — sketching enclosure shapes over the component layout (iPad).</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">References</div>
+      <h2 class="s24">Source &amp; related</h2>
       <div class="s78">
-        <a href="grouuwan.html" class="relcard s274"><div class="s80">GROUUWAN →</div><p class="s81">The LoRaWAN track this node builds on.</p></a>
+        <a href="grouuwan.html" class="relcard s274"><div class="s80">LoRaWAN Basic Node →</div><p class="s81">The track this node builds on.</p></a>
         <a href="server-stack.html" class="relcard s274"><div class="s80">Server Stack →</div><p class="s81">The open backend that stores &amp; shows uplinks.</p></a>
         <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" class="relcard s274"><div class="s80">Live dashboard ↗</div><p class="s81">The node's water-quality data, live.</p></a>
       </div>
+      <p class="s293">External: <a href="https://wiki.dfrobot.com/Turbidity_sensor_SKU__SEN0189" target="_blank" rel="noopener">DFRobot SEN0189</a> · <a href="https://www.phidgets.com/?prodid=103" target="_blank" rel="noopener">Phidgets 1130</a> · <a href="https://github.com/jgromes/RadioLib" target="_blank" rel="noopener">RadioLib</a> · <a href="https://www.thethingsnetwork.org/" target="_blank" rel="noopener">The Things Network</a> · <a href="https://atopile.io/" target="_blank" rel="noopener">atopile</a>.</p>
     </div>
   </section>
 
