@@ -46,7 +46,22 @@
     <div class="s22">
       <div class="s23">How it works</div>
       <h2 class="s24">One loop, sensed and served</h2>
-      <p class="s25">Aquaponics couples a fish tank to a grow bed: fish waste feeds the plants, the plants clean the water. GROUU's role is to watch that loop and, later, to keep it in range — the same pattern as every other node. There is no dedicated firmware in this repo yet; the plan reuses the WiFi node for sensing and the actuator module for pumps and feeders, both publishing over MQTT to the edge server.</p>
+      <p class="s25">Aquaponics couples a fish tank to a grow bed: fish waste feeds the plants, the plants clean the water. GROUU's role is to watch that loop and, later, to keep it in range — the same pattern as every other node. There is no dedicated firmware in this repo yet; the plan reuses the basic sensor node for sensing and the actuator module for pumps and feeders, both publishing over MQTT to the edge server.</p>
+      <p class="schcap mt24">The closed loop, and the reused sensing path into the shared stack.</p>
+      <div class="schflow schmid">
+        <div class="schbox wtank tc"><div class="schn">Fish tank</div><div class="schs">recovered · cork-insulated</div></div>
+        <div class="scharr">→</div>
+        <div class="schbox ftank tc"><div class="schn">Grow bed</div><div class="schs">plants (aromatics) · biofilter</div></div>
+      </div>
+      <p class="schcap">◄ clean water returns — a closed loop.</p>
+      <div class="schdown"><span class="l"></span><span class="t">sensed</span><span class="c">▼</span></div>
+      <div class="schflow">
+        <div class="schbox"><div class="schk">Sensing</div><div class="schn">Water + climate probes</div><div class="schs">greenhouse sensor set</div></div>
+        <div class="schlab"><span>WiFi</span><span>→</span><span>MQTT</span></div>
+        <div class="schbox dark"><div class="schk">Node</div><div class="schn">Basic sensor node</div><div class="schs">reused template</div></div>
+        <div class="scharr">→</div>
+        <div class="schbox dash"><div class="schk">Stack</div><div class="schn">Edge server</div><div class="schs">store + visualise</div></div>
+      </div>
       <div class="reciperow">
         <a href="https://github.com/steam228/fishTank" target="_blank" rel="noopener" class="reciperepo">⟶ fishTank (precursor · auto-feeder + tank IoT)</a>
       </div>
@@ -80,7 +95,7 @@
     <div class="s76">
       <div class="s77">Related</div>
       <div class="s78">
-        <a href="wifi-node.html" class="relcard s79"><div class="s80">WiFi Node →</div><p class="s81">The sensing template this build reuses.</p></a>
+        <a href="wifi-node.html" class="relcard s79"><div class="s80">Basic Sensor Node →</div><p class="s81">The sensing template this build reuses.</p></a>
         <a href="actuator.html" class="relcard s79"><div class="s80">Actuator Module →</div><p class="s81">Pumps and feeders for the loop.</p></a>
         <a href="server-stack.html" class="relcard s79"><div class="s80">Server Stack →</div><p class="s81">Where the readings are stored and shown.</p></a>
       </div>

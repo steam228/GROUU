@@ -145,7 +145,7 @@
         <div class="s252">
           <div class="s253"><span class="s254">04 · pH</span><span class="s255">✓ calibrated</span></div>
           <div class="s256">Phidgets 1130 + BNC probe</div>
-          <p class="s57">GigaΩ analog conditioner (pH 7 ≈ 2.5 V) through a 10k / 18k divider into the ADS (A2); two-point calibration at pH 4 &amp; 7.</p>
+          <p class="s57">GigaΩ analog conditioner (pH 7 ≈ 2.5 V) through a 10k / 18k divider into the ADS (A2); three-point calibration (pH 4 / 7 / 10, segmented at pH 7).</p>
         </div>
       </div>
       <div class="s215">
@@ -213,7 +213,7 @@ int16_t state = node.sendReceive(lpp.getBuffer(), lpp.getSize(),
             <tr><td class="part">LiPo 1S 4500 mAh</td><td>Battery — mains-rechargeable, no solar (B1)</td><td><a href="https://mauser.pt/035-5302/bateria-3-7v-4500mah-li-po-34x97x12mm" target="_blank" rel="noopener">Mauser ↗</a><span class="tag-order">to order</span></td></tr>
             <tr><td class="part">Dividers 10k/6.8k · 10k/18k</td><td>Level-shift turbidity &amp; pH into ADC range</td><td>—</td></tr>
             <tr><td class="part">M12 glands · BNC bulkhead · O-rings</td><td>Hull pass-throughs &amp; seal</td><td><span class="tag-order">to order</span></td></tr>
-            <tr><td class="part">pH buffers 4 / 7 · TDS KCl 84 / 1413 µS/cm</td><td>Two-point calibration standards</td><td><span class="tag-order">to order</span></td></tr>
+            <tr><td class="part">pH buffers 4 / 7 / 10 · TDS KCl 84 / 1413 µS/cm</td><td>pH three-point + TDS two-point calibration standards</td><td><span class="tag-order">to order</span></td></tr>
           </tbody>
         </table>
       </div>
