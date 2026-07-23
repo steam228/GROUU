@@ -424,6 +424,13 @@ a:hover{color:#00734f}
 .schsec .schpath{margin:14px 0;}
 .schsec .schg2{margin:14px 0;}
 .schsec .schgrid4{margin-top:6px;}
+/* envisioned-architecture canvas: self-contained dark panel so it works on any section bg */
+.c1frame{background:#122018;border-radius:14px;padding:28px;display:table;margin:0 auto;}
+/* status cards placed on a dark (s58) Process section: recolor text for contrast */
+.s58 .s26{border-color:#274031;}
+.s58 .s236{border-bottom-color:#274031;}
+.s58 .s28{color:#eaf3ec;}
+.s58 .s29{color:#bcccc0;}
 @media (max-width:760px){.schg2,.schg3{grid-template-columns:1fr!important}}
 .c1canvas{position:relative;width:680px;height:640px;margin:0 auto;}
 .c1canvas>svg{position:absolute;inset:0;width:100%;height:100%;}

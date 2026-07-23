@@ -94,6 +94,7 @@
         <div class="schtitle">One central core, wired probes</div>
         <p class="schcap">A limited set of probes cables into the Yún — the Arduino MCU runs sensing + global actuation (multiplexed I/O); Linux is the server: local edge, or — as deployed — Temboo publishing to a Google Sheet.</p>
         <div class="schcanvaswrap">
+          <div class="c1frame">
           <div class="c1canvas">
             <svg viewBox="0 0 680 640" preserveAspectRatio="none">
               <line x1="67" y1="82" x2="300" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
@@ -122,20 +123,7 @@
             <div class="c1card dash c1pb"><div class="c1ck">PATH B — AS DEPLOYED</div><div class="c1cn">Temboo → Google Sheet</div><div class="c1cs">"GROUU_EXP" · one probe's data</div></div>
             <div class="c1legend"><span class="wire"></span>wired link &nbsp;·&nbsp; today's vision instead → fully modular Wi-Fi / LoRaWAN sensor &amp; actuator nodes + MQTT server stack</div>
           </div>
-        </div>
-      </div>
-      <div class="schsec">
-        <div class="schtag">Envisioned modules</div>
-        <div class="schtitle">App map</div>
-        <p class="schcap">The module flow of the never-built server app, from the <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/GROUU%20OUTLINE%20.pdf" target="_blank" rel="noopener">outline</a>.</p>
-        <div class="schgrid4">
-          <div class="schmod"><div class="schmodn">01</div><div class="schmodt">Login</div><div class="schmodd">Entry point for every unit and user.</div></div>
-          <div class="schmod"><div class="schmodn">02</div><div class="schmodt">Profile</div><div class="schmodd">Admin / user roles.</div></div>
-          <div class="schmod"><div class="schmodn">03</div><div class="schmodt">Environmental definitions</div><div class="schmodd">Temp / humidity / photoperiod limits · µEinsteins.</div></div>
-          <div class="schmod"><div class="schmodn">04</div><div class="schmodt">Tests</div><div class="schmodd">Per-bed: plant, goal (crop / blooming / rooting / fruit-set), data interval, moisture · stress overrides · fertigation scheduling.</div></div>
-          <div class="schmod"><div class="schmodn">05</div><div class="schmodt">Watering solutions</div><div class="schmodd">6-product nutrient mixes: insert → mix → save.</div></div>
-          <div class="schmod"><div class="schmodn">06</div><div class="schmodt">Log &amp; annotation</div><div class="schmodd">Autolog + notes + photos · archive to PDF.</div></div>
-          <div class="schmod dark span2"><div class="schmodn">07</div><div class="schmodt">Dashboard</div><div class="schmodd">Real-time + anomaly alerts · global temp / humidity / photoperiod / luminance · per-test soil-temp, moisture, leaf wetness, hours.</div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -192,6 +180,21 @@
       <h2 class="s24">Yún gateway, Uno probes, Temboo</h2>
       <p class="s239">Three Arduino sketches: the Uno probes read analog + 1-Wire sensors and ship them over I²C (I2C_Anything) to address 42; the Yún gateway collects them, drives the cabinet — servo (pin 9), pumps BPER_1..6, main pump BR_P, valves — through the MOSFET perfboard, and, via the Linux Bridge, hands readings to a Temboo AppendRow choreo that timestamps a row into the "GROUU_EXP" Google Sheet. Local actuation only; no remote control. Committed credentials are redacted.</p>
       <div class="reciperow"><a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0/firmware" target="_blank" rel="noopener" class="reciperepo">⟶ firmware — Yún · probe · Temboo sketches</a></div>
+
+      <div class="schsec">
+        <div class="schtag">Envisioned app · module map</div>
+        <div class="schtitle">App map — the never-built server app</div>
+        <p class="schcap">The module flow of the planned server app, from the <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/GROUU%20OUTLINE%20.pdf" target="_blank" rel="noopener">outline</a>.</p>
+        <div class="schgrid4">
+          <div class="schmod"><div class="schmodn">01</div><div class="schmodt">Login</div><div class="schmodd">Entry point for every unit and user.</div></div>
+          <div class="schmod"><div class="schmodn">02</div><div class="schmodt">Profile</div><div class="schmodd">Admin / user roles.</div></div>
+          <div class="schmod"><div class="schmodn">03</div><div class="schmodt">Environmental definitions</div><div class="schmodd">Temp / humidity / photoperiod limits · µEinsteins.</div></div>
+          <div class="schmod"><div class="schmodn">04</div><div class="schmodt">Tests</div><div class="schmodd">Per-bed: plant, goal (crop / blooming / rooting / fruit-set), data interval, moisture · stress overrides · fertigation scheduling.</div></div>
+          <div class="schmod"><div class="schmodn">05</div><div class="schmodt">Watering solutions</div><div class="schmodd">6-product nutrient mixes: insert → mix → save.</div></div>
+          <div class="schmod"><div class="schmodn">06</div><div class="schmodt">Log &amp; annotation</div><div class="schmodd">Autolog + notes + photos · archive to PDF.</div></div>
+          <div class="schmod dark span2"><div class="schmodn">07</div><div class="schmodt">Dashboard</div><div class="schmodd">Real-time + anomaly alerts · global temp / humidity / photoperiod / luminance · per-test soil-temp, moisture, leaf wetness, hours.</div></div>
+        </div>
+      </div>
     </div>
   </section>
 
