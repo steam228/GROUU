@@ -27,11 +27,11 @@
     <div class="s10">
       <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#projects" class="s12">Projects</a> · <span class="s13">GROUUWAN</span></div>
       <div class="s14">
-        <span class="s15"></span>
-        <span class="s16">Under development · first node (WellBouy) deployed</span>
+        <span class="s209"></span>
+        <span class="s210">Completed · replicable basic node</span>
       </div>
-      <h1 class="s17">GROUUWAN — the LoRaWAN track</h1>
-      <p class="s18">Long-range, low-power sensing over LoRaWAN and The Things Network — the companion to the WiFi nodes, for sites WiFi can't reach. This page documents the architecture, hardware options and the TTN → MQTT bridge so it can be rebuilt on any stack. The first node on this track — <a href="wellbouy.html">WellBouy</a> — is deployed and streaming live.</p>
+      <h1 class="s17">LoRaWAN Basic Node — the GROUUWAN track</h1>
+      <p class="s18">Long-range, low-power sensing over LoRaWAN and The Things Network — the companion to the WiFi track, for sites WiFi can't reach. The basic LoRaWAN node — a XIAO + Wio-E5 publishing SHT4x readings to TTN — is complete and replicable; this page documents it alongside the architecture, hardware options and the TTN → MQTT bridge. The V3 water node, <a href="wellbouy.html">WellBouy</a>, extends the same track.</p>
       <div class="s19">
         <span class="s20">The Things Network</span>
         <span class="s20">EU868 · OTAA</span>
@@ -49,9 +49,9 @@
       <p class="s25">The track is defined, the integration path is documented, and the WellBouy node has validated it end-to-end. Additional node firmware is a working scaffold being filled out per sensor type.</p>
       <div class="s26">
         <div class="s27">
-          <span class="s28">Node firmware</span>
-          <span class="s29">WellBouy (RadioLib / XIAO) fully validated; general farm-sensing scaffold in progress.</span>
-          <span class="s30">◑ In progress</span>
+          <span class="s28">Basic node firmware</span>
+          <span class="s29">XIAO + Wio-E5 + SHT4x — OTAA join, hex uplink to TTN, OLED + downlink control. Complete and forkable.</span>
+          <span class="s31">✓ Complete</span>
         </div>
         <div class="s27">
           <span class="s28">TTN → MQTT bridge</span>
@@ -164,7 +164,7 @@ ret = at_send_check_response("Done", 5000, cmd);</pre>
         <table class="bomtable">
           <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
           <tbody>
-            <tr><td class="part">XIAO ESP32-C3</td><td>MCU driving the radio + sensors</td><td>—</td></tr>
+            <tr><td class="part">Seeeduino XIAO (SAMD21)</td><td>MCU driving the radio + sensors (PlatformIO env <span class="mono">seeed_xiao</span>)</td><td>—</td></tr>
             <tr><td class="part">Grove Wio-E5 (LoRa-E5)</td><td>LoRa radio — UART AT, OTAA, EU868</td><td>—</td></tr>
             <tr><td class="part">Sensirion SHT4x</td><td>Temperature + humidity (I²C)</td><td>—</td></tr>
             <tr><td class="part">SSD1306 OLED 128×64</td><td>Local status display (I²C)</td><td>—</td></tr>
@@ -217,7 +217,7 @@ ret = at_send_check_response("Done", 5000, cmd);</pre>
       <div class="s77">Related</div>
       <div class="s78">
         <a href="wellbouy.html" class="relcard s79"><div class="s80">WellBouy →</div><p class="s81">The first deployed node on this track.</p></a>
-        <a href="wifi-node.html" class="relcard s79"><div class="s80">WiFi Node →</div><p class="s81">The parallel local-sensing track.</p></a>
+        <a href="wifi-node.html" class="relcard s79"><div class="s80">Basic Sensor Node →</div><p class="s81">The parallel local-sensing module (WiFi).</p></a>
         <a href="server-stack.html" class="relcard s79"><div class="s80">Server Stack →</div><p class="s81">The backend the bridge feeds.</p></a>
       </div>
     </div>
