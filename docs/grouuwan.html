@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GROUUWAN — the LoRaWAN track · GROUU</title>
+  <title>LoRaWAN Basic Node — GROUUWAN track · GROUU</title>
   <link rel="icon" href="site/assets/emblem-green.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,141 +25,75 @@
 
   <header class="s9">
     <div class="s10">
-      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#projects" class="s12">Projects</a> · <span class="s13">GROUUWAN</span></div>
+      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#projects" class="s12">Projects</a> · <span class="s13">LoRaWAN Node</span></div>
       <div class="s14">
         <span class="s209"></span>
         <span class="s210">Completed · replicable basic node</span>
       </div>
       <h1 class="s17">LoRaWAN Basic Node — the GROUUWAN track</h1>
-      <p class="s18">Long-range, low-power sensing over LoRaWAN and The Things Network — the companion to the WiFi track, for sites WiFi can't reach. The basic LoRaWAN node — a XIAO + Wio-E5 publishing SHT4x readings to TTN — is complete and replicable; this page documents it alongside the architecture, hardware options and the TTN → MQTT bridge. The V3 water node, <a href="wellbouy.html">WellBouy</a>, extends the same track.</p>
+      <p class="s233">Long-range, low-power sensing over LoRaWAN and The Things Network — the companion to the WiFi track, for sites WiFi can't reach. The basic LoRaWAN node — a XIAO + Wio-E5 publishing SHT4x readings to TTN — is complete and replicable; this page documents it alongside the architecture, hardware options and the TTN → MQTT bridge. The V3 water node, <a href="wellbouy.html">WellBouy</a>, extends the same track.</p>
       <div class="s19">
         <span class="s20">The Things Network</span>
         <span class="s20">EU868 · OTAA</span>
+        <span class="s20">Wio-E5</span>
         <span class="s20">2–15 km range</span>
-        <span class="s20">Years on battery</span>
       </div>
     </div>
   </header>
 
-  <!-- LEVEL OF DEVELOPMENT -->
+  <!-- 01 · OVERVIEW -->
   <section class="s21">
     <div class="s22">
-      <div class="s23">Level of development</div>
-      <h2 class="s24">What's published so far</h2>
-      <p class="s25">The track is defined, the integration path is documented, and the WellBouy node has validated it end-to-end. Additional node firmware is a working scaffold being filled out per sensor type.</p>
-      <div class="s26">
-        <div class="s27">
-          <span class="s28">Basic node firmware</span>
-          <span class="s29">XIAO + Wio-E5 + SHT4x — OTAA join, hex uplink to TTN, OLED + downlink control. Complete and forkable.</span>
-          <span class="s31">✓ Complete</span>
-        </div>
-        <div class="s27">
-          <span class="s28">TTN → MQTT bridge</span>
-          <span class="s29">Two integration recipes documented (Node-RED and Mosquitto bridge).</span>
-          <span class="s31">✓ Documented</span>
-        </div>
-        <div class="s27">
-          <span class="s28">Hardware options</span>
-          <span class="s29">Candidate radios researched and compared (below).</span>
-          <span class="s31">✓ Documented</span>
-        </div>
-        <div class="s32">
-          <span class="s28">Naming &amp; topics</span>
-          <span class="s29">Convention shared with the WiFi track.</span>
-          <span class="s31">✓ Defined</span>
+      <div class="s23">01 · Overview</div>
+      <h2 class="s24">What it is</h2>
+      <p class="s25">A <strong class="s218">completed, replicable</strong> long-range node and the track around it: a XIAO + Wio-E5 (LoRa-E5) that joins The Things Network over EU868 and uplinks SHT4x temperature/humidity, with an OLED and downlink control. It reaches the same server stack as the WiFi nodes, for wells, fields and remote sites beyond a network.</p>
+      <div class="reciperow"><a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V2/GROUUV2-SensorNodeLoRAWAN" target="_blank" rel="noopener" class="reciperepo">⟶ GROUUV2-SensorNodeLoRAWAN (PlatformIO)</a></div>
+      <div class="schsec">
+        <div class="schtag">Overview</div>
+        <div class="schtitle">Node → gateway → TTN → backend</div>
+        <p class="schcap">The uplink path off-site, into the shared stack.</p>
+        <div class="schcanvaswrap">
+          <div class="schflow schmid">
+            <div class="schbox"><div class="schk">Node</div><div class="schn">XIAO + Wio-E5</div><div class="schs">SHT4x · OLED · OTAA-joined</div></div>
+            <div class="schlab"><span>LoRa</span><span>→</span><span>EU868</span></div>
+            <div class="schbox"><div class="schk">Gateway</div><div class="schn">Any TTN gateway</div><div class="schs">EU868</div></div>
+            <div class="scharr">→</div>
+            <div class="schbox"><div class="schk">Network</div><div class="schn">The Things Network</div><div class="schs">v3 · MQTT integration</div></div>
+            <div class="schlab"><span>MQTT</span><span>→</span></div>
+            <div class="schbox dark"><div class="schk">Backend</div><div class="schn">GROUU stack</div><div class="schs">Node-RED → InfluxDB → Grafana</div></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY LORAWAN -->
+  <!-- 02 · DESIGN -->
   <section class="s9">
     <div class="s22">
-      <div class="s23">Why LoRaWAN</div>
-      <h2 class="s24">A companion to WiFi, not a replacement</h2>
-      <p class="s25">WiFi is fine where a router reaches. LoRaWAN covers everything beyond it, on power budgets WiFi can't touch.</p>
+      <div class="s23">02 · Design</div>
+      <h2 class="s24">Why LoRaWAN, and which radio</h2>
+      <p class="s239">WiFi is fine where a router reaches; LoRaWAN covers everything beyond it, on power budgets WiFi can't touch. The radio is chosen per node.</p>
       <div class="s33">
-        <div class="s34">
-          <div class="s35">Need</div><div class="s35">WiFi</div><div class="s36">LoRaWAN</div>
-        </div>
+        <div class="s34"><div class="s35">Need</div><div class="s35">WiFi</div><div class="s36">LoRaWAN</div></div>
         <div class="s37"><div class="s38">Long range (orchards, fields)</div><div class="s39">No</div><div class="s40">2–15 km</div></div>
         <div class="s37"><div class="s38">Battery / solar powered</div><div class="s39">Power hungry</div><div class="s40">Years</div></div>
         <div class="s37"><div class="s38">Internet backbone</div><div class="s41">Local only</div><div class="s40">Global (TTN)</div></div>
         <div class="s42"><div class="s38">New hardware needed</div><div class="s41">Existing router</div><div class="s43">LoRa gateway</div></div>
       </div>
-    </div>
-  </section>
-
-  <!-- ARCHITECTURE + IMAGE -->
-  <section class="s21">
-    <div class="s44">
-      <div>
-        <div class="s23">How it works</div>
-        <h2 class="s45">Node → gateway → TTN → backend</h2>
-        <div class="s46">
-          <div class="s47"><span class="s48">Node</span><p class="s49">ESP32 / Arduino + LoRa radio, OTAA-joined.</p></div>
-          <div class="s50"></div>
-          <div class="s47"><span class="s48">Gateway</span><p class="s49">Any TTN-registered LoRa gateway, EU868.</p></div>
-          <div class="s50"></div>
-          <div class="s47"><span class="s48">TTN</span><p class="s49">The Things Network v3 → MQTT bridge.</p></div>
-          <div class="s50"></div>
-          <div class="s47"><span class="s48">Backend</span><p class="s49">Mosquitto → Node-RED → InfluxDB → Grafana.</p></div>
-        </div>
-      </div>
-      <div class="imgslot s51">
-        <span class="ico">🗺️📷</span>
-        <span class="cap">Diagram: end-to-end topology — node → gateway → TTN → backend</span>
+      <div class="s53 mt24">
+        <div class="s54"><div class="s55">DIY · lowest cost</div><div class="s56">Arduino Pro Mini + RFM95</div><p class="s57">Discrete build, OTAA. Most control, most wiring.</p></div>
+        <div class="s54"><div class="s55">Committed · this node</div><div class="s56">XIAO + Wio-E5 (LoRa-E5)</div><p class="s57">AT-command module over UART. The reference build on this page.</p></div>
+        <div class="s54"><div class="s55">V3 · WellBouy</div><div class="s56">XIAO ESP32-S3 + Wio-SX1262</div><p class="s57">RadioLib, deep-sleep friendly. The water node's stack.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- NODE HARDWARE OPTIONS -->
-  <section class="s9">
-    <div class="s22">
-      <div class="s23">Hardware options</div>
-      <h2 class="s52">Pick a radio for the node</h2>
-      <div class="s53">
-        <div class="s54">
-          <div class="s55">DIY · lowest cost</div>
-          <div class="s56">Arduino Pro Mini + RFM95</div>
-          <p class="s57">Discrete build, OTAA. Most control, most wiring.</p>
-        </div>
-        <div class="s54">
-          <div class="s55">XIAO · used in WellBouy</div>
-          <div class="s56">XIAO ESP32-S3 + Wio-SX1262</div>
-          <p class="s57">Compact, deep-sleep friendly, RadioLib. The stack the WellBouy node runs.</p>
-        </div>
-        <div class="s54">
-          <div class="s55">Dev board</div>
-          <div class="s56">Arduino MKR WAN 1300</div>
-          <p class="s57">Built-in LoRa module, official toolchain.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REFERENCE FIRMWARE & BOM -->
+  <!-- 03 · HARDWARE -->
   <section class="s21">
     <div class="s22">
-      <div class="s23">Reference firmware &amp; parts</div>
-      <h2 class="s24">The committed V2 node</h2>
-      <p class="s25">The firmware in the repo drives a Grove <strong class="s218">Wio-E5</strong> (LoRa-E5) module over UART with AT commands — an OTAA join then a hex uplink. It is distinct from the <a href="wellbouy.html">WellBouy</a> V3 path, which talks to a Wio-SX1262 directly through RadioLib; both reach the same TTN application.</p>
-      <div class="reciperow">
-        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V2/GROUUV2-SensorNodeLoRAWAN" target="_blank" rel="noopener" class="reciperepo">⟶ GROUUV2-SensorNodeLoRAWAN (PlatformIO)</a>
-      </div>
-      <p class="codecap">src/main.cpp — OTAA join + hex uplink over the Wio-E5 AT interface</p>
-      <div class="codewrap">
-<pre class="code">// OTAA join
-at_send_check_response("+MODE: LWOTAA", 1000, "AT+MODE=LWOTAA\r\n");
-at_send_check_response("+DR: EU868",    1000, "AT+DR=EU868\r\n");
-at_send_check_response("+CH: NUM",      1000, "AT+CH=NUM,0-2\r\n");
-at_send_check_response("+CLASS: A",     1000, "AT+CLASS=A\r\n");
-
-// pack temp + humidity, send as a hex uplink
-char cmd[128];
-sprintf(cmd, "AT+CMSGHEX=\"%04X%04X\"\r\n", (int)temp, (int)humi);
-ret = at_send_check_response("Done", 5000, cmd);</pre>
-      </div>
+      <div class="s23">03 · Hardware</div>
+      <h2 class="s24">The committed node</h2>
+      <p class="s70">A Grove <strong class="s218">Wio-E5</strong> (LoRa-E5) driven over UART with AT commands, on a Seeeduino XIAO, reading an SHT4x and showing status on an OLED. Distinct from the <a href="wellbouy.html">WellBouy</a> V3 path (Wio-SX1262 via RadioLib); both reach the same TTN application.</p>
       <div class="bomwrap mt24">
         <table class="bomtable">
           <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
@@ -175,34 +109,46 @@ ret = at_send_check_response("Done", 5000, cmd);</pre>
     </div>
   </section>
 
-  <!-- TTN BRIDGE -->
-  <section class="s58">
+  <!-- 04 · SOFTWARE -->
+  <section class="s9">
     <div class="s22">
-      <div class="s59">How to reuse · TTN → MQTT bridge</div>
-      <h2 class="s60">Two ways into the same pipeline</h2>
-      <div class="s61">
-        <div class="s62">
-          <div class="s63">Recommended</div>
-          <div class="s64">Node-RED subscription</div>
-          <p class="s65">Subscribe to <span class="s66">v3/{app}/devices/{dev}/up</span> using TTN's MQTT integration, parse the decoded payload in a function node, write to InfluxDB.</p>
-        </div>
-        <div class="s62">
-          <div class="s67">Alternative</div>
-          <div class="s64">Mosquitto bridge</div>
-          <p class="s65">A <span class="s66">connection</span> block in mosquitto.conf bridges <span class="s66">eu1.cloud.thethings.network:8883</span> into local topics.</p>
-        </div>
+      <div class="s23">04 · Software</div>
+      <h2 class="s24">OTAA join, hex uplink, TTN bridge</h2>
+      <p class="s239">The firmware drives the Wio-E5 over UART with AT commands — an OTAA join, then a hex uplink of temperature + humidity. Getting the data into the pipeline is a TTN → MQTT bridge.</p>
+      <div class="reciperow"><a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V2/GROUUV2-SensorNodeLoRAWAN/src" target="_blank" rel="noopener" class="reciperepo">⟶ src/main.cpp</a></div>
+      <p class="codecap">src/main.cpp — OTAA join + hex uplink over the Wio-E5 AT interface</p>
+      <div class="codewrap">
+<pre class="code">// OTAA join
+at_send_check_response("+MODE: LWOTAA", 1000, "AT+MODE=LWOTAA\r\n");
+at_send_check_response("+DR: EU868",    1000, "AT+DR=EU868\r\n");
+at_send_check_response("+CH: NUM",      1000, "AT+CH=NUM,0-2\r\n");
+at_send_check_response("+CLASS: A",     1000, "AT+CLASS=A\r\n");
+
+// pack temp + humidity, send as a hex uplink
+char cmd[128];
+sprintf(cmd, "AT+CMSGHEX=\"%04X%04X\"\r\n", (int)temp, (int)humi);
+ret = at_send_check_response("Done", 5000, cmd);</pre>
       </div>
-      <div class="s68">Naming convention: <span class="s69">Grouu[Installation][Type][ID]</span> → topic <span class="s69">Grouu[Installation][Type][ID]/sensors</span></div>
+      <div class="s61 mt24">
+        <div class="s62"><div class="s63">Recommended</div><div class="s64">Node-RED subscription</div><p class="s65">Subscribe to <span class="s66">v3/{app}/devices/{dev}/up</span> via TTN's MQTT integration, parse the decoded payload, write to InfluxDB.</p></div>
+        <div class="s62"><div class="s67">Alternative</div><div class="s64">Mosquitto bridge</div><p class="s65">A <span class="s66">connection</span> block in mosquitto.conf bridges <span class="s66">eu1.cloud.thethings.network:8883</span> into local topics.</p></div>
+      </div>
     </div>
   </section>
 
-  <!-- SCENARIOS -->
-  <section class="s21">
+  <!-- 05 · PROCESS -->
+  <section class="s58">
     <div class="s22">
-      <div class="s23">Reference scenarios</div>
-      <h2 class="s24">What the track is designed for</h2>
-      <p class="s70">Typical node types the design targets — a menu to compose from, not a fixed system.</p>
-      <div class="s71">
+      <div class="s59">05 · Process</div>
+      <h2 class="s262">Done, and what it's for</h2>
+      <p class="s263">The basic node is complete and validated end-to-end; the broader track adds per-sensor scaffolds. To reproduce: register a device on TTN, flash the node, wire the SHT4x + OLED, and bridge TTN → MQTT (above). The track targets the node types below.</p>
+      <div class="s26">
+        <div class="s236"><span class="s28">Basic node firmware</span><span class="s29">XIAO + Wio-E5 + SHT4x — OTAA join, hex uplink, OLED + downlink. Complete &amp; forkable.</span><span class="s31">✓ Complete</span></div>
+        <div class="s236"><span class="s28">TTN → MQTT bridge</span><span class="s29">Two integration recipes documented.</span><span class="s31">✓ Documented</span></div>
+        <div class="s236"><span class="s28">Hardware options</span><span class="s29">Candidate radios compared (Design, above).</span><span class="s31">✓ Documented</span></div>
+        <div class="s238"><span class="s28">Per-sensor scaffolds</span><span class="s29">General farm-sensing nodes filled out per type.</span><span class="s30">◑ Ongoing</span></div>
+      </div>
+      <div class="s71 mt24">
         <div class="s72"><div class="s73">Orchard soil grid</div><p class="s74">Shallow + deep moisture per tree, weather station</p></div>
         <div class="s72"><div class="s73">Water source</div><p class="s74">TDS, turbidity, pH, temperature — the <a href="wellbouy.html">WellBouy</a> node</p></div>
         <div class="s72"><div class="s73">Remote field</div><p class="s74">Soil moisture and temperature, far from any router</p></div>
@@ -211,15 +157,27 @@ ret = at_send_check_response("Done", 5000, cmd);</pre>
     </div>
   </section>
 
-  <!-- RELATED -->
-  <section class="s75">
-    <div class="s76">
-      <div class="s77">Related</div>
+  <!-- GALLERY -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Gallery</div>
+      <h2 class="s24">Node</h2>
+      <p class="s70">Bench and deployment photos are added as the reference node is rebuilt.</p>
+      <div class="imgslot embedph"><span class="ico">📷📡</span><span class="cap">Node photos — to add.</span></div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">References</div>
+      <h2 class="s24">Source &amp; related</h2>
       <div class="s78">
-        <a href="wellbouy.html" class="relcard s79"><div class="s80">WellBouy →</div><p class="s81">The first deployed node on this track.</p></a>
-        <a href="wifi-node.html" class="relcard s79"><div class="s80">Basic Sensor Node →</div><p class="s81">The parallel local-sensing module (WiFi).</p></a>
-        <a href="server-stack.html" class="relcard s79"><div class="s80">Server Stack →</div><p class="s81">The backend the bridge feeds.</p></a>
+        <a href="wellbouy.html" class="relcard s274"><div class="s80">WellBouy →</div><p class="s81">The V3 water node on this track.</p></a>
+        <a href="wifi-node.html" class="relcard s274"><div class="s80">Basic Sensor Node →</div><p class="s81">The parallel local-sensing module (WiFi).</p></a>
+        <a href="server-stack.html" class="relcard s274"><div class="s80">Server Stack →</div><p class="s81">The backend the bridge feeds.</p></a>
       </div>
+      <p class="s293">External: <a href="https://www.thethingsnetwork.org/" target="_blank" rel="noopener">The Things Network</a> · <a href="https://wiki.seeedstudio.com/Grove_LoRa_E5_New_Version/" target="_blank" rel="noopener">Grove Wio-E5</a> · <a href="https://sensirion.com/products/catalog/SHT40" target="_blank" rel="noopener">Sensirion SHT4x</a>.</p>
     </div>
   </section>
 
