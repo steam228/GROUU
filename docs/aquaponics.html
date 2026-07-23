@@ -28,26 +28,43 @@
       <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#projects" class="s12">Projects</a> · <span class="s13">Aquaponics</span></div>
       <div class="s14">
         <span class="s15"></span>
-        <span class="s16">Under development · fabrication stage</span>
+        <span class="s16">Active · fabrication stage</span>
       </div>
       <h1 class="s17">Aquaponics</h1>
-      <p class="s18">A home aquaponics unit for aromatics — fish and plants in one closed loop — built around a recovered fish tank with a CNC-fabricated structure. The build is in the fabrication stage; its sensing and automation reuse the GROUU WiFi node and the greenhouse sensor set, reporting into the same server stack.</p>
+      <p class="s233">A home aquaponics unit for aromatics — fish and plants in one closed loop — built around a recovered fish tank with a CNC-fabricated structure. In the fabrication stage; its sensing and automation reuse the GROUU basic node and sensor set, reporting into the same server stack. The page carries the full project structure now, filling in as it develops.</p>
       <div class="s19">
         <span class="s20">Recovered tank</span>
         <span class="s20">CNC fabrication</span>
+        <span class="s20">Reuses the basic node</span>
         <span class="s20">WiFi + MQTT</span>
-        <span class="s20">Design stage</span>
       </div>
     </div>
   </header>
 
-  <!-- HOW IT WORKS -->
+  <!-- LEVEL OF DEVELOPMENT -->
   <section class="s21">
     <div class="s22">
-      <div class="s23">How it works</div>
+      <div class="s23">Level of development</div>
+      <h2 class="s24">Where it is</h2>
+      <p class="s25">Concept and loop are set and the structure is being fabricated; electronics reuse the reference nodes. Sections below are in place so the structure reads the same as the finished projects.</p>
+      <div class="s26">
+        <div class="s236"><span class="s28">Concept &amp; loop</span><span class="s29">Fish → plants → clean water, watched by a reused node.</span><span class="s31">✓ Done</span></div>
+        <div class="s236"><span class="s28">Structure</span><span class="s29">Recovered tank + CNC-milled cork &amp; carpentry.</span><span class="s30">◑ In fabrication</span></div>
+        <div class="s236"><span class="s28">Sensing &amp; node</span><span class="s29">Water + climate on the basic node — selection in progress.</span><span class="s237">○ In design</span></div>
+        <div class="s236"><span class="s28">Precursor</span><span class="s29">fishTank auto-feeder + tank IoT, being folded in.</span><span class="s31">✓ Exists</span></div>
+        <div class="s236"><span class="s28">BOM</span><span class="s29">Recovered + digitally fabricated; no priced list yet.</span><span class="s237">○ Planned</span></div>
+        <div class="s238"><span class="s28">Documentation</span><span class="s29">This page grows with each stage.</span><span class="s31">✓ Ongoing</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">Overview</div>
       <h2 class="s24">One loop, sensed and served</h2>
-      <p class="s25">Aquaponics couples a fish tank to a grow bed: fish waste feeds the plants, the plants clean the water. GROUU's role is to watch that loop and, later, to keep it in range — the same pattern as every other node. There is no dedicated firmware in this repo yet; the plan reuses the basic sensor node for sensing and the actuator module for pumps and feeders, both publishing over MQTT to the edge server.</p>
-      <p class="schcap mt24">The closed loop, and the reused sensing path into the shared stack.</p>
+      <p class="s239">Aquaponics couples a fish tank to a grow bed: fish waste feeds the plants, the plants clean the water. GROUU's role is to watch that loop — the same sense → node → stack pattern as every other node.</p>
+      <p class="schcap">The closed loop, and the reused sensing path into the shared stack.</p>
       <div class="schflow schmid">
         <div class="schbox wtank tc"><div class="schn">Fish tank</div><div class="schs">recovered · cork-insulated</div></div>
         <div class="scharr">→</div>
@@ -62,19 +79,66 @@
         <div class="scharr">→</div>
         <div class="schbox dash"><div class="schk">Stack</div><div class="schn">Edge server</div><div class="schs">store + visualise</div></div>
       </div>
-      <div class="reciperow">
-        <a href="https://github.com/steam228/fishTank" target="_blank" rel="noopener" class="reciperepo">⟶ fishTank (precursor · auto-feeder + tank IoT)</a>
-      </div>
-      <p class="s25 mt24">The precursor <span class="mono">fishTank</span> project — a NodeMCU + ESP-01 with a 3D-printed automatic feeder — is the starting point being folded into GROUU. Sensor and control code will follow the reference nodes rather than be written from scratch.</p>
     </div>
   </section>
 
-  <!-- BOM -->
-  <section class="s58">
+  <!-- GOALS & CONTEXT -->
+  <section class="s21">
     <div class="s22">
-      <div class="s59">Bill of materials</div>
-      <h2 class="s60">What the build is made of</h2>
-      <p class="s263">Design-level so far — a mix of recovered material and digital fabrication. No priced BOM is published yet; electronics reuse the reference nodes.</p>
+      <div class="s23">Goals &amp; context</div>
+      <h2 class="s24">Why aquaponics</h2>
+      <p class="s70">A compact, low-input way to grow aromatics at home: the fish feed the plants, the plants keep the water clean, and the node keeps the loop in view. It reuses recovered material and digital fabrication as a design-research exercise in closing a small food loop.</p>
+      <p class="s70">Where it sits: a V3 build on the shared node/stack architecture, growing out of the earlier <span class="mono">fishTank</span> auto-feeder project rather than starting from scratch.</p>
+    </div>
+  </section>
+
+  <!-- SENSING -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">Hardware · sensing</div>
+      <h2 class="s24">Water &amp; climate</h2>
+      <p class="s70">Intended set follows the greenhouse sensor library — water temperature and level, and ambient climate — reusing calibrated GROUU drivers. Models and calibration land here once selected.</p>
+      <div class="imgslot embedph"><span class="ico">🐟🌿</span><span class="cap">Sensor selection — in design.</span></div>
+    </div>
+  </section>
+
+  <!-- STRUCTURE & FABRICATION -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Hardware · structure &amp; fabrication</div>
+      <h2 class="s24">Recovered tank, digital carpentry</h2>
+      <p class="s70">Built around a recovered fish tank, insulated with CNC-milled cork, on a CNC-fabricated structure (2D digital carpentry + 3D-CAM molds). The precursor electronics — a NodeMCU + ESP-01 with a 3D-printed auto-feeder — are being folded into the GROUU nodes.</p>
+      <div class="reciperow">
+        <a href="https://github.com/steam228/fishTank" target="_blank" rel="noopener" class="reciperepo">⟶ fishTank (precursor · auto-feeder + tank IoT)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRMWARE · SOFTWARE -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">Firmware · software</div>
+      <h2 class="s24">Reuses the basic node</h2>
+      <p class="s70">Sensor and control code follow the completed <a href="wifi-node.html">basic sensor node</a> and the <a href="actuator.html">actuator module</a> (pumps, feeder), both publishing over MQTT — not written from scratch. Node-specific config lands here.</p>
+      <div class="imgslot embedph"><span class="ico">💻🐟</span><span class="cap">Node config &amp; UML — once the node is chosen.</span></div>
+    </div>
+  </section>
+
+  <!-- DATA · DASHBOARD -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Data · dashboard</div>
+      <h2 class="s24">Into the shared stack</h2>
+      <p class="s70">Readings land in the shared <a href="server-stack.html">GROUU stack</a> — Mosquitto → Node-RED → InfluxDB → Grafana — alongside every other node. An aquaponics view is added once it reports.</p>
+    </div>
+  </section>
+
+  <!-- BILL OF MATERIALS -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">Bill of materials</div>
+      <h2 class="s24">What the build is made of</h2>
+      <p class="s70">Design-level so far — a mix of recovered material and digital fabrication. No priced BOM yet; electronics reuse the reference nodes.</p>
       <div class="bomwrap">
         <table class="bomtable">
           <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
@@ -90,14 +154,33 @@
     </div>
   </section>
 
+  <!-- MEDIA -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Media</div>
+      <h2 class="s24">Build &amp; 3D</h2>
+      <p class="s70">Fabrication photos and the 3D model are added as the build progresses.</p>
+      <div class="imgslot embedph"><span class="ico">📷🐟</span><span class="cap">Build photos &amp; 3D — to add.</span></div>
+    </div>
+  </section>
+
+  <!-- HOW TO REPRODUCE -->
+  <section class="s58">
+    <div class="s22">
+      <div class="s59">How to reproduce</div>
+      <h2 class="s262">Once the node is fixed</h2>
+      <p class="s263">The path mirrors the other nodes: fabricate the structure, flash the reused basic-node firmware, wire the sensors and feeder, point it at a broker. Detailed steps are filled in when the sensor set is finalised.</p>
+    </div>
+  </section>
+
   <!-- RELATED -->
-  <section class="s75">
+  <section class="s9">
     <div class="s76">
       <div class="s77">Related</div>
       <div class="s78">
-        <a href="wifi-node.html" class="relcard s79"><div class="s80">Basic Sensor Node →</div><p class="s81">The sensing template this build reuses.</p></a>
-        <a href="actuator.html" class="relcard s79"><div class="s80">Actuator Module →</div><p class="s81">Pumps and feeders for the loop.</p></a>
-        <a href="server-stack.html" class="relcard s79"><div class="s80">Server Stack →</div><p class="s81">Where the readings are stored and shown.</p></a>
+        <a href="wifi-node.html" class="relcard s274"><div class="s80">Basic Sensor Node →</div><p class="s81">The sensing template this build reuses.</p></a>
+        <a href="actuator.html" class="relcard s274"><div class="s80">Actuator Module →</div><p class="s81">Pumps and feeders for the loop.</p></a>
+        <a href="server-stack.html" class="relcard s274"><div class="s80">Server Stack →</div><p class="s81">Where the readings are stored and shown.</p></a>
       </div>
     </div>
   </section>
