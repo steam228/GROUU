@@ -86,37 +86,139 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- SYSTEM SCHEMES -->
   <section class="s9">
     <div class="s22">
-      <div class="s23">How it works</div>
-      <h2 class="s24">Sense, encode, transmit, sleep</h2>
-      <p class="s239">Analog probes are conditioned by dedicated modules and scaled to ≤3.3 V into a shared <strong class="s218">ADS1115</strong> 16-bit I²C ADC; temperature is read digitally over OneWire. Readings are packed as CayenneLPP and sent as a LoRaWAN uplink, after which the node deep-sleeps between cycles and resumes its session on wake.</p>
-      <div class="s240">
-        <div class="s241">
-          <div class="s242">Node</div>
-          <div class="s243">XIAO ESP32-S3 + Wio-SX1262</div>
-          <div class="s244">ADS1115 front-end · deep sleep</div>
-        </div>
-        <div class="s245">→</div>
-        <div class="s241">
-          <div class="s242">Transport</div>
-          <div class="s243">Gateway → TTN</div>
-          <div class="s244">EU868 · OTAA join · v3</div>
-        </div>
-        <div class="s245">→</div>
-        <div class="s246">
-          <div class="s247">Backend</div>
-          <div class="s248">MQTT → storage → dashboards</div>
-          <div class="s249">
-            <span class="s250">Mosquitto</span>
-            <span class="s250">Node-RED</span>
-            <span class="s250">InfluxDB</span>
-            <span class="s250">Grafana</span>
+      <div class="s23">System schemes</div>
+      <h2 class="s24">How it works, in five views</h2>
+      <p class="s239">The node's place in the wider system, its runtime lifecycle, the live-dashboard path and the firmware structure — each verified against the published source.</p>
+
+      <!-- 2a · ECOSYSTEM -->
+      <div class="schsec">
+        <div class="schtag">2a · Ecosystem</div>
+        <div class="schtitle">Block diagram — the bouy in a wider system</div>
+        <p class="schcap">One node among many: WellBouy feeds the shared GROUU server stack; the same infrastructure serves gardens, greenhouses and wells.</p>
+        <div class="schcanvaswrap">
+          <div class="schflow schmid">
+            <div class="schbox"><div class="schk">Node · at the well</div><div class="schn">WellBouy</div><div class="schs">temp · TDS · turbidity · pH · XIAO ESP32-S3 + Wio-SX1262 · ADS1115 · switched 5 V · deep sleep 30 min</div></div>
+            <div class="schlab"><span>LoRaWAN</span><span>→</span><span>EU868</span></div>
+            <div class="schbox"><div class="schk">Network</div><div class="schn">The Things Network</div><div class="schs">OTAA · CayenneLPP → semantic fields (uplink formatter)</div></div>
+            <div class="schlab"><span>MQTT</span><span>→</span><span>TLS 8883</span></div>
+            <div class="schbox dark"><div class="schk">GROUU server · V2 stack</div><div class="schn">Node-RED → InfluxDB</div><div class="schs">parse → bucket "wellbouy" · self-hosted Raspberry Pi</div></div>
           </div>
         </div>
+        <div class="schflow"><div class="schbox dash"><div class="schs">+ garden nodes · greenhouse nodes · other wells — same uplink, same stack</div></div></div>
+        <div class="schdown"><span class="l"></span><span class="c">▼</span></div>
+        <div class="schg3">
+          <div class="schbox lite"><div class="schn">Grafana</div><div class="schs">internal dashboards</div></div>
+          <div class="schbox lite"><div class="schn">Public dashboard</div><div class="schs">grouuwell01.hacktoimprove.com</div></div>
+          <div class="schbox dash"><div class="schn">Open data</div><div class="schs">other researchers · municipalities</div></div>
+        </div>
+        <p class="schcap">← downlink: Node-RED → TTN queue → node RX window · 0x01 set interval (min) · 0x02 reboot — applied next wake (Class A).</p>
       </div>
-      <p class="s251">The backend is the shared <a href="server-stack.html">GROUU Stack</a> — any TTN-connected application can consume the same uplinks.</p>
+
+      <!-- 2b · ARCHITECTURE -->
+      <div class="schsec">
+        <div class="schtag">2b · Architecture · V2 + V3</div>
+        <div class="schtitle">Envisioned architecture — radio per context</div>
+        <p class="schcap">Modular nodes choose their radio by context: Wi-Fi where a network exists, LoRaWAN where it doesn't. Both land in the same server stack.</p>
+        <div class="schg2">
+          <div class="schbox"><div class="schk">Context A · network available</div><div class="schn">Wi-Fi module</div><div class="schs">garden · greenhouse · home · mains or solar · MQTT direct to broker · high rate, rich payloads</div></div>
+          <div class="schbox"><div class="schk">Context B · off-grid</div><div class="schn">LoRaWAN module</div><div class="schs">well · field · remote · battery + deep sleep · TTN uplink · few bytes, km range — WellBouy's case</div></div>
+        </div>
+        <div class="schg2">
+          <div class="schdown"><span class="l"></span><span class="t">MQTT</span><span class="c">▼</span></div>
+          <div class="schdown"><span class="l"></span><span class="t">TTN → MQTT</span><span class="c">▼</span></div>
+        </div>
+        <div class="schbox dark tc"><div class="schk">Shared · unchanged since V2</div><div class="schn">One server stack</div><div class="schs">MQTT broker · Node-RED · InfluxDB · Grafana · public web — Raspberry Pi edge, or any host</div></div>
+        <p class="schcap">The 2014 vision (V0), finally modular: radio chosen per node, server layer anywhere.</p>
+      </div>
+
+      <!-- 2c · LIFECYCLE -->
+      <div class="schsec">
+        <div class="schtag">2c · Lifecycle</div>
+        <div class="schtitle">Node lifecycle — state machine</div>
+        <p class="schcap">Wake, measure, transmit, sleep — as implemented in <span class="mono">src/main.cpp</span>: sensors are read and powered down before the radio wakes.</p>
+        <div class="schpath">
+          <span class="schpill">DeepSleep</span>
+          <div class="schdown"><span class="l"></span><span class="t">RTC timer · txIntervalS · default 30 min · downlink-tunable (floor 60 s)</span><span class="c">▼</span></div>
+          <span class="schchip">Wake</span>
+          <div class="schdown"><span class="l"></span><span class="t">5 V rail on · warm-up 1000 ms</span><span class="c">▼</span></div>
+          <span class="schchip">ReadSensors</span>
+          <div class="schdown"><span class="l"></span><span class="t">temp first (compensates TDS) · 60 ms/channel · ×8 avg · rail off</span><span class="c">▼</span></div>
+          <span class="schchip">Encode</span>
+          <div class="schdown"><span class="l"></span><span class="t">CayenneLPP · ch1 temp · ch2 pH · ch3 turb · ch4 TDS · ch5 GPS (boot 1 + every 24th)</span><span class="c">▼</span></div>
+        </div>
+        <div class="schg2">
+          <div class="schcol ctr"><span class="schs">RTC session present</span><span class="schchip">SessionResume</span></div>
+          <div class="schcol ctr"><span class="schs">no session · first boot</span><span class="schchip dash">JoinOTAA</span></div>
+        </div>
+        <div class="schpath">
+          <div class="schdown"><span class="l"></span><span class="t">sendReceive() · unconfirmed · ADR on</span><span class="c">▼</span></div>
+          <span class="schchip on">Uplink</span>
+          <div class="schdown"><span class="l"></span><span class="c">▼</span></div>
+          <span class="schchip">DownlinkCheck</span>
+        </div>
+        <div class="schg2">
+          <div class="schcol ctr"><span class="schs">dnLen &gt; 0</span><span class="schchip dash">HandleCommand</span><span class="schs">0x01 set interval · 0x02 reboot</span></div>
+          <div class="schcol ctr"><span class="schs">none</span></div>
+        </div>
+        <div class="schpath">
+          <div class="schdown"><span class="l"></span><span class="t">save session to RTC · sleep txIntervalS ↺</span><span class="c">▼</span></div>
+          <span class="schpill">DeepSleep</span>
+        </div>
+      </div>
+
+      <!-- 2d · DASHBOARD -->
+      <div class="schsec">
+        <div class="schtag">2d · Dashboard</div>
+        <div class="schtitle">Online dashboard — implementation</div>
+        <p class="schcap">How the public page gets its numbers — implemented and running.</p>
+        <div class="schbox"><div class="schn">InfluxDB</div><div class="schs">2.x · bucket "wellbouy" · fields named by the TTN formatter</div></div>
+        <div class="schg2">
+          <div class="schcol"><span class="schs">Flux queries ▼</span><div class="schbox"><div class="schn">Grafana</div><div class="schs">internal · Flux · gauges + history · link-quality row</div></div></div>
+          <div class="schcol"><span class="schs">Express · GET /api/summary?range=6h|24h|7d ▼</span><div class="schbox dark"><div class="schn">Public web page</div><div class="schs">grouuwell01.hacktoimprove.com · static HTML/JS · Cloudflare tunnel</div></div></div>
+        </div>
+        <div class="schdown"><span class="l"></span><span class="c">▼</span></div>
+        <div class="schgrid4">
+          <div class="schbox lite tc"><div class="schk">Temp</div><div class="schval">17.4 °C</div></div>
+          <div class="schbox lite tc"><div class="schk">TDS</div><div class="schval">312 ppm</div></div>
+          <div class="schbox lite tc"><div class="schk">Turbidity</div><div class="schval">2 NTU</div></div>
+          <div class="schbox lite tc"><div class="schk">pH</div><div class="schval">6.8</div></div>
+        </div>
+        <p class="schcap">Values illustrative. Live: temp · TDS · turbidity · pH · RSSI/SNR — battery + packet-loss pending.</p>
+      </div>
+
+      <!-- 2e · FIRMWARE UML -->
+      <div class="schsec">
+        <div class="schtag">2e · Firmware</div>
+        <div class="schtitle">Firmware UML — module map</div>
+        <p class="schcap">Procedural C++ (PlatformIO), one cycle per wake: <span class="mono">main.cpp</span> orchestrates the duty cycle, each sensor is a small two-function module, every field-tunable constant lives in <span class="mono">config.h</span>.</p>
+        <div class="schcanvaswrap">
+          <div class="schg3">
+            <div class="schcol">
+              <div class="schcab"><div class="h">main.cpp</div><div class="schlvl"><div class="d">RTC_DATA_ATTR (survives sleep): bootCount · haveSession · rtcNonces[] · rtcSession[] · txIntervalS</div></div><div class="schlvl"><div class="d">+ setup() — whole cycle · − readAllSensors() · − adsMilliVolts(ch) ×8 · − sensorRailOn/Off (GPIO1) · − loraConnect/SaveSession · − handleDownlink · − goToSleep · + loop() never reached</div></div></div>
+              <div class="schcab"><div class="h">radio</div><div class="schlvl"><div class="d">SX1262 + LoRaWANNode · RadioLib 6.6.0 (pinned) · NSS 41 · DIO1 39 · RST 42 · BUSY 40 · EU868 · OTAA · ADR on · dwell-time off · appKey to both key slots (TTN 1.0.x)</div></div></div>
+            </div>
+            <div class="schcol">
+              <div class="schbox dash"><div class="schs">src/sensors/ — one module per ladder build</div></div>
+              <div class="schcab"><div class="h">temp_sensor · b02</div><div class="schlvl"><div class="d">tempSetup() · readTemperature() — DS18B20 · 1-Wire GPIO4 · read first (compensates TDS) · NaN → 25 °C</div></div></div>
+              <div class="schcab"><div class="h">tds_sensor · b03</div><div class="schlvl"><div class="d">tdsPpmFromMilliVolts(mv, tempC) — ADS A0 direct · DFRobot algo @ 25 °C · TDS_KVALUE 1.000 (factory, cal pending)</div></div></div>
+              <div class="schcab"><div class="h">turbidity_sensor · b04</div><div class="schlvl"><div class="d">turbidityNtuFromMilliVolts(mv) — ADS A1 · 10k/6.8k divider (0.405) · V_CLEAR 3.96 V rescaled onto DFRobot 4.20 V zero</div></div></div>
+              <div class="schcab"><div class="h">ph_sensor · b05</div><div class="schlvl"><div class="d">phFromMilliVolts(mv) — ADS A2 · 10k/18k divider · segmented at pH 7 · V4 0.987 / V7 1.519 / V10 1.980 V · 177 / 154 mV/pH</div></div></div>
+              <div class="schcab"><div class="h">analog_util</div><div class="schlvl"><div class="d">readAvgMilliVolts(pin) — legacy direct-ADC path, kept for the breadboard rig</div></div></div>
+            </div>
+            <div class="schcol">
+              <div class="schcab"><div class="h">config.h</div><div class="schlvl"><div class="d">pins · TX_INTERVAL_S 1800 (floor 60) · warm-up 1000 ms · gap 60 ms · ×8 samples · calibration constants · DL opcodes · fixed GPS · DBG() macros</div></div></div>
+              <div class="schcab"><div class="h">secrets.h</div><div class="schlvl"><div class="d">JoinEUI · DevEUI · AppKey — git-ignored · secrets.h.example template</div></div></div>
+              <div class="schbox dash"><div class="schs">libraries: RadioLib 6.6.0 · Adafruit ADS1X15 · CayenneLPP</div></div>
+              <div class="schbox dash"><div class="schs">src/bringup/01…05 + inject — the ladder: each build compiles alone, adds one sensor</div></div>
+            </div>
+          </div>
+        </div>
+        <p class="schcap">setup() → readAllSensors() → sensors/* → CayenneLPP → loraConnect() → sendReceive() → handleDownlink() → goToSleep() · loop() never runs — deep sleep restarts setup().</p>
+      </div>
+
     </div>
   </section>
 

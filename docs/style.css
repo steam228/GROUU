@@ -409,6 +409,19 @@ a:hover{color:#00734f}
 .schpath{display:flex;flex-direction:column;align-items:center;}
 /* 1c · envisioned architecture — fixed 680×640 canvas, scrolls on small screens */
 .schcanvaswrap{overflow-x:auto;}
+/* wellbouy scheme set (2a–2e) */
+.schsec{margin-top:40px;}
+.schtag{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#008a60;margin:0;}
+.schtitle{font-weight:600;font-size:20px;color:#16201a;margin:2px 0 4px;letter-spacing:-.01em;}
+.schg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.schg3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start;}
+.schcol{display:flex;flex-direction:column;gap:10px;align-items:stretch;}
+.schcol.ctr{align-items:center;}
+.schpill{display:inline-block;background:#122018;color:#eaf3ec;border-radius:100px;padding:9px 22px;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;}
+.schchip.dash{border-style:dashed;border-color:#008a60;color:#008a60;background:#fff;}
+.schchip.on{background:#008a60;border-color:#008a60;color:#eaf3ec;}
+.schval{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:#0c6b4b;margin-top:2px;}
+@media (max-width:760px){.schg2,.schg3{grid-template-columns:1fr!important}}
 .c1canvas{position:relative;width:680px;height:640px;margin:0 auto;}
 .c1canvas>svg{position:absolute;inset:0;width:100%;height:100%;}
 .c1p{position:absolute;top:8px;width:118px;box-sizing:border-box;background:rgba(234,243,236,0.08);border:1px solid rgba(234,243,236,0.4);border-radius:10px;padding:10px 12px;}
