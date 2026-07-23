@@ -421,6 +421,9 @@ a:hover{color:#00734f}
 .schchip.dash{border-style:dashed;border-color:#008a60;color:#008a60;background:#fff;}
 .schchip.on{background:#008a60;border-color:#008a60;color:#eaf3ec;}
 .schval{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:#0c6b4b;margin-top:2px;}
+.schsec .schpath{margin:14px 0;}
+.schsec .schg2{margin:14px 0;}
+.schsec .schgrid4{margin-top:6px;}
 @media (max-width:760px){.schg2,.schg3{grid-template-columns:1fr!important}}
 .c1canvas{position:relative;width:680px;height:640px;margin:0 auto;}
 .c1canvas>svg{position:absolute;inset:0;width:100%;height:100%;}
