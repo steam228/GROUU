@@ -31,7 +31,7 @@
         <span class="s16">Active · V1 reference exists</span>
       </div>
       <h1 class="s17">Actuator Module</h1>
-      <p class="s233">The module that lets GROUU <em>act</em> on the field, not just sense it — driving valves and pumps from MQTT commands. The reference build is a one-in / four-out electrovalve water router for micro-irrigation; an ESP8266 node from GROUU V1 already implements the pattern. The page carries the full project structure now, filling in as it develops.</p>
+      <p class="s233">The module that lets GROUU <em>act</em> on the field, not just sense it — driving valves and pumps from MQTT commands. The reference build is a one-in / four-out electrovalve water router for micro-irrigation; an ESP8266 node from GROUU V1 already implements the pattern.</p>
       <div class="s19">
         <span class="s20">ESP8266</span>
         <span class="s20">4× relay</span>
@@ -41,70 +41,71 @@
     </div>
   </header>
 
-  <!-- LEVEL OF DEVELOPMENT -->
+  <!-- 01 · OVERVIEW -->
   <section class="s21">
     <div class="s22">
-      <div class="s23">Level of development</div>
-      <h2 class="s24">Where it is</h2>
-      <p class="s25">The V1 reference (a 4-relay water router) works and is documented; the module is being generalised to the current node/naming conventions. Sections below are in place so the structure reads the same as the finished projects.</p>
-      <div class="s26">
-        <div class="s236"><span class="s28">V1 reference firmware</span><span class="s29">grouu-wrout — 4-relay router, MQTT-commanded, OTA. Runs.</span><span class="s31">✓ Exists</span></div>
-        <div class="s236"><span class="s28">Generalisation</span><span class="s29">Fold into the current basic-node conventions.</span><span class="s237">○ In design</span></div>
-        <div class="s236"><span class="s28">Targets</span><span class="s29">Valves, pumps, servo latch, fan, grow-LED (greenhouse set).</span><span class="s30">◑ Partial</span></div>
-        <div class="s236"><span class="s28">BOM</span><span class="s29">Breadboard-friendly; no priced list yet.</span><span class="s237">○ Planned</span></div>
-        <div class="s236"><span class="s28">Board</span><span class="s29">Runs on stock ESP8266 + relay board — no custom PCB.</span><span class="s237">— N/A</span></div>
-        <div class="s238"><span class="s28">Documentation</span><span class="s29">This page grows with each stage.</span><span class="s31">✓ Ongoing</span></div>
+      <div class="s23">01 · Overview</div>
+      <h2 class="s24">What it is</h2>
+      <p class="s25">The actuator is GROUU's output counterpart to the sensor node: an MQTT-driven way to switch valves, pumps and other loads. The V1 reference — a 4-relay water router — works and is documented; the module is being generalised to the current node/naming conventions so a garden, greenhouse or aquaponics build can water, dose or ventilate on the same stack it reports to.</p>
+      <p class="s70"><strong class="s218">Goal:</strong> close the loop. Sensing observes; actuation acts. It shares the basic node's connection, naming and OTA plumbing — the difference is outputs instead of inputs.</p>
+      <div class="reciperow"><a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V1/habibiWorksJuly2018-WS/grouu-wrout" target="_blank" rel="noopener" class="reciperepo">⟶ grouu-wrout — V1 4-relay water router</a></div>
+      <div class="schsec">
+        <div class="schtag">Overview</div>
+        <div class="schtitle">Subscribe, switch, echo state</div>
+        <p class="schcap">Command in, state echoed back — outputs instead of inputs.</p>
+        <div class="schflow schmid">
+          <div class="schbox dark"><div class="schk">Broker</div><div class="schn">MQTT command</div><div class="schs">&lt;host&gt;/valve/one/set · ON/OFF</div></div>
+          <div class="schlab"><span>sub</span><span>→</span></div>
+          <div class="schbox"><div class="schk">Node</div><div class="schn">ESP8266 · 4× relay</div><div class="schs">switch · echo state · OTA</div></div>
+          <div class="schlab"><span>GPIO</span><span>→</span></div>
+          <div class="schbox lite"><div class="schk">Output</div><div class="schn">Valve / pump</div><div class="schs">1-in / 4-out router</div></div>
+        </div>
+        <p class="schcap">State echoes back on &lt;host&gt;/valve/one — the loop closes without polling.</p>
       </div>
     </div>
   </section>
 
-  <!-- OVERVIEW -->
+  <!-- 02 · DESIGN -->
   <section class="s9">
     <div class="s22">
-      <div class="s23">Overview</div>
-      <h2 class="s24">Subscribe, switch, echo state</h2>
-      <p class="s239">An actuator node joins the same broker as the sensor nodes and subscribes to per-output command topics. A command flips a relay driving a valve or pump; the node then publishes the new state back, so a dashboard or automation always knows where each output stands.</p>
-      <p class="schcap">Command in, state echoed back — outputs instead of inputs.</p>
-      <div class="schflow schmid">
-        <div class="schbox dark"><div class="schk">Broker</div><div class="schn">MQTT command</div><div class="schs">&lt;host&gt;/valve/one/set · ON/OFF</div></div>
-        <div class="schlab"><span>sub</span><span>→</span></div>
-        <div class="schbox"><div class="schk">Node</div><div class="schn">ESP8266 · 4× relay</div><div class="schs">switch · echo state · OTA</div></div>
-        <div class="schlab"><span>GPIO</span><span>→</span></div>
-        <div class="schbox lite"><div class="schk">Output</div><div class="schn">Valve / pump</div><div class="schs">1-in / 4-out router</div></div>
+      <div class="s23">02 · Design</div>
+      <h2 class="s24">Command &amp; state topics</h2>
+      <p class="s239">The module is a naming + topic convention as much as hardware: a command topic per output, a state topic that echoes back, and the shared control topic for OTA/reboot — so any dashboard or automation can drive and read it the same way it reads sensors.</p>
+      <div class="s288">
+        <div class="s289"><div class="s290">&lt;host&gt;/valve/one/set</div><div class="s291">Command — <span class="s292">ON</span> / <span class="s292">OFF</span></div></div>
+        <div class="s289"><div class="s290">&lt;host&gt;/valve/one</div><div class="s291">State echo, published on change</div></div>
+        <div class="s289"><div class="s290">system/set/&lt;host&gt;</div><div class="s291">Control — <span class="s292">OTA_ON</span> / <span class="s292">REBOOT</span>, as on the basic node</div></div>
       </div>
-      <p class="schcap">State echoes back on &lt;host&gt;/valve/one — the loop closes without polling.</p>
     </div>
   </section>
 
-  <!-- GOALS & CONTEXT -->
+  <!-- 03 · HARDWARE -->
   <section class="s21">
     <div class="s22">
-      <div class="s23">Goals &amp; context</div>
-      <h2 class="s24">Why an actuator</h2>
-      <p class="s70">Sensing alone observes; actuation closes the loop. The module gives GROUU a common, MQTT-driven way to switch valves, pumps and other loads — so a garden, greenhouse or aquaponics build can water, dose or ventilate on the same stack it reports to.</p>
-      <p class="s70">Where it sits: the output counterpart to the <a href="wifi-node.html">basic sensor node</a>, sharing its connection, naming and OTA plumbing — the difference is outputs instead of inputs.</p>
-    </div>
-  </section>
-
-  <!-- ACTUATION · OUTPUTS -->
-  <section class="s9">
-    <div class="s22">
-      <div class="s23">Hardware · actuation</div>
+      <div class="s23">03 · Hardware</div>
       <h2 class="s24">Relays &amp; loads</h2>
-      <p class="s70">A 4-channel relay board on GPIO 16 · 5 · 4 · 0 switches the loads. The reference target is four solenoid valves (the water router); the module is meant to drive the greenhouse actuator set too — servo latch, fan, grow-LED, pump.</p>
-      <div class="imgslot embedph"><span class="ico">🔌🚰</span><span class="cap">Wiring / build photo — to add.</span></div>
+      <p class="s70">A 4-channel relay board on GPIO 16 · 5 · 4 · 0 switches the loads. The reference target is four solenoid valves (the water router); the module is meant to drive the greenhouse actuator set too — servo latch, fan, grow-LED, pump. Breadboard-friendly; no custom PCB.</p>
+      <div class="bomwrap mt24">
+        <table class="bomtable">
+          <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td class="part">ESP8266 (NodeMCU / ESP-01)</td><td>MCU + WiFi — runs the relay node, WiFiManager + OTA</td><td>—</td></tr>
+            <tr><td class="part">4-channel relay board</td><td>Switches valves / pumps on GPIO 16 · 5 · 4 · 0</td><td>—</td></tr>
+            <tr><td class="part">Solenoid valves ×4</td><td>The one-in / four-out irrigation router</td><td>—</td></tr>
+            <tr><td class="part">Servo latch · fan · grow-LED · pump</td><td>Other actuator targets (greenhouse set, design)</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
-  <!-- FIRMWARE · SOFTWARE -->
-  <section class="s21">
+  <!-- 04 · SOFTWARE -->
+  <section class="s9">
     <div class="s22">
-      <div class="s23">Firmware · software</div>
+      <div class="s23">04 · Software</div>
       <h2 class="s24">MQTT-commanded relay actuation</h2>
-      <p class="s70">Reuses the basic node's connection, naming and OTA; the difference is command topics driving outputs. The V1 reference is the committed <span class="mono">grouu-wrout</span>.</p>
-      <div class="reciperow">
-        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V1/habibiWorksJuly2018-WS/grouu-wrout" target="_blank" rel="noopener" class="reciperepo">⟶ grouu-wrout (V1 · 4-relay water router)</a>
-      </div>
+      <p class="s239">Reuses the basic node's connection, naming and OTA; the difference is command topics driving outputs. The V1 reference is the committed <span class="mono">grouu-wrout</span>.</p>
+      <div class="reciperow"><a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V1/habibiWorksJuly2018-WS/grouu-wrout" target="_blank" rel="noopener" class="reciperepo">⟶ grouu-wrout.ino</a></div>
       <p class="codecap">ARDUINO/GROUU_V1/…/grouu-wrout.ino — MQTT-commanded relay actuation</p>
       <div class="codewrap">
 <pre class="code">#define RELAY_ONE    16  // D0
@@ -121,66 +122,43 @@ void turnOffOut1() {
   client.publish(MQTT_VALVE_ONE_STATE_TOPIC.c_str(), PAYLOAD_OFF);
 }</pre>
       </div>
-      <p class="s70 mt24">Command a valve with <span class="mono">&lt;Host&gt;/valve/one/set</span> → <span class="mono">ON</span> / <span class="mono">OFF</span>; state echoes on <span class="mono">&lt;Host&gt;/valve/one</span>. The same <span class="mono">system/set/&lt;Host&gt;</span> control topic accepts <span class="mono">OTA_ON</span> / <span class="mono">REBOOT</span>, exactly like the basic node.</p>
     </div>
   </section>
 
-  <!-- DATA · DASHBOARD -->
-  <section class="s9">
+  <!-- 05 · PROCESS -->
+  <section class="s58">
     <div class="s22">
-      <div class="s23">Data · dashboard</div>
-      <h2 class="s24">Commands &amp; state on the shared stack</h2>
-      <p class="s70">Commands and echoed state travel the shared <a href="server-stack.html">GROUU stack</a> broker — the same Node-RED / dashboards that read sensors can drive and display these outputs.</p>
-    </div>
-  </section>
-
-  <!-- BILL OF MATERIALS -->
-  <section class="s21">
-    <div class="s22">
-      <div class="s23">Bill of materials</div>
-      <h2 class="s24">Parts for the water router</h2>
-      <p class="s70">A minimal, breadboard-friendly build. No priced BOM yet — the parts below are what the V1 node uses; the greenhouse set lists the other actuator targets the module is meant to drive.</p>
-      <div class="bomwrap">
-        <table class="bomtable">
-          <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
-          <tbody>
-            <tr><td class="part">ESP8266 (NodeMCU / ESP-01)</td><td>MCU + WiFi — runs the relay node, WiFiManager + OTA</td><td>—</td></tr>
-            <tr><td class="part">4-channel relay board</td><td>Switches valves / pumps on GPIO 16 · 5 · 4 · 0</td><td>—</td></tr>
-            <tr><td class="part">Solenoid valves ×4</td><td>The one-in / four-out irrigation router</td><td>—</td></tr>
-            <tr><td class="part">Servo latch · fan · grow-LED · pump</td><td>Other actuator targets (greenhouse set, design)</td><td>—</td></tr>
-          </tbody>
-        </table>
+      <div class="s59">05 · Process</div>
+      <h2 class="s262">Done, how, and what's left</h2>
+      <p class="s263">The V1 reference works and is documented; the module is being generalised to the current conventions. To reproduce: flash the firmware to an ESP8266, wire the relay board to the loads, set the host name and broker, then command each output over MQTT.</p>
+      <div class="s26">
+        <div class="s236"><span class="s28">V1 reference firmware</span><span class="s29">grouu-wrout — 4-relay router, MQTT-commanded, OTA. Runs.</span><span class="s31">✓ Exists</span></div>
+        <div class="s236"><span class="s28">Generalisation</span><span class="s29">Fold into the current basic-node conventions.</span><span class="s237">○ In design</span></div>
+        <div class="s236"><span class="s28">Targets</span><span class="s29">Valves, pumps, servo latch, fan, grow-LED.</span><span class="s30">◑ Partial</span></div>
+        <div class="s238"><span class="s28">What's left</span><span class="s29">Generalise topics/config, document, build photos.</span><span class="s237">○ Next</span></div>
       </div>
     </div>
   </section>
 
-  <!-- MEDIA -->
-  <section class="s9">
+  <!-- GALLERY -->
+  <section class="s21">
     <div class="s22">
-      <div class="s23">Media</div>
+      <div class="s23">Gallery</div>
       <h2 class="s24">Build</h2>
       <p class="s70">Wiring and build photos of the water router are added as it is rebuilt on the current conventions.</p>
       <div class="imgslot embedph"><span class="ico">📷🔧</span><span class="cap">Build photos — to add.</span></div>
     </div>
   </section>
 
-  <!-- HOW TO REPRODUCE -->
-  <section class="s58">
-    <div class="s22">
-      <div class="s59">How to reproduce</div>
-      <h2 class="s262">Clone, wire relays, command</h2>
-      <p class="s263">Flash the reference firmware to an ESP8266, wire the relay board to the loads, set the host name and broker, then command each output over MQTT. Generalised steps land here as the module folds into the current conventions.</p>
-    </div>
-  </section>
-
-  <!-- RELATED -->
+  <!-- REFERENCES -->
   <section class="s9">
-    <div class="s76">
-      <div class="s77">Related</div>
+    <div class="s22">
+      <div class="s23">References</div>
+      <h2 class="s24">Source &amp; related</h2>
       <div class="s78">
-        <a href="wifi-node.html" class="relcard s79"><div class="s80">Basic Sensor Node →</div><p class="s81">Shares the connection, naming and OTA pattern.</p></a>
-        <a href="server-stack.html" class="relcard s79"><div class="s80">Server Stack →</div><p class="s81">The broker that carries the valve commands.</p></a>
-        <a href="aquaponics.html" class="relcard s79"><div class="s80">Aquaponics →</div><p class="s81">A build that will use pumps and feeders.</p></a>
+        <a href="wifi-node.html" class="relcard s274"><div class="s80">Basic Sensor Node →</div><p class="s81">Shares the connection, naming and OTA pattern.</p></a>
+        <a href="server-stack.html" class="relcard s274"><div class="s80">Server Stack →</div><p class="s81">The broker that carries the valve commands.</p></a>
+        <a href="aquaponics.html" class="relcard s274"><div class="s80">Aquaponics →</div><p class="s81">A build that will use pumps and feeders.</p></a>
       </div>
     </div>
   </section>
