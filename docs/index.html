@@ -23,8 +23,8 @@
       <div class="s88" id="navlinks">
         <a href="#overview" class="s7">Overview</a>
         <a href="#system" class="s7">System</a>
-        <a href="#modules" class="s7">Modules</a>
-        <a href="#nodes" class="s7">Nodes</a>
+        <a href="#projects" class="s7">Projects</a>
+        <a href="#workshops" class="s7">Workshops</a>
         <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s8">GitHub ↗</a>
       </div>
       <button id="burger" class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">☰</button>
@@ -40,7 +40,7 @@
       <p class="s94">GROUU is precision agriculture and automation for personal and small-scale growers — a kit of open sensor nodes, actuators, and an edge server, each documented so you can build, deploy and adapt it yourself. Developed as a PhD research-through-design process.</p>
       <div class="s95">
         <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s96">View the repository ↗</a>
-        <a href="#nodes" class="s97">Nodes in the field</a>
+        <a href="#projects" class="s97">See the projects</a>
       </div>
       <div class="s98">
         <div><div class="s99">3</div><div class="s100">Hardware generations</div></div>
@@ -80,7 +80,7 @@
     <div class="s103">
       <div class="s112">02 — System</div>
       <h2 class="s113">From soil to dashboard</h2>
-      <p class="s114">Nodes sense and act in the field. <br>WiFi nodes report over local MQTT; LoRaWAN nodes reach the same server via The Things Network — two parallel tracks, one shared stack on a Raspberry Pi.</p>
+      <p class="s114">Nodes sense and act in the field. <br>WiFi nodes report over local MQTT; <a href="grouuwan.html" class="s69">LoRaWAN nodes</a> reach the same server via The Things Network — two parallel tracks, one shared stack on a Raspberry Pi.</p>
 
       <div class="s115">
         <div class="s116">
@@ -118,169 +118,133 @@
     </div>
   </section>
 
-  <!-- ── MODULES ── -->
-  <section id="modules" class="s75">
+  <!-- ── PROJECTS ── -->
+  <section id="projects" class="s102">
     <div class="s103">
-      <div class="s105">03 — Modules</div>
+      <div class="s105">03 — Projects</div>
       <div class="s132">
-        <h2 class="s106">DiY templates</h2>
-        <span class="s133">GROUU V2 · in development</span>
+        <h2 class="s147">Projects</h2>
+        <p class="s148">Builds at different stages — active, completed, or archived. Each links to its documentation and its source in the repository.</p>
       </div>
-      <div class="s134">
 
-        <a href="wifi-node.html" class="s135 cardlink hoverborder">
-          <div class="s136"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0714.JPG" alt="WiFi sensor node" loading="lazy" class="s137"></div>
-          <div class="s138">
-            <div class="s139">
-              <span class="s140">Sensor node</span>
-              <span class="s141">WiFi</span>
+      <!-- ACTIVE -->
+      <div class="projgroup">
+        <div class="projstatus"><span class="d dev"></span> Active · under development</div>
+        <div class="s149">
+
+          <a href="wellbouy.html" class="hoverline s150">
+            <div class="s151">
+              <div class="s152">
+                <span class="s153"></span>
+                <span class="s154">V3 · live dashboard</span>
+              </div>
+              <h3 class="s155">WellBouy — Water-Quality Sensor</h3>
+              <p class="s156">An open LoRaWAN reference design for a water source — DS18B20 temperature, TDS, turbidity (SEN0189) and pH (Phidgets), joining The Things Network over EU868. All four sensors are calibrated and validated; the node deep-sleeps, resumes its session and accepts downlink commands, streaming to a live dashboard. Dedicated PCB fabricated.</p>
+              <div class="s157">
+                <span class="s158">XIAO ESP32-S3</span>
+                <span class="s158">Wio-SX1262</span>
+                <span class="s158">EU868 · OTAA</span>
+                <span class="s158">The Things Network</span>
+              </div>
+              <span class="s159">Explore the project →</span>
             </div>
-            <h3 class="s142">WiFi Sensor Node</h3>
-            <p class="s143">A wireless sensor template reporting over WiFi + MQTT — for sites within reach of a network.</p>
-          </div>
-        </a>
+            <div class="s160"><img src="site/img/wellbouy-board.png" alt="Well-water sensor board" loading="lazy" class="s161"></div>
+          </a>
 
-        <a href="grouuwan.html" class="s135 cardlink hoverborder">
-          <div class="s136"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0717.JPG" alt="LoRa sensor node" loading="lazy" class="s137"></div>
-          <div class="s138">
-            <div class="s139">
-              <span class="s140">Sensor node</span>
-              <span class="s141">LoRaWAN</span>
+          <a href="nursery.html" class="s168 cardlink hoverborder">
+            <div class="s169"><img src="site/assets/emblem-green.svg" alt="" class="s145"></div>
+            <div class="s164">
+              <div class="s165">
+                <span class="s170">◑ In design</span>
+              </div>
+              <h3 class="s166">Nursery Greenhouse</h3>
+              <p class="s167">A small seedling greenhouse — climate and irrigation sensing feeding the same stack. Structure and node in design; 3D and notes to follow.</p>
             </div>
-            <h3 class="s142">LoRa Sensor Node</h3>
-            <p class="s143">Long-range, low-power template for remote fields and wells beyond WiFi coverage.</p>
-          </div>
-        </a>
+          </a>
 
-        <a href="actuator.html" class="s135 cardlink hoverborder">
-          <div class="s144"><img src="site/assets/emblem-green.svg" alt="" class="s145"></div>
-          <div class="s138">
-            <div class="s139">
-              <span class="s140">Actuator</span>
-              <span class="s146">under development</span>
+          <a href="aquaponics.html" class="s168 cardlink hoverborder">
+            <div class="s169"><img src="site/assets/emblem-green.svg" alt="" class="s145"></div>
+            <div class="s164">
+              <div class="s165">
+                <span class="s170">◑ Under development</span>
+              </div>
+              <h3 class="s166">Aquaponics</h3>
+              <p class="s167">A home aquaponics unit for aromatics, built around a recovered fish tank with a CNC-milled structure.</p>
             </div>
-            <h3 class="s142">Actuator Module</h3>
-            <p class="s143">Drives valves and pumps — e.g. a 1-in / 4-out electrovalve water router for micro-irrigation.</p>
-          </div>
-        </a>
+          </a>
 
-        <a href="server-stack.html" class="s135 cardlink hoverborder">
-          <div class="s136"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0878.JPG" alt="Edge server" loading="lazy" class="s137"></div>
-          <div class="s138">
-            <div class="s139">
-              <span class="s140">Server</span>
-              <span class="s141">RPi</span>
+          <a href="actuator.html" class="s168 cardlink hoverborder">
+            <div class="s169"><img src="site/assets/emblem-green.svg" alt="" class="s145"></div>
+            <div class="s164">
+              <div class="s165">
+                <span class="s170">◑ Under development</span>
+              </div>
+              <h3 class="s166">Actuator Module</h3>
+              <p class="s167">Drives valves and pumps — e.g. a 1-in / 4-out electrovalve water router for micro-irrigation.</p>
             </div>
-            <h3 class="s142">Edge Server</h3>
-            <p class="s143">A Raspberry Pi running the GROUU Stack — the local hub that ingests, stores, and visualises all node data.</p>
-          </div>
-        </a>
+          </a>
 
+        </div>
       </div>
+
+      <!-- COMPLETED -->
+      <div class="projgroup">
+        <div class="projstatus"><span class="d done"></span> Completed · replicable</div>
+        <div class="s149">
+
+          <a href="wifi-node.html" class="hoverborder s162">
+            <div class="s163"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0714.JPG" alt="WiFi sensor node" loading="lazy" class="s137"></div>
+            <div class="s164">
+              <div class="s165">
+                <span class="s141">● Completed</span>
+                <span class="s171">WiFi</span>
+              </div>
+              <h3 class="s166">Basic Sensor Node</h3>
+              <p class="s167">The replicable learning module — an ESP32 + DHT22 template publishing JSON over WiFi &amp; MQTT, with reconnect logic and OTA updates. Complete, forkable, documented firmware.</p>
+            </div>
+          </a>
+
+          <a href="server-stack.html" class="hoverborder s162">
+            <div class="s163"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0878.JPG" alt="Edge server" loading="lazy" class="s137"></div>
+            <div class="s164">
+              <div class="s165">
+                <span class="s141">● Completed</span>
+                <span class="s171">Docker</span>
+              </div>
+              <h3 class="s166">Edge Server</h3>
+              <p class="s167">The open containerised GROUU Stack — Mosquitto, Node-RED, InfluxDB and Grafana — deployable on any Linux host or Raspberry Pi.</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ARCHIVED -->
+      <div class="projgroup">
+        <div class="projstatus"><span class="d arch"></span> Archived</div>
+        <div class="s149">
+
+          <a href="greenhouse.html" class="s168 cardlink hoverborder">
+            <div class="s163"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/grouuView.png" alt="GROUU greenhouse" loading="lazy" class="s137"></div>
+            <div class="s164">
+              <div class="s165">
+                <span class="arch">▢ Archived</span>
+              </div>
+              <h3 class="s166">Greenhouse · V0 (GrouuPro)</h3>
+              <p class="s167">GrouuPro, ~2013 — a built greenhouse + fertigation cabinet: Arduino Yún + Uno probes publishing to Google Sheets via Temboo, with local pump &amp; vent actuation. The origin of GROUU's architecture.</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ── NODES / DEPLOYMENTS ── -->
-  <section id="nodes" class="s102">
-    <div class="s103">
-      <div class="s105">04 — Nodes &amp; modules</div>
-      <div class="s132">
-        <h2 class="s147">Nodes &amp; modules</h2>
-        <p class="s148">Open node and server designs at different stages — developed, under development, or planned. Each links to its documentation.</p>
-      </div>
-
-      <div class="s149">
-
-        <!-- Well-water (feature → dedicated page) -->
-        <a href="wellbouy.html" class="hoverline s150">
-          <div class="s151">
-            <div class="s152">
-              <span class="s153"></span>
-              <span class="s154">Deployed · live dashboard</span>
-            </div>
-            <h3 class="s155">WellBouy — Water-Quality Sensor</h3>
-            <p class="s156">An open LoRaWAN reference design for a water source — DS18B20 temperature, TDS, turbidity (SEN0189) and pH (Phidgets), joining The Things Network over EU868. All four sensors are calibrated and validated; the node deep-sleeps, resumes its session and accepts downlink commands, streaming to a live dashboard. Dedicated PCB fabricated.</p>
-            <div class="s157">
-              <span class="s158">XIAO ESP32-S3</span>
-              <span class="s158">Wio-SX1262</span>
-              <span class="s158">EU868 · OTAA</span>
-              <span class="s158">The Things Network</span>
-            </div>
-            <span class="s159">Explore the node →</span>
-          </div>
-          <div class="s160"><img src="site/img/wellbouy-board.png" alt="Well-water sensor board" loading="lazy" class="s161"></div>
-        </a>
-
-        <!-- WiFi sensor node -->
-        <a href="wifi-node.html" class="hoverborder s162">
-          <div class="s163"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0714.JPG" alt="WiFi sensor node" loading="lazy" class="s137"></div>
-          <div class="s164">
-            <div class="s165">
-              <span class="s141">● Developed</span>
-            </div>
-            <h3 class="s166">WiFi Sensor Node</h3>
-            <p class="s167">A reusable ESP32 + DHT22 template publishing JSON over WiFi &amp; MQTT, with reconnect logic and over-the-air updates. Complete, documented firmware.</p>
-          </div>
-        </a>
-
-        <!-- Aquaponics @ Home -->
-        <a href="aquaponics.html" class="s168 cardlink hoverborder">
-          <div class="s169"><img src="site/assets/emblem-green.svg" alt="" class="s145"></div>
-          <div class="s164">
-            <div class="s165">
-              <span class="s170">◑ Under development</span>
-            </div>
-            <h3 class="s166">Aquaponics</h3>
-            <p class="s167">A home aquaponics unit for aromatics, built around a recovered fish tank with a CNC-milled structure.</p>
-          </div>
-        </a>
-
-        <!-- GROUUWAN LoRaWAN -->
-        <a href="grouuwan.html" class="hoverborder s162">
-          <div class="s169"><img src="site/assets/emblem-green.svg" alt="" class="s145"></div>
-          <div class="s164">
-            <div class="s165">
-              <span class="s170">◑ Under development</span>
-              <span class="s171">LoRaWAN</span>
-            </div>
-            <h3 class="s166">GROUUWAN</h3>
-            <p class="s167">The long-range LoRaWAN track via The Things Network — gateway pattern and TTN bridge documented, first node tested, sensor firmware in progress.</p>
-          </div>
-        </a>
-
-        <!-- Greenhouse IoT (archived) -->
-        <a href="greenhouse.html" class="s168 cardlink hoverborder">
-          <div class="s163"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/grouuView.png" alt="GROUU greenhouse" loading="lazy" class="s137"></div>
-          <div class="s164">
-            <div class="s165">
-              <span class="arch">▢ Archived</span>
-            </div>
-            <h3 class="s166">Greenhouse · V0 (GrouuPro)</h3>
-            <p class="s167">GrouuPro, ~2013 — a built greenhouse + fertigation cabinet: Arduino Yún + Uno probes publishing to Google Sheets via Temboo, with local pump &amp; vent actuation. The origin of GROUU's architecture.</p>
-          </div>
-        </a>
-
-        <!-- Edge server -->
-        <a href="server-stack.html" class="hoverborder s162">
-          <div class="s163"><img src="https://raw.githubusercontent.com/steam228/GROUU/master/images/IMG_0878.JPG" alt="Edge server" loading="lazy" class="s137"></div>
-          <div class="s164">
-            <div class="s165">
-              <span class="s141">● Developed</span>
-              <span class="s171">Docker</span>
-            </div>
-            <h3 class="s166">Edge Server</h3>
-            <p class="s167">The open containerised GROUU Stack — Mosquitto, Node-RED, InfluxDB and Grafana — deployable on any Linux host or Raspberry Pi.</p>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── VERSIONS ── -->
+  <!-- ── EVOLUTION ── -->
   <section class="s75">
     <div class="s103">
-      <div class="s105">05 — Evolution</div>
+      <div class="s105">04 — Evolution</div>
       <h2 class="s172">Research-through-design process evolution</h2>
       <div class="s173">
 
@@ -313,16 +277,41 @@
         <div class="s182">
           <img src="site/assets/emblem-light.svg" alt="" class="s183">
           <div class="s184">
-            <span class="s185">V2</span>
+            <span class="s185">V2 – V3</span>
             <span class="s186">2023 – now</span>
           </div>
           <div class="s187">Situated Practice</div>
-          <p class="s188">The designer's own position inside an open knowledge ecosystem — WiFi and LoRaWAN nodes feeding a containerised server stack, tested across real, inhabited sites.</p>
+          <p class="s188">The designer's own position inside an open knowledge ecosystem — WiFi and LoRaWAN nodes feeding a containerised server stack, tested across real, inhabited sites. V3 extends the LoRaWAN track to water and climate.</p>
           <div class="s189">
             <span class="s190">XIAO ESP32-S3</span>
             <span class="s190">WiFi + LoRaWAN</span>
           </div>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WORKSHOPS ── -->
+  <section id="workshops" class="s102">
+    <div class="s103">
+      <div class="s105">05 — Workshops</div>
+      <div class="s132">
+        <h2 class="s147">Workshops</h2>
+        <p class="s148">Hands-on activities built to disseminate and co-create around GROUU. Materials — BOMs, circuit diagrams, build photos — live in the repository.</p>
+      </div>
+      <div class="s149">
+
+        <a href="https://github.com/steam228/GROUU/tree/master/WORKSHOPS/AAlfaceOHM" target="_blank" rel="noopener" class="s168 cardlink hoverborder">
+          <div class="s169"><img src="site/assets/emblem-green.svg" alt="" class="s145"></div>
+          <div class="s164">
+            <div class="s165">
+              <span class="s171">Workshop ↗</span>
+            </div>
+            <h3 class="s166">AlfaceOHM · Osso Labirintos</h3>
+            <p class="s167">A hands-on electronics workshop — a 555-based soil-moisture "metro", with BOMs, circuit diagrams and build photos.</p>
+          </div>
+        </a>
 
       </div>
     </div>
@@ -355,8 +344,8 @@
             <div class="s206">
               <a href="#overview" class="s207">Overview</a>
               <a href="#system" class="s207">System</a>
-              <a href="#modules" class="s207">Modules</a>
-              <a href="#nodes" class="s207">Nodes</a>
+              <a href="#projects" class="s207">Projects</a>
+              <a href="#workshops" class="s207">Workshops</a>
             </div>
           </div>
           <div>
