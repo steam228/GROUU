@@ -45,6 +45,8 @@
     </div>
   </header>
 
+  <img src="site/img/wellbouy-board.png" alt="The well-bouy01 carrier board" class="v0hero" loading="lazy" />
+
   <!-- 01 · OVERVIEW -->
   <section class="s21">
     <div class="s22">
@@ -149,6 +151,11 @@
         <div class="s259"><span class="s260">5 V</span><p class="s261"><strong class="s218">Switched</strong> — analog conditioners powered ~1 s per cycle through a high-side load switch (GPIO1 / D0).</p></div>
         <div class="s259"><span class="s260">Bat</span><p class="s261">1S LiPo (4500 mAh), mains-rechargeable — a fixed well site needs no panel. The board still exposes battery + solar inputs, so the same design runs off-grid elsewhere.</p></div>
       </div>
+
+      <figure class="pfig mt24">
+        <img src="site/img/wellbouy/boards-fabricated.jpg" alt="Fabricated well-bouy01 boards from JLCPCB" loading="lazy">
+        <figcaption>The fabricated well-bouy01 boards.</figcaption>
+      </figure>
 
       <div class="bomwrap mt24">
         <table class="bomtable">
@@ -322,9 +329,8 @@ int16_t state = node.sendReceive(lpp.getBuffer(), lpp.getSize(),
   <section class="s21">
     <div class="s22">
       <div class="s23">Gallery</div>
-      <h2 class="s24">Boards, renders, sketching</h2>
+      <h2 class="s24">Renders &amp; sketching</h2>
       <div class="photogrid">
-        <figure class="pfig"><img src="site/img/wellbouy/boards-fabricated.jpg" alt="Fabricated well-bouy01 boards from JLCPCB" loading="lazy"><figcaption>Fabricated well-bouy01 boards</figcaption></figure>
         <figure class="pfig"><img src="site/img/wellbouy/components-01.jpg" alt="WellBouy components laid out in the Fusion model" loading="lazy"><figcaption>Component layout</figcaption></figure>
         <figure class="pfig"><img src="site/img/wellbouy/components-02.jpg" alt="WellBouy component arrangement, alternate view" loading="lazy"><figcaption>Arrangement</figcaption></figure>
         <figure class="pfig"><img src="site/img/wellbouy/components-03.jpg" alt="WellBouy component arrangement packed for the hull" loading="lazy"><figcaption>Packing study</figcaption></figure>
