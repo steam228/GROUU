@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WiFi Sensor Node · GROUU</title>
+  <title>Basic Sensor Node · GROUU</title>
   <link rel="icon" href="site/assets/emblem-green.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +17,7 @@
     <div class="s3">
       <a href="index.html" class="s4"><img src="site/assets/wordmark-green.svg" alt="GROUU" class="s5"></a>
       <div class="s6">
-        <a href="index.html#nodes" class="s7">← All nodes</a>
+        <a href="index.html#projects" class="s7">← All projects</a>
         <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V2/GROUUV2-SensorNodeWiFi" target="_blank" rel="noopener" class="s8">Firmware ↗</a>
       </div>
     </div>
@@ -25,13 +25,13 @@
 
   <header class="s9">
     <div class="s10">
-      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#nodes" class="s12">Nodes</a> · <span class="s13">WiFi Sensor Node</span></div>
+      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#projects" class="s12">Projects</a> · <span class="s13">Basic Sensor Node</span></div>
       <div class="s14">
         <span class="s209"></span>
-        <span class="s210">Developed · firmware published</span>
+        <span class="s210">Completed · replicable recipe</span>
       </div>
-      <h1 class="s17">WiFi Sensor Node</h1>
-      <p class="s233">The reference template for local sensing on GROUU: an ESP32 that reads a sensor and publishes JSON over WiFi + MQTT, with reconnect logic and over-the-air updates. Complete, documented firmware you can clone, configure and flash.</p>
+      <h1 class="s17">Basic Sensor Node</h1>
+      <p class="s233">GROUU's basic node for local sensing: an ESP32 that reads a sensor and publishes JSON over WiFi + MQTT, with reconnect logic and over-the-air updates. A complete, forkable firmware template — the learning module the water and climate nodes build on.</p>
       <div class="s19">
         <span class="s20">ESP32</span>
         <span class="s20">DHT22</span>
@@ -73,23 +73,28 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- OVERVIEW -->
   <section class="s9">
-    <div class="s44">
-      <div>
-        <div class="s23">How it works</div>
-        <h2 class="s45">Connect, publish, stay reachable</h2>
-        <div class="s275">
-          <div class="s276"><span class="s277">→</span><p class="s261">Joins WiFi with automatic reconnect.</p></div>
-          <div class="s276"><span class="s277">→</span><p class="s261">Publishes / subscribes over MQTT via PubSubClient.</p></div>
-          <div class="s276"><span class="s277">→</span><p class="s261">Reads DHT22 and sends <span class="s278">{"t2":x,"h2":x}</span> every 3 s.</p></div>
-          <div class="s276"><span class="s277">→</span><p class="s261"><strong class="s218">OTA updates</strong>, armed remotely via a control topic.</p></div>
-          <div class="s276"><span class="s277">→</span><p class="s261">Accepts a remote reboot command.</p></div>
-        </div>
+    <div class="s22">
+      <div class="s23">Overview</div>
+      <h2 class="s24">Sense, publish, stay reachable</h2>
+      <p class="s239">The node reads a sensor and publishes JSON over WiFi + MQTT to the shared stack, reconnecting on its own and updatable over the air. In the research process it is the foundational, replicable learning module the water and climate nodes extend.</p>
+      <p class="schcap">Sense → publish over WiFi / MQTT → the shared stack picks it up.</p>
+      <div class="schflow">
+        <div class="schbox"><div class="schk">Sensor</div><div class="schn">DHT22</div><div class="schs">temperature + humidity · single-wire</div></div>
+        <div class="scharr">→</div>
+        <div class="schbox dark"><div class="schk">Node</div><div class="schn">ESP32 (XIAO-C3)</div><div class="schs">read · JSON · auto-reconnect · OTA</div></div>
+        <div class="schlab"><span>WiFi</span><span>→</span><span>MQTT</span></div>
+        <div class="schbox"><div class="schk">Broker</div><div class="schn">Mosquitto</div><div class="schs">&lt;host&gt;/sensors · system/set · system/log</div></div>
+        <div class="scharr">→</div>
+        <div class="schbox dash"><div class="schk">Stack</div><div class="schn">Node-RED · InfluxDB · Grafana</div><div class="schs">store + visualise</div></div>
       </div>
-      <div class="imgslot s51">
-        <span class="ico">🔧📷</span>
-        <span class="cap">Wiring diagram / photo: ESP32 + DHT22 on breadboard</span>
+      <div class="s275">
+        <div class="s276"><span class="s277">→</span><p class="s261">Joins WiFi with automatic reconnect.</p></div>
+        <div class="s276"><span class="s277">→</span><p class="s261">Publishes / subscribes over MQTT via PubSubClient.</p></div>
+        <div class="s276"><span class="s277">→</span><p class="s261">Reads DHT22 and sends <span class="s278">{"t2":x,"h2":x}</span> every 3 s.</p></div>
+        <div class="s276"><span class="s277">→</span><p class="s261"><strong class="s218">OTA updates</strong>, armed remotely via a control topic.</p></div>
+        <div class="s276"><span class="s277">→</span><p class="s261">Accepts a remote reboot command.</p></div>
       </div>
     </div>
   </section>
@@ -156,7 +161,7 @@
           <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
           <tbody>
             <tr><td class="part">ESP32 dev board</td><td>MCU + WiFi (the PlatformIO env targets a XIAO ESP32-C3)</td><td>—</td></tr>
-            <tr><td class="part">DHT22 (AM2302)</td><td>Temperature + humidity, data on pin D7</td><td>—</td></tr>
+            <tr><td class="part">DHT22 (AM2302)</td><td>Temperature + humidity (factory-calibrated, no user cal), data on pin D7</td><td>—</td></tr>
             <tr><td class="part">4.7k–10k pull-up</td><td>On the DHT data line</td><td>—</td></tr>
             <tr><td class="part">MQTT broker</td><td>Any — e.g. the GROUU Stack</td><td><a href="server-stack.html">Server Stack</a></td></tr>
           </tbody>
