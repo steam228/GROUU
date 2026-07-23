@@ -158,10 +158,10 @@
   <!-- POWER -->
   <section class="s9">
     <div class="s44">
-      <div class="imgslot s219">
-        <span class="ico">🔌📷</span>
-        <span class="cap">Photo / diagram: the node's power rails &amp; 5 V load switch (breadboard or board close-up)</span>
-      </div>
+      <figure class="pfig">
+        <img src="site/img/wellbouy/boards-fabricated.jpg" alt="Fabricated well-bouy01 boards, fresh from JLCPCB" loading="lazy">
+        <figcaption>The fabricated well-bouy01 boards.</figcaption>
+      </figure>
       <div>
         <div class="s23">Hardware · power</div>
         <h2 class="s257">Two rails, battery-powered</h2>
@@ -217,6 +217,25 @@ int16_t state = node.sendReceive(lpp.getBuffer(), lpp.getSize(),
           </tbody>
         </table>
       </div>
+    </div>
+  </section>
+
+  <!-- 3D MODEL & ENCLOSURE -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">Industrial design · 3D</div>
+      <h2 class="s24">Enclosure &amp; live 3D model</h2>
+      <p class="s70">The board and enclosure are modelled in Autodesk Fusion; the viewer below always shows the latest version. Under it: the component layout the hull has to wrap, and a timelapse sketching shapes over that arrangement.</p>
+      <div class="embed3d"><iframe src="https://a360.co/4wkWMu1" title="WellBouy — Fusion 360 model" allowfullscreen loading="lazy"></iframe></div>
+      <div class="photogrid mt24">
+        <figure class="pfig"><img src="site/img/wellbouy/components-01.jpg" alt="WellBouy components laid out in the Fusion model" loading="lazy"><figcaption>Component layout</figcaption></figure>
+        <figure class="pfig"><img src="site/img/wellbouy/components-02.jpg" alt="WellBouy component arrangement, alternate view" loading="lazy"><figcaption>Arrangement</figcaption></figure>
+        <figure class="pfig"><img src="site/img/wellbouy/components-03.jpg" alt="WellBouy component arrangement, packed for the hull" loading="lazy"><figcaption>Packing study</figcaption></figure>
+      </div>
+      <figure class="pfig mt24">
+        <video controls muted loop playsinline preload="metadata"><source src="site/img/wellbouy/enclosure-sketch.mp4" type="video/mp4"></video>
+        <figcaption>Timelapse — sketching enclosure shapes over the component layout (iPad).</figcaption>
+      </figure>
     </div>
   </section>
 
