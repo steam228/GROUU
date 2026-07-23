@@ -17,7 +17,7 @@
     <div class="s3">
       <a href="index.html" class="s4"><img src="site/assets/wordmark-green.svg" alt="GROUU" class="s5"></a>
       <div class="s6">
-        <a href="index.html#system" class="s7">← System</a>
+        <a href="index.html#projects" class="s7">← All projects</a>
         <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s8">Source ↗</a>
       </div>
     </div>
@@ -25,13 +25,13 @@
 
   <header class="s9">
     <div class="s10">
-      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#system" class="s12">System</a> · <span class="s13">Server Stack</span></div>
+      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#projects" class="s12">Projects</a> · <span class="s13">Server Stack</span></div>
       <div class="s14">
         <span class="s209"></span>
-        <span class="s210">Developed · reproducible from a compose file</span>
+        <span class="s210">Completed · reproducible from a compose file</span>
       </div>
       <h1 class="s17">The GROUU Stack</h1>
-      <p class="s18">An open, containerised edge-server pipeline that any GROUU node can report into — messaging, flow logic, time-series storage and dashboards. Runs on any Linux host or Raspberry Pi from a single Docker Compose file.</p>
+      <p class="s233">An open, containerised edge-server pipeline that any GROUU node can report into — messaging, flow logic, time-series storage and dashboards. Runs on any Linux host or Raspberry Pi from a single Docker Compose file.</p>
       <div class="s19">
         <span class="s20">Docker Compose</span>
         <span class="s20">Portainer</span>
@@ -40,59 +40,45 @@
     </div>
   </header>
 
-  <!-- LEVEL OF DEVELOPMENT -->
+  <img src="site/img/server/dashboard.jpg" alt="The GROUU public dashboard" class="v0hero" loading="lazy" />
+
+  <!-- 01 · OVERVIEW -->
   <section class="s21">
     <div class="s22">
-      <div class="s23">Level of development</div>
-      <h2 class="s24">What's published</h2>
-      <p class="s25">The stack is a complete, reusable recipe: a compose file plus the guidance to deploy and secure it. It runs live on the project's Raspberry Pi, ingesting the WellBouy node today.</p>
-      <div class="s26">
-        <div class="s27">
-          <span class="s28">Docker Compose</span>
-          <span class="s29">Full four-service stack definition, deployable as-is.</span>
-          <span class="s31">✓ Available</span>
-        </div>
-        <div class="s27">
-          <span class="s28">Install guide</span>
-          <span class="s29">Docker + Portainer setup, then deploy the stack.</span>
-          <span class="s31">✓ Available</span>
-        </div>
-        <div class="s27">
-          <span class="s28">Service configuration</span>
-          <span class="s29">MQTT auth, InfluxDB buckets and Grafana data-source notes.</span>
-          <span class="s31">✓ Available</span>
-        </div>
-        <div class="s32">
-          <span class="s28">TTN bridge recipe</span>
-          <span class="s29">For pulling LoRaWAN uplinks in — see <a href="grouuwan.html">GROUUWAN</a>.</span>
-          <span class="s31">✓ Documented</span>
+      <div class="s23">01 · Overview</div>
+      <h2 class="s24">What it is</h2>
+      <p class="s25">The GROUU Stack is the <strong class="s218">completed, reusable</strong> backend every node reports into — a compose file plus the guidance to deploy and secure it. It runs live on the project's Raspberry Pi, ingesting the WellBouy node today; any TTN- or MQTT-connected node lands in the same pipeline.</p>
+      <div class="reciperow"><a href="https://github.com/steam228/GROUU#server-documentation" target="_blank" rel="noopener" class="reciperepo">⟶ server documentation (repository)</a></div>
+      <div class="schsec">
+        <div class="schtag">Overview</div>
+        <div class="schtitle">Every node, one path</div>
+        <p class="schcap">Sources → ingest → store → visualise.</p>
+        <div class="schcanvaswrap">
+          <div class="schflow schmid">
+            <div class="schbox"><div class="schk">Sources</div><div class="schn">WiFi &amp; LoRaWAN nodes</div><div class="schs">MQTT · TTN</div></div>
+            <div class="scharr">→</div>
+            <div class="schbox"><div class="schk">Ingest</div><div class="schn">Mosquitto → Node-RED</div><div class="schs">:1883 · :1880</div></div>
+            <div class="scharr">→</div>
+            <div class="schbox"><div class="schk">Store</div><div class="schn">InfluxDB</div><div class="schs">:8086 · buckets</div></div>
+            <div class="scharr">→</div>
+            <div class="schbox dark"><div class="schk">Visualise</div><div class="schn">Grafana + public web</div><div class="schs">:3000 · dashboards</div></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- 02 · DESIGN -->
   <section class="s9">
     <div class="s22">
-      <div class="s23">How it works · services</div>
-      <h2 class="s52">Four containers, one pipeline</h2>
+      <div class="s23">02 · Design</div>
+      <h2 class="s24">Four containers, one pipeline</h2>
+      <p class="s239">The stack is four cooperating services on one compose network, plus a management UI — each does one job, and any of them can be swapped.</p>
       <div class="s211">
-        <div class="s54">
-          <div class="s212"><span class="s213">Mosquitto</span><span class="s214">:1883</span></div>
-          <p class="s57">MQTT broker — receives every sensor uplink. Per-client authentication (anonymous access disabled).</p>
-        </div>
-        <div class="s54">
-          <div class="s212"><span class="s213">Node-RED</span><span class="s214">:1880</span></div>
-          <p class="s57">Flow-based processing — routes and parses messages (including TTN payloads) on the way to storage.</p>
-        </div>
-        <div class="s54">
-          <div class="s212"><span class="s213">InfluxDB</span><span class="s214">:8086</span></div>
-          <p class="s57">Time-series database — one bucket per source. All sensor history lives here.</p>
-        </div>
-        <div class="s54">
-          <div class="s212"><span class="s213">Grafana</span><span class="s214">:3000</span></div>
-          <p class="s57">Dashboards &amp; visualisation, reading InfluxDB over the shared compose network.</p>
-        </div>
+        <div class="s54"><div class="s212"><span class="s213">Mosquitto</span><span class="s214">:1883</span></div><p class="s57">MQTT broker — receives every sensor uplink. Per-client authentication (anonymous access disabled).</p></div>
+        <div class="s54"><div class="s212"><span class="s213">Node-RED</span><span class="s214">:1880</span></div><p class="s57">Flow-based processing — routes and parses messages (including TTN payloads) on the way to storage.</p></div>
+        <div class="s54"><div class="s212"><span class="s213">InfluxDB</span><span class="s214">:8086</span></div><p class="s57">Time-series database — one bucket per source. All sensor history lives here.</p></div>
+        <div class="s54"><div class="s212"><span class="s213">Grafana</span><span class="s214">:3000</span></div><p class="s57">Dashboards &amp; visualisation, reading InfluxDB over the shared compose network.</p></div>
       </div>
       <div class="s215">
         <span class="s216">Management</span>
@@ -101,57 +87,29 @@
     </div>
   </section>
 
-  <!-- FLOW + IMAGE -->
+  <!-- 03 · HARDWARE -->
   <section class="s21">
-    <div class="s44">
-      <div class="imgslot s219">
-        <span class="ico">📊📷</span>
-        <span class="cap">Screenshot: a Grafana dashboard (or the live GROUU dashboard)</span>
-      </div>
-      <div>
-        <div class="s23">Data flow</div>
-        <h2 class="s45">Every node, one path</h2>
-        <div class="s46">
-          <div class="s220"><span class="s221">Sources</span><p class="s49">WiFi &amp; LoRaWAN (via TTN) nodes</p></div>
-          <div class="s222"></div>
-          <div class="s220"><span class="s221">Ingest</span><p class="s49">Mosquitto → Node-RED</p></div>
-          <div class="s222"></div>
-          <div class="s220"><span class="s221">Store</span><p class="s49">InfluxDB time-series buckets</p></div>
-          <div class="s222"></div>
-          <div class="s220"><span class="s221">Visualise</span><p class="s49">Grafana dashboards</p></div>
-        </div>
+    <div class="s22">
+      <div class="s23">03 · Hardware</div>
+      <h2 class="s24">What it runs on</h2>
+      <p class="s70">Host-agnostic: any Linux machine or a Raspberry Pi. The project's instance runs on a Pi, exposed publicly through a Cloudflare tunnel.</p>
+      <div class="s127 mt24">
+        <div><div class="s231">Host</div><div class="s28">Linux / RPi</div><div class="s232">64-bit recommended</div></div>
+        <div><div class="s231">Engine</div><div class="s28">Docker</div><div class="s232">compose plugin</div></div>
+        <div><div class="s231">Network</div><div class="s28">LAN</div><div class="s232">static address advised</div></div>
+        <div><div class="s231">Storage</div><div class="s28">Volumes</div><div class="s232">per service</div></div>
       </div>
     </div>
   </section>
 
-  <!-- DEPLOY -->
-  <section class="s58">
+  <!-- 04 · SOFTWARE -->
+  <section class="s9">
     <div class="s22">
-      <div class="s59">How to reuse · deploy</div>
-      <h2 class="s60">Three steps to a running stack</h2>
-      <div class="s223">
-        <div class="s224"><div class="s225">01</div><div class="s226">Install Docker</div><p class="s227">On any Linux host or Raspberry Pi.</p></div>
-        <div class="s224"><div class="s225">02</div><div class="s226">Run Portainer</div><p class="s227">Container-management UI on :9000.</p></div>
-        <div class="s224"><div class="s225">03</div><div class="s226">Deploy the stack</div><p class="s227">Paste the compose → Deploy.</p></div>
-      </div>
-      <div class="s228">
-        <div class="s229">docker compose up -d</div>
-        <div><span class="s69">mosquitto</span>  eclipse-mosquitto:2   →  :1883</div>
-        <div><span class="s69">nodered</span>    nodered/node-red      →  :1880</div>
-        <div><span class="s69">influxdb</span>   influxdb:2            →  :8086</div>
-        <div><span class="s69">grafana</span>    grafana/grafana       →  :3000</div>
-      </div>
-      <div class="s230">Full compose file, MQTT-auth guide and a security checklist live in the <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s69">repository ↗</a></div>
-    </div>
-  </section>
-
-  <!-- REFERENCE FILES -->
-  <section class="s75">
-    <div class="s22">
-      <div class="s23">Reference files</div>
-      <h2 class="s24">The files behind the stack</h2>
+      <div class="s23">04 · Software</div>
+      <h2 class="s24">The compose file &amp; flows</h2>
+      <p class="s239">Everything is declared: the four-service compose file, the Node-RED flows and TTN payload formatter, and the Grafana dashboard — all in the repo.</p>
       <div class="reciperow">
-        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3/server" target="_blank" rel="noopener" class="reciperepo">⟶ server/ — Node-RED flows · TTN formatter · Grafana dashboard</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3/server" target="_blank" rel="noopener" class="reciperepo">⟶ server/ — flows · TTN formatter · Grafana dashboard</a>
         <a href="https://github.com/steam228/GROUU/tree/master/ARDUINO/GROUU_V3/webapp" target="_blank" rel="noopener" class="reciperepo">⟶ webapp/ — public dashboard container</a>
       </div>
       <p class="codecap">docker-compose.yml — the four-service stack (representative; full file in the repo)</p>
@@ -179,27 +137,47 @@
     </div>
   </section>
 
-  <!-- REQUIREMENTS -->
-  <section class="s21">
-    <div class="s76">
-      <div class="s77">Requirements</div>
-      <div class="s127">
-        <div><div class="s231">Host</div><div class="s28">Linux / RPi</div><div class="s232">64-bit recommended</div></div>
-        <div><div class="s231">Engine</div><div class="s28">Docker</div><div class="s232">compose plugin</div></div>
-        <div><div class="s231">Network</div><div class="s28">LAN</div><div class="s232">static address advised</div></div>
-        <div><div class="s231">Storage</div><div class="s28">Volumes</div><div class="s232">per service</div></div>
+  <!-- 05 · PROCESS -->
+  <section class="s58">
+    <div class="s22">
+      <div class="s59">05 · Process</div>
+      <h2 class="s262">Done — three steps to a running stack</h2>
+      <p class="s263">The stack is a complete, reusable recipe running live on the project's Pi. To deploy your own: install Docker, run Portainer, paste the compose and deploy.</p>
+      <div class="s223">
+        <div class="s224"><div class="s225">01</div><div class="s226">Install Docker</div><p class="s227">On any Linux host or Raspberry Pi.</p></div>
+        <div class="s224"><div class="s225">02</div><div class="s226">Run Portainer</div><p class="s227">Container-management UI on :9000.</p></div>
+        <div class="s224"><div class="s225">03</div><div class="s226">Deploy the stack</div><p class="s227">Paste the compose → Deploy.</p></div>
       </div>
+      <div class="s228">
+        <div class="s229">docker compose up -d</div>
+        <div><span class="s69">mosquitto</span>  eclipse-mosquitto:2   →  :1883</div>
+        <div><span class="s69">nodered</span>    nodered/node-red      →  :1880</div>
+        <div><span class="s69">influxdb</span>   influxdb:2            →  :8086</div>
+        <div><span class="s69">grafana</span>    grafana/grafana       →  :3000</div>
+      </div>
+      <div class="s230">Full compose file, MQTT-auth guide and a security checklist live in the <a href="https://github.com/steam228/GROUU" target="_blank" rel="noopener" class="s69">repository ↗</a></div>
     </div>
   </section>
 
-  <!-- RELATED -->
-  <section class="s75">
-    <div class="s76">
-      <div class="s77">Related</div>
+  <!-- GALLERY -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Gallery</div>
+      <h2 class="s24">The dashboard, live</h2>
+      <p class="s70">The public page the stack serves — real WellBouy data.</p>
+      <div class="reciperow"><a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" class="reciperepo">⟶ grouuwell01.hacktoimprove.com — live</a></div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">References</div>
+      <h2 class="s24">Source &amp; related</h2>
       <div class="s78">
-        <a href="wifi-node.html" class="relcard s79"><div class="s80">WiFi Node →</div><p class="s81">A source that publishes into this stack.</p></a>
-        <a href="grouuwan.html" class="relcard s79"><div class="s80">GROUUWAN →</div><p class="s81">The TTN bridge into Mosquitto.</p></a>
-        <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" class="relcard s79"><div class="s80">Live dashboard ↗</div><p class="s81">A public Grafana-style view — real WellBouy data.</p></a>
+        <a href="wifi-node.html" class="relcard s274"><div class="s80">Basic Sensor Node →</div><p class="s81">A source that publishes into this stack.</p></a>
+        <a href="grouuwan.html" class="relcard s274"><div class="s80">LoRaWAN Node →</div><p class="s81">The TTN bridge into Mosquitto.</p></a>
+        <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" class="relcard s274"><div class="s80">Live dashboard ↗</div><p class="s81">Real WellBouy data.</p></a>
       </div>
     </div>
   </section>

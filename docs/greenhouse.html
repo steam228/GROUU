@@ -25,12 +25,12 @@
 
   <header class="s9">
     <div class="s10">
-      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html" class="s12">Evolution</a> · <span class="s13">V0 · GrouuPro</span></div>
+      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#projects" class="s12">Projects</a> · <span class="s13">V0 · GrouuPro</span></div>
       <div class="s14">
         <span class="arch">▢ Archived</span>
       </div>
       <h1 class="s17">GrouuPro — the V0 greenhouse</h1>
-      <p class="s18">GrouuPro, 2013–2014. A greenhouse with an automated fertigation system for four raised beds. Built: sensing, cloud logging (Temboo → Google Sheets), local actuation. Designed, not built: the server app, remote control, automation. Sole author; build assistance by Rui Lopes.</p>
+      <p class="s233">GrouuPro, 2013–2014. A greenhouse with an automated fertigation system for four raised beds. Built: sensing, cloud logging (Temboo → Google Sheets), local actuation. Designed, not built: the server app, remote control, automation. Sole author; build assistance by Rui Lopes.</p>
       <div class="s19">
         <span class="s20">Arduino Yún</span>
         <span class="s20">Arduino Uno · I²C</span>
@@ -43,23 +43,27 @@
 
   <img src="site/img/v0/built.jpg" alt="The GrouuPro greenhouse, built" class="v0hero" loading="lazy" />
 
-  <!-- 1a · SYSTEM BLOCK DIAGRAM -->
+  <!-- 01 · OVERVIEW -->
   <section class="s21">
     <div class="s22">
       <div class="archbanner mb28">▢&nbsp; <strong>Archived</strong> — not in active development. Built: sensing, cloud logging, local actuation. Not built: server app, remote control, automation.</div>
-      <div class="s23">As built</div>
-      <h2 class="s24">System block diagram</h2>
-      <p class="schcap">Sensing → gateway → cloud log; local actuation through the cabinet.</p>
-      <div class="schflow">
-        <div class="schbox"><div class="schk">Field</div><div class="schn">Sensors</div><div class="schs">DHT22 · LDR · soil moisture · leaf wetness · DS18B20 · pH · levels · flow</div></div>
-        <div class="scharr">→</div>
-        <div class="schbox"><div class="schk">Probe boards</div><div class="schn">Arduino Uno probes</div><div class="schs">analog + 1-Wire in · I2C_Anything out</div></div>
-        <div class="schlab"><span>I²C</span><span>→</span><span>@42</span></div>
-        <div class="schbox dark"><div class="schk">Gateway</div><div class="schn">Arduino Yún</div><div class="schs">MCU sensing/actuation + Linux Bridge</div></div>
-        <div class="schlab"><span>Temboo</span><span>→</span></div>
-        <div class="schbox"><div class="schk">Cloud middleware</div><div class="schn">AppendRow choreo</div><div class="schs">timestamped rows</div></div>
-        <div class="scharr">→</div>
-        <div class="schbox dash"><div class="schk">Dashboard</div><div class="schn">Google Sheet</div><div class="schs">"GROUU_EXP" · interim log / plot</div></div>
+      <div class="s23">01 · Overview</div>
+      <h2 class="s24">What it was</h2>
+      <p class="s25">GrouuPro was the V0 origin of GROUU — a built greenhouse with a four-level fertigation cabinet serving four raised beds. An Arduino Yún sensed and actuated locally and published to a Google Sheet via Temboo; a fuller server app was designed but never built. It is the root of the sense → publish → visualise architecture everything since inherits.</p>
+      <div class="reciperow"><a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0" target="_blank" rel="noopener" class="reciperepo">⟶ grouu-v0 archive</a></div>
+      <p class="schcap">As built: sensing → gateway → cloud log; local actuation through the cabinet.</p>
+      <div class="schcanvaswrap">
+        <div class="schflow">
+          <div class="schbox"><div class="schk">Field</div><div class="schn">Sensors</div><div class="schs">DHT22 · LDR · soil moisture · leaf wetness · DS18B20 · pH · levels · flow</div></div>
+          <div class="scharr">→</div>
+          <div class="schbox"><div class="schk">Probe boards</div><div class="schn">Arduino Uno probes</div><div class="schs">analog + 1-Wire in · I2C_Anything out</div></div>
+          <div class="schlab"><span>I²C</span><span>→</span><span>@42</span></div>
+          <div class="schbox dark"><div class="schk">Gateway</div><div class="schn">Arduino Yún</div><div class="schs">MCU sensing/actuation + Linux Bridge</div></div>
+          <div class="schlab"><span>Temboo</span><span>→</span></div>
+          <div class="schbox"><div class="schk">Cloud middleware</div><div class="schn">AppendRow choreo</div><div class="schs">timestamped rows</div></div>
+          <div class="scharr">→</div>
+          <div class="schbox dash"><div class="schk">Dashboard</div><div class="schn">Google Sheet</div><div class="schs">"GROUU_EXP" · interim log / plot</div></div>
+        </div>
       </div>
       <div class="schdown"><span class="l"></span><span class="t">Yún GPIO · PWM</span><span class="l"></span><span class="c">▼</span></div>
       <div class="schflow"><div class="schbox tc"><div class="schn">MOSFET perfboard</div><div class="schs">PWM drivers · no custom PCB</div></div></div>
@@ -79,12 +83,70 @@
     </div>
   </section>
 
-  <!-- 1b · FERTIGATION P&ID -->
-  <section class="s75">
+  <!-- 02 · DESIGN -->
+  <section class="s9">
     <div class="s22">
-      <div class="s23">Cabinet + plumbing</div>
-      <h2 class="s24">Fertigation P&amp;ID</h2>
-      <p class="schcap">The four-level armário on the left; the water path it drives on the right. Glazed structure in LEXAN 8 mm on BWF aluminium; no custom PCB — pumps/motors on perfboard MOSFETs.</p>
+      <div class="s23">02 · Design</div>
+      <h2 class="s24">Designed 2014, never fully built</h2>
+      <p class="s239">The envisioned architecture — one central core, wired probes — and the module map of the server app that was planned but never built.</p>
+      <div class="schsec">
+        <div class="schtag">Envisioned architecture</div>
+        <div class="schtitle">One central core, wired probes</div>
+        <p class="schcap">A limited set of probes cables into the Yún — the Arduino MCU runs sensing + global actuation (multiplexed I/O); Linux is the server: local edge, or — as deployed — Temboo publishing to a Google Sheet.</p>
+        <div class="schcanvaswrap">
+          <div class="c1canvas">
+            <svg viewBox="0 0 680 640" preserveAspectRatio="none">
+              <line x1="67" y1="82" x2="300" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
+              <line x1="239" y1="82" x2="330" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
+              <line x1="419" y1="82" x2="360" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
+              <line x1="587" y1="82" x2="390" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
+              <line x1="260" y1="356" x2="160" y2="446" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
+              <line x1="420" y1="356" x2="510" y2="426" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
+              <line x1="420" y1="356" x2="445" y2="516" stroke="#65c298" stroke-width="2" opacity="0.5"></line>
+            </svg>
+            <div class="c1p c1p1"><div class="c1pk">PROBE 1</div><div class="c1pn">Sensor board</div><div class="c1ps">wired · I²C</div></div>
+            <div class="c1p c1p2"><div class="c1pk">PROBE 2</div><div class="c1pn">Sensor board</div><div class="c1ps">wired · I²C</div></div>
+            <div class="c1p c1p3"><div class="c1pk">PROBE 3</div><div class="c1pn">Sensor board</div><div class="c1ps">wired · I²C</div></div>
+            <div class="c1p c1p4"><div class="c1pk">PROBE 4</div><div class="c1pn">Sensor board</div><div class="c1ps">wired · I²C</div></div>
+            <div class="c1note">fixed set — bus limit, not modular</div>
+            <div class="c1yun">
+              <div class="c1yunh"><div class="c1yunt">Arduino Yún</div><div class="c1yuntag">CENTRAL CORE · DUAL ROLE</div></div>
+              <div class="c1yunr">
+                <div class="c1sub"><div class="c1subk">MCU</div><div class="c1subn">Sensing + actuation</div><div class="c1subs">+ multiplexing shield for more ports</div></div>
+                <div class="c1sub"><div class="c1subk">LINUX</div><div class="c1subn">Server / bridge</div><div class="c1subs">local edge server or cloud publish</div></div>
+              </div>
+            </div>
+            <div class="c1card c1act"><div class="c1ck">GLOBAL ACTUATORS</div><div class="c1cn">Irrigation cabinet · top-hatch vents</div><div class="c1cs">MOSFETs · pumps · valves · servo</div></div>
+            <div class="c1card c1pa"><div class="c1ck">PATH A — ENVISIONED</div><div class="c1cn">Local edge server</div><div class="c1cs">Node server + web front end on the LAN</div></div>
+            <div class="c1or">or</div>
+            <div class="c1card dash c1pb"><div class="c1ck">PATH B — AS DEPLOYED</div><div class="c1cn">Temboo → Google Sheet</div><div class="c1cs">"GROUU_EXP" · one probe's data</div></div>
+            <div class="c1legend"><span class="wire"></span>wired link &nbsp;·&nbsp; today's vision instead → fully modular Wi-Fi / LoRaWAN sensor &amp; actuator nodes + MQTT server stack</div>
+          </div>
+        </div>
+      </div>
+      <div class="schsec">
+        <div class="schtag">Envisioned modules</div>
+        <div class="schtitle">App map</div>
+        <p class="schcap">The module flow of the never-built server app, from the <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/GROUU%20OUTLINE%20.pdf" target="_blank" rel="noopener">outline</a>.</p>
+        <div class="schgrid4">
+          <div class="schmod"><div class="schmodn">01</div><div class="schmodt">Login</div><div class="schmodd">Entry point for every unit and user.</div></div>
+          <div class="schmod"><div class="schmodn">02</div><div class="schmodt">Profile</div><div class="schmodd">Admin / user roles.</div></div>
+          <div class="schmod"><div class="schmodn">03</div><div class="schmodt">Environmental definitions</div><div class="schmodd">Temp / humidity / photoperiod limits · µEinsteins.</div></div>
+          <div class="schmod"><div class="schmodn">04</div><div class="schmodt">Tests</div><div class="schmodd">Per-bed: plant, goal (crop / blooming / rooting / fruit-set), data interval, moisture · stress overrides · fertigation scheduling.</div></div>
+          <div class="schmod"><div class="schmodn">05</div><div class="schmodt">Watering solutions</div><div class="schmodd">6-product nutrient mixes: insert → mix → save.</div></div>
+          <div class="schmod"><div class="schmodn">06</div><div class="schmodt">Log &amp; annotation</div><div class="schmodd">Autolog + notes + photos · archive to PDF.</div></div>
+          <div class="schmod dark span2"><div class="schmodn">07</div><div class="schmodt">Dashboard</div><div class="schmodd">Real-time + anomaly alerts · global temp / humidity / photoperiod / luminance · per-test soil-temp, moisture, leaf wetness, hours.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · HARDWARE -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">03 · Hardware</div>
+      <h2 class="s24">Cabinet + plumbing</h2>
+      <p class="s70">The four-level armário on the left; the water path it drives on the right. Glazed structure in LEXAN 8 mm on BWF aluminium; no custom PCB — pumps/motors on perfboard MOSFETs.</p>
       <div class="schpid">
         <div class="schcab">
           <div class="h">Control cabinet · armário</div>
@@ -123,68 +185,35 @@
     </div>
   </section>
 
-  <!-- 1c · ENVISIONED ARCHITECTURE -->
+  <!-- 04 · SOFTWARE -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">04 · Software</div>
+      <h2 class="s24">Yún gateway, Uno probes, Temboo</h2>
+      <p class="s239">Three Arduino sketches: the Uno probes read analog + 1-Wire sensors and ship them over I²C (I2C_Anything) to address 42; the Yún gateway collects them, drives the cabinet — servo (pin 9), pumps BPER_1..6, main pump BR_P, valves — through the MOSFET perfboard, and, via the Linux Bridge, hands readings to a Temboo AppendRow choreo that timestamps a row into the "GROUU_EXP" Google Sheet. Local actuation only; no remote control. Committed credentials are redacted.</p>
+      <div class="reciperow"><a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0/firmware" target="_blank" rel="noopener" class="reciperepo">⟶ firmware — Yún · probe · Temboo sketches</a></div>
+    </div>
+  </section>
+
+  <!-- 05 · PROCESS -->
   <section class="s58">
     <div class="s22">
-      <div class="s59">Designed 2014, never fully built</div>
-      <h2 class="s60">Envisioned architecture</h2>
-      <p class="schcap">One central core, wired probes. A limited set of probes cables into the Yún — the Arduino MCU runs sensing + global actuation (multiplexed I/O); Linux is the server: local edge, or — as deployed — Temboo publishing to a Google Sheet.</p>
-      <div class="schcanvaswrap">
-        <div class="c1canvas">
-          <svg viewBox="0 0 680 640" preserveAspectRatio="none">
-            <line x1="67" y1="82" x2="300" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
-            <line x1="239" y1="82" x2="330" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
-            <line x1="419" y1="82" x2="360" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
-            <line x1="587" y1="82" x2="390" y2="196" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
-            <line x1="260" y1="356" x2="160" y2="446" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
-            <line x1="420" y1="356" x2="510" y2="426" stroke="#65c298" stroke-width="2" opacity="0.85"></line>
-            <line x1="420" y1="356" x2="445" y2="516" stroke="#65c298" stroke-width="2" opacity="0.5"></line>
-          </svg>
-          <div class="c1p c1p1"><div class="c1pk">PROBE 1</div><div class="c1pn">Sensor board</div><div class="c1ps">wired · I²C</div></div>
-          <div class="c1p c1p2"><div class="c1pk">PROBE 2</div><div class="c1pn">Sensor board</div><div class="c1ps">wired · I²C</div></div>
-          <div class="c1p c1p3"><div class="c1pk">PROBE 3</div><div class="c1pn">Sensor board</div><div class="c1ps">wired · I²C</div></div>
-          <div class="c1p c1p4"><div class="c1pk">PROBE 4</div><div class="c1pn">Sensor board</div><div class="c1ps">wired · I²C</div></div>
-          <div class="c1note">fixed set — bus limit, not modular</div>
-          <div class="c1yun">
-            <div class="c1yunh"><div class="c1yunt">Arduino Yún</div><div class="c1yuntag">CENTRAL CORE · DUAL ROLE</div></div>
-            <div class="c1yunr">
-              <div class="c1sub"><div class="c1subk">MCU</div><div class="c1subn">Sensing + actuation</div><div class="c1subs">+ multiplexing shield for more ports</div></div>
-              <div class="c1sub"><div class="c1subk">LINUX</div><div class="c1subn">Server / bridge</div><div class="c1subs">local edge server or cloud publish</div></div>
-            </div>
-          </div>
-          <div class="c1card c1act"><div class="c1ck">GLOBAL ACTUATORS</div><div class="c1cn">Irrigation cabinet · top-hatch vents</div><div class="c1cs">MOSFETs · pumps · valves · servo</div></div>
-          <div class="c1card c1pa"><div class="c1ck">PATH A — ENVISIONED</div><div class="c1cn">Local edge server</div><div class="c1cs">Node server + web front end on the LAN</div></div>
-          <div class="c1or">or</div>
-          <div class="c1card dash c1pb"><div class="c1ck">PATH B — AS DEPLOYED</div><div class="c1cn">Temboo → Google Sheet</div><div class="c1cs">"GROUU_EXP" · one probe's data</div></div>
-          <div class="c1legend"><span class="wire"></span>wired link &nbsp;·&nbsp; today's vision instead → fully modular Wi-Fi / LoRaWAN sensor &amp; actuator nodes + MQTT server stack</div>
-        </div>
+      <div class="s59">05 · Process</div>
+      <h2 class="s262">Built vs designed</h2>
+      <p class="s263">The greenhouse, cabinet and sensing were built and ran; cloud logging worked through Temboo. The fuller server app (login, per-bed tests, fertigation scheduling, dashboard) was designed in the outline but never built — the bus-limited, single-core architecture is exactly what the modular WiFi/LoRaWAN + MQTT-stack direction replaced. Archived, not in active development.</p>
+      <div class="s26">
+        <div class="s236"><span class="s28">Built</span><span class="s29">Greenhouse + fertigation cabinet, sensing, local actuation, Temboo → Google Sheet logging.</span><span class="s31">✓ Ran</span></div>
+        <div class="s236"><span class="s28">Designed, not built</span><span class="s29">Server app, remote control, automated scheduling, dashboard.</span><span class="s237">○ Never built</span></div>
+        <div class="s238"><span class="s28">Superseded by</span><span class="s29">Modular nodes + the shared MQTT server stack (V1–V3).</span><span class="s31">→ Evolved</span></div>
       </div>
     </div>
   </section>
 
-  <!-- 1d · APP MAP -->
+  <!-- GALLERY -->
   <section class="s21">
     <div class="s22">
-      <div class="s23">Envisioned modules</div>
-      <h2 class="s24">App map</h2>
-      <p class="schcap">The module flow of the never-built server app, from the <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/GROUU%20OUTLINE%20.pdf" target="_blank" rel="noopener">outline</a>.</p>
-      <div class="schgrid4">
-        <div class="schmod"><div class="schmodn">01</div><div class="schmodt">Login</div><div class="schmodd">Entry point for every unit and user.</div></div>
-        <div class="schmod"><div class="schmodn">02</div><div class="schmodt">Profile</div><div class="schmodd">Admin / user roles.</div></div>
-        <div class="schmod"><div class="schmodn">03</div><div class="schmodt">Environmental definitions</div><div class="schmodd">Temp / humidity / photoperiod limits · µEinsteins.</div></div>
-        <div class="schmod"><div class="schmodn">04</div><div class="schmodt">Tests</div><div class="schmodd">Per-bed: plant, goal (crop / blooming / rooting / fruit-set), data interval, moisture · stress overrides · fertigation scheduling.</div></div>
-        <div class="schmod"><div class="schmodn">05</div><div class="schmodt">Watering solutions</div><div class="schmodd">6-product nutrient mixes: insert → mix → save.</div></div>
-        <div class="schmod"><div class="schmodn">06</div><div class="schmodt">Log &amp; annotation</div><div class="schmodd">Autolog + notes + photos · archive to PDF.</div></div>
-        <div class="schmod dark span2"><div class="schmodn">07</div><div class="schmodt">Dashboard</div><div class="schmodd">Real-time + anomaly alerts · global temp / humidity / photoperiod / luminance · per-test soil-temp, moisture, leaf wetness, hours.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PHOTOS -->
-  <section class="s75">
-    <div class="s22">
-      <div class="s23">The build</div>
-      <h2 class="s24">Photos</h2>
+      <div class="s23">Gallery</div>
+      <h2 class="s24">The build</h2>
       <div class="photogrid">
         <figure class="pfig"><img src="site/img/v0/built2.jpg" alt="" loading="lazy"><figcaption>The greenhouse, built</figcaption></figure>
         <figure class="pfig"><img src="site/img/v0/built3.jpg" alt="" loading="lazy"><figcaption>A detail inside</figcaption></figure>
@@ -205,12 +234,12 @@
     </div>
   </section>
 
-  <!-- IN THE ARCHIVE -->
-  <section class="s102">
+  <!-- REFERENCES -->
+  <section class="s9">
     <div class="s22">
-      <div class="s23">In the archive</div>
-      <h2 class="s24">What's kept, and where</h2>
-      <p class="s25">The firmware, the master-plan outline and key drawings are committed; the 1.5 GB of CAD, renders and raw photos are catalogued in the manifest and referenced on backup. (Temboo/Google credentials in the sketches are redacted.)</p>
+      <div class="s23">References</div>
+      <h2 class="s24">In the archive &amp; related</h2>
+      <p class="s70">The firmware, the master-plan outline and key drawings are committed; the 1.5 GB of CAD, renders and raw photos are catalogued in the manifest and referenced on backup. (Temboo/Google credentials in the sketches are redacted.)</p>
       <div class="reciperow">
         <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0/firmware" target="_blank" rel="noopener" class="reciperepo">⟶ Firmware (Yún · probe · Temboo sketches)</a>
         <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/GROUU%20OUTLINE%20.pdf" target="_blank" rel="noopener" class="reciperepo">⟶ GROUU OUTLINE (the master plan)</a>
@@ -218,17 +247,10 @@
         <a href="https://github.com/steam228/GROUU/tree/master/ARCHIVE/grouu-v0/solidworks" target="_blank" rel="noopener" class="reciperepo">⟶ SolidWorks model tree (audited)</a>
         <a href="https://github.com/steam228/GROUU/blob/master/ARCHIVE/grouu-v0/MANIFEST.md" target="_blank" rel="noopener" class="reciperepo">⟶ Full manifest (1.5 GB catalogued)</a>
       </div>
-    </div>
-  </section>
-
-  <!-- RELATED -->
-  <section class="s75">
-    <div class="s76">
-      <div class="s77">Related</div>
-      <div class="s78">
-        <a href="server-stack.html" class="relcard s79"><div class="s80">Server Stack →</div><p class="s81">MQTT · Node-RED · InfluxDB · Grafana.</p></a>
-        <a href="wifi-node.html" class="relcard s79"><div class="s80">WiFi Node →</div><p class="s81">ESP32 + DHT22 template.</p></a>
-        <a href="index.html" class="relcard s79"><div class="s80">GROUU home →</div><p class="s81">V0 → V3 evolution.</p></a>
+      <div class="s78 mt24">
+        <a href="server-stack.html" class="relcard s274"><div class="s80">Server Stack →</div><p class="s81">MQTT · Node-RED · InfluxDB · Grafana.</p></a>
+        <a href="nursery.html" class="relcard s274"><div class="s80">Nursery →</div><p class="s81">Its V3 descendant, reduced to propagation.</p></a>
+        <a href="index.html" class="relcard s274"><div class="s80">GROUU home →</div><p class="s81">V0 → V3 evolution.</p></a>
       </div>
     </div>
   </section>
