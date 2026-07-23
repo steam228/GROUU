@@ -27,67 +27,137 @@
     <div class="s10">
       <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#projects" class="s12">Projects</a> · <span class="s13">Nursery</span></div>
       <div class="s14">
-        <span class="s153"></span>
-        <span class="s210">Active · in design</span>
+        <span class="s15"></span>
+        <span class="s16">Active · in design</span>
       </div>
       <h1 class="s17">Nursery greenhouse</h1>
-      <p class="s233">A small seedling nursery — a controlled greenhouse for propagation that senses climate and irrigation and reports to the shared GROUU stack. In early design; hardware, 3D and notes to follow.</p>
+      <p class="s233">A small seedling nursery — a controlled greenhouse for propagation that senses climate and irrigation and reports to the shared GROUU stack. Structure in build; sensing, node and 3D in design. The page carries the full project structure now, and fills in as it develops.</p>
       <div class="s19">
         <span class="s20">Seedling propagation</span>
         <span class="s20">Climate + irrigation</span>
+        <span class="s20">Reuses the basic node</span>
         <span class="s20">GROUU stack</span>
       </div>
     </div>
   </header>
 
-  <!-- STATUS -->
+  <img src="site/img/nursery/hero.jpg" alt="The nursery greenhouse" class="v0hero" loading="lazy" />
+
+  <!-- LEVEL OF DEVELOPMENT -->
   <section class="s21">
     <div class="s22">
       <div class="s23">Level of development</div>
       <h2 class="s24">Where it is</h2>
-      <p class="s25">Early design. The concept and its role in the system are set; hardware selection, structure and firmware come next.</p>
+      <p class="s25">Concept and role are set and the structure is being built; sensing, the node and the 3D model are in design. Sections below are in place so the structure reads the same as the finished projects.</p>
       <div class="s26">
-        <div class="s236">
-          <span class="s28">Concept</span>
-          <span class="s29">Role defined — a propagation nursery feeding the shared stack.</span>
-          <span class="s31">✓ Done</span>
-        </div>
-        <div class="s236">
-          <span class="s28">Sensing &amp; node</span>
-          <span class="s29">Climate + soil/irrigation sensing on a WiFi or LoRaWAN node.</span>
-          <span class="s237">○ In design</span>
-        </div>
-        <div class="s236">
-          <span class="s28">Structure &amp; 3D</span>
-          <span class="s29">Greenhouse structure and enclosure to be modelled in Fusion.</span>
-          <span class="s237">○ Planned</span>
-        </div>
-        <div class="s238">
-          <span class="s28">Notes &amp; docs</span>
-          <span class="s29">Design notes and this page grow as it develops.</span>
-          <span class="s31">✓ Ongoing</span>
-        </div>
+        <div class="s236"><span class="s28">Concept</span><span class="s29">A propagation nursery feeding the shared stack.</span><span class="s31">✓ Done</span></div>
+        <div class="s236"><span class="s28">Structure</span><span class="s29">Greenhouse frame + glazing under construction.</span><span class="s30">◑ In build</span></div>
+        <div class="s236"><span class="s28">Sensing &amp; node</span><span class="s29">Climate + soil/irrigation on a WiFi or LoRaWAN node — selection in progress.</span><span class="s237">○ In design</span></div>
+        <div class="s236"><span class="s28">3D model</span><span class="s29">Structure and layout modelled in Fusion.</span><span class="s30">◑ In progress</span></div>
+        <div class="s236"><span class="s28">BOM</span><span class="s29">Structure + reused electronics; no priced list yet.</span><span class="s237">○ Planned</span></div>
+        <div class="s238"><span class="s28">Documentation</span><span class="s29">This page grows with each stage.</span><span class="s31">✓ Ongoing</span></div>
       </div>
     </div>
   </section>
 
-  <!-- GOALS & CONTEXT -->
+  <!-- OVERVIEW -->
   <section class="s9">
+    <div class="s22">
+      <div class="s23">Overview</div>
+      <h2 class="s24">System diagram</h2>
+      <p class="s239">The nursery's sense → node → stack path, in the same shape as the other GROUU nodes. The scheme is drawn once the sensor set and radio are chosen.</p>
+      <div class="imgslot embedph"><span class="ico">🌱📐</span><span class="cap">System scheme — in design.</span></div>
+    </div>
+  </section>
+
+  <!-- GOALS & CONTEXT -->
+  <section class="s21">
     <div class="s22">
       <div class="s23">Goals &amp; context</div>
       <h2 class="s24">Why a nursery</h2>
-      <p class="s239">Propagation is a bottleneck for a small grower: seedlings need stable warmth, humidity and watering before they go out. The nursery is the V3 node that manages that stage — and a testbed for climate control on the shared stack.</p>
+      <p class="s70">Propagation is a bottleneck for a small grower: seedlings need stable warmth, humidity and watering before they go out. The nursery is the V3 node that manages that stage — and a testbed for climate control on the shared stack.</p>
       <p class="s70">Where it sits: a V3 build on the same sense → node → stack path as WellBouy, descending from the archived V0 greenhouse but reduced to the propagation stage and the current node/stack architecture.</p>
     </div>
   </section>
 
-  <!-- OVERVIEW -->
+  <!-- SENSING -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">Hardware · sensing</div>
+      <h2 class="s24">Climate &amp; irrigation</h2>
+      <p class="s70">Intended set: air temperature and humidity, soil/substrate moisture, and light — reusing the GROUU sensor library. Exact models and calibration land here once selected.</p>
+      <div class="imgslot embedph"><span class="ico">🌡️🪴</span><span class="cap">Sensor selection — in design.</span></div>
+    </div>
+  </section>
+
+  <!-- STRUCTURE & POWER -->
   <section class="s21">
     <div class="s22">
-      <div class="s23">Overview</div>
-      <h2 class="s24">System diagram</h2>
-      <p class="s70">The nursery's sense → node → stack path, in the same shape as the other GROUU nodes. Diagram in design.</p>
-      <div class="imgslot embedph"><span class="ico">🌱📐</span><span class="cap">System scheme — in design.</span></div>
+      <div class="s23">Hardware · structure &amp; power</div>
+      <h2 class="s24">Frame, glazing, power</h2>
+      <p class="s70">A small propagation frame with glazing and a controlled hatch; powered from mains or a small panel. Fabrication is under way — build photos in the media section below.</p>
+      <div class="imgslot embedph"><span class="ico">🏗️🔌</span><span class="cap">Structure + power detail — to document.</span></div>
+    </div>
+  </section>
+
+  <!-- FIRMWARE · SOFTWARE -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">Firmware · software</div>
+      <h2 class="s24">Reuses the basic node</h2>
+      <p class="s70">No firmware is written from scratch: the nursery node follows the completed <a href="wifi-node.html">basic sensor node</a> (or its <a href="grouuwan.html">LoRaWAN peer</a>), publishing JSON/CayenneLPP to the same broker. Node-specific config lands here.</p>
+      <div class="imgslot embedph"><span class="ico">💻🌱</span><span class="cap">Node config &amp; UML — once the node is chosen.</span></div>
+    </div>
+  </section>
+
+  <!-- DATA · DASHBOARD -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Data · dashboard</div>
+      <h2 class="s24">Into the shared stack</h2>
+      <p class="s70">Readings land in the shared <a href="server-stack.html">GROUU stack</a> — Mosquitto → Node-RED → InfluxDB → Grafana — alongside every other node. A nursery view is added to the dashboards once it reports.</p>
+    </div>
+  </section>
+
+  <!-- BILL OF MATERIALS -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">Bill of materials</div>
+      <h2 class="s24">What the build is made of</h2>
+      <p class="s70">Design-level so far: greenhouse structure + glazing, reused GROUU electronics (node + sensors), power. A priced list is published when the sensor set is fixed.</p>
+      <div class="bomwrap">
+        <table class="bomtable">
+          <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td class="part">Greenhouse frame + glazing</td><td>Propagation structure</td><td>—</td></tr>
+            <tr><td class="part">Basic sensor node</td><td>Sensing + uplink (reused)</td><td><a href="wifi-node.html">Basic node ↗</a></td></tr>
+            <tr><td class="part">Climate + soil sensors (TBD)</td><td>Air temp/humidity · substrate moisture · light</td><td><span class="tag-order">to select</span></td></tr>
+            <tr><td class="part">Ventilation / irrigation actuation</td><td>Hatch + watering (later)</td><td><span class="tag-order">planned</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDIA · 3D & BUILD -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">Media · 3D &amp; build</div>
+      <h2 class="s24">Model and construction</h2>
+      <p class="s70">The Fusion model and the structure going up. A live 3D embed and notes are added as they firm up.</p>
+      <div class="photogrid">
+        <figure class="pfig"><img src="site/img/nursery/3d.jpg" alt="Nursery greenhouse 3D model in Fusion" loading="lazy"><figcaption>3D model (Fusion)</figcaption></figure>
+        <figure class="pfig"><img src="site/img/nursery/build.jpg" alt="The nursery greenhouse under construction" loading="lazy"><figcaption>On the build</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO REPRODUCE -->
+  <section class="s58">
+    <div class="s22">
+      <div class="s59">How to reproduce</div>
+      <h2 class="s262">Once the node is fixed</h2>
+      <p class="s263">The reproduction path mirrors the other nodes: build the structure, flash the reused basic-node firmware, wire the sensors, point it at a broker. Detailed steps are filled in when the sensor set and structure are finalised.</p>
     </div>
   </section>
 
@@ -97,7 +167,7 @@
       <div class="s77">Related</div>
       <div class="s78">
         <a href="wellbouy.html" class="relcard s274"><div class="s80">WellBouy →</div><p class="s81">The V3 water node on the same track.</p></a>
-        <a href="server-stack.html" class="relcard s274"><div class="s80">Server Stack →</div><p class="s81">The shared backend it reports to.</p></a>
+        <a href="wifi-node.html" class="relcard s274"><div class="s80">Basic Sensor Node →</div><p class="s81">The firmware this build reuses.</p></a>
         <a href="greenhouse.html" class="relcard s274"><div class="s80">Greenhouse V0 →</div><p class="s81">The archived greenhouse it descends from.</p></a>
       </div>
     </div>
