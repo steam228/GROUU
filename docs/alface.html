@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- HIDDEN / not published: noindex + not linked from the site. Flip the Workshops card to point here when ready. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Alface que sussurra OHMMMMM · GROUU</title>
+  <link rel="icon" href="site/assets/emblem-green.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="s1">
+
+  <nav class="s2">
+    <div class="s3">
+      <a href="index.html" class="s4"><img src="site/assets/wordmark-green.svg" alt="GROUU" class="s5"></a>
+      <div class="s6">
+        <a href="index.html#workshops" class="s7">← Workshops</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/WORKSHOPS/AAlfaceOHM" target="_blank" rel="noopener" class="s8">Materials ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="s9">
+    <div class="s10">
+      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#workshops" class="s12">Workshops</a> · <span class="s13">Alface · OHMMM</span></div>
+      <div class="s14">
+        <span class="s15"></span>
+        <span class="s16">Workshop · Fablab Benfica · ~2 h</span>
+      </div>
+      <h1 class="s17">Alface que sussurra OHMMMMM</h1>
+      <p class="s233">The lettuce that whispers OHMMMMM — a hands-on art + electronics workshop. Participants turn soil and lettuce into circuit components, reading moisture as resistance and turning it first into light, then into sound with a 555 oscillator. Built for children and students, run at Fablab Benfica.</p>
+      <div class="s19">
+        <span class="s20">STEAM · electronics</span>
+        <span class="s20">Soil resistance</span>
+        <span class="s20">555 timer</span>
+        <span class="s20">CC-BY 4.0</span>
+      </div>
+    </div>
+  </header>
+
+  <img src="site/img/alface/hero.jpg" alt="The Osso / 555-Metro moisture instrument built in the workshop" class="v0hero" loading="lazy" />
+
+  <!-- 01 · OVERVIEW -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">01 · Overview</div>
+      <h2 class="s24">What it is</h2>
+      <p class="s25">A two-hour exploratory activity blending art and electronics: lettuce leaves and potting soil become natural circuit components, and repurposed packaging becomes a planter. Participants investigate how soil resistance changes with moisture, and build two progressive projects — a moisture-responsive LED, then a 555-based moisture-sensing sound instrument. By André Rocha (ESELx / IPL), CC-BY 4.0.</p>
+      <div class="reciperow"><a href="https://github.com/steam228/GROUU/tree/master/WORKSHOPS/AAlfaceOHM" target="_blank" rel="noopener" class="reciperepo">⟶ AAlfaceOHM — materials, diagrams &amp; BOMs</a></div>
+      <div class="schsec">
+        <div class="schtag">Overview</div>
+        <div class="schtitle">Soil → resistance → light, then sound</div>
+        <p class="schcap">Dry soil is high-resistance, wet soil low — and that difference drives the circuit.</p>
+        <div class="schflow schmid">
+          <div class="schbox wtank tc"><div class="schk">Sensor</div><div class="schn">Soil + nail probes</div><div class="schs">resistance ∝ moisture</div></div>
+          <div class="scharr">→</div>
+          <div class="schbox tc"><div class="schk">Circuit</div><div class="schn">LED · then 555 oscillator</div><div class="schs">resistance sets brightness / pitch</div></div>
+          <div class="scharr">→</div>
+          <div class="schbox dark tc"><div class="schk">Output</div><div class="schn">Light → sound</div><div class="schs">the soil "sings" OHMMM</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · DESIGN -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">02 · Design</div>
+      <h2 class="s24">Two activities, art meets resistance</h2>
+      <p class="s239">The workshop is designed as a progression: a first, almost-no-electronics circuit that makes the phenomenon visible, then a richer oscillator that makes it audible — with difficulty adjustable by the educator. The framing is poetic: "how do we use electronics to extract soil's secrets, where roots meet resistance?"</p>
+      <div class="schg2">
+        <div class="schbox"><div class="schk">Activity 1 · see it</div><div class="schn">Moisture LED</div><div class="schs">a resistor + LED + battery + probes — brightness tracks soil hydration</div></div>
+        <div class="schbox"><div class="schk">Activity 2 · hear it</div><div class="schn">555 moisture sound</div><div class="schs">a 555 square-wave oscillator whose pitch is set by soil resistance</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · HARDWARE -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">03 · Hardware</div>
+      <h2 class="s24">Materials &amp; circuits</h2>
+      <p class="s70">Everything is breadboard-friendly and low-cost. Activity 1 needs almost nothing; Activity 2 adds the 555 oscillator.</p>
+      <div class="bomwrap mt24">
+        <table class="bomtable">
+          <thead><tr><th>Part</th><th>Role</th><th>Qty</th></tr></thead>
+          <tbody>
+            <tr><td class="part">LED (5 mm)</td><td>Activity 1 — brightness tracks moisture</td><td>1</td></tr>
+            <tr><td class="part">220 Ω resistor (¼ W)</td><td>Activity 1 — LED current limit</td><td>1</td></tr>
+            <tr><td class="part">9 V battery + connector</td><td>Activity 1 — supply</td><td>1</td></tr>
+            <tr><td class="part">Nails / stainless probes (~7–10 cm)</td><td>Soil resistance electrodes</td><td>2</td></tr>
+            <tr><td class="part">Crocodile clip leads</td><td>Connections</td><td>4</td></tr>
+            <tr><td class="part">Planter + potting soil + seedling</td><td>The living sensor (lettuce / bean / tomato)</td><td>1</td></tr>
+            <tr><td class="part">NE555P timer (DIP-8)</td><td>Activity 2 — square-wave oscillator</td><td>1</td></tr>
+            <tr><td class="part">10 µF electrolytic caps (16 V+)</td><td>Activity 2 — timing / output coupling</td><td>2</td></tr>
+            <tr><td class="part">100 nF ceramic cap (50 V)</td><td>Activity 2 — control-pin bypass (pin 5)</td><td>1</td></tr>
+            <tr><td class="part">1 kΩ resistor</td><td>Activity 2 — timing (pins 2–7)</td><td>1</td></tr>
+            <tr><td class="part">100 kΩ linear potentiometer</td><td>Activity 2 — pitch (replaced by soil probes)</td><td>1</td></tr>
+            <tr><td class="part">8 Ω speaker</td><td>Activity 2 — the sound</td><td>1</td></tr>
+            <tr><td class="part">Mini breadboard (~170 pts) + jumpers</td><td>Activity 2 — build surface</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="photogrid mt24">
+        <figure class="pfig"><img src="site/img/alface/circuit-osc.png" alt="555 square-wave oscillator schematic" loading="lazy"><figcaption>555 oscillator (v1)</figcaption></figure>
+        <figure class="pfig"><img src="site/img/alface/circuit-final.png" alt="555 oscillator with soil-moisture probes as the resistance" loading="lazy"><figcaption>Oscillator + soil probes</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · SOFTWARE -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">04 · Software</div>
+      <h2 class="s24">Circuit files &amp; simulation</h2>
+      <p class="s239">No firmware — the "software" is the circuit design: schematics and BOMs are versioned in the repo, and the oscillator can be explored interactively in TinkerCAD before building.</p>
+      <div class="reciperow">
+        <a href="https://github.com/steam228/GROUU/tree/master/WORKSHOPS/AAlfaceOHM/Osso-Labirintos-WKS/diagrams" target="_blank" rel="noopener" class="reciperepo">⟶ diagrams — schematics · BOM CSVs · circuit script</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · PROCESS -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">05 · Process</div>
+      <h2 class="s24">Running the workshop</h2>
+      <p class="s70"><strong class="s218">Activity 1 — see the moisture</strong></p>
+      <p class="s70">1 · Plant a lettuce / bean / tomato seedling in prepared soil. &nbsp; 2 · Wire the simple circuit — 9 V → 220 Ω → LED → probe, probe → back to battery. &nbsp; 3 · Test the response: dry soil (dim / off) vs. watered soil (bright). &nbsp; 4 · Push the probes into the pot and watch the LED track hydration.</p>
+      <p class="s70 mt24"><strong class="s218">Activity 2 — hear the moisture</strong></p>
+      <p class="s70">1 · Seat the NE555 on the breadboard (watch orientation) and connect the battery safely. &nbsp; 2 · Tie pins 2–6 together, pin 4 to pin 8, and a 1 kΩ between pins 2–7. &nbsp; 3 · Add the caps with correct polarity — 10 µF at pin 3 (output), 100 nF at pin 5, 10 µF at pin 6. &nbsp; 4 · Wire the 100 kΩ pot across VCC–GND with the wiper to pin 7; connect the 8 Ω speaker (– to the output cap, + to VCC). &nbsp; 5 · Test the tone with the pot, then <strong class="s218">replace the pot with the soil probes</strong> — now the soil sets the pitch.</p>
+      <div class="reciperow mt24"><a href="https://github.com/steam228/GROUU/blob/master/WORKSHOPS/AAlfaceOHM/Osso-Labirintos-WKS/PrintOssoOHMMM.pdf" target="_blank" rel="noopener" class="reciperepo">⟶ PrintOssoOHMMM.pdf — the printable handout</a></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">Gallery</div>
+      <h2 class="s24">The build</h2>
+      <div class="photogrid">
+        <figure class="pfig"><img src="site/img/alface/photo1.jpg" alt="Workshop build — the 555 moisture instrument" loading="lazy"><figcaption>The instrument</figcaption></figure>
+        <figure class="pfig"><img src="site/img/alface/photo2.jpg" alt="Workshop build detail" loading="lazy"><figcaption>Detail</figcaption></figure>
+        <figure class="pfig"><img src="site/img/alface/photo3.jpg" alt="Workshop build detail" loading="lazy"><figcaption>On the bench</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">References</div>
+      <h2 class="s24">Source, credits &amp; license</h2>
+      <p class="s70">Full write-up on the Fablab Benfica documentation hub; materials, diagrams and BOMs in the GROUU repository.</p>
+      <div class="reciperow">
+        <a href="https://fablabbenfica.gitlab.io/fablabbenficadocs/instructables/alface/" target="_blank" rel="noopener" class="reciperepo">⟶ Fablab Benfica — full instructable</a>
+        <a href="https://github.com/steam228/GROUU/tree/master/WORKSHOPS/AAlfaceOHM" target="_blank" rel="noopener" class="reciperepo">⟶ AAlfaceOHM in the repo</a>
+      </div>
+      <p class="s293">Author: André Rocha (ESELx / IPL) · License: CC-BY 4.0 · Host: Fablab Benfica.</p>
+    </div>
+  </section>
+
+  <footer class="s82">
+    <div class="s83">
+      <a href="index.html"><img src="site/assets/wordmark-white.svg" alt="GROUU" class="s84"></a>
+      <span class="s85">Open hardware &amp; software · GPLv3 + CC-BY-SA 4.0</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

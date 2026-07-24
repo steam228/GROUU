@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- ══════════════════════════════════════════════════════════════════════
+       GROUU PROJECT PAGE TEMPLATE — the common 5 + 2 spine.
+       HIDDEN: noindex + not linked anywhere. To make a new entry, copy this
+       file to <name>.html, remove this meta, fill the [[ ... ]] placeholders,
+       and add its card on index.html.
+
+       Structure (every entry uses the same 7 headings; fill only what applies):
+         Hero image  →  01 Overview  →  02 Design  →  03 Hardware
+         →  04 Software  →  05 Process  →  Gallery  →  References
+
+       Rules of thumb:
+         · Each section carries a ⟶ repo link (reciperow) to its files if they exist.
+         · Put photos IN the section they illustrate; the Gallery mops up the rest.
+         · Sections that don't apply keep the heading with a short placeholder
+           (imgslot.embedph) so under-dev pages read like finished ones.
+         · Section bg alternates: s21 (white) / s9 (light-green) / s58 (dark).
+           On s58, status-card text is auto-recoloured. Schemes use .sch* classes.
+         · No inline style= attributes — everything via style.css classes.
+       ══════════════════════════════════════════════════════════════════════ -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>[[ Project name ]] · GROUU</title>
+  <link rel="icon" href="site/assets/emblem-green.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="s1">
+
+  <nav class="s2">
+    <div class="s3">
+      <a href="index.html" class="s4"><img src="site/assets/wordmark-green.svg" alt="GROUU" class="s5"></a>
+      <div class="s6">
+        <a href="index.html#projects" class="s7">← All projects</a>
+        <a href="[[ repo URL ]]" target="_blank" rel="noopener" class="s8">Source ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="s9">
+    <div class="s10">
+      <div class="s11"><a href="index.html" class="s12">GROUU</a> · <a href="index.html#projects" class="s12">Projects</a> · <span class="s13">[[ Name ]]</span></div>
+      <!-- status chip — pick one:
+           Active   : <span class="s15"></span><span class="s16">Active · in design</span>
+           Completed: <span class="s209"></span><span class="s210">Completed · replicable</span>
+           Archived : <span class="arch">▢ Archived</span> -->
+      <div class="s14">
+        <span class="s15"></span>
+        <span class="s16">[[ Active · in design ]]</span>
+      </div>
+      <h1 class="s17">[[ Project name ]]</h1>
+      <p class="s233">[[ One-paragraph what-it-is: what, phase, and how it fits GROUU. ]]</p>
+      <div class="s19">
+        <span class="s20">[[ tag ]]</span>
+        <span class="s20">[[ tag ]]</span>
+        <span class="s20">[[ tag ]]</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO — a strong image (board render, build photo, dashboard). Omit if none. -->
+  <img src="site/img/[[ path ]]" alt="[[ alt ]]" class="v0hero" loading="lazy" />
+
+  <!-- 01 · OVERVIEW — what it is, phase, general explanation + the system scheme. -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">01 · Overview</div>
+      <h2 class="s24">What it is</h2>
+      <p class="s25">[[ 2–4 sentences: what it is, its phase, its goal, where it sits in the process. ]]</p>
+      <div class="reciperow"><a href="[[ repo URL ]]" target="_blank" rel="noopener" class="reciperepo">⟶ [[ repo folder ]]</a></div>
+      <div class="schsec">
+        <div class="schtag">Overview</div>
+        <div class="schtitle">[[ System-diagram title ]]</div>
+        <p class="schcap">[[ one-line caption ]]</p>
+        <!-- system scheme: build with .schflow / .schbox / .scharr / .schlab / .schdown,
+             or drop a placeholder if not drawn yet: -->
+        <div class="schflow schmid">
+          <div class="schbox"><div class="schk">Sensor</div><div class="schn">[[ … ]]</div><div class="schs">[[ … ]]</div></div>
+          <div class="schlab"><span>[[ link ]]</span><span>→</span></div>
+          <div class="schbox dark"><div class="schk">Node</div><div class="schn">[[ … ]]</div><div class="schs">[[ … ]]</div></div>
+          <div class="scharr">→</div>
+          <div class="schbox dash"><div class="schk">Stack</div><div class="schn">[[ … ]]</div><div class="schs">[[ … ]]</div></div>
+        </div>
+        <!-- <div class="imgslot embedph"><span class="ico">🧩📐</span><span class="cap">System scheme — in design.</span></div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · DESIGN — architecture, industrial design, 3D, design decisions, schemes. -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">02 · Design</div>
+      <h2 class="s24">[[ Design heading ]]</h2>
+      <p class="s239">[[ The design thinking: architecture, form, decisions. ]]</p>
+      <div class="reciperow"><a href="[[ repo/hardware or design URL ]]" target="_blank" rel="noopener" class="reciperepo">⟶ [[ design files ]]</a></div>
+      <!-- a scheme (.schsec + .sch*), a Fusion embed (.embed3d + iframe), a render (.pfig),
+           or a placeholder (.imgslot.embedph). -->
+      <div class="imgslot embedph"><span class="ico">📐✏️</span><span class="cap">Design / 3D — to add.</span></div>
+    </div>
+  </section>
+
+  <!-- 03 · HARDWARE — sensors/actuators · compute (MCU) · comms · power · BOM. -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">03 · Hardware</div>
+      <h2 class="s24">[[ Hardware heading ]]</h2>
+      <p class="s70">[[ The physical build: parts, front-end, power. Photos go here if relevant. ]]</p>
+      <div class="bomwrap mt24">
+        <table class="bomtable">
+          <thead><tr><th>Part</th><th>Role</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td class="part">[[ part ]]</td><td>[[ role ]]</td><td>[[ link / — ]]</td></tr>
+            <tr><td class="part">[[ part ]]</td><td>[[ role ]]</td><td><span class="tag-order">to order</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · SOFTWARE — MCU/MPU code, firmware structure (UML), and the interface. -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">04 · Software</div>
+      <h2 class="s24">[[ Software heading ]]</h2>
+      <p class="s239">[[ Firmware / code / the interface it drives. ]]</p>
+      <div class="reciperow"><a href="[[ src URL ]]" target="_blank" rel="noopener" class="reciperepo">⟶ src/</a></div>
+      <!-- a lifecycle/UML scheme (.schsec + .sch*), and/or a code block: -->
+      <p class="codecap">[[ file — what this shows ]]</p>
+      <div class="codewrap">
+<pre class="code">[[ key snippet ]]</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · PROCESS — what's done, how it was done, what's left.
+       Under-dev: status cards (s236). Archived: "built vs designed". Completed: reuse steps.
+       NOTE: if this section is s58 (dark), status-card text auto-recolours; else use s21. -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">05 · Process</div>
+      <h2 class="s24">Done, how, and what's left</h2>
+      <p class="s70">[[ Narrative: what runs, how it was built, what remains. ]]</p>
+      <div class="s26 mt24">
+        <div class="s236"><span class="s28">[[ item ]]</span><span class="s29">[[ detail ]]</span><span class="s31">✓ Done</span></div>
+        <div class="s236"><span class="s28">[[ item ]]</span><span class="s29">[[ detail ]]</span><span class="s30">◑ In progress</span></div>
+        <div class="s238"><span class="s28">What's left</span><span class="s29">[[ next steps ]]</span><span class="s237">○ Next</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY — photos/renders/video not tied to one section above. -->
+  <section class="s9">
+    <div class="s22">
+      <div class="s23">Gallery</div>
+      <h2 class="s24">[[ Gallery heading ]]</h2>
+      <div class="photogrid">
+        <figure class="pfig"><img src="site/img/[[ … ]]" alt="[[ … ]]" loading="lazy"><figcaption>[[ caption ]]</figcaption></figure>
+      </div>
+      <!-- or, if none yet: <div class="imgslot embedph"><span class="ico">📷</span><span class="cap">Photos — to add.</span></div> -->
+    </div>
+  </section>
+
+  <!-- REFERENCES — related project cards + external links / credits. -->
+  <section class="s21">
+    <div class="s22">
+      <div class="s23">References</div>
+      <h2 class="s24">Source &amp; related</h2>
+      <div class="s78">
+        <a href="[[ page ]].html" class="relcard s274"><div class="s80">[[ Related ]] →</div><p class="s81">[[ why ]]</p></a>
+        <a href="[[ page ]].html" class="relcard s274"><div class="s80">[[ Related ]] →</div><p class="s81">[[ why ]]</p></a>
+      </div>
+      <p class="s293">External: <a href="[[ url ]]" target="_blank" rel="noopener">[[ ref ]]</a>.</p>
+    </div>
+  </section>
+
+  <footer class="s82">
+    <div class="s83">
+      <a href="index.html"><img src="site/assets/wordmark-white.svg" alt="GROUU" class="s84"></a>
+      <span class="s85">Open hardware &amp; software · GPLv3 + CC-BY-SA 4.0</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
