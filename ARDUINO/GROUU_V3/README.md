@@ -1,6 +1,6 @@
 # GROUU V3 — WellBouy · Well-Water-Quality LoRaWAN Node
 
-A battery-powered well-water-quality monitor (the board is solar-capable). A **Seeed XIAO ESP32-S3** + **Wio-SX1262**
+A battery/solar well-water-quality monitor. A **Seeed XIAO ESP32-S3** + **Wio-SX1262**
 LoRa node reads four water sensors, uplinks them to **The Things Network** (EU868,
 OTAA, CayenneLPP), and deep-sleeps between readings. On a **Raspberry Pi**, the data
 flows TTN → Node-RED → InfluxDB → Grafana, and a small **public dashboard**
@@ -52,7 +52,7 @@ to stay under the ADS's 3.3 V input limit.
 | LoRa radio | Wio-SX1262 | SPI · NSS 41 / DIO1 39 / RST 42 / BUSY 40 | `Module(41,39,42,40)` |
 | Water temp | DS18B20 | GPIO4 (1-Wire) | 4.7 kΩ pull-up |
 | TDS | Seeed Grove TDS | ADS **A0** | 5 V; ~2.3 V out (direct, safe); DFRobot Gravity algorithm |
-| Turbidity | DFRobot SEN0189 | ADS **A1** | **5 V** + **10k/6.8k** divider (÷0.405) |
+| Turbidity | Seeed Grove turbidity | ADS **A1** | **5 V** + **10k/6.8k** divider (÷0.405) |
 | pH | Phidgets 1130 | ADS **A2** | 5 V + **10k/18k** divider |
 | I²C | ADS1115 @ 0x48 | SDA GPIO5 / SCL GPIO6 | XIAO Grove I²C |
 | 5 V rail enable | load switch | **GPIO1 / D0** | off during deep sleep |
@@ -117,8 +117,9 @@ PLATFORMIO_BUILD_FLAGS="-DTX_INTERVAL_S=120" pio run -e prod -t upload
 - **pH** — two-point (pH 7 → `PH_CAL_V7`, pH 4 → `PH_CAL_V4`), measured at the ADS
   pin so the fit absorbs the divider. This adapter runs *acidic = lower voltage*.
 - **TDS** — DFRobot Gravity, temp-compensated to 25 °C via a two-point `TDS_KVALUE`.
-- **Turbidity** — DFRobot SEN0189 quadratic, anchored to the measured clear-water
-  voltage (`TURBIDITY_V_CLEAR`) and rescaled so clear water = 0 NTU.
+- **Turbidity** — Seeed Grove turbidity via a per-sensor `TurbidityCal` (clear-water
+  anchor + fouled reference); reports a clear-anchored relative index (0 = clear) until
+  a formazin standard is run for absolute NTU.
 
 ## Data pipeline & dashboard
 - **`server/`** — TTN MQTT → Node-RED → InfluxDB 2 (org `homelab`, bucket

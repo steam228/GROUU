@@ -64,6 +64,12 @@ void setup() {
   Serial.println("joined!");
 
   node.setADR(true);
+  // Bench bring-up only: EU868 starts at DR0 (SF12), whose 1% duty-cycle silence
+  // (~150 s) is longer than our test interval, so every uplink would return
+  // RADIOLIB_ERR_UPLINK_UNAVAILABLE. Disable the guard so we can watch uplinks
+  // land on TTN. (Don't leave this running long — respect TTN fair use.)
+  node.setDutyCycle(false);
+  node.setDwellTime(false);
   Serial.printf("[3/3] sending a dummy uplink every %d s on port %d ...\n",
                 BRINGUP_TX_INTERVAL_S, LPP_FPORT);
 }

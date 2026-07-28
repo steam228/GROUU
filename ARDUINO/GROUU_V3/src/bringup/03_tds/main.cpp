@@ -185,6 +185,12 @@ void setup() {
   Serial.println("mode: SERIAL only (set SEND_LORA 1 to uplink)");
 #endif
 
+  // Power the switched 5 V rail so the analog sensor (TDS) is actually driven.
+  pinMode(SENSOR_PWR_EN_PIN, OUTPUT);
+  digitalWrite(SENSOR_PWR_EN_PIN, SENSOR_PWR_ACTIVE_HIGH ? HIGH : LOW);
+  delay(SENSOR_WARMUP_MS);   // let the rail + TDS front-end settle
+  Serial.printf("5V rail ON (GPIO%d) + %d ms warm-up\n", SENSOR_PWR_EN_PIN, SENSOR_WARMUP_MS);
+
   // I2C is brought up in loop() only once the bus reads idle-high, so a stuck
   // line reports cleanly instead of hanging Wire here.
 

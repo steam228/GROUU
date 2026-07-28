@@ -131,9 +131,9 @@
           <p class="s57">Analog Grove TDS on the switched 5 V rail, output into the ADS (A0). DFRobot Gravity two-point k-value algorithm, temp-compensated ppm.</p>
         </div>
         <div class="s252">
-          <div class="s253"><span class="s254">03 · Turbidity</span><span class="s255">✓ calibrated</span></div>
-          <div class="s256">DFRobot SEN0189</div>
-          <p class="s57">Optical head, cabled; a 10k / 6.8k divider brings the 5 V output into ADC range (A1) → NTU, anchored to clear water.</p>
+          <div class="s253"><span class="s254">03 · Turbidity</span><span class="s255">✓ validated</span></div>
+          <div class="s256">Seeed Grove turbidity</div>
+          <p class="s57">Optical head, cabled; a 10k / 6.8k divider brings the 5 V output into ADC range (A1). Reported as a clear-anchored relative index (0 = clear); absolute NTU pending a formazin standard.</p>
         </div>
         <div class="s252">
           <div class="s253"><span class="s254">04 · pH</span><span class="s255">✓ calibrated</span></div>
@@ -165,7 +165,7 @@
             <tr><td class="part">ADS1115</td><td>Shared 16-bit I²C ADC @ 0x48 — analog sensors on A0–A2</td><td>—</td></tr>
             <tr><td class="part">DS18B20 (waterproof)</td><td>Water temperature — 1-Wire (GPIO4) + 4.7k pull-up</td><td><a href="https://www.adafruit.com/product/381" target="_blank" rel="noopener">Adafruit ↗</a><span class="tag-have">in stock</span></td></tr>
             <tr><td class="part">Seeed Grove TDS</td><td>Dissolved solids (A0) — DFRobot Gravity algorithm, temp-compensated</td><td><a href="https://www.seeedstudio.com/Grove-TDS-Sensor-p-4400.html" target="_blank" rel="noopener">Seeed ↗</a><span class="tag-have">in stock</span></td></tr>
-            <tr><td class="part">DFRobot SEN0189</td><td>Turbidity (A1) via 10k/6.8k divider, 5 V</td><td><a href="https://wiki.dfrobot.com/Turbidity_sensor_SKU__SEN0189" target="_blank" rel="noopener">DFRobot ↗</a><span class="tag-have">in stock</span></td></tr>
+            <tr><td class="part">Seeed Grove turbidity</td><td>Turbidity (A1) via 10k/6.8k divider, 5 V — clear-anchored relative index</td><td><a href="https://www.seeedstudio.com/Grove-Turbidity-Sensor-Meter-for-Arduino-V1-0-p-4399.html" target="_blank" rel="noopener">Seeed ↗</a><span class="tag-have">in stock</span></td></tr>
             <tr><td class="part">Phidgets ASP200 pH probe</td><td>pH 0–14, gel-filled BNC probe</td><td><a href="https://www.phidgets.com/?prodid=412" target="_blank" rel="noopener">Phidgets ↗</a><span class="tag-have">in stock</span></td></tr>
             <tr><td class="part">Phidgets 1130 pH/ORP adapter</td><td>BNC → analog (A2) via 10k/18k divider, 5 V</td><td><a href="https://www.phidgets.com/?prodid=103" target="_blank" rel="noopener">Phidgets ↗</a><span class="tag-have">in stock</span></td></tr>
             <tr><td class="part">Grove Shield for XIAO</td><td>Bring-up carrier; final build uses the fabricated well-bouy01 board</td><td><a href="https://www.seeedstudio.com/Grove-Shield-for-Seeeduino-XIAO-p-4621.html" target="_blank" rel="noopener">Seeed ↗</a><span class="tag-order">to order</span></td></tr>
@@ -237,8 +237,8 @@
             <div class="schcol">
               <div class="schbox dash"><div class="schs">src/sensors/ — one module per ladder build</div></div>
               <div class="schcab"><div class="h">temp_sensor · b02</div><div class="schlvl"><div class="d">tempSetup() · readTemperature() — DS18B20 · 1-Wire GPIO4 · read first (compensates TDS) · NaN → 25 °C</div></div></div>
-              <div class="schcab"><div class="h">tds_sensor · b03</div><div class="schlvl"><div class="d">tdsPpmFromMilliVolts(mv, tempC) — ADS A0 direct · DFRobot algo @ 25 °C · TDS_KVALUE 1.000 (factory, cal pending)</div></div></div>
-              <div class="schcab"><div class="h">turbidity_sensor · b04</div><div class="schlvl"><div class="d">turbidityNtuFromMilliVolts(mv) — ADS A1 · 10k/6.8k divider (0.405) · V_CLEAR 3.96 V rescaled onto DFRobot 4.20 V zero</div></div></div>
+              <div class="schcab"><div class="h">tds_sensor · b03</div><div class="schlvl"><div class="d">tdsPpmFromMilliVolts(mv, tempC) — ADS A0 direct · DFRobot algo @ 25 °C · TDS_KVALUE 0.944 (cal'd to 705 ppm @ 1413 µS/cm)</div></div></div>
+              <div class="schcab"><div class="h">turbidity_sensor · b04</div><div class="schlvl"><div class="d">turbidityFromMilliVolts(mv, cal) — Seeed Grove · ADS A1 · 10k/6.8k divider (0.405) · per-sensor TurbidityCal · clear anchor 3.79 V → relative index</div></div></div>
               <div class="schcab"><div class="h">ph_sensor · b05</div><div class="schlvl"><div class="d">phFromMilliVolts(mv) — ADS A2 · 10k/18k divider · segmented at pH 7 · V4 0.987 / V7 1.519 / V10 1.980 V · 177 / 154 mV/pH</div></div></div>
               <div class="schcab"><div class="h">analog_util</div><div class="schlvl"><div class="d">readAvgMilliVolts(pin) — legacy direct-ADC path, kept for the breadboard rig</div></div></div>
             </div>
@@ -258,7 +258,7 @@
 lpp.reset();
 lpp.addTemperature(1, isnan(r.temperatureC) ? 0.0f : r.temperatureC);
 lpp.addAnalogInput(2, r.ph);
-lpp.addLuminosity (3, (uint16_t)(r.turbidityNtu + 0.5f));   // turbidity
+lpp.addLuminosity (3, (uint16_t)(r.turbidityIdx + 0.5f));   // turbidity (relative index)
 lpp.addLuminosity (4, (uint16_t)(r.tdsPpm + 0.5f));         // TDS
 if (bootCount == 1 || (bootCount % 24) == 0)
   lpp.addGPS(5, FIXED_LATITUDE, FIXED_LONGITUDE, FIXED_ALTITUDE);
@@ -280,7 +280,7 @@ int16_t state = node.sendReceive(lpp.getBuffer(), lpp.getSize(),
         <div class="schgrid4">
           <div class="schbox lite tc"><div class="schk">Temp</div><div class="schval">17.4 °C</div></div>
           <div class="schbox lite tc"><div class="schk">TDS</div><div class="schval">312 ppm</div></div>
-          <div class="schbox lite tc"><div class="schk">Turbidity</div><div class="schval">2 NTU</div></div>
+          <div class="schbox lite tc"><div class="schk">Turbidity</div><div class="schval">3 idx</div></div>
           <div class="schbox lite tc"><div class="schk">pH</div><div class="schval">6.8</div></div>
         </div>
         <p class="schcap">Values illustrative. Live: temp · TDS · turbidity · pH · RSSI/SNR — battery + packet-loss pending.</p>
@@ -352,7 +352,7 @@ int16_t state = node.sendReceive(lpp.getBuffer(), lpp.getSize(),
         <a href="server-stack.html" class="relcard s274"><div class="s80">Server Stack →</div><p class="s81">The open backend that stores &amp; shows uplinks.</p></a>
         <a href="https://grouuwell01.hacktoimprove.com" target="_blank" rel="noopener" class="relcard s274"><div class="s80">Live dashboard ↗</div><p class="s81">The node's water-quality data, live.</p></a>
       </div>
-      <p class="s293">External: <a href="https://wiki.dfrobot.com/Turbidity_sensor_SKU__SEN0189" target="_blank" rel="noopener">DFRobot SEN0189</a> · <a href="https://www.phidgets.com/?prodid=103" target="_blank" rel="noopener">Phidgets 1130</a> · <a href="https://github.com/jgromes/RadioLib" target="_blank" rel="noopener">RadioLib</a> · <a href="https://www.thethingsnetwork.org/" target="_blank" rel="noopener">The Things Network</a> · <a href="https://atopile.io/" target="_blank" rel="noopener">atopile</a>.</p>
+      <p class="s293">External: <a href="https://www.seeedstudio.com/Grove-Turbidity-Sensor-Meter-for-Arduino-V1-0-p-4399.html" target="_blank" rel="noopener">Seeed Grove turbidity</a> · <a href="https://www.phidgets.com/?prodid=103" target="_blank" rel="noopener">Phidgets 1130</a> · <a href="https://github.com/jgromes/RadioLib" target="_blank" rel="noopener">RadioLib</a> · <a href="https://www.thethingsnetwork.org/" target="_blank" rel="noopener">The Things Network</a> · <a href="https://atopile.io/" target="_blank" rel="noopener">atopile</a>.</p>
     </div>
   </section>
 

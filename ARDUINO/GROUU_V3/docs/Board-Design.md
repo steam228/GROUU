@@ -29,9 +29,9 @@ Companion to [[Bringup-Plan]]. ✅ decided · 🟡 mid-decision · ❓ needs inf
 - **On-board:** 5 V (switched) feed, output divider to ADS, probe connector.
 - 🟡 Module for rev A; integrating the AC-excitation front-end is a rev-B maybe.
 
-## 04 · Turbidity — SEN0189
-- **Module:** SEN0189 sensor head/driver.
-- **On-board:** 10k/6.8k divider, 5 V (switched) feed, probe connector.
+## 04 · Turbidity — Seeed Grove
+- **Module:** Seeed Grove turbidity sensor head/driver (replaced the DFRobot SEN0189).
+- **On-board:** 10k/6.8k divider, 5 V (switched) feed, probe connector (U5 → A1).
 - ✅ Divider on-board; head stays cabled.
 
 ## 05 · pH — Phidgets 1130

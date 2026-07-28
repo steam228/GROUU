@@ -127,7 +127,7 @@ static void handleDownlink(const uint8_t* data, size_t len) {
 struct Readings {
   float temperatureC;
   float tdsPpm;
-  float turbidityNtu;
+  float turbidityIdx;   // clear-anchored relative index (0=clear); see turbidity_sensor.h
   float ph;
 };
 
@@ -153,15 +153,15 @@ static Readings readAllSensors() {
     delay(SENSOR_GAP_MS);
     r.tdsPpm       = tdsPpmFromMilliVolts(adsMilliVolts(ADS_CH_TDS), tc);
     delay(SENSOR_GAP_MS);
-    r.turbidityNtu = turbidityNtuFromMilliVolts(adsMilliVolts(ADS_CH_TURBIDITY));
+    r.turbidityIdx = turbidityNtuFromMilliVolts(adsMilliVolts(ADS_CH_TURBIDITY));
     delay(SENSOR_GAP_MS);
     r.ph           = phFromMilliVolts(adsMilliVolts(ADS_CH_PH));
   } else {
-    r.tdsPpm = 0.0f; r.turbidityNtu = 0.0f; r.ph = 0.0f;
+    r.tdsPpm = 0.0f; r.turbidityIdx = 0.0f; r.ph = 0.0f;
   }
 
-  DBG("[READ] T=%.1f C  TDS=%.0f ppm  Turb=%.0f NTU  pH=%.2f\n",
-      r.temperatureC, r.tdsPpm, r.turbidityNtu, r.ph);
+  DBG("[READ] T=%.1f C  TDS=%.0f ppm  Turb=%.0f idx  pH=%.2f\n",
+      r.temperatureC, r.tdsPpm, r.turbidityIdx, r.ph);
 
   sensorRailOff();
   return r;
@@ -239,14 +239,14 @@ void setup() {
 
   // 4. Encode as Cayenne LPP. Turbidity and TDS use the Luminosity type
   //    (0-65535); Analog Input (0x02) caps at +/-327.67 and both can exceed it.
-  //    ch1 temperature (DS18B20), ch2 pH (analog in), ch3 turbidity (NTU, lum),
-  //    ch4 TDS (ppm, lum), ch5 fixed GPS. Field names are set by the TTN
-  //    formatter (server/ttn-uplink-formatter.js).
+  //    ch1 temperature (DS18B20), ch2 pH (analog in), ch3 turbidity (relative
+  //    index, lum), ch4 TDS (ppm, lum), ch5 fixed GPS. Field names are set by
+  //    the TTN formatter (server/ttn-uplink-formatter.js).
   CayenneLPP lpp(51);
   lpp.reset();
   lpp.addTemperature(1, isnan(r.temperatureC) ? 0.0f : r.temperatureC);
   lpp.addAnalogInput(2, r.ph);
-  lpp.addLuminosity (3, (uint16_t)(r.turbidityNtu + 0.5f));
+  lpp.addLuminosity (3, (uint16_t)(r.turbidityIdx + 0.5f));
   lpp.addLuminosity (4, (uint16_t)(r.tdsPpm + 0.5f));
   // Fixed location: 11 of 27 bytes. Send it only on the first uplink after a
   // power-up and occasionally after, to cut airtime (keeps TTN's map populated).

@@ -77,6 +77,10 @@ void setup() {
   uint32_t t0 = millis();
   while (!Serial && (millis() - t0) < 2000) {}
   Serial.println("\n=== WellBouy bring-up 05: pH via I2C ADS1115 (A2) ===");
+  pinMode(SENSOR_PWR_EN_PIN, OUTPUT);
+  digitalWrite(SENSOR_PWR_EN_PIN, SENSOR_PWR_ACTIVE_HIGH ? HIGH : LOW);
+  delay(SENSOR_WARMUP_MS);   // 5V rail on + settle before reading the analog sensor
+  Serial.printf("5V rail ON (GPIO%d) + %d ms warm-up\n", SENSOR_PWR_EN_PIN, SENSOR_WARMUP_MS);
   Serial.printf("current cal: pH%.1f@%.3fV, pH%.1f@%.3fV, pH%.1f@%.3fV\n",
                 PH_CAL_PH4, PH_CAL_V4, PH_CAL_PH7, PH_CAL_V7, PH_CAL_PH10, PH_CAL_V10);
 #if SEND_LORA

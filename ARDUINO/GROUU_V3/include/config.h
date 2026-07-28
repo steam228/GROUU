@@ -119,7 +119,7 @@
 // --- TDS (DFRobot Gravity algorithm, temperature compensated to 25 C) -------
 //  TDS_KVALUE is the probe constant from a TWO-POINT calibration: measure two
 //  standard solutions, solve k for each, and average. Default 1.0 = factory.
-#define TDS_KVALUE           1.000f
+#define TDS_KVALUE           0.944f
 
 // --- pH (three-point: pH 4.0 / 7.0 / 10.0 buffers) --------------------------
 //  Voltages are measured AT THE ADS PIN (post 10k/18k divider); the fit absorbs
@@ -136,16 +136,22 @@
 #define PH_CAL_V7            1.519f        // volts at ADS in pH 7.0 buffer
 #define PH_CAL_V10           1.980f        // volts at ADS in pH 10.0 buffer
 
-// --- Turbidity (SEN0189 through a 10k / 6.8k divider) -----------------------
-//  Divider ratio = R2 / (R1 + R2) = 6.8k / (10k + 6.8k) = 0.4048.
-//  We divide the measured ADC voltage by this to recover the raw 0-4.5 V
-//  sensor output, then apply DFRobot's quadratic voltage->NTU curve.
+// --- Turbidity (Seeed Grove turbidity, through the 10k / 6.8k divider) -------
+//  SENSOR: SEEED GROVE turbidity (replaced the DFRobot SEN0189). Analog,
+//  transmittance-type, 5 V supply; the output FALLS as the water fouls. The
+//  10k/6.8k divider (ratio 0.4048) drops its 5 V-range output into the ADS
+//  input; the driver recovers the sensor voltage before applying calibration.
 //
-//  V_CLEAR is the MEASURED clear-water sensor voltage on this rig (5 V supply):
-//  clear water read A1 = 1606 mV -> 1606/0.4048 = 3.96 V. DFRobot's raw curve
-//  only crosses 0 NTU at ~4.20 V, so we rescale V_CLEAR onto that 0 point
-//  (see turbidity_sensor.cpp) to get a continuous 0-at-clear response.
-//  Re-measure in clear water and update V_CLEAR if the sensor/supply changes.
-#define TURBIDITY_DIVIDER_RATIO   (6.8f / (10.0f + 6.8f))
-#define TURBIDITY_V_CLEAR         3.96f    // MEASURED sensor V in clear water => 0 NTU
-#define TURBIDITY_V_DFR0          4.20f    // sensor V at which DFRobot's curve = 0 NTU
+//  Calibration is PER-SENSOR (see TurbidityCal in turbidity_sensor.h). Until a
+//  formazin standard is run, turbidity is reported as a CLEAR-ANCHORED RELATIVE
+//  INDEX (0 = clear water .. TURBIDITY_FULL_SCALE = fully fouled), NOT true NTU.
+//  Measured on well-bouy01 (5 V rail, U5 -> A1) during bring-up:
+//     clear water : A1 ~1535 mV -> sensor 3.79 V   (index 0)
+//     heavy milk  : A1  ~197 mV -> sensor 0.49 V   (index full-scale)
+//  Re-measure the clear anchor per unit; add a TurbidityCal row per sensor and
+//  point TURBIDITY_CAL at it. Drop in a formazin-fitted curve when available.
+#define TURBIDITY_DIVIDER_RATIO   (6.8f / (10.0f + 6.8f))   // 0.4048
+#define TURBIDITY_FULL_SCALE      1000.0f   // index reported at/below V_FOUL
+//  Active sensor variant used by readTurbidity()/turbidityNtuFromMilliVolts().
+//  Swap to TURB_CAL_SEN0189, or your own row, for a different sensor/unit.
+#define TURBIDITY_CAL             TURB_CAL_GROVE

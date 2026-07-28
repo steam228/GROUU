@@ -104,6 +104,10 @@ void setup() {
   uint32_t t0 = millis();
   while (!Serial && (millis() - t0) < 2000) {}
   Serial.println("\n=== WellBouy bring-up 04: Turbidity via I2C ADS1115 (A1) ===");
+  pinMode(SENSOR_PWR_EN_PIN, OUTPUT);
+  digitalWrite(SENSOR_PWR_EN_PIN, SENSOR_PWR_ACTIVE_HIGH ? HIGH : LOW);
+  delay(SENSOR_WARMUP_MS);   // 5V rail on + settle before reading the analog sensor
+  Serial.printf("5V rail ON (GPIO%d) + %d ms warm-up\n", SENSOR_PWR_EN_PIN, SENSOR_WARMUP_MS);
 #if SEND_LORA
   Serial.println("mode: SERIAL + LoRaWAN uplink");
   loraJoin();
