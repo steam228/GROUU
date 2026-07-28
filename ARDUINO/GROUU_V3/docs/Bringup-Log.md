@@ -55,10 +55,11 @@ Live log of bringing up the fabricated **well-bouy01** carrier board, stage by s
   anchored at 3.79 V = 0 NTU. **Absolute NTU needs a formazin standard** we don't have on the
   bench yet; until then the honest output is clear-anchored relative turbidity. Structure the
   final driver to hold per-sensor cal (clear-water anchor + curve) so variants swap cleanly.
-- **pH** — hardware ✓ (U3 → 10k/18k → A2, reads 1.665 V). Cal **carried over** from the
-  previous bench rig (V4 0.987 / V7 1.519 / V10 1.980) — no buffers on the bench to re-fit.
-  Path/divider identical to that rig, so it transfers; expect a small per-electrode offset.
-  TODO: re-verify against pH 4/7/10 buffers when available.
+- **pH** — hardware ✓ (U3 → 10k/18k → A2). **Re-calibrated 3-point on this unit**
+  (2026-07-28, buffer IDs inferred from voltage since labels were unclear):
+  V4 **0.969 V** / V7 **1.507 V** / V10 **1.889 V**. Segmented fit at pH 7: acid slope
+  179 mV/pH, base slope 127 mV/pH (alkaline slope aged down from an earlier 154). Sanity:
+  freshly cal'd probe reads ~pH 5.1 in tap water. Old rig values (0.987/1.519/1.980) retired.
 
 ## Flashing workflow (ESP32-S3 native USB)
 - New board arrived with **prod** flashed → it deep-sleeps 30 min on boot → USB port vanishes
@@ -75,7 +76,7 @@ Live log of bringing up the fabricated **well-bouy01** carrier board, stage by s
 - **b03 TDS** — ✓ ADS @ 0x48, 5 V rail + load switch, A0, **calibrated** (705 ppm @ 1413).
 - **b04 turbidity** — hardware ✓ (Grove on U5→A1; clear 3.79 V → milk 0.49 V, clean swing).
   NTU curve fit pending (needs Grove mapping; formazin standard for absolute NTU).
-- **b05 pH** — hardware ✓ (U3 → A2, 1.665 V). Cal carried over (no buffers); see above.
+- **b05 pH** — hardware ✓ (U3 → A2). 3-point cal re-done on this unit (0.969/1.507/1.889 V).
 - **prod** — ✓ full cycle on the new board: ADS 0x48 → T 26.0 °C / TDS 615 ppm /
   Turb 3 idx (≈clear, Grove code sane) / pH 7.70 → OTAA join → 27-byte LPP uplink OK →
   deep sleep 1800 s. Board now running production firmware.
@@ -84,8 +85,8 @@ Live log of bringing up the fabricated **well-bouy01** carrier board, stage by s
 - [x] Turbidity: Grove driver done — `TurbidityCal` per-sensor struct (GROVE active, SEN0189
       kept), clear-anchored relative index (3.79 V→0, 0.49 V→full-scale). prod builds clean.
       Still open: fit a real formazin NTU curve when a standard is available.
-- [~] Lock per-unit cal constants (TDS k ✓; turbidity clear anchor ✓; **pH V4/V7/V10 still
-      to re-verify against buffers**).
+- [x] Lock per-unit cal constants — TDS k ✓; turbidity clear anchor ✓; pH V4/V7/V10 ✓
+      (3-point re-cal 2026-07-28). Turbidity absolute NTU still needs a formazin standard.
 - [x] Support multiple sensor variants / per-sensor calibration — `TurbidityCal` struct.
 - [x] Sync working-copy changes into `GROUU_V3` and commit (master `7e0fc11`, not pushed).
 - [x] Remove the temporary `b_iscan` env — gone from platformio.ini + sketch deleted.

@@ -126,15 +126,16 @@
 //  the divider ratio, so no ratio constant is needed. This adapter runs
 //  "acidic = lower voltage" (pH 4 < pH 7 < pH 10). The fit is SEGMENTED at pH 7:
 //  an acid slope (pH4..pH7) below V7 and a base slope (pH7..pH10) above it, so
-//  the electrode's lower alkaline slope is handled (measured 177 vs 153 mV/pH).
-//  Measured 2026-07-16 on the bench rig (buffers 4/7/10). Re-dip and update if
+//  the electrode's lower alkaline slope is handled (measured 179 vs 127 mV/pH -
+//  the alkaline slope has aged down from an earlier 154). Measured 2026-07-28 on
+//  well-bouy01 (buffers 4/7/10, IDs inferred from voltage). Re-dip and update if
 //  the probe/electrode changes.
 #define PH_CAL_PH4           4.00f
 #define PH_CAL_PH7           7.00f
 #define PH_CAL_PH10         10.00f
-#define PH_CAL_V4            0.987f        // volts at ADS in pH 4.0 buffer
-#define PH_CAL_V7            1.519f        // volts at ADS in pH 7.0 buffer
-#define PH_CAL_V10           1.980f        // volts at ADS in pH 10.0 buffer
+#define PH_CAL_V4            0.969f        // volts at ADS in pH 4.0 buffer
+#define PH_CAL_V7            1.507f        // volts at ADS in pH 7.0 buffer
+#define PH_CAL_V10           1.889f        // volts at ADS in pH 10.0 buffer
 
 // --- Turbidity (Seeed Grove turbidity, through the 10k / 6.8k divider) -------
 //  SENSOR: SEEED GROVE turbidity (replaced the DFRobot SEN0189). Analog,
