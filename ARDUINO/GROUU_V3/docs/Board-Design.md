@@ -49,3 +49,25 @@ Companion to [[Bringup-Plan]]. ✅ decided · 🟡 mid-decision · ❓ needs inf
 - **On-board (custom rev):** our own high-side load switch for the 5 V sensor branch; later swap module for low-Iq buck/boost.
 - **Battery:** 🟡 leaning 1S Li-ion 18650 (LiFePO4 if cold). Share battery node with XIAO BAT for the 3.3 V.
 - **Panel:** ❓ none yet — size **after** bring-up measures sleep/active current; pick voltage to match the chosen charger.
+
+## Rev-B feedback (from well-bouy01 fabrication + bring-up, 2026-07)
+Lessons from building and bringing up the fabricated rev-A boards — the change list for rev-B.
+
+- **ADS1115 hand-soldering is the #1 casualty. ✅ fix in rev-B.** The VSSOP-10 (0.5 mm pitch)
+  ADS is brutal to hand-solder/rework — **3 boards damaged**, one ADS pad lifted during rework
+  and killed a whole board mid-bring-up. → **Have JLCPCB SMT-assemble the ADS** (and the other
+  fine-pitch/QFN parts), or move to a pre-assembled ADS1115 module footprint. If kept hand-built:
+  larger/thermal-relieved pads + a paste stencil. This single change removes most of the build risk.
+- **Terminal silk shows refdes (U2–U5), not function. ✅ fix in rev-B.** During bring-up the Grove
+  turbidity got wired into **U3 (which is electrically the pH channel, A2)** because the silk only
+  says "U3" — the numbering doesn't follow the sensor order. → Silk each screw terminal with its
+  **function + ADS channel + pin order**, e.g. `TEMP 3V3·DAT·GND`, `TDS A0 5V·SIG·GND`,
+  `TURB A1 5V·SIG·GND`, `pH A2 5V·SIG·GND`; label CN3 as `5V IN` and CN1/CN2 as `GROVE`.
+- **Reverse-polarity P-FET (q_revp) is unprotected + easy to lose. 🟡 rev-B.** It burned when a
+  live board was probed for continuity, and with it gone there's no reverse protection. → Add a
+  **resettable fuse + TVS** on the 5 V input, and **test points** on v5v / v5v_sw / the ADS
+  channels / SDA·SCL so bring-up doesn't require probing bare nets. Silk a "measure unpowered" note.
+- **Turbidity sensor changed: DFRobot SEN0189 → Seeed Grove.** Same 5 V range, same 10k/6.8k
+  divider, so no board change — but the BOM/labels reference Grove now (see §04).
+- **Keep (worked well):** socketed XIAO + Wio-SX1262 as modules, switched-5 V load switch,
+  3V3 always-on split, screw-terminal probes, single shared ADS front-end.

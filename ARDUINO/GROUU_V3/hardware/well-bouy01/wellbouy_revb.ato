@@ -1,0 +1,61 @@
+"""WellBouy rev-B carrier - atopile 0.15.x.
+
+rev-B started from the fabricated rev-A (main.ato:WellBouy), which stays FROZEN
+as the record of the built board. WellBouyRevB inherits rev-A's full netlist and
+is the scaffold for the next spin; the change list below comes from actually
+building and bringing up the rev-A boards (see docs/Board-Design.md "Rev-B
+feedback" and docs/Bringup-Log.md).
+
+REV-B CHANGE LIST
+  1. ADS1115 assembly (fab, not netlist). The VSSOP-10 (0.5 mm) ADS wrecked 3
+     boards by hand (one lifted pad killed a board mid-bring-up). -> SMT-assemble
+     the ADS at JLCPCB, or move to a pre-assembled ADS1115 module footprint.
+     If kept hand-built: bigger/thermal-relieved pads + paste stencil.
+  2. Function silk on the screw terminals (layout, not netlist). rev-A silk shows
+     only refdes (U2..U5), so the Grove turbidity got wired into U3 = the pH
+     channel during bring-up. -> silk each terminal with FUNCTION + ADS channel +
+     pin order: U2 "TEMP 3V3/DAT/GND", U4 "TDS A0 5V/SIG/GND",
+     U5 "TURB A1 5V/SIG/GND", U3 "pH A2 5V/SIG/GND"; CN3 "5V IN"; CN1/CN2 "GROVE".
+  3. Input protection + bring-up test points (NETLIST - needs parts, see stub
+     below). rev-A's reverse-polarity P-FET burned when a live board was probed,
+     leaving no protection. -> add a PPTC resettable fuse + TVS on v5v_raw, and
+     test points on v5v / v5v_sw / sda / scl / tds_in / turb_in / ph_in / gnd so
+     bring-up never probes bare nets. Silk a "measure UNPOWERED" note.
+  4. Turbidity sensor is now Seeed Grove (was DFRobot SEN0189). Same 5 V range,
+     same 10k/6.8k divider -> no board change, BOM/labels only.
+
+KEEP (worked well): socketed XIAO + Wio-SX1262 modules, switched-5 V load switch,
+3V3-always-on split, screw-terminal probes, single shared ADS front-end.
+
+STATUS: inherits rev-A unchanged so it builds today. Items 1-2 are layout/fab
+work for the next KiCad pass. Item 3's parts (fuse rating, TVS clamp, test-point
+footprint) are hardware calls - instantiate them in the block below once the LCSC
+parts are chosen (`ato create part <lcsc-id>`), attaching to the nets named above.
+"""
+
+from "main.ato" import WellBouy
+
+module WellBouyRevB from WellBouy:
+    # rev-A netlist inherited wholesale. Add rev-B netlist changes here.
+    #
+    # --- REV-B item 3: input protection + test points (parts TBD) -------------
+    # Wire-up is fully determined; only the concrete parts are pending. Example
+    # once parts exist (pseudo, uncomment + import the created parts):
+    #
+    #   f_in = new PPTC_Fuse            # series in v5v_raw, hold >= peak sensor load
+    #   f_in.p1 ~ j_5vin.p1
+    #   f_in.p2 ~ v5v_raw               # (retarget q_revp.D / j_5vin split accordingly)
+    #
+    #   d_tvs = new TVS_5V              # v5v_raw -> gnd, clamp above 5 V, below ADS/XIAO max
+    #   d_tvs.p1 ~ v5v_raw
+    #   d_tvs.p2 ~ gnd
+    #
+    #   tp_v5v = new TestPoint;     tp_v5v.p1    ~ v5v
+    #   tp_v5vsw = new TestPoint;   tp_v5vsw.p1  ~ v5v_sw
+    #   tp_sda = new TestPoint;     tp_sda.p1    ~ sda
+    #   tp_scl = new TestPoint;     tp_scl.p1    ~ scl
+    #   tp_a0 = new TestPoint;      tp_a0.p1     ~ tds_in
+    #   tp_a1 = new TestPoint;      tp_a1.p1     ~ turb_in
+    #   tp_a2 = new TestPoint;      tp_a2.p1     ~ ph_in
+    #   tp_gnd = new TestPoint;     tp_gnd.p1    ~ gnd
+    pass
